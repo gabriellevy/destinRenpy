@@ -1,0 +1,11 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/generationUnivers.rpy", line 3: invalid syntax
+    from despin.exec import situation
+                    ^
+    
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Mon Nov 30 20:14:48 2020

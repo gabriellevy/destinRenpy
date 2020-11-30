@@ -3,15 +3,25 @@
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
-# Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eileen', color="#c8ffc8")
+# Persos
+define narrator = Character(color="#fafad8", what_italic=True)
 
 
 # Le jeu commence ici
 label start:
+    "Lancement du jeu"
 
-    e "Vous venez de créer un nouveau jeu Ren'Py."
+    $ DeterminerPerso()
 
-    e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
+label debut_cycle:
+    "Début d'un cycle."
 
+    # $ DeterminationEvtCourant()
+
+    "Fin d'un cycle."
+
+    if situation_["Santé"] != "Mort":
+        jump debut_cycle
+
+    "Fin de vie."
     return
