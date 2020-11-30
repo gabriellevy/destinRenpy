@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/generationUnivers.rpy", line 3: invalid syntax
-    from despin.exec import situation
-                    ^
-    
+File "game/script.rpy", line 35: expected 'label_name' not found.
+    jump [prochainEvt]
+        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 20:14:48 2020
+Mon Nov 30 22:56:02 2020

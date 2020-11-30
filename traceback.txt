@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "game/generationUnivers.rpy", line 3, in <module>
-    from despin.abs import situation
-ImportError: cannot import name situation
+  File "game/script.rpy", line 34, in script
+    $ renpy.jump(prochainEvt)
+ScriptError: could not find label 'None'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 3, in <module>
-    from despin.abs import situation
-ImportError: cannot import name situation
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "game/script.rpy", line 34, in script
+    $ renpy.jump(prochainEvt)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'None'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Mon Nov 30 20:41:26 2020
+DestinExtremis 1.0
+Mon Nov 30 22:59:05 2020

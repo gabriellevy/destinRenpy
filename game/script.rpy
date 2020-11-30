@@ -6,6 +6,20 @@
 # Persos
 define narrator = Character(color="#fafad8", what_italic=True)
 
+init -10 python:
+    from despin.gen_vie import selecteur
+    import random
+
+    selecteur_ = selecteur.Selecteur()
+    def determinationEvtCourant():
+        global selecteur_
+        return selecteur_.determinationEvtCourant()
+
+init -1 python:
+    from despin.gen_vie import selecteur
+    import random
+
+    AjouterEvtsAdministratif()
 
 # Le jeu commence ici
 label start:
@@ -16,7 +30,8 @@ label start:
 label debut_cycle:
     "Début d'un cycle."
 
-    # $ DeterminationEvtCourant()
+    $ prochainEvt = determinationEvtCourant()
+    $ renpy.jump(prochainEvt)
 
     "Fin d'un cycle."
 
@@ -25,3 +40,9 @@ label debut_cycle:
 
     "Fin de vie."
     return
+
+label labelGoTo_pasFait:
+    "Ce sélecteur d'énévement n'a pas de label go to on dirait"
+
+label pas_evt_trouve:
+    " ERREUR : pas d'événement trouvé à ce cycle"
