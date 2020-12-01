@@ -1,28 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 34, in script
-    $ renpy.jump(prochainEvt)
-ScriptError: could not find label 'None'.
+  File "game/script.rpy", line 33, in script
+    $ prochainEvt = determinationEvtCourant(situation_)
+  File "game/script.rpy", line 33, in <module>
+    $ prochainEvt = determinationEvtCourant(situation_)
+  File "game/script.rpy", line 16, in determinationEvtCourant
+    return selecteur_.determinationEvtCourant(situation)
+TypeError: cannot concatenate 'str' and 'float' objects
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
-    run(restart)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
-    renpy.execution.run_context(True)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
-    context.run()
-  File "game/script.rpy", line 34, in script
-    $ renpy.jump(prochainEvt)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'None'.
+  File "game/script.rpy", line 33, in script
+    $ prochainEvt = determinationEvtCourant(situation_)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 33, in <module>
+    $ prochainEvt = determinationEvtCourant(situation_)
+  File "game/script.rpy", line 16, in determinationEvtCourant
+    return selecteur_.determinationEvtCourant(situation)
+  File "despin/gen_vie/selecteur.py", line 23, in determinationEvtCourant
+TypeError: cannot concatenate 'str' and 'float' objects
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Mon Nov 30 22:59:05 2020
+Tue Dec 01 22:40:38 2020

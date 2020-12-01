@@ -11,9 +11,9 @@ init -10 python:
     import random
 
     selecteur_ = selecteur.Selecteur()
-    def determinationEvtCourant():
+    def determinationEvtCourant(situation):
         global selecteur_
-        return selecteur_.determinationEvtCourant()
+        return selecteur_.determinationEvtCourant(situation)
 
 init -1 python:
     from despin.gen_vie import selecteur
@@ -30,7 +30,7 @@ label start:
 label debut_cycle:
     "Début d'un cycle."
 
-    $ prochainEvt = determinationEvtCourant()
+    $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
 
     "Fin d'un cycle."

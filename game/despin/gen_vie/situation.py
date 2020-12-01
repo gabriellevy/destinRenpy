@@ -17,6 +17,9 @@ class Situation:
     def __getitem__(self, key):
         return self.caracs_[key]
 
+    def __setitem__(self, key, val):
+        self.caracs_[key] = val
+
     def __getattr__(self, nom):
         """Si Python ne trouve pas l'attribut nommé nom, il appelle
              cette méthode. On affiche une alerte"""
