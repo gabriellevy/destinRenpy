@@ -1,16 +1,17 @@
 init -2 python:
     from despin.abs import carac
+    from despin.gen_vie import situation
     import random
 
-    situation_ = {} # dictionnaire contenant toutes les caracs courantes de la partie
+    situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
 
     def DeterminerPerso():
         global situation_
         # tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
-        situation_["Nom"] = "Deharbe"
-        situation_["Prénom"] = "Mathieu"
-        situation_["Santé"] = "Bonne"
-        situation_["Métier"] = "Fonctionnaire administratif"
+        situation_.SetCarac("Nom", "Deharbe")
+        situation_.SetCarac("Prénom", "Mathieu")
+        situation_.SetCarac("Santé", "Bonne")
+        situation_.SetCarac("Métier", "Fonctionnaire administratif")
         renpy.jump("generationUnivers_Perso")
 
 label generationUnivers_Perso:
