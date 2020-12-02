@@ -9,7 +9,7 @@ init -2 python:
         global situation_
         # tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
         situation_["Nom"] = "Deharbe"
-        situation_["Prénom"] = "Mathieu"
+        situation_["Prénom"] = "Mathieu--"
         situation_["Santé"] = "Bonne"
         situation_["Métier"] = "Fonctionnaire administratif"
         # situation_["Métier"] = "Test tmp"

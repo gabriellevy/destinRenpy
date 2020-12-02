@@ -1,31 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 33, in script
-    $ prochainEvt = determinationEvtCourant(situation_)
-  File "game/script.rpy", line 33, in <module>
-    $ prochainEvt = determinationEvtCourant(situation_)
-  File "game/script.rpy", line 16, in determinationEvtCourant
-    return selecteur_.determinationEvtCourant(situation)
-TypeError: cannot concatenate 'str' and 'float' objects
+  File "game/script.rpy", line 18, in script
+    init -1 python:
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsAdministratif()
+  File "game/administratif.rpy", line 20, in AjouterEvtsAdministratif
+    probaMathieu.ajouterModifProba(10., conditionMathieu)
+TypeError: ajouterModifProba() takes exactly 3 arguments (2 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 33, in script
-    $ prochainEvt = determinationEvtCourant(situation_)
+  File "game/script.rpy", line 18, in script
+    init -1 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 33, in <module>
-    $ prochainEvt = determinationEvtCourant(situation_)
-  File "game/script.rpy", line 16, in determinationEvtCourant
-    return selecteur_.determinationEvtCourant(situation)
-  File "despin/gen_vie/selecteur.py", line 23, in determinationEvtCourant
-TypeError: cannot concatenate 'str' and 'float' objects
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsAdministratif()
+  File "game/administratif.rpy", line 20, in AjouterEvtsAdministratif
+    probaMathieu.ajouterModifProba(10., conditionMathieu)
+  File "despin/gen_vie/proba.py", line 21, in ajouterModifProba
+TypeError: ajouterModifProba() takes exactly 3 arguments (2 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Tue Dec 01 22:40:38 2020
+ 
+Wed Dec 02 22:38:55 2020

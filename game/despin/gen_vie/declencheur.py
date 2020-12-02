@@ -1,4 +1,6 @@
-
+from despin.gen_vie import proba
+from despin.gen_vie import modifProba
+from despin.abs import condition
 
 class Declencheur:
     """
@@ -6,23 +8,23 @@ class Declencheur:
     calculs en fonction des caracs de la situation actuelle
     """
 
-    def __init__(self, proba, labelGoTo):
+    def __init__(self, aproba, labelGoTo):
         self.conditions_ = []
-        self.proba_ = proba # float d'abord puis proba composée avec des modificateurs de proba
+        if isinstance(aproba, proba.Proba):
+            self.proba_ = aproba
+        else:
+            # la proba est un simple nombre flottant (sans modif de proba)
+            self.proba_ = proba.Proba(aproba)
         self.labelGoTo_ = labelGoTo
 
     def calculerProba(self, situation):
         for condition in self.conditions_:
-            resTest = condition.Tester(situation)
-            print("condition : {}".format(condition))
-            print("resTest : {}".format(resTest))
+            resTest = condition.tester(situation)
             if not resTest:
                 return 0. # si une des conditions n'est pas vérifiée alors la proba est égale à 0
             pass
 
-        print("fin calculerProba")
-        #  compléter bien sûr, en attendant :
-        return self.proba_
+        return self.proba_.calculer(situation)
 
     def executer(self):
         return self.labelGoTo_

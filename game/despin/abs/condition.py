@@ -15,7 +15,7 @@ class Condition:
         self._m_Valeur = valeur
         self._m_Comparateur = comparateur
 
-    def Tester(self, situation):
+    def tester(self, situation):
         """
         renvoit true si la condition est vérifiée
         """

@@ -3,18 +3,22 @@ init -5 python:
     import random
     from despin.gen_vie import declencheur
     from despin.gen_vie import selecteur
+    from despin.gen_vie import proba
     from despin.abs import condition
 
     def AjouterEvtsAdministratif():
         global selecteur_
         conditionAdministratif = condition.Condition("Métier", "Fonctionnaire administratif", condition.Condition.EGAL)
         conditionTmp = condition.Condition("Métier", "Test tmp", condition.Condition.EGAL)
+        conditionMathieu = condition.Condition("Prénom", "Mathieu", condition.Condition.EGAL)
 
         decVisiteInvestisseurs = declencheur.Declencheur(0.5, "decVisiteInvestisseurs")
         decVisiteInvestisseurs.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs)
 
-        decVisiteInvestisseurs2 = declencheur.Declencheur(0.5, "decVisiteInvestisseurs2")
+        probaMathieu = proba.Proba(0.01)
+        probaMathieu.ajouterModifProbaViaVals(10., conditionMathieu)
+        decVisiteInvestisseurs2 = declencheur.Declencheur(probaMathieu, "decVisiteInvestisseurs_Mathieu")
         decVisiteInvestisseurs2.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs2)
 
@@ -27,11 +31,11 @@ init -5 python:
         selecteur_.ajouterDeclencheur(testBidonAdministratif2)
 
 label decVisiteInvestisseurs:
-    "Déclenchement de decVisiteInvestisseurs. 1"
+    "Déclenchement de decVisiteInvestisseurs."
     jump debut_cycle
 
-label decVisiteInvestisseurs2:
-    "Déclenchement de decVisiteInvestisseurs. 2"
+label decVisiteInvestisseurs_Mathieu:
+    "Déclenchement de decVisiteInvestisseurs. Surtout si Mathieu !!!"
     jump debut_cycle
 
 label testBidonAdministratif:

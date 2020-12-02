@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 35: expected 'label_name' not found.
-    jump [prochainEvt]
-        ^
+File "game/administratif.rpy", line 20: expected an indented block
+        decVisiteInvestisseurs2 = declencheur.Declencheur(0.5, "decVisiteInvestisseurs_Mathieu")
+                               ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Nov 30 22:56:02 2020
+Wed Dec 02 22:33:14 2020
