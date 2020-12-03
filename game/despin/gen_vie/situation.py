@@ -15,6 +15,8 @@ class Situation:
         self.valsMax_ = dict()# facultatif : dictionnaire contenant l'éventuelle valeur max de la carac en clé
 
     def __getitem__(self, key):
+        if key not in self.caracs_:
+            self.caracs_[key] = ""
         return self.caracs_[key]
 
     def __setitem__(self, key, val):

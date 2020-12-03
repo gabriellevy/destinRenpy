@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/administratif.rpy", line 20: expected an indented block
-        decVisiteInvestisseurs2 = declencheur.Declencheur(0.5, "decVisiteInvestisseurs_Mathieu")
-                               ^
+File "game/generationUnivers.rpy", line 22: invalid syntax
+    aUnMetier = situation_[Métier] != ""
+                             ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Dec 02 22:33:14 2020
+Thu Dec 03 23:06:09 2020

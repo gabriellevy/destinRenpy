@@ -1,31 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 18, in script
-    init -1 python:
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsAdministratif()
-  File "game/administratif.rpy", line 20, in AjouterEvtsAdministratif
-    probaMathieu.ajouterModifProba(10., conditionMathieu)
-TypeError: ajouterModifProba() takes exactly 3 arguments (2 given)
+  File "game/generationUnivers.rpy", line 22, in script
+    if situation_[Métier] != "":
+SyntaxError: invalid syntax (game/generationUnivers.rpy, line 22)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 18, in script
-    init -1 python:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsAdministratif()
-  File "game/administratif.rpy", line 20, in AjouterEvtsAdministratif
-    probaMathieu.ajouterModifProba(10., conditionMathieu)
-  File "despin/gen_vie/proba.py", line 21, in ajouterModifProba
-TypeError: ajouterModifProba() takes exactly 3 arguments (2 given)
+  File "game/generationUnivers.rpy", line 22, in script
+    if situation_[Métier] != "":
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2057, in py_eval
+    code = py_compile(code, 'eval')
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 692, in py_compile
+    raise e
+SyntaxError: invalid syntax (game/generationUnivers.rpy, line 22)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Wed Dec 02 22:38:55 2020
+DestinExtremis 1.0
+Thu Dec 03 23:01:26 2020

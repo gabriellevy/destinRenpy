@@ -1,21 +1,20 @@
-Wed Dec 02 22:40:30 2020
+Thu Dec 03 23:08:17 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.12s
+Loading script took 0.10s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.07s
+Running init code took 0.08s
 Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
 Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -25,15 +24,15 @@ Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.08s
-Prepare screens took 0.06s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.07s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.03s
+Interface start took 0.02s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
@@ -414,308 +413,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.10899996758s
+Total time until interface ready: 0.998000144958s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.012000 seconds.
-- Frame drawn at 0.027000 seconds.
-- Frame drawn at 0.044000 seconds.
-- Frame drawn at 0.061000 seconds.
-- 0.061000 seconds to render 5 frames.
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.257143163234
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.0772214204209
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.43907892535
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.473618463706
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.274686207496
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.279881578631
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.0389112303321
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.213200893869
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.0462610948313
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.224625837811
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.471992262321
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.432545676569
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.218358409796
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.239724622021
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.440455233878
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.30757366618
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.249928859436
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.319840105966
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.453208638194
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.103735240951
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.269945213272
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.113532923827
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.170782981136
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.0258617239221
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.229380685498
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.223169339203
-determinationEvtCourant
----declencheur
-proba : 0.5
----declencheur
-proba : 0.01
----declencheur
-proba : 0.0
----declencheur
-proba : 0.0
-probaComplete : 0.51
-resProba :  0.241118497056
+- Frame drawn at 0.010000 seconds.
+- Frame drawn at 0.025000 seconds.
+- Frame drawn at 0.042000 seconds.
+- Frame drawn at 0.060000 seconds.
+- 0.060000 seconds to render 5 frames.
