@@ -2,10 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/generationUnivers.rpy", line 22: invalid syntax
-    aUnMetier = situation_[Métier] != ""
-                             ^
-    
+The label decVisiteInvestisseurs is defined twice, at
+  File "game/administratif.rpyc", line 43 and
+  File "game/evts_metiers/administratif.rpy", line 43.
+
+The label decVisiteInvestisseurs_Mathieu is defined twice, at
+  File "game/administratif.rpyc", line 49 and
+  File "game/evts_metiers/administratif.rpy", line 49.
+
+The label testBidonAdministratif is defined twice, at
+  File "game/administratif.rpyc", line 55 and
+  File "game/evts_metiers/administratif.rpy", line 55.
+
+The label testBidonAdministratif2 is defined twice, at
+  File "game/administratif.rpyc", line 61 and
+  File "game/evts_metiers/administratif.rpy", line 61.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Dec 03 23:06:09 2020
+Fri Dec 04 22:02:16 2020

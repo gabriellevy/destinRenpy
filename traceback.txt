@@ -1,24 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 22, in script
-    if situation_[Métier] != "":
-SyntaxError: invalid syntax (game/generationUnivers.rpy, line 22)
+  File "game/evts_generaux/rien.rpy", line 27, in script
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 27, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 20, in LancerEvtVide
+    if situation[Metier.ADMINISTRATIF] > 0:
+NameError: global name 'Metier' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 22, in script
-    if situation_[Métier] != "":
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
-    if renpy.python.py_eval(condition):
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2057, in py_eval
-    code = py_compile(code, 'eval')
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 692, in py_compile
-    raise e
-SyntaxError: invalid syntax (game/generationUnivers.rpy, line 22)
+  File "game/evts_generaux/rien.rpy", line 27, in script
+    $ LancerEvtVide(situation_)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/evts_generaux/rien.rpy", line 27, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 20, in LancerEvtVide
+    if situation[Metier.ADMINISTRATIF] > 0:
+NameError: global name 'Metier' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Thu Dec 03 23:01:26 2020
+Fri Dec 04 23:16:33 2020

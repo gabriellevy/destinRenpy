@@ -18,6 +18,7 @@ init -1 python:
     import random
 
     AjouterEvtsAdministratif()
+    AjouterEvtsRien()
 
 # Le jeu commence ici
 label start:

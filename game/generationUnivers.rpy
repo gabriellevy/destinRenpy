@@ -12,7 +12,7 @@ init -2 python:
         situation_["Nom"] = "Deharbe"
         situation_["Prénom"] = "Mathieu"
         situation_["Santé"] = "Bonne"
-        # situation_["Métier"] = "Fonctionnaire administratif"
+        situation_["Métier"] = "Fonctionnaire administratif"
         metier.regenererCaracsMetier(situation_)
         renpy.jump("generationUnivers_Perso")
 

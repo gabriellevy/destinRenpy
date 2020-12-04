@@ -1,4 +1,4 @@
-
+from despin.extremis import metier
 
 class Situation:
     """
@@ -12,7 +12,7 @@ class Situation:
     def __init__(self):
         self.caracs_ = dict() # dictionnaire contenant toutes les caracs courantes de la partie
         self.valsMin_ = dict() # facultatif : dictionnaire contenant l'éventuelle valeur min de la carac en clé
-        self.valsMax_ = dict()# facultatif : dictionnaire contenant l'éventuelle valeur max de la carac en clé
+        self.valsMax_ = dict() # facultatif : dictionnaire contenant l'éventuelle valeur max de la carac en clé
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -20,7 +20,8 @@ class Situation:
         return self.caracs_[key]
 
     def __setitem__(self, key, val):
-        self.caracs_[key] = val
+        #self.caracs_[key] = val
+        self.SetCarac(key, val)
 
     def __getattr__(self, nom):
         """Si Python ne trouve pas l'attribut nommé nom, il appelle
@@ -47,6 +48,10 @@ class Situation:
             self.valsMin_[idCarac] = valeurMin
         if valeurMax != "":
             self.valsMax_[idCarac] = valeurMax
+
+        # modifier certaines caracs peut impliquer des changements implicites à d'autres :
+        if idCarac == metier.Metier.METIER:
+            metier.regenererCaracsMetier(self)
 
     def AjouterACarac(self, idCarac, valCarac):
         finalVal = self.caracs_[idCarac] + valCarac
