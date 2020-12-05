@@ -12,7 +12,6 @@ class Theme:
     def __setitem__(self, key, val):
         self.themes_[key] = val
 
-
 class FiltreAction:
     """
     Filtres des Actions qui seront proposées au joueur durant la partie.
@@ -20,8 +19,17 @@ class FiltreAction:
     Ils ont aussi pour effet de faire arriver certains événements plus souvent si leurs thèmes correspondants ont été sélectionnés
     """
 
+    # liste des filtres disponibles :
+    RECOLTE_PREPARATION = "Récolte et préparation" # artisanat, alchimie, cuisisine etc...
     VOL = "Vol"
+    ANIMAUX = "Animaux" #approvoisement etc..."
+    MAGIE = "Magie"
+    ART = "Art"
+    DESTRUCTION = "Destruction" # Actions vraiment nihiliste gratuites
+    VIOLENCE = "Violence"
+    AMOUR = "Amour"
 
     def __init__(self):
         self.themes_ = Theme()
         self.themes_[FiltreAction.VOL] = 1
+        self.themes_[FiltreAction.AMOUR] = 1

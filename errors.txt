@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/evts_metiers/administratif.rpy", line 75: expected ':' not found.
-    label decVisiteInvestisseurs_fin
-                                    ^
+The label decVisiteInvestisseurs_drague is defined twice, at
+  File "game/evts_metiers/administratif.rpy", line 82 and
+  File "game/evts_metiers/administratif.rpy", line 86.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 18:29:42 2020
+Sat Dec 05 22:37:05 2020

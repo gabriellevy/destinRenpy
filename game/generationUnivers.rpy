@@ -9,7 +9,7 @@ init -2 python:
 
     def DeterminerPerso():
         global situation_
-        # tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
+        # TODO : tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
         situation_["Nom"] = "Deharbe"
         situation_["Prénom"] = "Mathieu"
         situation_["Santé"] = "Bonne"

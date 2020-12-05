@@ -1,9 +1,11 @@
 
 image superieur_hierarchique = "administration/homme_elegant_barbu.png"
 image investisseur = "coteries/victorien/jeune_monocle.png"
+image investisseuse = "coteries/victorien/belle_jeune_femme.png"
 
 define ch = Character('Chef', who_outlines=[(2, "#894646",1,1)], color="#580404")
 define inv = Character('M. Maxwell', color="#e30909")
+define inve = Character('Mlle. Dowe', color="#22002c")
 
 init -5 python:
     import random
@@ -18,7 +20,7 @@ init -5 python:
         global selecteur_
         conditionAdministratif = condition.Condition(metier.Metier.ADMINISTRATIF, 1, condition.Condition.EGAL)
 
-        decVisiteInvestisseurs = declencheur.Declencheur(400.02, "decVisiteInvestisseurs")
+        decVisiteInvestisseurs = declencheur.Declencheur(0.02, "decVisiteInvestisseurs")
         decVisiteInvestisseurs.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs)
 
@@ -50,6 +52,10 @@ label decVisiteInvestisseurs:
     inv "Bonjour. Votre secrétaire m'a permis d'entrer pour vous retrouver et observer les locaux."
     inv "J'espère que vous ne m'en voulez pas de ne pas vous avoir attendu à l'entrée."
     ch "Non vous avez bien fait. Suivez moi dans la salle de réunion, nous ferons le tour des bureaux après la présentation de 9h."
+    show investisseuse at center
+    with dissolve
+    inve "D'accord, tant que nous avons le temps de visiter les installations en détail ensuite."
+
     menu:
         "En profiter pour vous faire remarquer en vantant votre travail.":
              jump decVisiteInvestisseurs_frime
@@ -59,10 +65,14 @@ label decVisiteInvestisseurs:
              jump decVisiteInvestisseurs_discret
         "Profiter de cette diversion pour voler des choses au bureau." if filtre_.themes_[filtres_action.FiltreAction.VOL] != "":
             jump decVisiteInvestisseurs_vol
+        "Tenter de se faire remarquer par Mlle Dowe." if filtre_.themes_[filtres_action.FiltreAction.AMOUR] != "":
+            jump decVisiteInvestisseurs_drague
 
     label decVisiteInvestisseurs_discret:
         hide superieur_hierarchique
         with moveoutleft
+        hide investisseuse
+        with moveoutright
         hide investisseur
         with moveoutright
         "Vous préférez rester discret comme le souhaitait votre chef."
@@ -72,8 +82,12 @@ label decVisiteInvestisseurs:
         ch "Bonne soirée [situation_[Prénom]]. À demain."
         jump decVisiteInvestisseurs_fin
 
+    label decVisiteInvestisseurs_drague:
+        "youpi drague PAS FAIT"
+        jump decVisiteInvestisseurs_fin
+
     label decVisiteInvestisseurs_vol:
-        "voler c'est pas cool"
+        "voler c'est pas cool PAS FAIT"
         jump decVisiteInvestisseurs_fin
 
     label decVisiteInvestisseurs_fin:

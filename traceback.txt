@@ -1,27 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "game/generationUnivers.rpy", line 8, in <module>
-    filtre_ = filtres_action.FiltreAction()
-NameError: global name 'VOL' is not defined
+  File "game/evts_metiers/administratif.rpy", line 55, in script
+    show investisseuse at CENTER
+  File "game/evts_metiers/administratif.rpy", line 55, in <module>
+    show investisseuse at CENTER
+NameError: name 'CENTER' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 8, in <module>
-    filtre_ = filtres_action.FiltreAction()
-  File "despin/reglages/filtres_action.py", line 27, in __init__
-NameError: global name 'VOL' is not defined
+  File "game/evts_metiers/administratif.rpy", line 55, in script
+    show investisseuse at CENTER
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1183, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1142, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/evts_metiers/administratif.rpy", line 55, in <module>
+    show investisseuse at CENTER
+NameError: name 'CENTER' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Sat Dec 05 18:32:08 2020
+DestinExtremis 1.0
+Sat Dec 05 22:38:21 2020
