@@ -1,4 +1,4 @@
-Sat Dec 05 14:37:26 2020
+Sat Dec 05 17:44:06 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -7,7 +7,7 @@ Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.14s
+Loading script took 0.15s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -27,7 +27,7 @@ Init translation took 0.02s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.07s
+Save screen analysis took 0.08s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.07s
@@ -414,11 +414,25 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.14600014687s
+Total time until interface ready: 1.18099999428s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.004000 seconds.
-- Frame drawn at 0.016000 seconds.
-- Frame drawn at 0.033000 seconds.
-- Frame drawn at 0.049000 seconds.
-- 0.049000 seconds to render 5 frames.
+- Frame drawn at 0.005000 seconds.
+- Frame drawn at 0.018000 seconds.
+- Frame drawn at 0.034000 seconds.
+- Frame drawn at 0.051000 seconds.
+- 0.051000 seconds to render 5 frames.
+
+Full traceback:
+  File "game/evts_metiers/administratif.rpy", line 54, in script
+    jump decVisiteInvestisseurs_frime
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
+
+While running game code:
+  File "game/evts_metiers/administratif.rpy", line 54, in script
+    jump decVisiteInvestisseurs_frime
+ScriptError: could not find label 'decVisiteInvestisseurs_frime'.

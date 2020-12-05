@@ -1,4 +1,10 @@
 
+image superieur_hierarchique = "administration/homme_elegant_barbu.png"
+image investisseur = "coteries/victorien/jeune_monocle.png"
+
+define ch = Character('Chef', who_outlines=[(2, "#894646",1,1)], color="#580404")
+define inv = Character('M. Maxwell', color="#e30909")
+
 init -5 python:
     import random
     from despin.gen_vie import declencheur
@@ -31,6 +37,28 @@ init -5 python:
 
 label decVisiteInvestisseurs:
     $ actionDebutAdministratif()
-    "Visite d'investisseurs. A FAIRE"
+    "On dit qu'une délégation de très importants investisseurs Victoriens va visiter les bureaux aujourd'hui."
+    "Votre chef fait le tour du personnel. Il semble très tendu."
+    show superieur_hierarchique at left
+    with moveinleft
+    ch "Bonjour [situation_[Prénom]]. Aujourd'hui est un jour très important. Je compte sur vous pour faire bonne impression."
+    ch "Contentez vous bien bien travailler ou au moins d'en avoir l'air et restez discret."
+    "Avant que vous puissiez répondre un homme apparaît."
+    show investisseur at right
+    with moveinright
+    inv "Bonjour. Votre secrétaire m'a permis d'entrer pour vous retrouver et observer les locaux."
+    inv "J'espère que vous ne m'en voulez pas de ne pas vous avoir attendu à l'entrée."
+    ch "Non vous avez bien fait. Suivez moi dans la salle de réunion, nous ferons le tour des bureaux après la présentation de 9h."
+    menu:
+        "En profiter pour vous faire remarquer en vantant votre travail.":
+             jump decVisiteInvestisseurs_frime
+        "Flatter votre directeur pour vous faire bien voir.":
+             jump decVisiteInvestisseurs_flatterie
+        "Travailler sérieusement et discrètement.":
+             jump decVisiteInvestisseurs_discret
+
+    label decVisiteInvestisseurs_discret:
+        "Vous préférez rester discret comme le souhaitait votre chef."
+        "Le chef semble satisfait de comment s'est déroulé la visite et lLa journée se passe tranquillement sans événement notable."
     $ actionFinAdministratif()
     jump debut_cycle

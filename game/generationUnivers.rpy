@@ -17,8 +17,8 @@ init -2 python:
         renpy.jump("generationUnivers_Perso")
 
 label generationUnivers_Perso:
-    "Vous avez 20 ans."
-    "Vous vous appelez [situation_[Prénom]] [situation_[Nom]]."
-    if metier.aUnMetier(situation_):
-        "Vous êtes [situation_[Métier]]."
+    #"Vous avez 20 ans."
+    #"Vous vous appelez [situation_[Prénom]] [situation_[Nom]]."
+    #if metier.aUnMetier(situation_):
+    #    "Vous êtes [situation_[Métier]]."
     jump debut_cycle

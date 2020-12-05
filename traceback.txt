@@ -1,30 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 27, in script
-    $ LancerEvtVide(situation_)
-  File "game/evts_generaux/rien.rpy", line 27, in <module>
-    $ LancerEvtVide(situation_)
-  File "game/evts_generaux/rien.rpy", line 20, in LancerEvtVide
-    if situation[Metier.ADMINISTRATIF] > 0:
-NameError: global name 'Metier' is not defined
+  File "game/evts_metiers/administratif.rpy", line 54, in script
+    jump decVisiteInvestisseurs_frime
+ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 27, in script
-    $ LancerEvtVide(situation_)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/evts_generaux/rien.rpy", line 27, in <module>
-    $ LancerEvtVide(situation_)
-  File "game/evts_generaux/rien.rpy", line 20, in LancerEvtVide
-    if situation[Metier.ADMINISTRATIF] > 0:
-NameError: global name 'Metier' is not defined
+  File "game/evts_metiers/administratif.rpy", line 54, in script
+    jump decVisiteInvestisseurs_frime
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Fri Dec 04 23:16:33 2020
+Sat Dec 05 17:44:20 2020

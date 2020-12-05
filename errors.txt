@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-The label decVisiteInvestisseurs is defined twice, at
-  File "game/administratif.rpyc", line 43 and
-  File "game/evts_metiers/administratif.rpy", line 43.
-
-The label decVisiteInvestisseurs_Mathieu is defined twice, at
-  File "game/administratif.rpyc", line 49 and
-  File "game/evts_metiers/administratif.rpy", line 49.
-
-The label testBidonAdministratif is defined twice, at
-  File "game/administratif.rpyc", line 55 and
-  File "game/evts_metiers/administratif.rpy", line 55.
-
-The label testBidonAdministratif2 is defined twice, at
-  File "game/administratif.rpyc", line 61 and
-  File "game/evts_metiers/administratif.rpy", line 61.
+File "game/evts_metiers/administratif.rpy", line 52: expected ':' not found.
+    "En profiter pour vous faire remarquer en vantant votre travail." jump decVisiteInvestisseurs_frime
+                                                                      ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Dec 04 22:02:16 2020
+Sat Dec 05 17:40:27 2020
