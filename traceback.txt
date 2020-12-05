@@ -1,22 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_metiers/administratif.rpy", line 54, in script
-    jump decVisiteInvestisseurs_frime
-ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "game/generationUnivers.rpy", line 8, in <module>
+    filtre_ = filtres_action.FiltreAction()
+NameError: global name 'VOL' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_metiers/administratif.rpy", line 54, in script
-    jump decVisiteInvestisseurs_frime
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/generationUnivers.rpy", line 8, in <module>
+    filtre_ = filtres_action.FiltreAction()
+  File "despin/reglages/filtres_action.py", line 27, in __init__
+NameError: global name 'VOL' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Sat Dec 05 17:44:20 2020
+ 
+Sat Dec 05 18:32:08 2020

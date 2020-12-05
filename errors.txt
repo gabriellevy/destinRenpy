@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/evts_metiers/administratif.rpy", line 52: expected ':' not found.
-    "En profiter pour vous faire remarquer en vantant votre travail." jump decVisiteInvestisseurs_frime
-                                                                      ^
+File "game/evts_metiers/administratif.rpy", line 75: expected ':' not found.
+    label decVisiteInvestisseurs_fin
+                                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 17:40:27 2020
+Sat Dec 05 18:29:42 2020

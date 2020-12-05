@@ -5,6 +5,7 @@ init -2 python:
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
+    filtre_ = filtres_action.FiltreAction()
 
     def DeterminerPerso():
         global situation_

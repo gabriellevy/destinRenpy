@@ -12,6 +12,7 @@ init -5 python:
     from despin.gen_vie import proba
     from despin.abs import condition
     from despin.extremis import metier
+    from despin.reglages import filtres_action
 
     def AjouterEvtsAdministratif():
         global selecteur_
@@ -56,9 +57,50 @@ label decVisiteInvestisseurs:
              jump decVisiteInvestisseurs_flatterie
         "Travailler sérieusement et discrètement.":
              jump decVisiteInvestisseurs_discret
+        "Profiter de cette diversion pour voler des choses au bureau." if filtre_.themes_[filtres_action.FiltreAction.VOL] != "":
+            jump decVisiteInvestisseurs_vol
 
     label decVisiteInvestisseurs_discret:
+        hide superieur_hierarchique
+        with moveoutleft
+        hide investisseur
+        with moveoutright
         "Vous préférez rester discret comme le souhaitait votre chef."
-        "Le chef semble satisfait de comment s'est déroulé la visite et lLa journée se passe tranquillement sans événement notable."
+        "Le chef semble satisfait de comment s'est déroulé la visite et la journée se passe tranquillement sans événement notable."
+        show superieur_hierarchique at left
+        with moveinleft
+        ch "Bonne soirée [situation_[Prénom]]. À demain."
+        jump decVisiteInvestisseurs_fin
+
+    label decVisiteInvestisseurs_vol:
+        "voler c'est pas cool"
+        jump decVisiteInvestisseurs_fin
+
+    label decVisiteInvestisseurs_fin:
+
     $ actionFinAdministratif()
     jump debut_cycle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # tmp
