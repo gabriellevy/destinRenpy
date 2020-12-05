@@ -22,8 +22,7 @@ init -1 python:
 
 # Le jeu commence ici
 label start:
-    "Lancement du jeu"
-
+    scene bg rue_haussmann
     $ DeterminerPerso()
 
 label debut_cycle:

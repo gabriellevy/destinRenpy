@@ -11,13 +11,16 @@ init -5 python:
         global selecteur_
         conditionAdministratif = condition.Condition(metier.Metier.ADMINISTRATIF, 1, condition.Condition.EGAL)
 
-        decVisiteInvestisseurs = declencheur.Declencheur(0.02, "decVisiteInvestisseurs")
+        decVisiteInvestisseurs = declencheur.Declencheur(400.02, "decVisiteInvestisseurs")
         decVisiteInvestisseurs.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs)
 
     # attention des actions sont à exécuter au début et à al fin de chaque événement administratif :
     def actionDebutAdministratif():
         global situation_
+        renpy.transition(dissolve)
+        renpy.scene()
+        renpy.show("bg bureau")
         # metier.regenererCaracsMetier(situation_)
 
     # attention des actions sont à exécuter au début et à al fin de chaque événement administratif :

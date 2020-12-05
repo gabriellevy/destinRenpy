@@ -22,7 +22,6 @@ def estDeBureau(strMetier):
     return False
 
 def regenererCaracsMetier(situation):
-    print("regenererCaracsMetier")
     if not aUnMetier(situation):
         # pas de métier
         return
