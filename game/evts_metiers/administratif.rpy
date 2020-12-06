@@ -19,10 +19,18 @@ init -5 python:
     def AjouterEvtsAdministratif():
         global selecteur_
         conditionAdministratif = condition.Condition(metier.Metier.ADMINISTRATIF, 1, condition.Condition.EGAL)
-
         decVisiteInvestisseurs = declencheur.Declencheur(0.02, "decVisiteInvestisseurs")
         decVisiteInvestisseurs.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs)
+
+        # exemple d'ajout d'événement :
+        # conditionExemple = condition.Condition(metier.Metier.ADMINISTRATIF, 1, condition.Condition.EGAL) # condition de base de l'événement
+        # probaExemple = proba.Proba(0.02) # faible chance d'arriver
+        # conditionDeharbe = condition.Condition("Nom", "Deharbe", condition.Condition.EGAL)
+        # probaVisiteInvestisseurs.ajouterModifProbaViaVals(10.0, conditionDeharbe) # sauf si nommé Deharbe : très forte chance d'arriver
+        # decExemple = declencheur.Declencheur(0.02, "decExemple") # déclencheur avec en param la proba et le nom du label à suivre
+        # decExemple.AjouterCondition(conditionExemple)
+        # selecteur_.ajouterDeclencheur(decExemple)
 
     # attention des actions sont à exécuter au début et à al fin de chaque événement administratif :
     def actionDebutAdministratif():
@@ -36,6 +44,13 @@ init -5 python:
     def actionFinAdministratif():
         global situation_
         # metier.regenererCaracsMetier(situation_)
+
+# exemple de label d'événement (lié à l'exemple de déclencheur commenté ci dessus)
+# label decExemple:
+    # $ actionDebutAdministratif()
+    # actions etc classiques
+    # $ actionFinAdministratif()
+    # jump debut_cycle
 
 
 label decVisiteInvestisseurs:

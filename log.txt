@@ -1,4 +1,4 @@
-Sat Dec 05 22:47:20 2020
+Sun Dec 06 12:32:35 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -19,7 +19,7 @@ Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\
 Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.01s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.05s
 Cleaning stores took 0.00s
@@ -28,7 +28,7 @@ Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.07s
-Prepare screens took 0.06s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.07s
 Running _start took 0.00s
@@ -414,11 +414,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.21000003815s
+Total time until interface ready: 1.11100006104s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.004000 seconds.
-- Frame drawn at 0.020000 seconds.
+- Frame drawn at 0.006000 seconds.
+- Frame drawn at 0.022000 seconds.
 - Frame drawn at 0.038000 seconds.
-- Frame drawn at 0.054000 seconds.
-- 0.054000 seconds to render 5 frames.
+- Frame drawn at 0.055000 seconds.
+- 0.055000 seconds to render 5 frames.
