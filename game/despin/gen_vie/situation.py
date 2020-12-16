@@ -1,4 +1,4 @@
-from despin.extremis import metier
+from extremis.socio_eco import metier
 
 class Situation:
     """

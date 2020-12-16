@@ -1,7 +1,7 @@
 init -2 python:
     from despin.abs import carac
     from despin.gen_vie import situation
-    from despin.extremis import metier
+    from extremis.socio_eco import metier
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
