@@ -2,10 +2,12 @@ init -2 python:
     from despin.abs import carac
     from despin.gen_vie import situation
     from extremis.socio_eco import metier
+    from extremis.humanite import trait
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
     filtre_ = filtres_action.FiltreAction()
+    traits_ = trait.Trait.TOUS_LES_TRAITS
 
     def DeterminerPerso():
         global situation_
@@ -20,6 +22,8 @@ init -2 python:
 label generationUnivers_Perso:
     #"Vous avez 20 ans."
     #"Vous vous appelez [situation_[Prénom]] [situation_[Nom]]."
-    if metier.aUnMetier(situation_):
-        "Vous êtes [situation_[Metier]]."
+    #if metier.aUnMetier(situation_):
+    #    "Vous êtes [situation_[Metier]]."
+    "Vous êtes aussi [traits_]."
+    "Vous êtes aussi [trait.Trait.CUPIDE]."
     jump debut_cycle
