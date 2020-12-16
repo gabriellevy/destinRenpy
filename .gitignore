@@ -1,0 +1,8 @@
+
+*.rpyb
+
+*.rpyc
+
+*.save
+
+game/saves/persistent

@@ -15,7 +15,7 @@ init -5 python:
 
     def LancerEvtVide(situation):
         # régénère les événements compatibles avec la situation
-        evtsVides_ = ["evtRien1", "evtRien2" ]
+        evtsVides_ = ["evtRien1", "evtRien2", "evtRien3" ]
 
         if situation[metier.Metier.ADMINISTRATIF] > 0:
             evtsVides_.append("evtRien_Administratif1")
@@ -32,6 +32,10 @@ label evtRien1:
 
 label evtRien2:
     "Les jours se suivent et se ressemblent."
+    jump debut_cycle
+
+label evtRien3:
+    "Un jour c'est sûr quelque chose vous arrivera."
     jump debut_cycle
 
 label evtRien_Administratif1:

@@ -13,13 +13,13 @@ init -2 python:
         situation_["Nom"] = "Deharbe"
         situation_["Prénom"] = "Mathieu"
         situation_["Santé"] = "Bonne"
-        situation_["Métier"] = "Fonctionnaire administratif"
+        situation_[metier.Metier.METIER] = "Fonctionnaire administratif"
         metier.regenererCaracsMetier(situation_)
         renpy.jump("generationUnivers_Perso")
 
 label generationUnivers_Perso:
     #"Vous avez 20 ans."
     #"Vous vous appelez [situation_[Prénom]] [situation_[Nom]]."
-    #if metier.aUnMetier(situation_):
-    #    "Vous êtes [situation_[Métier]]."
+    if metier.aUnMetier(situation_):
+        "Vous êtes [situation_[Metier]]."
     jump debut_cycle

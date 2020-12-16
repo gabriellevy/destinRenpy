@@ -19,6 +19,7 @@ init -5 python:
     def AjouterEvtsAdministratif():
         global selecteur_
         conditionAdministratif = condition.Condition(metier.Metier.ADMINISTRATIF, 1, condition.Condition.EGAL)
+
         decVisiteInvestisseurs = declencheur.Declencheur(0.02, "decVisiteInvestisseurs")
         decVisiteInvestisseurs.AjouterCondition(conditionAdministratif)
         selecteur_.ajouterDeclencheur(decVisiteInvestisseurs)
