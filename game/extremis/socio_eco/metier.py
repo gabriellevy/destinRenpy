@@ -10,10 +10,10 @@ class Metier:
      - etc
     """
 
-    METIER = "Metier"
+    METIER = u"Métier"
 
     # types de métiers
-    ADMINISTRATIF = "MetierAdministratif"
+    ADMINISTRATIF = u"MétierAdministratif"
 
 def estDeBureau(strMetier):
     if "administratif" in strMetier.lower():

@@ -1,4 +1,4 @@
-Wed Dec 16 21:18:30 2020
+Wed Dec 16 22:51:08 2020
 Linux-5.4.0-58-generic-x86_64-with-Ubuntu-20.04-focal
 Ren'Py 7.3.5.606
  
@@ -6,12 +6,12 @@ Ren'Py 7.3.5.606
 Bootstrap to the start of init.init took 0.14s
 Early init took 0.00s
 Loader init took 0.02s
-Loading error handling took 0.20s
-Loading script took 3.00s
-Loading save slot metadata. took 0.01s
+Loading error handling took 0.21s
+Loading script took 3.02s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.32s
+Running init code took 0.35s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
@@ -21,19 +21,19 @@ Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.05s
 DPI scale factor: 1.000000
-Creating interface object took 0.24s
+Creating interface object took 0.25s
 Cleaning stores took 0.00s
 Init translation took 0.08s
-Build styles took 0.01s
+Build styles took 0.02s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.12s
-Prepare screens took 0.13s
+Analyze screens took 0.04s
+Save screen analysis took 0.13s
+Prepare screens took 0.14s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.09s
-Running _start took 0.05s
+Running _start took 0.04s
 Performance test:
-Interface start took 0.06s
+Interface start took 0.05s
 
 primary display bounds: (0, 0, 1600, 900)
 swap interval: 1 frames
@@ -353,11 +353,14 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 5.46737098694s
+Total time until interface ready: 5.58794999123s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017444 seconds.
-- Frame drawn at 0.026554 seconds.
-- Frame drawn at 0.042346 seconds.
-- Frame drawn at 0.051437 seconds.
-- 0.051437 seconds to render 5 frames.
+- Frame drawn at 0.017497 seconds.
+- Frame drawn at 0.026592 seconds.
+- Frame drawn at 0.033821 seconds.
+- Frame drawn at 0.047749 seconds.
+- 0.047749 seconds to render 5 frames.
+GetDescription de trait
+GetDescription val : 0
+GetDescription self.eTrait_ : Cupide

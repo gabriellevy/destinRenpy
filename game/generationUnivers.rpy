@@ -7,23 +7,30 @@ init -2 python:
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
     filtre_ = filtres_action.FiltreAction()
-    traits_ = trait.Trait.TOUS_LES_TRAITS
+    traits_ = trait.CollectionTraits()
 
     def DeterminerPerso():
         global situation_
         # TODO : tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
         situation_["Nom"] = "Deharbe"
-        situation_["Prénom"] = "Mathieu"
-        situation_["Santé"] = "Bonne"
+        situation_["Prenom"] = "Mathieu"
+        situation_["Sante"] = "Bonne"
         situation_[metier.Metier.METIER] = "Fonctionnaire administratif"
         metier.regenererCaracsMetier(situation_)
         renpy.jump("generationUnivers_Perso")
 
 label generationUnivers_Perso:
     #"Vous avez 20 ans."
-    #"Vous vous appelez [situation_[Prénom]] [situation_[Nom]]."
-    #if metier.aUnMetier(situation_):
-    #    "Vous êtes [situation_[Metier]]."
-    "Vous êtes aussi [traits_]."
-    "Vous êtes aussi [trait.Trait.CUPIDE]."
+    #"Vous vous appelez [situation_[Prenom]] [situation_[Nom]]."
+    if metier.aUnMetier(situation_):
+        "Vous êtes [situation_[Métier]]."
+    "Liste des traits : [traits_]."
+    $ indexTraitStr = trait.Trait.CUPIDE
+    "Le nom de ce trait en statique est [trait.Trait.CUPIDE]."
+    "Le nom de ce trait via tableau est [traits_[Cupide]]."
+    "Niveau de cupidité '[situation_[Cupide]]'."
+    $ traitCupidite_ = traits_[trait.Trait.CUPIDE]
+    $ descriptionCupiditeJoueur = traitCupidite_.GetDescription(situation_)
+    "Vous êtes [descriptionCupiditeJoueur]."
+    "Liste des traits : [traits_]."
     jump debut_cycle
