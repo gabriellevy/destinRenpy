@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label decVisiteInvestisseurs_drague is defined twice, at
-  File "game/evts_metiers/administratif.rpy", line 82 and
-  File "game/evts_metiers/administratif.rpy", line 86.
+File "game/evts_generaux/naissance.rpy", line 10: expected an indented block
+    def genererTraits(situation):
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 05 22:37:05 2020
+Thu Dec 17 20:51:30 2020

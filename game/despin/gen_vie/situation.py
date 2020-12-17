@@ -23,6 +23,11 @@ class Situation:
         #self.caracs_[key] = val
         self.SetCarac(key, val)
 
+    def __format__(self, format):
+        # if(format == 'age'):
+        #     return '23'
+        return str(self)
+
     def __getattr__(self, nom):
         """Si Python ne trouve pas l'attribut nommé nom, il appelle
              cette méthode. On affiche une alerte"""
@@ -69,3 +74,12 @@ class Situation:
         if ( idCarac not in self.caracs_):
             return ""
         return self.caracs_[idCarac]
+
+    def __str__(self):
+        """Affichage quand on affiche l'objet (print)"""
+        if len(self.caracs_) == 0:
+            return u"Aucune carac."
+        str = u"Situation actuelle : "
+        for carac in self.caracs_.keys():
+            str = str + self.caracs_[carac] + "(" + carac + ")" ", "
+        return str
