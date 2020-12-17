@@ -44,23 +44,16 @@ class Trait:
     TODO : différencier ceux qui sont réellement évolutifs et les acquis à la naissance et presque impossible à gagner.
     """
 
-    CUPIDE = u"Cupide"
+    SEUIL_A = 1 # valeur à partir de laquelle (et au dessus) on est considéré comme ayant le trait
+    SEUIL_A_EXTREME = 11 # valeur à partir de laquelle (et au dessus) on est considéré comme ayant le trait à un niveau héroïque
+    SEUIL_A_PAS = -3 # valeur à partir de laquelle (et en dessous) on est considéré comme ayant le trait en négatif
+    SEUIL_A_PAS_EXTREME = -13 # valeur à partir de laquelle (et en dessous) on est considéré comme ayant le trait en très très négatif
+
+    CUPIDE = u"Cupidité"
+    HONORABILITE = u"Honorabilité" # prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
 
     def __init__(self, eTrait):
-        # print("__init__ de Trait")
         self.eTrait_ = eTrait # enum Trait qui servira à identifier le trait pour lui affecter des caracs secondaires
-        # print("fin de __init__ de Trait")
-
-    def GetTxt(self):
-        """
-        Mot définissant le trait lui-même (pas le personnage qui l'a)
-        """
-        # print("GetTxt de Trait")
-        switcher = {
-            Trait.CUPIDE: "Cupide"
-        }
-        # print("eTrait : {}".format(self.eTrait_))
-        return switcher.get(self.eTrait_, "Ce trait n'a pas de string correspondante : {}".format(self.eTrait_))
 
     def GetDescription(self, situation):
         """
@@ -74,12 +67,21 @@ class Trait:
             assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
         if self.eTrait_ == Trait.CUPIDE:
-            if val < -3:
-                return "Prodigue"
-            elif val > 0:
-                return "Cupide"
+            if val <= Trait.SEUIL_A_PAS:
+                return u"Prodigue"
+            elif val >= Trait.SEUIL_A:
+                return u"Cupide"
             else:
                 return u"Équilibré" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+        elif self.eTrait_ == Trait.HONORABILITE:
+            if val <= Trait.SEUIL_A_PAS:
+                if val <= Trait.SEUIL_A_PAS_EXTREME:
+                    return u"Mythomane"
+                return u"Menteur"
+            elif val >= Trait.SEUIL_A:
+                return u"Honorable"
+            else:
+                return u"Équilibré"
 
         return "Valeur de description non trouvée pour : Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
@@ -87,9 +89,9 @@ class Trait:
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
         print("__repr__ de Trait")
-        return "Trait : {}".format(self.GetTxt())
+        return "Trait : {}".format(self.eTrait_)
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
         # print("__str__ de Trait")
-        return "{}".format(self.GetTxt())
+        return "{}".format(self.eTrait_)

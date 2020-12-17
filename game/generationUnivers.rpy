@@ -22,15 +22,13 @@ init -2 python:
 label generationUnivers_Perso:
     #"Vous avez 20 ans."
     #"Vous vous appelez [situation_[Prenom]] [situation_[Nom]]."
-    if metier.aUnMetier(situation_):
-        "Vous êtes [situation_[Métier]]."
+    #if metier.aUnMetier(situation_):
+    #    "Vous êtes [situation_[Métier]]."
     "Liste des traits : [traits_]."
-    $ indexTraitStr = trait.Trait.CUPIDE
-    "Le nom de ce trait en statique est [trait.Trait.CUPIDE]."
-    "Le nom de ce trait via tableau est [traits_[Cupide]]."
-    "Niveau de cupidité '[situation_[Cupide]]'."
-    $ traitCupidite_ = traits_[trait.Trait.CUPIDE]
-    $ descriptionCupiditeJoueur = traitCupidite_.GetDescription(situation_)
-    "Vous êtes [descriptionCupiditeJoueur]."
-    "Liste des traits : [traits_]."
+    #"Le nom de ce trait en statique est [trait.Trait.CUPIDE]."
+    #"Le nom de ce trait via tableau est [traits_[Cupidité]]."
+    #"Niveau de cupidité '[situation_[Cupidité]]'."
+    #$ descriptionCupiditeJoueur = traitCupidite_.GetDescription(situation_)
+    #"Vous êtes [descriptionCupiditeJoueur]."
+    #"Liste des traits : [traits_]."
     jump debut_cycle
