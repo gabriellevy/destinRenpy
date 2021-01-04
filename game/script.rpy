@@ -23,9 +23,10 @@ init -1 python:
 # Le jeu commence ici
 label start:
     scene bg rue_haussmann
-    $ DeterminerPerso()
+    $ DeterminerPerso() # attention cette fonction alnce un jump
 
 label debut_cycle:
+    show screen valeurs_traits
     "Début d'un cycle."
 
     $ prochainEvt = determinationEvtCourant(situation_)

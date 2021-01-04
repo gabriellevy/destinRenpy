@@ -1530,3 +1530,11 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
+
+screen valeurs_traits():
+    tag interface_personnage
+    $ descriptionTrait = situation_.DescriptionTraits(traits_)
+    frame:
+        xpos 5 ypos 5
+        vbox:
+            text _(u"[descriptionTrait]")

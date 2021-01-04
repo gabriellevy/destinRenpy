@@ -75,6 +75,20 @@ class Situation:
             return ""
         return self.caracs_[idCarac]
 
+    def DescriptionTraits(self, traits_):
+        """
+        Description des traits
+        """
+        str = u""
+        for traitK in traits_.lTraits_.keys():
+            trait = traits_[traitK]
+            traitStr = u""
+            descr = "" +  trait.GetDescription(self)
+            if descr != "":
+                traitStr =  "{} ({})".format(descr, trait.eTrait_)
+                str = traitStr + "\n"
+        return str
+
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
         if len(self.caracs_) == 0:

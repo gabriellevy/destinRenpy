@@ -6,9 +6,11 @@ init -5 python:
     from despin.gen_vie import selecteur
     from despin.gen_vie import proba
     from despin.abs import condition
+    from extremis.humanite import trait
 
     def genererTraits(situation):
         # sélectionne léatoirement les traits principaux du personnage à la naissance
+        situation[u"Cupidité"] = "5"
 
         # TODO : générer ces données aléatoirement quand la bdd de noms sera ajoutée
         situation[u"Nom"] = "Deharbe"

@@ -1,22 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_metiers/administratif.rpy", line 81, in script
-    jump decVisiteInvestisseurs_frime
-ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
+  File "game/script.rpy", line 30, in script
+    "Début d'un cycle."
+  File "game/screens.rpy", line 1534, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1534, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1536, in execute
+    $ descriptionTrait = situation_.DescriptionTraits(traits_)
+  File "game/screens.rpy", line 1536, in <module>
+    $ descriptionTrait = situation_.DescriptionTraits(traits_)
+AttributeError: class Trait has no attribute 'CUPIDE'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_metiers/administratif.rpy", line 81, in script
-    jump decVisiteInvestisseurs_frime
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'decVisiteInvestisseurs_frime'.
+  File "game/script.rpy", line 30, in script
+    "Début d'un cycle."
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1534, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1534, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1536, in execute
+    $ descriptionTrait = situation_.DescriptionTraits(traits_)
+  File "game/screens.rpy", line 1536, in <module>
+    $ descriptionTrait = situation_.DescriptionTraits(traits_)
+  File "despin/gen_vie/situation.py", line 86, in DescriptionTraits
+  File "extremis/humanite/trait.py", line 88, in GetDescription
+AttributeError: class Trait has no attribute 'CUPIDE'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Dec 06 12:32:08 2020
+Mon Jan 04 22:26:33 2021

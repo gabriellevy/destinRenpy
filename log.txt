@@ -1,71 +1,59 @@
-Thu Dec 17 21:27:49 2020
-Linux-5.4.0-58-generic-x86_64-with-Ubuntu-20.04-focal
+Mon Jan 04 22:27:12 2021
+Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.14s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.21s
-Loading script took 2.97s
-Loading save slot metadata. took 0.02s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.10s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.32s
+Running init code took 0.09s
 Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to '/home/mdeharbe/.renpy/backups/destinRenpy':
-Dump and make backups. took 0.10s
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.05s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.38s
+Creating interface object took 0.06s
 Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.01s
-Load screen analysis took 0.04s
+Init translation took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.13s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.10s
-Running _start took 0.05s
+Save bytecode. took 0.07s
+Running _start took 0.00s
 Performance test:
-Interface start took 0.06s
+Interface start took 0.03s
 
-primary display bounds: (0, 0, 1600, 900)
+primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
 Windowed mode.
 Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
-Vendor: 'Intel'
-Renderer: 'Mesa Intel(R) HD Graphics 505 (APL 3)'
-Version: '4.6 (Compatibility Profile) Mesa 20.0.8'
+Vendor: 'NVIDIA Corporation'
+Renderer: 'GeForce GTX 760 (192-bit)/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 457.30'
 Display Info: None
+Fixed-function is blacklisted.
 Extensions:
     
-    GL_3DFX_texture_compression_FXT1
-    GL_AMD_conservative_depth
-    GL_AMD_depth_clamp_separate
-    GL_AMD_draw_buffers_blend
     GL_AMD_multi_draw_indirect
-    GL_AMD_performance_monitor
-    GL_AMD_query_buffer_object
     GL_AMD_seamless_cubemap_per_texture
-    GL_AMD_shader_stencil_export
-    GL_AMD_shader_trinary_minmax
-    GL_AMD_texture_texture4
-    GL_AMD_vertex_shader_layer
-    GL_AMD_vertex_shader_viewport_index
-    GL_ANGLE_texture_compression_dxt3
-    GL_ANGLE_texture_compression_dxt5
-    GL_APPLE_packed_pixels
     GL_ARB_ES2_compatibility
     GL_ARB_ES3_1_compatibility
+    GL_ARB_ES3_2_compatibility
     GL_ARB_ES3_compatibility
     GL_ARB_arrays_of_arrays
     GL_ARB_base_instance
+    GL_ARB_bindless_texture
     GL_ARB_blend_func_extended
     GL_ARB_buffer_storage
     GL_ARB_clear_buffer_object
@@ -75,6 +63,7 @@ Extensions:
     GL_ARB_compatibility
     GL_ARB_compressed_texture_pixel_storage
     GL_ARB_compute_shader
+    GL_ARB_compute_variable_group_size
     GL_ARB_conditional_render_inverted
     GL_ARB_conservative_depth
     GL_ARB_copy_buffer
@@ -99,10 +88,10 @@ Extensions:
     GL_ARB_fragment_program
     GL_ARB_fragment_program_shadow
     GL_ARB_fragment_shader
-    GL_ARB_fragment_shader_interlock
     GL_ARB_framebuffer_no_attachments
     GL_ARB_framebuffer_object
     GL_ARB_framebuffer_sRGB
+    GL_ARB_geometry_shader4
     GL_ARB_get_program_binary
     GL_ARB_get_texture_sub_image
     GL_ARB_gl_spirv
@@ -111,6 +100,7 @@ Extensions:
     GL_ARB_gpu_shader_int64
     GL_ARB_half_float_pixel
     GL_ARB_half_float_vertex
+    GL_ARB_imaging
     GL_ARB_indirect_parameters
     GL_ARB_instanced_arrays
     GL_ARB_internalformat_query
@@ -130,7 +120,6 @@ Extensions:
     GL_ARB_point_parameters
     GL_ARB_point_sprite
     GL_ARB_polygon_offset_clamp
-    GL_ARB_post_depth_coverage
     GL_ARB_program_interface_query
     GL_ARB_provoking_vertex
     GL_ARB_query_buffer_object
@@ -152,17 +141,17 @@ Extensions:
     GL_ARB_shader_image_size
     GL_ARB_shader_objects
     GL_ARB_shader_precision
-    GL_ARB_shader_stencil_export
     GL_ARB_shader_storage_buffer_object
     GL_ARB_shader_subroutine
     GL_ARB_shader_texture_image_samples
     GL_ARB_shader_texture_lod
-    GL_ARB_shader_viewport_layer_array
     GL_ARB_shading_language_100
     GL_ARB_shading_language_420pack
     GL_ARB_shading_language_include
     GL_ARB_shading_language_packing
     GL_ARB_shadow
+    GL_ARB_sparse_buffer
+    GL_ARB_sparse_texture
     GL_ARB_spirv_extensions
     GL_ARB_stencil_texturing
     GL_ARB_sync
@@ -216,24 +205,21 @@ Extensions:
     GL_ARB_vertex_type_2_10_10_10_rev
     GL_ARB_viewport_array
     GL_ARB_window_pos
-    GL_ATI_blend_equation_separate
     GL_ATI_draw_buffers
-    GL_ATI_fragment_shader
-    GL_ATI_separate_stencil
-    GL_ATI_texture_env_combine3
     GL_ATI_texture_float
-    GL_EXT_EGL_image_storage
-    GL_EXT_EGL_sync
+    GL_ATI_texture_mirror_once
+    GL_EXTX_framebuffer_mixed_formats
+    GL_EXT_Cg_shader
     GL_EXT_abgr
     GL_EXT_bgra
+    GL_EXT_bindable_uniform
     GL_EXT_blend_color
     GL_EXT_blend_equation_separate
     GL_EXT_blend_func_separate
     GL_EXT_blend_minmax
     GL_EXT_blend_subtract
     GL_EXT_compiled_vertex_array
-    GL_EXT_copy_texture
-    GL_EXT_demote_to_helper_invocation
+    GL_EXT_depth_bounds_test
     GL_EXT_direct_state_access
     GL_EXT_draw_buffers2
     GL_EXT_draw_instanced
@@ -244,9 +230,15 @@ Extensions:
     GL_EXT_framebuffer_multisample_blit_scaled
     GL_EXT_framebuffer_object
     GL_EXT_framebuffer_sRGB
+    GL_EXT_geometry_shader4
     GL_EXT_gpu_program_parameters
     GL_EXT_gpu_shader4
+    GL_EXT_import_sync_object
+    GL_EXT_memory_object
+    GL_EXT_memory_object_win32
     GL_EXT_multi_draw_arrays
+    GL_EXT_multiview_texture_multisample
+    GL_EXT_multiview_timer_query
     GL_EXT_packed_depth_stencil
     GL_EXT_packed_float
     GL_EXT_packed_pixels
@@ -256,20 +248,20 @@ Extensions:
     GL_EXT_provoking_vertex
     GL_EXT_rescale_normal
     GL_EXT_secondary_color
+    GL_EXT_semaphore
+    GL_EXT_semaphore_win32
+    GL_EXT_separate_shader_objects
     GL_EXT_separate_specular_color
-    GL_EXT_shader_framebuffer_fetch
-    GL_EXT_shader_framebuffer_fetch_non_coherent
+    GL_EXT_shader_image_load_store
     GL_EXT_shader_integer_mix
-    GL_EXT_shader_samples_identical
     GL_EXT_shadow_funcs
     GL_EXT_stencil_two_side
     GL_EXT_stencil_wrap
-    GL_EXT_subtexture
-    GL_EXT_texture
     GL_EXT_texture3D
     GL_EXT_texture_array
     GL_EXT_texture_buffer_object
     GL_EXT_texture_compression_dxt1
+    GL_EXT_texture_compression_latc
     GL_EXT_texture_compression_rgtc
     GL_EXT_texture_compression_s3tc
     GL_EXT_texture_cube_map
@@ -279,65 +271,133 @@ Extensions:
     GL_EXT_texture_env_dot3
     GL_EXT_texture_filter_anisotropic
     GL_EXT_texture_integer
+    GL_EXT_texture_lod
     GL_EXT_texture_lod_bias
+    GL_EXT_texture_mirror_clamp
     GL_EXT_texture_object
-    GL_EXT_texture_rectangle
     GL_EXT_texture_sRGB
     GL_EXT_texture_sRGB_R8
     GL_EXT_texture_sRGB_decode
     GL_EXT_texture_shadow_lod
     GL_EXT_texture_shared_exponent
-    GL_EXT_texture_snorm
+    GL_EXT_texture_storage
     GL_EXT_texture_swizzle
     GL_EXT_timer_query
-    GL_EXT_transform_feedback
+    GL_EXT_transform_feedback2
     GL_EXT_vertex_array
     GL_EXT_vertex_array_bgra
     GL_EXT_vertex_attrib_64bit
-    GL_IBM_multimode_draw_arrays
+    GL_EXT_win32_keyed_mutex
+    GL_EXT_window_rectangles
     GL_IBM_rasterpos_clip
     GL_IBM_texture_mirrored_repeat
-    GL_INGR_blend_func_separate
-    GL_INTEL_performance_query
-    GL_INTEL_shader_atomic_float_minmax
-    GL_INTEL_shader_integer_functions2
     GL_KHR_blend_equation_advanced
-    GL_KHR_blend_equation_advanced_coherent
     GL_KHR_context_flush_control
     GL_KHR_debug
     GL_KHR_no_error
     GL_KHR_parallel_shader_compile
     GL_KHR_robust_buffer_access_behavior
     GL_KHR_robustness
-    GL_KHR_texture_compression_astc_ldr
-    GL_KHR_texture_compression_astc_sliced_3d
-    GL_MESA_framebuffer_flip_y
-    GL_MESA_pack_invert
-    GL_MESA_shader_integer_functions
-    GL_MESA_texture_signed_rgba
-    GL_MESA_window_pos
+    GL_KHR_shader_subgroup
+    GL_KTX_buffer_region
+    GL_NVX_conditional_render
+    GL_NVX_gpu_memory_info
+    GL_NVX_gpu_multicast2
+    GL_NVX_linked_gpu_multicast
+    GL_NVX_multigpu_info
+    GL_NVX_nvenc_interop
+    GL_NVX_progress_fence
+    GL_NV_ES1_1_compatibility
+    GL_NV_ES3_1_compatibility
+    GL_NV_alpha_to_coverage_dither_control
+    GL_NV_bindless_multi_draw_indirect
+    GL_NV_bindless_multi_draw_indirect_count
+    GL_NV_bindless_texture
+    GL_NV_blend_equation_advanced
     GL_NV_blend_square
-    GL_NV_compute_shader_derivatives
+    GL_NV_command_list
+    GL_NV_compute_program5
     GL_NV_conditional_render
+    GL_NV_copy_depth_to_color
+    GL_NV_copy_image
+    GL_NV_depth_buffer_float
     GL_NV_depth_clamp
+    GL_NV_draw_texture
+    GL_NV_draw_vulkan_image
+    GL_NV_explicit_multisample
+    GL_NV_feature_query
+    GL_NV_fence
+    GL_NV_float_buffer
     GL_NV_fog_distance
-    GL_NV_fragment_shader_interlock
+    GL_NV_fragment_program
+    GL_NV_fragment_program2
+    GL_NV_fragment_program_option
+    GL_NV_framebuffer_multisample_coverage
+    GL_NV_geometry_shader4
+    GL_NV_gpu_multicast
+    GL_NV_gpu_program4
+    GL_NV_gpu_program4_1
+    GL_NV_gpu_program5
+    GL_NV_gpu_program5_mem_extended
+    GL_NV_gpu_program_fp64
+    GL_NV_gpu_shader5
+    GL_NV_half_float
+    GL_NV_internalformat_sample_query
     GL_NV_light_max_exponent
+    GL_NV_multisample_coverage
+    GL_NV_multisample_filter_hint
+    GL_NV_occlusion_query
     GL_NV_packed_depth_stencil
+    GL_NV_parameter_buffer_object
+    GL_NV_parameter_buffer_object2
+    GL_NV_path_rendering
+    GL_NV_pixel_data_range
+    GL_NV_point_sprite
     GL_NV_primitive_restart
+    GL_NV_query_resource
+    GL_NV_query_resource_tag
+    GL_NV_register_combiners
+    GL_NV_register_combiners2
+    GL_NV_shader_atomic_counters
+    GL_NV_shader_atomic_float
+    GL_NV_shader_buffer_load
+    GL_NV_shader_storage_buffer_object
+    GL_NV_shader_subgroup_partitioned
+    GL_NV_shader_thread_group
+    GL_NV_shader_thread_shuffle
     GL_NV_texgen_reflection
     GL_NV_texture_barrier
+    GL_NV_texture_compression_vtc
     GL_NV_texture_env_combine4
+    GL_NV_texture_multisample
     GL_NV_texture_rectangle
-    GL_OES_EGL_image
-    GL_OES_read_format
+    GL_NV_texture_rectangle_compressed
+    GL_NV_texture_shader
+    GL_NV_texture_shader2
+    GL_NV_texture_shader3
+    GL_NV_transform_feedback
+    GL_NV_transform_feedback2
+    GL_NV_uniform_buffer_unified_memory
+    GL_NV_vertex_array_range
+    GL_NV_vertex_array_range2
+    GL_NV_vertex_attrib_integer_64bit
+    GL_NV_vertex_buffer_unified_memory
+    GL_NV_vertex_program
+    GL_NV_vertex_program1_1
+    GL_NV_vertex_program2
+    GL_NV_vertex_program2_option
+    GL_NV_vertex_program3
+    GL_OVR_multiview
+    GL_OVR_multiview2
     GL_S3_s3tc
     GL_SGIS_generate_mipmap
-    GL_SGIS_texture_border_clamp
-    GL_SGIS_texture_edge_clamp
     GL_SGIS_texture_lod
-    GL_SUN_multi_draw_arrays
-Number of texture units: 8
+    GL_SGIX_depth_texture
+    GL_SGIX_shadow
+    GL_SUN_slice_accum
+    GL_WIN_swap_hint
+    WGL_EXT_swap_control
+Number of texture units: 4
 Using shader environment.
 Using FBO RTT.
 Root FBO is: 0
@@ -353,17 +413,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 5.46086788177s
+Total time until interface ready: 1.09100008011s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017533 seconds.
-- Frame drawn at 0.025265 seconds.
-- Frame drawn at 0.035561 seconds.
-- Frame drawn at 0.049310 seconds.
-- 0.049310 seconds to render 5 frames.
-self.caracs_[carac] : Deharbe
-carac : Nom
-str : Situation actuelle : Deharbe(Nom),
-self.caracs_[carac] : Mathieu
-carac : Prenom
-str : Situation actuelle : Deharbe(Nom),Mathieu(Prenom),
+- Frame drawn at 0.013000 seconds.
+- Frame drawn at 0.029000 seconds.
+- Frame drawn at 0.045000 seconds.
+- Frame drawn at 0.063000 seconds.
+- 0.063000 seconds to render 5 frames.

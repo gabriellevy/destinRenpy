@@ -21,8 +21,9 @@ label generationUnivers_Perso:
     #"Vous avez 20 ans."
     #if metier.aUnMetier(situation_):
     #    "Vous êtes [situation_[Métier]]."
-    "[situation_]"
-    #"Le nom de ce trait en statique est [trait.Trait.CUPIDE]."
+    #"situation : [situation_]"
+    # "[traits_]"
+    #"Le nom de ce trait en statique est [trait.Cupidite.NOM]."
     #"Le nom de ce trait via tableau est [traits_[Cupidité]]."
     #"Niveau de cupidité '[situation_[Cupidité]]'."
     #$ descriptionCupiditeJoueur = traitCupidite_.GetDescription(situation_)
