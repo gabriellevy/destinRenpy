@@ -30,4 +30,4 @@ label generationUnivers_Perso:
     #"Vous êtes [descriptionCupiditeJoueur]."
     #"Liste des traits : [traits_]."
     jump naissance
-    jump debut_cycle
+    # jump fin_cycle

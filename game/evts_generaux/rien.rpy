@@ -28,16 +28,16 @@ label selecteurDEvenementVide:
 
 label evtRien1:
     "Et encore une journée de plus."
-    jump debut_cycle
+    jump fin_cycle
 
 label evtRien2:
     "Les jours se suivent et se ressemblent."
-    jump debut_cycle
+    jump fin_cycle
 
 label evtRien3:
     "Un jour c'est sûr quelque chose vous arrivera."
-    jump debut_cycle
+    jump fin_cycle
 
 label evtRien_Administratif1:
     "La vie de bureau suit son cours."
-    jump debut_cycle
+    jump fin_cycle

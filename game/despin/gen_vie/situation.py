@@ -81,12 +81,12 @@ class Situation:
         """
         str = u""
         for traitK in traits_.lTraits_.keys():
+            if str != "":
+                str = u"{}\n".format(str)
             trait = traits_[traitK]
-            traitStr = u""
-            descr = "" +  trait.GetDescription(self)
+            descr = u"{}".format(trait.GetDescription(self))
             if descr != "":
-                traitStr =  "{} ({})".format(descr, trait.eTrait_)
-                str = traitStr + "\n"
+                str = u"{}{} ({})".format(str, descr, trait.eTrait_)
         return str
 
     def __str__(self):
@@ -95,5 +95,5 @@ class Situation:
             return u"Aucune carac."
         str = u"Situation actuelle : "
         for carac in self.caracs_.keys():
-            str = str + self.caracs_[carac] + "(" + carac + ")" ", "
+            str = "{} {} ({}), ".format(str, self.caracs_[carac], carac)
         return str

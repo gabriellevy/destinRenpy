@@ -1,5 +1,3 @@
-
-
 class Trait:
     """
     ce qui a rapport aux traits descriptif d'un personnage
@@ -16,8 +14,6 @@ class Trait:
     SEUIL_A_PAS = -3 # valeur à partir de laquelle (et en dessous) on est considéré comme ayant le trait en négatif
     SEUIL_A_PAS_EXTREME = -13 # valeur à partir de laquelle (et en dessous) on est considéré comme ayant le trait en très très négatif
 
-    HONORABILITE = u"Honorabilité" # prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
-
     def __init__(self, eTrait):
         self.eTrait_ = eTrait # enum Trait qui servira à identifier le trait pour lui affecter des caracs secondaires
 
@@ -31,17 +27,6 @@ class Trait:
             situation[self.eTrait_] = val
         if not isinstance(val, int):
             assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
-
-        elif self.eTrait_ == Trait.HONORABILITE:
-            if val <= Trait.SEUIL_A_PAS:
-                if val <= Trait.SEUIL_A_PAS_EXTREME:
-                    return u"Mythomane"
-                return u"Menteur"
-            elif val >= Trait.SEUIL_A:
-                return u"Honorable"
-            else:
-                return u"Équilibré"
-
         return "Valeur de description non trouvée pour : Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
 
@@ -54,8 +39,6 @@ class Trait:
         """Affichage quand on affiche l'objet (print)"""
         # print("__str__ de Trait")
         return "{}".format(self.eTrait_)
-
-
 
 class TraitTernaire(Trait):
 
@@ -75,9 +58,6 @@ class Cupidite(TraitTernaire):
         self.eTrait_ = Cupidite.NOM
 
     def GetDescription(self, situation):
-        """
-        Mot décrivant le personnage dans ce trait particulier
-        """
         val = situation[self.eTrait_]
         if val == "":
             val = 0
@@ -92,6 +72,30 @@ class Cupidite(TraitTernaire):
         else:
             return u"Équilibré" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
 
+# prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
+class Honorabilite(TraitTernaire):
+
+    NOM = u"Honorabilité"
+
+    def __init__(self):
+        self.eTrait_ = Honorabilite.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+                return u"Mythomane"
+            return u"Menteur"
+        elif val >= Trait.SEUIL_A:
+            return u"Honorable"
+        else:
+            return u"Équilibré"
 
 class CollectionTraits:
 
@@ -99,6 +103,8 @@ class CollectionTraits:
         self.lTraits_ = dict()
         cupidite = Cupidite()
         self.SetTrait(Cupidite.NOM, cupidite)
+        honorabilite = Honorabilite()
+        self.SetTrait(Honorabilite.NOM, honorabilite)
 
     def __getitem__(self, idTrait):
         if not idTrait in self.lTraits_:

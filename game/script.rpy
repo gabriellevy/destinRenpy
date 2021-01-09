@@ -32,6 +32,7 @@ label debut_cycle:
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
 
+label fin_cycle:
     "Fin d'un cycle."
 
     if situation_["Santé"] != "Mort":

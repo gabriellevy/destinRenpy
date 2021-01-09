@@ -51,7 +51,7 @@ init -5 python:
     # $ actionDebutAdministratif()
     # actions etc classiques
     # $ actionFinAdministratif()
-    # jump debut_cycle
+    # jump fin_cycle
 
 
 label decVisiteInvestisseurs:
@@ -109,7 +109,7 @@ label decVisiteInvestisseurs:
     label decVisiteInvestisseurs_fin:
 
     $ actionFinAdministratif()
-    jump debut_cycle
+    jump fin_cycle
 
 
 
