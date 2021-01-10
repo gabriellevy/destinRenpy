@@ -10,7 +10,7 @@ init -5 python:
 
     def genererTraits(situation, tousLesTraits):
         # sélectionne aléatoirement les traits principaux du personnage à la naissance
-        nbTraits = 2 #3 + random.randint(0,6)
+        nbTraits = 3 + random.randint(0,6)
         m_Traits = []
         while nbTraits > 0:
             trait = tousLesTraits.getTraitAleatoire()

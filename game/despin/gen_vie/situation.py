@@ -81,11 +81,11 @@ class Situation:
         """
         str = u""
         for traitK in traits.lTraits_.keys():
-            if str != "":
-                str = u"{}\n".format(str)
             trait = traits[traitK]
             descr = u"{}".format(trait.GetDescription(self))
             if descr != "":
+                if str != "":
+                    str = u"{}\n".format(str)
                 str = u"{}{} ({})".format(str, descr, trait.eTrait_)
         return str
 
