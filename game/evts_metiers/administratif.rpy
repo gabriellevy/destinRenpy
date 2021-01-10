@@ -110,27 +110,3 @@ label decVisiteInvestisseurs:
 
     $ actionFinAdministratif()
     jump fin_cycle
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # tmp

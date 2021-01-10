@@ -75,15 +75,15 @@ class Situation:
             return ""
         return self.caracs_[idCarac]
 
-    def DescriptionTraits(self, traits_):
+    def DescriptionTraits(self, traits):
         """
         Description des traits
         """
         str = u""
-        for traitK in traits_.lTraits_.keys():
+        for traitK in traits.lTraits_.keys():
             if str != "":
                 str = u"{}\n".format(str)
-            trait = traits_[traitK]
+            trait = traits[traitK]
             descr = u"{}".format(trait.GetDescription(self))
             if descr != "":
                 str = u"{}{} ({})".format(str, descr, trait.eTrait_)

@@ -1,3 +1,5 @@
+import random
+
 class Trait:
     """
     ce qui a rapport aux traits descriptif d'un personnage
@@ -90,7 +92,7 @@ class Cupidite(TraitTernaire):
         elif val >= Trait.SEUIL_A:
             return u"Cupide" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
         else:
-            return ""
+            return u""
 
 class Opportunisme(TraitBinaire):
 
@@ -149,6 +151,9 @@ class CollectionTraits:
         opp = Opportunisme()
         self.SetTrait(Opportunisme.NOM, opp)
 
+    def getTraitAleatoire(self):
+        return random.choice(list(self.lTraits_.values()))
+
     def __getitem__(self, idTrait):
         if not idTrait in self.lTraits_:
             self.CreerTrait(idTrait)
@@ -167,6 +172,9 @@ class CollectionTraits:
     def CreerTrait(self, idTrait):
         trait = Trait(idTrait)
         self.lTraits_[idTrait] = trait
+
+    def __len__(self):
+        return len(self.lTraits_)
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""

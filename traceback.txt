@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "game/generationUnivers.rpy", line 10, in <module>
-    traits_ = trait.CollectionTraits()
-NameError: global name 'Opportuniste' is not defined
+  File "game/evts_generaux/naissance.rpy", line 37, in script
+    $ genererTraits(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 37, in <module>
+    $ genererTraits(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 16, in genererTraits
+    trait = tousLesTraits.getTraitAleatoire()
+TypeError: getTraitAleatoire() takes no arguments (1 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
+  File "game/evts_generaux/naissance.rpy", line 37, in script
+    $ genererTraits(situation_, traits_)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 10, in <module>
-    traits_ = trait.CollectionTraits()
-  File "extremis/humanite/trait.py", line 149, in __init__
-  File "extremis/humanite/trait.py", line 100, in __init__
-NameError: global name 'Opportuniste' is not defined
+  File "game/evts_generaux/naissance.rpy", line 37, in <module>
+    $ genererTraits(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 16, in genererTraits
+    trait = tousLesTraits.getTraitAleatoire()
+TypeError: getTraitAleatoire() takes no arguments (1 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Sun Jan 10 12:05:57 2021
+DestinExtremis 1.0
+Sun Jan 10 22:45:39 2021
