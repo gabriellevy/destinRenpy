@@ -6,3 +6,8 @@
 *.save
 
 game/saves/persistent
+game/.idea/game.iml
+game/.idea/inspectionProfiles/profiles_settings.xml
+game/.idea/misc.xml
+game/.idea/modules.xml
+game/.idea/vcs.xml

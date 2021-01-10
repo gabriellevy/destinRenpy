@@ -9,9 +9,10 @@ init -5 python:
     from extremis.humanite import trait
 
     def genererTraits(situation):
-        # sélectionne léatoirement les traits principaux du personnage à la naissance
+        # sélectionne aléatoirement les traits principaux du personnage à la naissance
         situation[u"Cupidité"] = -5
-        situation[u"Honorabilité"] = 5
+        situation[u"Sincérité"] = 5
+        situation[u"Opportunisme"] = 1
 
         # TODO : générer ces données aléatoirement quand la bdd de noms sera ajoutée
         situation[u"Nom"] = "Deharbe"

@@ -40,6 +40,16 @@ class Trait:
         # print("__str__ de Trait")
         return "{}".format(self.eTrait_)
 
+class TraitBinaire(Trait):
+
+    NOM = u"TraitBinaire"
+
+    def GetDescription(self, situation):
+        """
+        Mot décrivant le personnage dans ce trait particulier
+        """
+        return u"Description TraitBinaire" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+
 class TraitTernaire(Trait):
 
     NOM = u"TraitTernaire"
@@ -48,7 +58,17 @@ class TraitTernaire(Trait):
         """
         Mot décrivant le personnage dans ce trait particulier
         """
-        return u"Escription TraitTernaire" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+        return u"Description TraitTernaire" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+
+class TraitGraduel(Trait):
+
+    NOM = u"TraitGraduel"
+
+    def GetDescription(self, situation):
+        """
+        Mot décrivant le personnage dans ce trait particulier
+        """
+        return u"Description TraitGraduel" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
 
 class Cupidite(TraitTernaire):
 
@@ -68,17 +88,38 @@ class Cupidite(TraitTernaire):
         if val <= Trait.SEUIL_A_PAS:
             return u"Prodigue"
         elif val >= Trait.SEUIL_A:
-            return u"Cupide"
+            return u"Cupide" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
         else:
-            return u"Équilibré" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+            return ""
 
-# prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
-class Honorabilite(TraitTernaire):
+class Opportunisme(TraitBinaire):
 
-    NOM = u"Honorabilité"
+    NOM = u"Opportunisme"
 
     def __init__(self):
-        self.eTrait_ = Honorabilite.NOM
+        self.eTrait_ = Opportunisme.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val >= Trait.SEUIL_A:
+            return u"Opportuniste"
+        else:
+            return ""
+
+# prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
+# inclut aussi la sincérité vs l'hypocrisie etc
+class Sincerite(TraitGraduel):
+
+    NOM = u"Sincérité"
+
+    def __init__(self):
+        self.eTrait_ = Sincerite.NOM
 
     def GetDescription(self, situation):
         val = situation[self.eTrait_]
@@ -93,9 +134,9 @@ class Honorabilite(TraitTernaire):
                 return u"Mythomane"
             return u"Menteur"
         elif val >= Trait.SEUIL_A:
-            return u"Honorable"
+            return u"Sincère"
         else:
-            return u"Équilibré"
+            return ""
 
 class CollectionTraits:
 
@@ -103,8 +144,10 @@ class CollectionTraits:
         self.lTraits_ = dict()
         cupidite = Cupidite()
         self.SetTrait(Cupidite.NOM, cupidite)
-        honorabilite = Honorabilite()
-        self.SetTrait(Honorabilite.NOM, honorabilite)
+        honorabilite = Sincerite()
+        self.SetTrait(Sincerite.NOM, honorabilite)
+        opp = Opportunisme()
+        self.SetTrait(Opportunisme.NOM, opp)
 
     def __getitem__(self, idTrait):
         if not idTrait in self.lTraits_:

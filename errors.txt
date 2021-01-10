@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1541: u'u' is not a keyword argument or valid child for the grid statement.
-    u"nom du trait : "
-     ^
+File "game/evts_generaux/naissance.rpy", line 14: expected an indented block
+        situation[u"Cupidité"] = -5
+                 ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Jan 04 22:06:52 2021
+Sun Jan 10 12:05:34 2021
