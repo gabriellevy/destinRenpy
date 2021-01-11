@@ -14,8 +14,9 @@ init -5 python:
         m_Traits = []
         while nbTraits > 0:
             trait = tousLesTraits.getTraitAleatoire()
-            situation[trait.eTrait_] = random.randint(-10,10)
-            nbTraits = nbTraits - 1
+            if trait.PeutEtrePrisALaNaissance():
+                situation[trait.eTrait_] = random.randint(-10,10)
+                nbTraits = nbTraits - 1
 
         # situation[u"Cupidité"] = 5
         # situation[u"Sincérité"] = -5
