@@ -23,7 +23,7 @@ init -1 python:
 # Le jeu commence ici
 label start:
     scene bg rue_haussmann
-    $ DeterminerPerso() # attention cette fonction alnce un jump
+    $ DeterminerPerso() # attention cette fonction lance un jump
 
 label debut_cycle:
     show screen valeurs_traits

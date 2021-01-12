@@ -38,6 +38,12 @@ class Trait:
         """
         return True
 
+    def GetValeurALaNaissance(self):
+        """
+        Doit être overridée
+        """
+        return -99999
+
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
         print("__repr__ de Trait")
@@ -58,6 +64,9 @@ class TraitBinaire(Trait):
         """
         return u"Description TraitBinaire" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
 
+    def GetValeurALaNaissance(self):
+        return 1
+
 class TraitTernaire(Trait):
 
     NOM = u"TraitTernaire"
@@ -68,6 +77,15 @@ class TraitTernaire(Trait):
         """
         return u"Description TraitTernaire" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
 
+    def GetValeurALaNaissance(self):
+        """
+        50% de chance en négatif, 50% de chance en positif
+        """
+        if random.randint(0,1) == 0:
+            return Trait.SEUIL_A_PAS
+        else:
+            return Trait.SEUIL_A
+
 class TraitGraduel(Trait):
 
     NOM = u"TraitGraduel"
@@ -77,6 +95,20 @@ class TraitGraduel(Trait):
         Mot décrivant le personnage dans ce trait particulier
         """
         return u"Description TraitGraduel" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
+
+    def GetValeurALaNaissance(self):
+        """
+        50% de chance en négatif, 50% de chance en positif
+        """
+        val = random.randint(0,100)
+        if val <= 15:
+            return Trait.SEUIL_A_PAS_EXTREME
+        elif val <= 35:
+            return Trait.SEUIL_A_PAS
+        elif val <= 85:
+            return Trait.SEUIL_A
+        else:
+            return Trait.SEUIL_A_EXTREME
 
 class Cupidite(TraitTernaire):
 
