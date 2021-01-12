@@ -28,6 +28,14 @@ label start:
 label debut_cycle:
     show screen valeurs_traits
     "Début d'un cycle."
+    $ res = situation_.CalculerPourcentageReussite(trait.Charme.NOM, 8)
+    "res Charme, 8 : [res]"
+    $ res = situation_.CalculerPourcentageReussite(trait.Habilete.NOM, 3)
+    "res Habilete, 3 : [res]"
+    $ res = situation_.CalculerPourcentageReussite(trait.Ambition.NOM, 10)
+    "res Ambition, 10 : [res]"
+    $ res = situation_.CalculerPourcentageReussite(trait.Taille.NOM, 1)
+    "res Taille, 1 : [res]"
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
