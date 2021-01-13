@@ -2,10 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/evts_generaux/naissance.rpy", line 14: expected an indented block
-        situation[u"Cupidité"] = -5
-                 ^
-    
+File "game/evts_vie_courante/conduiteVehicule.rpy", line 48: expected ':' not found.
+    label decAccident_repriseControle
+                                     ^
+
+File "game/evts_vie_courante/conduiteVehicule.rpy", line 50: expected ':' not found.
+    label decAccident_SauteEnMarche
+                                   ^
+
+File "game/evts_vie_courante/conduiteVehicule.rpy", line 52: expected ':' not found.
+    label decAccident_Choc
+                          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Jan 10 12:05:34 2021
+Wed Jan 13 20:57:01 2021

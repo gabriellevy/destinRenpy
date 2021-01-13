@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 31, in script
-    $ res = situation_.TesterDifficulte(trait.Charme.NOM, 8)
-  File "game/script.rpy", line 31, in <module>
-    $ res = situation_.TesterDifficulte(trait.Charme.NOM, 8)
-IndexError: list index out of range
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 39, in script
+    $ affPilotageExpert = situation_.AffichagePourcentageReussite(trait.Pilotage.NOM, diffRepriseControle6)
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 39, in <module>
+    $ affPilotageExpert = situation_.AffichagePourcentageReussite(trait.Pilotage.NOM, diffRepriseControle6)
+NameError: name 'diffRepriseControle6' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 31, in script
-    $ res = situation_.TesterDifficulte(trait.Charme.NOM, 8)
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 39, in script
+    $ affPilotageExpert = situation_.AffichagePourcentageReussite(trait.Pilotage.NOM, diffRepriseControle6)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 31, in <module>
-    $ res = situation_.TesterDifficulte(trait.Charme.NOM, 8)
-  File "despin/gen_vie/situation.py", line 107, in TesterDifficulte
-  File "despin/gen_vie/situation.py", line 121, in CalculerPourcentageReussite
-IndexError: list index out of range
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 39, in <module>
+    $ affPilotageExpert = situation_.AffichagePourcentageReussite(trait.Pilotage.NOM, diffRepriseControle6)
+NameError: name 'diffRepriseControle6' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Jan 12 20:38:17 2021
+Wed Jan 13 22:27:27 2021

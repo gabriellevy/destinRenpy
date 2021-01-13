@@ -849,10 +849,72 @@ class Artiste(TraitGraduel):
         else:
             return ""
 
+class Pilotage(TraitGraduel):
+
+    NOM = u"Pilotage"
+
+    def __init__(self):
+        self.eTrait_ = Pilotage.NOM
+
+    def PeutEtrePrisALaNaissance(self):
+        return False
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            # if val <= Trait.SEUIL_A_PAS_EXTREME:
+            #    return u"Très Déplaisant"
+            return u"Ne sais pas conduire"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Pilote de course"
+            return u"A son permis"
+        else:
+            return ""
+
+class Richesse(TraitGraduel):
+
+    NOM = u"Richesse"
+
+    def __init__(self):
+        self.eTrait_ = Richesse.NOM
+
+    def PeutEtrePrisALaNaissance(self):
+        return True
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+                return u"Misérable"
+            return u"Pauvre"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Richissime"
+            return u"Aisé"
+        else:
+            return ""
+
 class CollectionTraits:
 
     def __init__(self):
         self.lTraits_ = dict()
+        richesse = Richesse()
+        self.SetTrait(Richesse.NOM, richesse)
+        pilotage = Pilotage()
+        self.SetTrait(Pilotage.NOM, pilotage)
         artiste = Artiste()
         self.SetTrait(Artiste.NOM, artiste)
         spiritualite = Spiritualite()

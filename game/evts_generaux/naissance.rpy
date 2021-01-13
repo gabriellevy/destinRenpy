@@ -19,9 +19,7 @@ init -5 python:
                 # random.randint(-10,10)
                 nbTraits = nbTraits - 1
 
-        # situation[u"Cupidité"] = 5
-        # situation[u"Sincérité"] = -5
-        # situation[u"Opportunisme"] = 5
+        # situation[u"Pilotage"] = 1 # tmp A FAIRE : ajouter un événement (passage de permis) pour gagner ce trait à peu près sûr entre 18 et 25 ans)
 
         # A FAIRE Mathieu : génération de la famille
         # Famille::GenererParents(effetNarrationVide);
@@ -37,7 +35,4 @@ init -5 python:
 
 label naissance:
     $ genererTraits(situation_, traits_)
-    # "Post naissance : [situation_]"
-    # "Vous êtes un jeune homme de 15 ans."
-    # "Vous vous appelez [situation_[Prenom]] [situation_[Nom]]."
     jump debut_cycle

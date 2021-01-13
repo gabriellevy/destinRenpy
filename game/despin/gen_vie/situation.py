@@ -104,7 +104,10 @@ class Situation:
         retourne True si le joueur réussit la tâche de difficulté demandée avec sa valeur en carac idCarac
         False sinon
         """
-        return random.randint(0,100) >= self.CalculerPourcentageReussite(idCarac, difficulte)
+        return random.randint(0,100) <= self.CalculerPourcentageReussite(idCarac, difficulte)
+
+    def AffichagePourcentageReussite(self, idCarac, difficulte):
+        return " ({}% en {})".format(self.CalculerPourcentageReussite(idCarac, difficulte), idCarac)
 
     def CalculerPourcentageReussite(self, idCarac, difficulte):
         """
@@ -117,7 +120,7 @@ class Situation:
         3 : tâche de base pour un travailleur/connaisseur de base
         4 : tâche de base pour un travailleur/connaisseur un mauvais jour
         5 : tâche pour un expérimenté
-        6 : tâche pour un expoert
+        6 : tâche pour un expert
         7 :
         8 : difficulté héroïque
         9 : difficulté surhumaine
@@ -161,7 +164,7 @@ class Situation:
         [100, 100, 100, 100, 100,  85,  76, 55, 40, 20], # 12 héros
         [100, 100, 100, 100, 100,  95,  82, 60, 50, 30], # surhumain
         [100, 100, 100, 100, 100, 100,  88, 65, 60, 40], # surhumain
-        [100, 100, 100, 100, 100, 100,  94, 75, 70, 50], #15 surhumain
-        [100, 100, 100, 100, 100, 100, 100, 85, 80, 60] #16 surhumain
+        [100, 100, 100, 100, 100, 100,  94, 75, 70, 45], #15 surhumain
+        [100, 100, 100, 100, 100, 100, 100, 85, 80, 50] #16 dieu
         ]
         return diff[valCarac+20][difficulte-1]
