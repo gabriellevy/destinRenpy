@@ -2,17 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/evts_vie_courante/conduiteVehicule.rpy", line 48: expected ':' not found.
-    label decAccident_repriseControle
-                                     ^
+File "game/extremis/constitution/temps.rpy", line 1: expected statement.
+    import random
+                 ^
 
-File "game/evts_vie_courante/conduiteVehicule.rpy", line 50: expected ':' not found.
-    label decAccident_SauteEnMarche
-                                   ^
-
-File "game/evts_vie_courante/conduiteVehicule.rpy", line 52: expected ':' not found.
-    label decAccident_Choc
-                          ^
+File "game/extremis/constitution/temps.rpy", line 3: expected statement.
+    class Date:
+              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Jan 13 20:57:01 2021
+Fri Jan 22 22:26:32 2021

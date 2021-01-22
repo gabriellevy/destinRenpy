@@ -28,13 +28,15 @@ label start:
 
 label debut_cycle:
     show screen valeurs_traits
-    "Début d'un cycle."
+    # "Début d'un cycle."
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
 
 label fin_cycle:
-    "Fin d'un cycle."
+    # "Fin d'un cycle."
+
+    $ date_.TourSuivant()
 
     if situation_["Santé"] != "Mort":
         jump debut_cycle

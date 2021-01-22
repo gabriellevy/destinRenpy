@@ -1537,4 +1537,5 @@ screen valeurs_traits():
     frame:
         xpos 5 ypos 5
         vbox:
+            text _(u"[date_]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
             text _(u"[descriptionTrait]")
