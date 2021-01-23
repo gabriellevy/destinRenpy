@@ -1534,8 +1534,11 @@ style slider_pref_slider:
 screen valeurs_traits():
     tag interface_personnage
     $ descriptionTrait = situation_.DescriptionTraits(traits_)
+    $ affAge = situation_.AffichageAge()
+    $ affDate = situation_.AffichageDate()
     frame:
         xpos 5 ypos 5
         vbox:
-            text _(u"[date_]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
+            text _(u"[affDate]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
+            text _(u"[affAge]\n")
             text _(u"[descriptionTrait]")

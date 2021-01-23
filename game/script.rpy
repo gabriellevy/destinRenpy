@@ -36,7 +36,7 @@ label debut_cycle:
 label fin_cycle:
     # "Fin d'un cycle."
 
-    $ date_.TourSuivant()
+    $ situation_.TourSuivant()
 
     if situation_["Santé"] != "Mort":
         jump debut_cycle

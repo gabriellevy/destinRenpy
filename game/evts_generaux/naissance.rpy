@@ -7,6 +7,14 @@ init -5 python:
     from despin.gen_vie import proba
     from despin.abs import condition
     from extremis.humanite import trait
+    from extremis.constitution import temps
+
+    def genererDateNaissance(situation):
+        # le jeu commence quand le eprsonnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
+        # avant sa majorité idéologique de 20 ans
+        # donc la date de naissance est l'actuelle moins 16 ans pile :
+        nbJoursDateNaissance = situation[temps.Date.DATE] - 365*16
+        situation[temps.Date.DATE_NAISSANCE] = nbJoursDateNaissance
 
     def genererTraits(situation, tousLesTraits):
         # sélectionne aléatoirement les traits principaux du personnage à la naissance
@@ -16,7 +24,6 @@ init -5 python:
             trait = tousLesTraits.getTraitAleatoire()
             if trait.PeutEtrePrisALaNaissance():
                 situation[trait.eTrait_] = trait.GetValeurALaNaissance()
-                # random.randint(-10,10)
                 nbTraits = nbTraits - 1
 
         # situation[u"Pilotage"] = 1 # tmp A FAIRE : ajouter un événement (passage de permis) pour gagner ce trait à peu près sûr entre 18 et 25 ans)
@@ -34,5 +41,6 @@ init -5 python:
         return
 
 label naissance:
+    $ genererDateNaissance(situation_)
     $ genererTraits(situation_, traits_)
     jump debut_cycle

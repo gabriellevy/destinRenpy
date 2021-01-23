@@ -9,27 +9,10 @@ init -2 python:
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
     filtre_ = filtres_action.FiltreAction()
     traits_ = trait.CollectionTraits()
-    date_ = temps.Date()
 
     def DeterminerPerso():
         global situation_
-        # TODO : tout ce qui suit devra être déterminé aléatoirement mais en attendant valeur par défaut :
-        # situation_["Sante"] = "Bonne"
-        # situation_[metier.Metier.METIER] = "Fonctionnaire administratif"
-        # metier.regenererCaracsMetier(situation_)
         renpy.jump("generationUnivers_Perso")
 
 label generationUnivers_Perso:
-    #"Vous avez 20 ans."
-    #if metier.aUnMetier(situation_):
-    #    "Vous êtes [situation_[Métier]]."
-    #"situation : [situation_]"
-    # "[traits_]"
-    #"Le nom de ce trait en statique est [trait.Cupidite.NOM]."
-    #"Le nom de ce trait via tableau est [traits_[Cupidité]]."
-    #"Niveau de cupidité '[situation_[Cupidité]]'."
-    #$ descriptionCupiditeJoueur = traitCupidite_.GetDescription(situation_)
-    #"Vous êtes [descriptionCupiditeJoueur]."
-    #"Liste des traits : [traits_]."
     jump naissance
-    # jump fin_cycle

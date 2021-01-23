@@ -5,21 +5,20 @@ class Date:
     date au format plus ou moins calendrier révolutionnaire
     """
 
+    DATE = u"Date"
+    DATE_NAISSANCE = u"Date de naissance"
+
     def __init__(self, nbJours = None):
         if nbJours is None:
             self.nbJours_ = 40000 + random.randint(0, 40000) # nombre de jours semi aléatoire pour destin extermis
         else:
             self.nbJours_ = nbJours # nombre de jours depuis
 
+    def NbJours(self):
+        return self.nbJours_
+
     def AjouterJours(self, nbJours):
         self.nbJours_ = self.nbJours_ + nbJours
-
-    def TourSuivant(self):
-        """
-        Passage au "tour" suivant dans un destin extermis c'est à dire grosso modo à un mois un peu randomisé
-        """
-        nbJours = 20 + random.randint(0, 20)
-        self.AjouterJours(nbJours)
 
     def GetStrJourSemaine(self):
         val = self.nbJours_%10 + 1 # calculer selon nbJours

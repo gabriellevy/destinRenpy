@@ -1,4 +1,5 @@
 from extremis.socio_eco import metier
+from extremis.constitution import temps
 import random
 
 class Situation:
@@ -14,6 +15,8 @@ class Situation:
         self.caracs_ = dict() # dictionnaire contenant toutes les caracs courantes de la partie
         self.valsMin_ = dict() # facultatif : dictionnaire contenant l'éventuelle valeur min de la carac en clé
         self.valsMax_ = dict() # facultatif : dictionnaire contenant l'éventuelle valeur max de la carac en clé
+        date = temps.Date()
+        self.caracs_[temps.Date.DATE] = date.nbJours_
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -89,6 +92,31 @@ class Situation:
                     str = u"{}\n".format(str)
                 str = u"{}{} ({})".format(str, descr, trait.eTrait_)
         return str
+
+    def AffichageAge(self):
+        nbJoursVecus = temps.Date(self.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(self.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
+        if isinstance(nbJoursVecus, int):
+            nbAnnees = nbJoursVecus/365
+            nbJoursPasses = nbJoursVecus%365
+            nbMois = nbJoursPasses/30
+            return "{} ans, {} mois".format(nbAnnees, nbMois)
+        return "??? nbJoursVecus pas int : {}".format(nbJoursVecus)
+
+    def AgeEnAnnees(self):
+        nbJoursVecus = temps.Date(self.caracs_[temps.Date.DATE_NAISSANCE])
+        nbAnnees = nbJoursVecus/365
+        return nbAnnees
+
+    def AffichageDate(self):
+        return temps.Date(self.caracs_[temps.Date.DATE])
+
+    def TourSuivant(self):
+        """
+        Passage au "tour" suivant dans un destin extermis c'est à dire grosso modo à un mois un peu randomisé
+        """
+        nbJoursPasses = 20 + random.randint(0, 20)
+        nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
+        self.caracs_[temps.Date.DATE] = nouvelleDate
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
