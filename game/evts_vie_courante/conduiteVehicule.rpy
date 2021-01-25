@@ -11,17 +11,26 @@ init -5 python:
     from extremis.socio_eco import metier
     from despin.reglages import filtres_action
     from extremis.humanite import trait
+    from extremis.constitution import temps
 
     def AjouterEvtsPilotage():
         global selecteur_
         conditionSaitConduire = condition.Condition(trait.Pilotage.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        conditionAgePermis = condition.Condition(temps.Date.AGE_ANNEES, 18, condition.Condition.SUPERIEUR_EGAL)
+        pas_decPermisJamais = condition.Condition("decPermisJamais", 1, condition.Condition.DIFFERENT)
         pasTropPauvre = condition.Condition(trait.Richesse.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.SUPERIEUR) # substitut pour ' a les moyens d'avoir une voiture'
 
-        decAccident = declencheur.Declencheur(10.02, "decAccident")
+        decAccident = declencheur.Declencheur(0.02, "decAccident")
         decAccident.AjouterCondition(conditionSaitConduire)
         selecteur_.ajouterDeclencheur(decAccident)
 
-    # attention des actions sont à exécuter au début et à al fin de chaque événement administratif :
+        decPermis = declencheur.Declencheur(10.02, "decPermis")
+        decPermis.AjouterCondition(conditionAgePermis)
+        decPermis.AjouterCondition(pasTropPauvre)
+        decPermis.AjouterCondition(pas_decPermisJamais)
+        selecteur_.ajouterDeclencheur(decPermis)
+
+    # attention des actions sont à exécuter au début et à la fin de chaque événement administratif :
     def actionDebutConduiteVehicule():
         global situation_
         renpy.transition(dissolve)
@@ -31,6 +40,38 @@ init -5 python:
     # attention des actions sont à exécuter au début et à al fin de chaque événement administratif :
     def actionFinConduiteVehicule():
         global situation_
+
+label decPermis:
+    $ actionDebutConduiteVehicule()
+    "Vous êtes éligible au permis et vous avez les moyens de vous le payer."
+    menu:
+        "Cela vous intéresse-t'il ?."
+        "Oui c'est parti.":
+            jump decAccident_debut
+        "Plus tard peut-être.":
+            jump decPermis_fin
+        "Jamais.":
+            $ situation_.SetCarac("decPermisJamais", 1)
+            jump decPermis_fin
+        "Vous préféreriez le permis moto.":
+            jump decPermisMoto
+        "Vous préféreriez le permis cheval.":
+            jump decPermisCheval
+        "Vous préféreriez le permis spécifique voiture volante.":
+            jump decPermisVoitureVolante
+
+    label decPermisMoto:
+        "decPermisMoto pas fait"
+    label decPermisCheval:
+        "decPermisCheval pas fait"
+    label decPermisVoitureVolante:
+        "decPermisVoitureVolante pas fait"
+    label decPermis_debut:
+        "decPermis_debut pas fait"
+
+    label decPermis_fin:
+    $ actionFinConduiteVehicule()
+    jump fin_cycle
 
 label decAccident:
     $ actionDebutConduiteVehicule()

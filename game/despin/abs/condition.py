@@ -9,6 +9,7 @@ class Condition:
     EGAL = 0
     SUPERIEUR_EGAL = 1
     SUPERIEUR = 2
+    DIFFERENT = -99
 
     def __init__(self, caracId, valeur, comparateur):
         self._m_CaracId = caracId
@@ -22,6 +23,8 @@ class Condition:
         valCarac = situation.GetValCarac(self._m_CaracId)
         if (self._m_Comparateur == Condition.EGAL):
             return str(self._m_Valeur) == str(valCarac)
+        if (self._m_Comparateur == Condition.DIFFERENT):
+            return str(self._m_Valeur) != str(valCarac)
         else:
             # test de valeurs forcément arithmétiques :
             assert isinstance(valCarac, int), "Test de valeur arithmétique sur une valeur de carac ({}) qui n'est pas arithmétique : '{}'".format(self._m_CaracId, valCarac)

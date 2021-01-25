@@ -5,8 +5,9 @@ class Date:
     date au format plus ou moins calendrier révolutionnaire
     """
 
-    DATE = u"Date"
-    DATE_NAISSANCE = u"Date de naissance"
+    DATE = u"Date" # date actuelle depuis le début du calendrier (en jours)
+    DATE_NAISSANCE = u"Date de naissance" # date de naissance du perso depuis le début du calendrier (en jours)
+    AGE_ANNEES = u"Age" # age du perso (en années)
 
     def __init__(self, nbJours = None):
         if nbJours is None:

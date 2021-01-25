@@ -10,7 +10,7 @@ init -5 python:
     from extremis.constitution import temps
 
     def genererDateNaissance(situation):
-        # le jeu commence quand le eprsonnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
+        # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
         # avant sa majorité idéologique de 20 ans
         # donc la date de naissance est l'actuelle moins 16 ans pile :
         nbJoursDateNaissance = situation[temps.Date.DATE] - 365*16

@@ -17,6 +17,7 @@ class Situation:
         self.valsMax_ = dict() # facultatif : dictionnaire contenant l'éventuelle valeur max de la carac en clé
         date = temps.Date()
         self.caracs_[temps.Date.DATE] = date.nbJours_
+        self.caracs_[temps.Date.AGE_ANNEES] = 0
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -103,9 +104,11 @@ class Situation:
         return "??? nbJoursVecus pas int : {}".format(nbJoursVecus)
 
     def AgeEnAnnees(self):
-        nbJoursVecus = temps.Date(self.caracs_[temps.Date.DATE_NAISSANCE])
-        nbAnnees = nbJoursVecus/365
-        return nbAnnees
+        if isinstance(self.caracs_[temps.Date.DATE_NAISSANCE], int):
+            nbJoursVecus = temps.Date(self.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(self.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
+            nbAnnees = nbJoursVecus/365
+            return nbAnnees
+        return 0
 
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])
@@ -117,6 +120,7 @@ class Situation:
         nbJoursPasses = 20 + random.randint(0, 20)
         nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
         self.caracs_[temps.Date.DATE] = nouvelleDate
+        self.caracs_[temps.Date.AGE_ANNEES] = self.AgeEnAnnees()
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
