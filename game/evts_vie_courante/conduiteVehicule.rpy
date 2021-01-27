@@ -1,6 +1,8 @@
 image medecin_peste = "medecine/medecin_peste.png"
+image moniteur_auto_ecole = "metiers/moniteur_auto_ecole.png"
 
 define med = Character('Médecin', who_outlines=[(2, "#894646",1,1)], color="#580404")
+define monit = Character('Moniteur', color="#e30909")
 
 init -5 python:
     import random
@@ -47,7 +49,7 @@ label decPermis:
     menu:
         "Cela vous intéresse-t'il ?."
         "Oui c'est parti.":
-            jump decAccident_debut
+            jump decPermis_debut
         "Plus tard peut-être.":
             jump decPermis_fin
         "Jamais.":
@@ -62,12 +64,91 @@ label decPermis:
 
     label decPermisMoto:
         "decPermisMoto pas fait"
+        jump decPermis
     label decPermisCheval:
         "decPermisCheval pas fait"
+        jump decPermis
     label decPermisVoitureVolante:
         "decPermisVoitureVolante pas fait"
+        jump decPermis
     label decPermis_debut:
-        "decPermis_debut pas fait"
+        "Vous prenez un peu de temps pour apprendre le code de la route ; dès la semaine suivante vous participez à vos premiers entrainements au code."
+        show moniteur_auto_ecole at right
+        with moveinright
+        monit "Quarante questions, une minute par question. C'est parti on se revoit pour la correction."
+        "Les questions sont bien plus difficiles et ambiguës que vous ne l'auriez cru."
+        $ diffCode = 4
+        $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Intelligence.NOM, diffCode)
+        menu:
+            "Voyons le résultat. [affdiffCode]":
+                jump decPermis_PremierCode
+
+        label decPermis_PremierCode:
+            $ reussi = situation_.TesterDifficulte(trait.Intelligence.NOM, diffCode)
+            if reussi:
+                "11/20"
+                monit "Ça n'a pas l'air impressionnant mais c'est un bon résultat pour un premier essai."
+            else:
+                "04/20"
+                monit "Hum il a eu des difficultés mais c'est le tout début."
+                $ situation_.RetirerACarac(trait.Assurance.NOM, 1)
+            monit "Les questions posées à ce test sont plus difficiles que celles du test de code final."
+            monit "Si il s'entraîne régulièrement je suis sûr qu'il l'aura."
+            jump decPermis_PremiereConduite
+
+        label decPermis_PremiereConduite:
+            "Deux jours plus tard vous suivez votre première leçon de conduite."
+            monit "Je m'occupe des pédales et du changement de vitesse, contente toi du volant et de bien observer."
+            monit "On va rester dans une zone sans passant ni voitures le temps de faire quelques tours."
+            $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Observation.NOM, diffCode)
+            menu:
+                "Vous roulez le long d'une file de voitures garées. [affdiffCode]":
+                    jump decPermis_PremiereConduite_1
+
+            label decPermis_PremiereConduite_1:
+                $ reussi = situation_.TesterDifficulte(trait.Observation.NOM, diffCode)
+                if reussi:
+                    monit "Bravo tu as une bonne tenue de route, tu vas pouvoir commencer à essayer de passer des vitesses."
+                else:
+                    "Le moniteur attrape le volant brusquement et fait un léger écart."
+                    monit "He ben il veut arracher des rétroviseurs ou quoi ?"
+                    monit "Faut pas qu'il prenne des risques comme ça pour rien."
+                    monit "Faut qu'il reste détendu."
+                    $ situation_.RetirerACarac(trait.Assurance.NOM, 1)
+                monit "La prochaine fois il essayera quelques manoeuvres. Mais il faut qu'il continue les leçons de code surtout."
+                jump decPermis_PremiereManoeuvre
+
+                label decPermis_PremiereManoeuvre:
+                    monit "Cette fois il va apprendre des manoeuvres de base."
+                    monit "Essaye de stationner entre les deux voitures là bas. Tu as deux fois plus de place que nécessaire."
+                    $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Habilete.NOM, diffCode)
+                    menu:
+                        "Vous approchez de l'emplacement désigné. [affdiffCode]":
+                            jump decPermis_PremiereManoeuvre_1
+
+                    label decPermis_PremiereManoeuvre_1:
+                        $ reussi = situation_.TesterDifficulte(trait.Habilete.NOM, diffCode)
+                        if reussi:
+                            "Vous parvenez à vous glisser entre les voitures et à vous garer presque aligné au trottoir."
+                        else:
+                            "Après six essais infructueux pour se rapprocher le moniteur finit par accompagner tous vos mouvements pour réussir un stationnement potable."
+                            $ situation_.RetirerACarac(trait.Assurance.NOM, 1)
+                        monit "Bien. La prochaine fois on fera le stationnement en épi. Ramène nous à l'auto-école, c'est moi qui garerai la voiture."
+                        jump decPermis_PasserPermis
+
+                        label decPermis_PasserPermis:
+                            "Les jours se suivent et vous faites de sensibles progrès. Enfin le moniteur vous juge prêt."
+                            $ affdiffCode = situation_.AffichagePourcentageReussite(\
+                                [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+                            menu:
+                                "C'est le grand jour. [affdiffCode]":
+                                    jump decPermis_PasserPermis_1
+                            label decPermis_PasserPermis_1:
+                                $ reussi = situation_.TesterDifficulte([trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+                                if reussi:
+                                    "réussi pas fait."
+                                else:
+                                    "raté pas fait."
 
     label decPermis_fin:
     $ actionFinConduiteVehicule()

@@ -64,13 +64,21 @@ class Situation:
             metier.regenererCaracsMetier(self)
 
     def AjouterACarac(self, idCarac, valCarac):
+        # si la carac n'existe pas encore, la créer
+        if not idCarac in self.caracs_:
+            self.CreerCarac(idCarac, 0)
+
         finalVal = self.caracs_[idCarac] + valCarac
         if idCarac in self.valsMax_ and finalVal > self.valsMax_[idCarac]:
             finalVal = self.valsMax_[idCarac]
         self.SetCarac(idCarac, finalVal)
 
     def RetirerACarac(self, idCarac, valCarac):
-        finalVal = self.caracs_[idCarac].m_Valeur - valCarac
+        # si la carac n'existe pas encore, la créer
+        if not idCarac in self.caracs_:
+            self.CreerCarac(idCarac, 0)
+
+        finalVal = self.caracs_[idCarac] - valCarac
         if idCarac in self.valsMin_ and finalVal < self.valsMin_[idCarac]:
             finalVal = self.valsMin_[idCarac]
         self.SetCarac(idCarac, finalVal)
@@ -139,7 +147,12 @@ class Situation:
         return random.randint(0,100) <= self.CalculerPourcentageReussite(idCarac, difficulte)
 
     def AffichagePourcentageReussite(self, idCarac, difficulte):
-        return " ({}% en {})".format(self.CalculerPourcentageReussite(idCarac, difficulte), idCarac)
+        affichageCarac = idCarac
+        if isinstance(idCarac, list):
+            affichageCarac = ""
+            for carac in idCarac:
+                affichageCarac = "{}, {}".format(affichageCarac, carac)
+        return " ({}% en {})".format(self.CalculerPourcentageReussite(idCarac, difficulte), affichageCarac)
 
     def CalculerPourcentageReussite(self, idCarac, difficulte):
         """
@@ -159,7 +172,14 @@ class Situation:
         10 : difficulté divine
         la valeur de carac va de -20 à 16
         """
-        valCarac = self.GetValCarac(idCarac)
+        valCarac = 0
+        if isinstance(idCarac, list):
+            for carac in idCarac:
+                valCarac = valCarac + self.GetValCarac(carac)
+            valCarac = valCarac / len(carac)
+        else:
+            valCarac = self.GetValCarac(idCarac)
+
         diff = [
         [ 80,  40,   0,   0,   0,   0,   0,  0,  0,  0], # -20 très handicapé
         [ 81,  42,   0,   0,   0,   0,   0,  0,  0,  0], # très handicapé

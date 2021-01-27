@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 39, in script
-    $ situation_.TourSuivant()
-  File "game/script.rpy", line 39, in <module>
-    $ situation_.TourSuivant()
-TypeError: unsupported operand type(s) for /: 'instance' and 'int'
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "game/generationUnivers.rpy", line 3, in <module>
+    from despin.gen_vie import situation
+SyntaxError: can't assign to function call (despin/gen_vie/situation.py, line 153)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 39, in script
-    $ situation_.TourSuivant()
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 39, in <module>
-    $ situation_.TourSuivant()
-  File "despin/gen_vie/situation.py", line 124, in TourSuivant
-  File "despin/gen_vie/situation.py", line 110, in AgeEnAnnees
-TypeError: unsupported operand type(s) for /: 'instance' and 'int'
+  File "game/generationUnivers.rpy", line 3, in <module>
+    from despin.gen_vie import situation
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: can't assign to function call (despin/gen_vie/situation.py, line 153)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Mon Jan 25 20:39:18 2021
+ 
+Wed Jan 27 22:00:01 2021

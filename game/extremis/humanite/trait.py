@@ -97,18 +97,15 @@ class TraitGraduel(Trait):
         return u"Description TraitGraduel" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
 
     def GetValeurALaNaissance(self):
-        """
-        50% de chance en négatif, 50% de chance en positif
-        """
         val = random.randint(0,100)
-        if val <= 15:
-            return Trait.SEUIL_A_PAS_EXTREME
+        if val <= 5:
+            return Trait.SEUIL_A_PAS_EXTREME # douteux que ce soit une bonne idée comme valeur de départ
         elif val <= 35:
             return Trait.SEUIL_A_PAS
-        elif val <= 85:
+        elif val <= 95:
             return Trait.SEUIL_A
         else:
-            return Trait.SEUIL_A_EXTREME
+            return Trait.SEUIL_A_EXTREME # douteux que ce soit une bonne idée comme valeur de départ
 
 class Cupidite(TraitTernaire):
 
@@ -404,6 +401,37 @@ class Intelligence(TraitGraduel):
             if val >= Trait.SEUIL_A_EXTREME:
                 return u"Très intelligent"
             return u"Intelligent"
+        else:
+            return ""
+
+class Assurance(TraitGraduel):
+    """
+    plus ou moins confiance du personnage en lui-même
+    caractéristique très variable
+    a des effets sur le charme et la mise en avant du personnage par exemple
+    """
+
+    NOM = u"Assurance"
+
+    def __init__(self):
+        self.eTrait_ = Assurance.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+                return u"Aucune confiance en lui"
+            return u"Doute de lui"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Sûr de lui"
+            return u"Confiant"
         else:
             return ""
 
@@ -911,6 +939,8 @@ class CollectionTraits:
 
     def __init__(self):
         self.lTraits_ = dict()
+        assurance = Assurance()
+        self.SetTrait(Assurance.NOM, assurance)
         richesse = Richesse()
         self.SetTrait(Richesse.NOM, richesse)
         pilotage = Pilotage()
