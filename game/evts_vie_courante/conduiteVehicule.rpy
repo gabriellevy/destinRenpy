@@ -18,6 +18,7 @@ init -5 python:
     def AjouterEvtsPilotage():
         global selecteur_
         conditionSaitConduire = condition.Condition(trait.Pilotage.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        conditionSaitPasConduire = condition.Condition(trait.Pilotage.NOM, 0, condition.Condition.INFERIEUR_EGAL)
         conditionAgePermis = condition.Condition(temps.Date.AGE_ANNEES, 18, condition.Condition.SUPERIEUR_EGAL)
         pas_decPermisJamais = condition.Condition("decPermisJamais", 1, condition.Condition.DIFFERENT)
         pasTropPauvre = condition.Condition(trait.Richesse.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.SUPERIEUR) # substitut pour ' a les moyens d'avoir une voiture'
@@ -26,10 +27,12 @@ init -5 python:
         decAccident.AjouterCondition(conditionSaitConduire)
         selecteur_.ajouterDeclencheur(decAccident)
 
+        # passer le permis ?
         decPermis = declencheur.Declencheur(10.02, "decPermis")
         decPermis.AjouterCondition(conditionAgePermis)
         decPermis.AjouterCondition(pasTropPauvre)
         decPermis.AjouterCondition(pas_decPermisJamais)
+        decPermis.AjouterCondition(conditionSaitPasConduire)
         selecteur_.ajouterDeclencheur(decPermis)
 
     # attention des actions sont à exécuter au début et à la fin de chaque événement administratif :
@@ -144,11 +147,45 @@ label decPermis:
                                 "C'est le grand jour. [affdiffCode]":
                                     jump decPermis_PasserPermis_1
                             label decPermis_PasserPermis_1:
-                                $ reussi = situation_.TesterDifficulte([trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
-                                if reussi:
-                                    "réussi pas fait."
+                                $ nivReussite = situation_.TesterDegreReussite([trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+                                if nivReussite>0:
+                                    "Bravo c'est une réussite vous avez maintenant le code et le permis."
+                                    $ situation_.AjouterACarac(trait.Assurance.NOM, 2)
+                                    $ situation_.SetCarac(trait.Pilotage.NOM, 1)
+                                    jump decPermis_fin
+                                elif nivReussite <-1:
+                                    "C'est un échec catastrophique. Vous êtes tellement angoissé que vous démarrez avec le frein à main enclenché. Vous avez même failli causer un accident."
+                                    "L'examinateur ne s'abaisse même pas à vous dire à que c'est un échec."
+                                    $ situation_.RetirerACarac(trait.Assurance.NOM, 2)
+                                    jump decPermis_ReessayerPermis
                                 else:
-                                    "raté pas fait."
+                                    "Vous faites presque un sans faute mais une erreur d'inattention et une petite erreur de code vous font échouer."
+                                    monit "Il a fait une petite erreur mais il fera mieux la prochaine fois."
+                                    $ situation_.AjouterACarac(trait.Assurance.NOM, 1)
+                                    jump decPermis_ReessayerPermis
+                                label decPermis_ReessayerPermis:
+                                    $ diffRepasser = 2
+                                    $ affdiffRepasser = situation_.AffichagePourcentageReussite(trait.Assurance.NOM, diffRepasser)
+                                    menu:
+                                        "Voulez vous tenter de repasser le permis ?"
+                                        "Oui [affdiffRepasser]":
+                                            $ reussi = situation_.TesterDifficulte(trait.Assurance.NOM, diffRepasser)
+                                            if reussi:
+                                                jump decPermis_ReessayerPermis_Payer
+                                            else:
+                                                "Vous avez perdu toute confiance en vos capacités, et puis vous détestez conduire. Tant pis vous abandonnez. Une autre fois peut-être ?"
+                                                jump decPermis_fin
+                                        "Non":
+                                            jump decPermis_fin
+                                label decPermis_ReessayerPermis_Payer:
+                                    $ affdiffRepasser = situation_.AffichagePourcentageReussite(trait.Richesse.NOM, diffRepasser)
+                                    menu:
+                                        "Il va falloir reprendre plusieurs leçons [affdiffRepasser]":
+                                            $ reussi = situation_.TesterDifficulte(trait.Richesse.NOM, diffRepasser)
+                                            if not reussi:
+                                                "Ça commence à coûter cher."
+                                                $ situation_.RetirerACarac(trait.Richesse.NOM, 2)
+                                            jump decPermis_PasserPermis
 
     label decPermis_fin:
     $ actionFinConduiteVehicule()

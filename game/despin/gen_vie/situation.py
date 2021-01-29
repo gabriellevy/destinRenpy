@@ -146,6 +146,17 @@ class Situation:
         """
         return random.randint(0,100) <= self.CalculerPourcentageReussite(idCarac, difficulte)
 
+    def TesterDegreReussite(self, idCarac, difficulte):
+        """
+        retourne un chiffre entre -5 et 5 qui est une note de réussite d'un test de difficulté demandée avec sa valeur en carac idCarac
+        -4 échec catastrophique
+        0 échec passable
+        1 réussite médiocre
+        5 réussite exceptionnelle
+        """
+        res = ( self.CalculerPourcentageReussite(idCarac, difficulte) - random.randint(0,80) )/20
+        return res
+
     def AffichagePourcentageReussite(self, idCarac, difficulte):
         affichageCarac = idCarac
         if isinstance(idCarac, list):
