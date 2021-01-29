@@ -88,6 +88,11 @@ class Situation:
             return ""
         return self.caracs_[idCarac]
 
+    def GetValCaracInt(self, idCarac):
+        if ( idCarac not in self.caracs_):
+            return 0
+        return self.caracs_[idCarac]
+
     def DescriptionTraits(self, traits):
         """
         Description des traits
@@ -144,7 +149,7 @@ class Situation:
         retourne True si le joueur réussit la tâche de difficulté demandée avec sa valeur en carac idCarac
         False sinon
         """
-        return random.randint(0,100) <= self.CalculerPourcentageReussite(idCarac, difficulte)
+        return random.randint(1,100) <= self.CalculerPourcentageReussite(idCarac, difficulte)
 
     def TesterDegreReussite(self, idCarac, difficulte):
         """
@@ -154,8 +159,17 @@ class Situation:
         1 réussite médiocre
         5 réussite exceptionnelle
         """
-        res = ( self.CalculerPourcentageReussite(idCarac, difficulte) - random.randint(0,80) )/20
-        return res
+        scorePourcent = random.randint(0,100)
+        pourcentageReussi = self.CalculerPourcentageReussite(idCarac, difficulte)
+        degreReussite = 1
+        if scorePourcent <= pourcentageReussi:
+            # réussite
+            degreReussite = ( pourcentageReussi - scorePourcent )/20 + 1
+        else:
+            # échec
+            degreReussite = ( pourcentageReussi - scorePourcent )/15
+
+        return degreReussite
 
     def AffichagePourcentageReussite(self, idCarac, difficulte):
         affichageCarac = idCarac

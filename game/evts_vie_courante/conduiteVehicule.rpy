@@ -101,7 +101,7 @@ label decPermis:
 
         label decPermis_PremiereConduite:
             "Deux jours plus tard vous suivez votre première leçon de conduite."
-            monit "Je m'occupe des pédales et du changement de vitesse, contente toi du volant et de bien observer."
+            monit "Je m'occupe des pédales et du changement de vitesse, qu'il se contente du volant et de bien observer."
             monit "On va rester dans une zone sans passant ni voitures le temps de faire quelques tours."
             $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Observation.NOM, diffCode)
             menu:
@@ -123,7 +123,7 @@ label decPermis:
 
                 label decPermis_PremiereManoeuvre:
                     monit "Cette fois il va apprendre des manoeuvres de base."
-                    monit "Essaye de stationner entre les deux voitures là bas. Tu as deux fois plus de place que nécessaire."
+                    monit "Qu'il essaye de stationner entre les deux voitures là bas. Il a deux fois plus de place que nécessaire."
                     $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Habilete.NOM, diffCode)
                     menu:
                         "Vous approchez de l'emplacement désigné. [affdiffCode]":
@@ -178,6 +178,7 @@ label decPermis:
                                         "Non":
                                             jump decPermis_fin
                                 label decPermis_ReessayerPermis_Payer:
+                                    $ situation_.TourSuivant() # le temps passe
                                     $ affdiffRepasser = situation_.AffichagePourcentageReussite(trait.Richesse.NOM, diffRepasser)
                                     menu:
                                         "Il va falloir reprendre plusieurs leçons [affdiffRepasser]":
