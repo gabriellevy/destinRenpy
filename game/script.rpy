@@ -17,9 +17,13 @@ init -1 python:
     from despin.gen_vie import selecteur
     import random
 
+    # métiers
     AjouterEvtsAdministratif()
+    # vie courante
     AjouterEvtsPilotage()
     AjouterEvtsRien()
+    # coteries
+    AjouterEvtsCoteries()
 
 # Le jeu commence ici
 label start:
@@ -28,8 +32,6 @@ label start:
 
 label debut_cycle:
     show screen valeurs_traits
-    # "Début d'un cycle."
-    "[coteries_]"
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
@@ -50,3 +52,6 @@ label labelGoTo_pasFait:
 
 label pas_evt_trouve:
     " ERREUR : pas d'événement trouvé à ce cycle"
+
+label probaAbsoluesSup100:
+    "Le total des probas absolues dépasse 100%% !"

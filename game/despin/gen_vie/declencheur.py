@@ -9,6 +9,9 @@ class Declencheur:
     """
 
     def __init__(self, aproba, labelGoTo):
+        """
+        aproba peut être une proba complète déclarée ou juste un float dans ce cas il sera convertie en proba déclarée dans ce constructeur
+        """
         self.conditions_ = []
         if isinstance(aproba, proba.Proba):
             self.proba_ = aproba

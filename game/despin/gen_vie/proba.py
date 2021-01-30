@@ -5,12 +5,12 @@ class Proba:
     Probabilité à appliquer à un déclencheur
     """
 
-    def __init__(self, poidsProba):
+    def __init__(self, poidsProba, relative = True):
         self.modifsProba_ = []
         # si relative_ est à True la proba dépend du poids des autres proba dans le sélecteur
         # Sinon elle est absolue et poidsProba devient une proba de type pourcentage (entre 0 (=> jamais) et 1(=>toujours))
         self.poidsProba_ = poidsProba
-        self.relative_ = True
+        self.relative_ = relative
 
     def ajouterModifProba(self, modifProba):
         # TODO : tester le type d'objet en paramètre avec isInstance ou je ne sais quoi

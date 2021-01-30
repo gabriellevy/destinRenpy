@@ -23,12 +23,12 @@ init -5 python:
         pas_decPermisJamais = condition.Condition("decPermisJamais", 1, condition.Condition.DIFFERENT)
         pasTropPauvre = condition.Condition(trait.Richesse.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.SUPERIEUR) # substitut pour ' a les moyens d'avoir une voiture'
 
-        decAccident = declencheur.Declencheur(0.02, "decAccident")
+        decAccident = declencheur.Declencheur(0.01, "decAccident")
         decAccident.AjouterCondition(conditionSaitConduire)
         selecteur_.ajouterDeclencheur(decAccident)
 
         # passer le permis ?
-        decPermis = declencheur.Declencheur(10.02, "decPermis")
+        decPermis = declencheur.Declencheur(0.1, "decPermis")
         decPermis.AjouterCondition(conditionAgePermis)
         decPermis.AjouterCondition(pasTropPauvre)
         decPermis.AjouterCondition(pas_decPermisJamais)

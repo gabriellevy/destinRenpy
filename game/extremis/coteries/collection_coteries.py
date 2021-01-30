@@ -10,8 +10,10 @@ class CollectionCoteries:
 
         templier = templiers.Templiers()
         self.SetCoterie(templiers.Templiers.NOM, templier)
+
         transhumaniste = transhumanistes.Transhumanistes()
         self.SetCoterie(transhumanistes.Transhumanistes.NOM, transhumaniste)
+        
         elfe = elfes.Elfes()
         self.SetCoterie(elfes.Elfes.NOM, elfe)
 
