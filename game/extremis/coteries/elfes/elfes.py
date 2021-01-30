@@ -6,3 +6,6 @@ class Elfes(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Elfes.NOM
+
+    def getLabelUniversite(self):
+        return "univElfes"

@@ -13,12 +13,17 @@ class CollectionCoteries:
 
         transhumaniste = transhumanistes.Transhumanistes()
         self.SetCoterie(transhumanistes.Transhumanistes.NOM, transhumaniste)
-        
+
         elfe = elfes.Elfes()
         self.SetCoterie(elfes.Elfes.NOM, elfe)
 
     def getCoterieAleatoire(self):
         return random.choice(list(self.lCoteries_.values()))
+
+    def DebuterProchaineUniversite(self):
+        coterie = self.getCoterieAleatoire()
+        labelProchainEvt = coterie.getLabelUniversite()
+        return labelProchainEvt
 
     def __getitem__(self, idCoterie):
         if not idCoterie in self.lCoteries_:

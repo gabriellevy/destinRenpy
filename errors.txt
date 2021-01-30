@@ -2,13 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/extremis/constitution/temps.rpy", line 1: expected statement.
-    import random
-                 ^
+The label univElfes is defined twice, at
+  File "game/extremis/coteries/elfes/elfes.rpyc", line 4 and
+  File "game/extremis/coteries/elfes/evts_UnivElfes.rpy", line 3.
 
-File "game/extremis/constitution/temps.rpy", line 3: expected statement.
-    class Date:
-              ^
+The label univTempliers is defined twice, at
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 2 and
+  File "game/extremis/coteries/templiers/templiers.rpyc", line 2.
+
+The label univTranshumanistes is defined twice, at
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 2 and
+  File "game/extremis/coteries/transhumanistes/transhumanistes.rpyc", line 2.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Jan 22 22:26:32 2021
+Sat Jan 30 21:27:32 2021

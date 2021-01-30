@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 57, in script
-    "Le total des probas absolues dépasse 100% !"
-ValueError: unsupported format character '!' (0x21) at index 42
+  File "game/extremis/coteries/evts_coteries.rpy", line 30, in script
+    jump univ
+ScriptError: could not find label 'univ'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 57, in script
-    "Le total des probas absolues dépasse 100% !"
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1334, in say
-    what = what % tag_quoting_dict
-ValueError: unsupported format character '!' (0x21) at index 42
+  File "game/extremis/coteries/evts_coteries.rpy", line 30, in script
+    jump univ
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'univ'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sat Jan 30 20:07:34 2021
+Sat Jan 30 21:03:55 2021

@@ -6,3 +6,6 @@ class Templiers(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Templiers.NOM
+
+    def getLabelUniversite(self):
+        return "univTempliers"

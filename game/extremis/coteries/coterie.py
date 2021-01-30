@@ -5,6 +5,9 @@ class Coterie:
     classe de base de toutes les coteries
     """
 
+    NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
+    NB_MOIS_UNIV_A_FAIRE = "Nombre de mois à faire dans l'université actuelle"
+
     def __init__(self):
         self.nom_ = "pas de nom, à overrider" # enum Trait qui servira à identifier le trait pour lui affecter des caracs secondaires
 
@@ -55,6 +58,9 @@ class Coterie:
 
     def GetMusique(self):
         return ""
+
+    def getLabelUniversite(self):
+        return "à overrider avec le label de l'université de la coterie"
 
     def RejoindreCoterie(self, situation):
         """

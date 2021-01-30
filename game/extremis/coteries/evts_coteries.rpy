@@ -8,7 +8,7 @@ init -5 python:
     from despin.reglages import filtres_action
     from extremis.humanite import trait
     from extremis.constitution import temps
-
+    from extremis.coteries import coterie
 
     def AjouterEvtsCoteries():
         global selecteur_
@@ -19,5 +19,12 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decUnivCoterie)
 
 label decUnivCoterie:
-    "Ça y est vous avez l'âge de rejoindre les universités des coteries."
-    jump fin_cycle
+    $ numUnivCoteries = situation_.GetValCaracInt(coterie.Coterie.NB_UNIV)
+    if numUnivCoteries < 1:
+        "Ça y est vous avez l'âge de rejoindre les universités des coteries."
+    else:
+        "Cette année d'université se termine, place à la suivante."
+    $ situation_.SetCarac(coterie.Coterie.NB_MOIS_UNIV_A_FAIRE, 12)
+    $ situation_.AjouterACarac(coterie.Coterie.NB_UNIV, 1)
+    $ univ = coteries_.DebuterProchaineUniversite()
+    $ renpy.jump(univ)

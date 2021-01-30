@@ -6,3 +6,6 @@ class Transhumanistes(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Transhumanistes.NOM
+
+    def getLabelUniversite(self):
+        return "univTranshumanistes"
