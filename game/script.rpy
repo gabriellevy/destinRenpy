@@ -29,6 +29,7 @@ label start:
 label debut_cycle:
     show screen valeurs_traits
     # "Début d'un cycle."
+    "[coteries_]"
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)

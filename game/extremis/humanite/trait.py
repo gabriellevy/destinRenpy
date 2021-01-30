@@ -46,12 +46,10 @@ class Trait:
 
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
-        print("__repr__ de Trait")
         return "Trait : {}".format(self.eTrait_)
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
-        # print("__str__ de Trait")
         return "{}".format(self.eTrait_)
 
 class TraitBinaire(Trait):

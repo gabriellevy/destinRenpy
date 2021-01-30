@@ -3,9 +3,9 @@
 While running game code:
   File "game/generationUnivers.rpy", line 1, in script
     init -2 python:
-  File "game/generationUnivers.rpy", line 3, in <module>
-    from despin.gen_vie import situation
-SyntaxError: can't assign to function call (despin/gen_vie/situation.py, line 153)
+  File "game/generationUnivers.rpy", line 13, in <module>
+    coteries_ = collection_coteries.CollectionCoteries()
+UnboundLocalError: local variable 'transhumanistes' referenced before assignment
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,13 +16,12 @@ Full traceback:
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 3, in <module>
-    from despin.gen_vie import situation
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
-    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
-SyntaxError: can't assign to function call (despin/gen_vie/situation.py, line 153)
+  File "game/generationUnivers.rpy", line 13, in <module>
+    coteries_ = collection_coteries.CollectionCoteries()
+  File "extremis/coteries/collection_coteries.py", line 13, in __init__
+UnboundLocalError: local variable 'transhumanistes' referenced before assignment
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
-Wed Jan 27 22:00:01 2021
+Sat Jan 30 16:28:52 2021

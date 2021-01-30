@@ -1,33 +1,32 @@
-Fri Jan 29 22:14:30 2021
+Sat Jan 30 16:29:32 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.14s
+Loading script took 0.10s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.09s
+Running init code took 0.11s
 Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.01s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.08s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.07s
@@ -414,12 +413,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.1970000267s
+Total time until interface ready: 1.11599993706s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.009000 seconds.
-- Frame drawn at 0.024000 seconds.
-- Frame drawn at 0.041000 seconds.
-- Frame drawn at 0.057000 seconds.
-- 0.057000 seconds to render 5 frames.
+- Frame drawn at 0.011000 seconds.
+- Frame drawn at 0.026000 seconds.
+- Frame drawn at 0.043000 seconds.
+- Frame drawn at 0.060000 seconds.
+- 0.060000 seconds to render 5 frames.
