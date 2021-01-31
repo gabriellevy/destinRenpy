@@ -24,6 +24,9 @@ init -1 python:
     AjouterEvtsRien()
     # coteries
     AjouterEvtsCoteries()
+    AjouterEvtsUnivTranshumanistes()
+    AjouterEvtsUnivTempliers()
+    AjouterEvtsUnivElfes()
 
 # Le jeu commence ici
 label start:

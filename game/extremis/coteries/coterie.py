@@ -5,8 +5,13 @@ class Coterie:
     classe de base de toutes les coteries
     """
 
-    NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
-    NB_MOIS_UNIV_A_FAIRE = "Nombre de mois à faire dans l'université actuelle"
+    Carac_NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
+    NB_UNIV_TOTAL = 3 #nombre total d'université que doit suivre un personnage
+    
+    Carac_NB_MOIS_UNIV_A_FAIRE = "Nombre de mois à faire dans l'université actuelle"
+    NB_MOIS_UNIV_TOTAL_A_FAIRE = 6 # nombre de "modules" obligatoires à suivre quand on rejoint une université de coterie
+
+    Carac_UNIV_COURANTE = "Université actuelle"
 
     def __init__(self):
         self.nom_ = "pas de nom, à overrider" # enum Trait qui servira à identifier le trait pour lui affecter des caracs secondaires
