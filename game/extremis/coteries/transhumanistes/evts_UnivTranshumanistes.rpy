@@ -59,6 +59,7 @@ label univTranshumanistes_evt1:
 
 label univTranshumanistes_evt2:
     # cours informatique
+    scene bg informatique
     "L'informatique est indispensable pour garder en fonctionnement les nombreuses organisations techniquement avancées des transhumanistes. "
     "L'université comprend bien sûr des cours variés dans cette discipline."
     $ situation_.AjouterACarac(metier.Informaticien.NOM, 1)
@@ -117,6 +118,7 @@ label univTranshumanistes_evt5:
 
 label univTranshumanistes_evt6:
     # faire la fête
+    scene bg boite_de_nuit
     "L'université transhumaniste n'est pas juste un lieu d'apprentissage universitaire, c'est aussi un lieu de vie et de consommation unique dans tout Extremis. "
     "Impossible de passer à côté des fêtes innombrables, toutes plus surprenantes et chères les unes que les autres."
     $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
