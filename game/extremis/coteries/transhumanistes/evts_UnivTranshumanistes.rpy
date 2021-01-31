@@ -2,6 +2,7 @@ init -5 python:
     import random
     from extremis.coteries.transhumanistes import transhumanistes
     from extremis.socio_eco.metiers import metier
+    from extremis.religions import religion
 
     def AjouterEvtsUnivTranshumanistes():
         """
@@ -87,20 +88,27 @@ label univTranshumanistes_evt4:
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.RetirerACarac(trait.Altruisme.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.AjouterACarac(trait.Ambition.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.AjouterACarac(trait.Cupidite.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.AjouterACarac(trait.Opportunisme.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.AjouterACarac(trait.Individualisme.NOM, 1)
     $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
     # Ajouter quand la religion sera ajoutée
-    # double proba = Aleatoire::GetAl()->Entre0Et1();
-    # if ( proba <= 0.5) {
-    #     Religion::ModifierEffetEnEffetConversion(effet, Religion::ATHEE);
-    # }
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ devientAthee = devientAthee()
+        if devientAthee:
+            "Vous avez perdu la foi."
+
     jump fin_cycle
 
 label univTranshumanistes_evt5:
@@ -129,7 +137,7 @@ label univTranshumanistes_evt6:
 
 label univTranshumanistes_evt7:
     "univTranshumanistes_evt7 PAS FAIT"
-    jump univTranshumanistes
+    jump fin_cycle
 label univTranshumanistes_evt8:
     "univTranshumanistes_evt8 PAS FAIT"
     jump fin_cycle

@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-The label univElfes is defined twice, at
-  File "game/extremis/coteries/elfes/elfes.rpyc", line 4 and
-  File "game/extremis/coteries/elfes/evts_UnivElfes.rpy", line 3.
-
-The label univTempliers is defined twice, at
-  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 2 and
-  File "game/extremis/coteries/templiers/templiers.rpyc", line 2.
-
-The label univTranshumanistes is defined twice, at
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 2 and
-  File "game/extremis/coteries/transhumanistes/transhumanistes.rpyc", line 2.
+File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 106: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    if resProba < 0.5:
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Jan 30 21:27:32 2021
+Sun Jan 31 20:52:38 2021
