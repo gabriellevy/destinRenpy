@@ -6,7 +6,7 @@ init -5 python:
     from despin.gen_vie import selecteur
     from despin.gen_vie import proba
     from despin.abs import condition
-    from extremis.socio_eco import metier
+    from extremis.socio_eco.metiers import metier
     from extremis.humanite import trait
 
     def AjouterEvtsRien():

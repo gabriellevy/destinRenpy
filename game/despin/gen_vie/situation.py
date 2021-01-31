@@ -1,4 +1,5 @@
-from extremis.socio_eco import metier
+
+from extremis.socio_eco.metiers import metier
 from extremis.constitution import temps
 import random
 

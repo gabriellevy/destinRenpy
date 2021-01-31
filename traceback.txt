@@ -1,26 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "game/script.rpy", line 29, in <module>
-    AjouterEvtsUnivElfes()
-NameError: name 'AjouterEvtsUnivElfes' is not defined
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "game/generationUnivers.rpy", line 14, in <module>
+    metiers_ = metier.CollectionMetiers()
+AttributeError: CollectionMetiers instance has no attribute 'SetTrait'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 29, in <module>
-    AjouterEvtsUnivElfes()
-NameError: name 'AjouterEvtsUnivElfes' is not defined
+  File "game/generationUnivers.rpy", line 14, in <module>
+    metiers_ = metier.CollectionMetiers()
+  File "extremis/socio_eco/metiers/metier.py", line 185, in __init__
+AttributeError: CollectionMetiers instance has no attribute 'SetTrait'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
-Sun Jan 31 12:25:57 2021
+Sun Jan 31 16:04:05 2021

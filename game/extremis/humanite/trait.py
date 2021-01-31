@@ -7,8 +7,6 @@ class Trait:
     Souvent ils sont binaires par souci de simplification (0 oumoins signifie pas de trait, 1 ou plus signifie possède le trait)
     Certains ont des valeurs qui s'échelonnent de -20 à +16 mais sont encore utilisables en binaires comme ci dessus.
     Ils peuvent aussi bien être psychologiques que physiques.
-
-    TODO : différencier ceux qui sont réellement évolutifs et les acquis à la naissance et presque impossible à gagner.
     """
 
     SEUIL_A = 1 # valeur à partir de laquelle (et au dessus) on est considéré comme ayant le trait
