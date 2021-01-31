@@ -1,27 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "game/generationUnivers.rpy", line 14, in <module>
-    metiers_ = metier.CollectionMetiers()
-AttributeError: CollectionMetiers instance has no attribute 'SetTrait'
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 79, in script
+    $ situation_.AjouterACarac(metier.Charme.NOM, 1)
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 79, in <module>
+    $ situation_.AjouterACarac(metier.Charme.NOM, 1)
+AttributeError: 'module' object has no attribute 'Charme'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 79, in script
+    $ situation_.AjouterACarac(metier.Charme.NOM, 1)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 14, in <module>
-    metiers_ = metier.CollectionMetiers()
-  File "extremis/socio_eco/metiers/metier.py", line 185, in __init__
-AttributeError: CollectionMetiers instance has no attribute 'SetTrait'
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 79, in <module>
+    $ situation_.AjouterACarac(metier.Charme.NOM, 1)
+AttributeError: 'module' object has no attribute 'Charme'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Sun Jan 31 16:04:05 2021
+DestinExtremis 1.0
+Sun Jan 31 19:06:37 2021

@@ -61,7 +61,7 @@ class Situation:
             self.valsMax_[idCarac] = valeurMax
 
         # modifier certaines caracs peut impliquer des changements implicites à d'autres :
-        if idCarac == metier.Metier.METIER:
+        if idCarac == metier.Metier.Carac_METIER:
             metier.regenererCaracsMetier(self)
 
     def AjouterACarac(self, idCarac, valCarac):
@@ -123,6 +123,11 @@ class Situation:
             nbAnnees = nbJoursVecus/365
             return nbAnnees
         return 0
+
+    def AffichageMetier(self):
+        if ( metier.Metier.Carac_METIER not in self.caracs_):
+            return ""
+        return self.caracs_[metier.Metier.Carac_METIER]
 
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])

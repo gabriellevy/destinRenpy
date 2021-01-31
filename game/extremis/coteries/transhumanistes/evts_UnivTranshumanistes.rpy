@@ -1,6 +1,7 @@
 init -5 python:
     import random
     from extremis.coteries.transhumanistes import transhumanistes
+    from extremis.socio_eco.metiers import metier
 
     def AjouterEvtsUnivTranshumanistes():
         """
@@ -47,26 +48,83 @@ label univTranshumanistes:
     jump fin_cycle
 
 label univTranshumanistes_evt1:
+    # cours scientifique
     scene bg labo
     "La génétique et la cybernétique sont les base du transhumanisme. Une initiation à ces sciences est indispensable dans cette université. "
-    "univTranshumanistes_evt1 PAS FAIT"
+    "Sans être d'un niveau professionnel vous ressortirez de cette université avec des connaissances très avancées. Vous ressortirez aussi avec les poches moins lourdes car cette université est réellement hors de prix."
+    $ situation_.AjouterACarac(metier.Geneticien.NOM, 1)
+    $ situation_.AjouterACarac(metier.Cyberneticien.NOM, 1)
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
     jump fin_cycle
 
 label univTranshumanistes_evt2:
-    "univTranshumanistes_evt2 PAS FAIT"
+    # cours informatique
+    "L'informatique est indispensable pour garder en fonctionnement les nombreuses organisations techniquement avancées des transhumanistes. "
+    "L'université comprend bien sûr des cours variés dans cette discipline."
+    $ situation_.AjouterACarac(metier.Informaticien.NOM, 1)
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt3:
-    "univTranshumanistes_evt3 PAS FAIT"
+    # cours de commerce
+    "La base de la philosophie libérale transhumaniste est que tout se vend. Les produits et les améliorations cybernétique bien sûr. Mais un politique se vend aussi à son électorat comme un gendre à sa belle famille."
+    "Que vous fassiez carrière dans le commerce ou pas ces cours de commerce et de manipulation seront utiles."
+    $ situation_.AjouterACarac(metier.Commercial.NOM, 1)
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Cupidite.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Charme.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt4:
-    "univTranshumanistes_evt4 PAS FAIT"
+    # cours de philosophie libérale transhumaniste
+    "Toute coterie a une forme de philosophie et celle des transhumanistes est une des plus développée. Tout vous est expliqué sur plusieurs mois. Du matérialisme au libéralisme. "
+    "Le progrès est central et l'amélioration de l'humain en tant qu'individu complet est le but final de toute la coterie. Vous en ressortez transformé."
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.RetirerACarac(trait.Altruisme.NOM, 1)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Ambition.NOM, 1)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Cupidite.NOM, 1)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Opportunisme.NOM, 1)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Individualisme.NOM, 1)
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
+    # Ajouter quand la religion sera ajoutée
+    # double proba = Aleatoire::GetAl()->Entre0Et1();
+    # if ( proba <= 0.5) {
+    #     Religion::ModifierEffetEnEffetConversion(effet, Religion::ATHEE);
+    # }
     jump fin_cycle
+
 label univTranshumanistes_evt5:
-    "univTranshumanistes_evt5 PAS FAIT"
+    # petits boulots
+    "L'université transhumaniste est hors de prix. Vous êtes obligé de prendre des petits boulots à côté pour vous en sortir."
+    "L'université voit cela d'un bon oeil car ça donne de la main d'oeuvre pas cher à son conglomérat et forme les étudiants au monde du travail."
+    $ situation_.AjouterACarac(trait.Richesse.NOM, 2)
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.AjouterACarac(trait.Industrie.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.RetirerACarac(trait.Serenite.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt6:
-    "univTranshumanistes_evt6 PAS FAIT"
+    # faire la fête
+    "L'université transhumaniste n'est pas juste un lieu d'apprentissage universitaire, c'est aussi un lieu de vie et de consommation unique dans tout Extremis. "
+    "Impossible de passer à côté des fêtes innombrables, toutes plus surprenantes et chères les unes que les autres."
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
+    $ resProba = random.uniform(0, 1.0)
+    if resProba < 0.5:
+        $ situation_.RetirerACarac(trait.Ascetisme.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt7:
     "univTranshumanistes_evt7 PAS FAIT"
     jump univTranshumanistes
