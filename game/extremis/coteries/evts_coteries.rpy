@@ -30,6 +30,7 @@ label decUnivCoterie:
         if numUnivCoteries >= coterie.Coterie.NB_UNIV_TOTAL:
             "Vous avez accompli vos années d'université légales. Il est temps de se lancer dans la vie active."
             "Choix éventuel PAS FAIT"
+            $ situation_.SetValCarac(coterie.Coterie.Carac_UNIV_COURANTE, "fini")
             jump fin_cycle
         else:
             "Cette année d'université se termine, place à la suivante."

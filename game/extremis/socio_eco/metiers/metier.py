@@ -137,6 +137,11 @@ class Pilote(Metier):
     def __init__(self):
         self.nom_ = Pilote.NOM
 
+class Chevalier(Metier):
+    NOM = u"Chevalier"
+    def __init__(self):
+        self.nom_ = Chevalier.NOM
+
 class Informaticien(Metier):
     NOM = u"Informaticien"
     def __init__(self):

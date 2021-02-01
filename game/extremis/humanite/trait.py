@@ -348,7 +348,35 @@ class Nature(TraitTernaire):
         else:
             return u""
 
-# prends très au sérieux sa réputation, ne ment jamais, respecte ses pairs et sa famille...
+# Suit un code de l'honneur, ou agit par instinct (différence entre Loyal et Chaotique)
+# respecte ses pairs et sa famille...
+class Honorabilite(TraitGraduel):
+
+    NOM = u"Honorabilité"
+
+    def __init__(self):
+        self.eTrait_ = Honorabilite.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+                return u"Chaotique"
+            return u"Instinctif"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Très Honorable"
+            return u"Honorable"
+        else:
+            return ""
+
+# prends très au sérieux sa réputation, ne ment jamais
 # inclut aussi la sincérité vs l'hypocrisie etc
 class Sincerite(TraitGraduel):
 
@@ -967,8 +995,10 @@ class CollectionTraits:
         self.SetTrait(Sexualite.NOM, sexualite)
         cupidite = Cupidite()
         self.SetTrait(Cupidite.NOM, cupidite)
-        honorabilite = Sincerite()
-        self.SetTrait(Sincerite.NOM, honorabilite)
+        sincerite = Sincerite()
+        self.SetTrait(Sincerite.NOM, sincerite)
+        honorabilite = Honorabilite()
+        self.SetTrait(Honorabilite.NOM, honorabilite)
         opp = Opportunisme()
         self.SetTrait(Opportunisme.NOM, opp)
         ind = Industrie()
