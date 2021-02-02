@@ -1,28 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
-  File "game/generationUnivers.rpy", line 6, in <module>
-    from extremis.coteries import collection_coteries
-IndentationError: unexpected indent (extremis/coteries/collection_coteries.py, line 20)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in script
+    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in <module>
+    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
+AttributeError: 'module' object has no attribute 'TueurDeMonstre'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generationUnivers.rpy", line 1, in script
-    init -2 python:
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in script
+    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/generationUnivers.rpy", line 6, in <module>
-    from extremis.coteries import collection_coteries
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
-    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
-IndentationError: unexpected indent (extremis/coteries/collection_coteries.py, line 20)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in <module>
+    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
+AttributeError: 'module' object has no attribute 'TueurDeMonstre'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Mon Feb 01 21:46:45 2021
+DestinExtremis 1.0
+Tue Feb 02 20:59:14 2021
