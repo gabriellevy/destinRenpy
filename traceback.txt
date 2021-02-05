@@ -1,26 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in script
-    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
-  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in <module>
-    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
-AttributeError: 'module' object has no attribute 'TueurDeMonstre'
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 61, in script
+    $ conversion = conversionReligieuse(religion.Christianisme.NOM)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 61, in <module>
+    $ conversion = conversionReligieuse(religion.Christianisme.NOM)
+  File "game/extremis/religions/evts_religion.rpy", line 31, in conversionReligieuse
+    situation_.SetValCarac(religion.Religion.C_RELIGION, p_religion)
+TypeError: SetCarac() takes at most 5 arguments (6 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in script
-    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 61, in script
+    $ conversion = conversionReligieuse(religion.Christianisme.NOM)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 142, in <module>
-    $ situation_.AjouterACarac(metier.TueurDeMonstre.NOM, 1)
-AttributeError: 'module' object has no attribute 'TueurDeMonstre'
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 61, in <module>
+    $ conversion = conversionReligieuse(religion.Christianisme.NOM)
+  File "game/extremis/religions/evts_religion.rpy", line 31, in conversionReligieuse
+    situation_.SetValCarac(religion.Religion.C_RELIGION, p_religion)
+  File "despin/gen_vie/situation.py", line 68, in SetValCarac
+TypeError: SetCarac() takes at most 5 arguments (6 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Feb 02 20:59:14 2021
+Fri Feb 05 23:41:07 2021

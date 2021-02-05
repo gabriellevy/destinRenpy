@@ -327,6 +327,9 @@ class Spiritualite(TraitTernaire):
             return u""
 
 class Nature(TraitTernaire):
+    """
+    Aime la nature, s'y sent bien, s'y débrouille bien
+    """
 
     NOM = u"Nature"
 
@@ -512,6 +515,9 @@ class Individualisme(TraitGraduel):
             return ""
 
 class Sexualite(TraitGraduel):
+    """
+    intérêt pour le sexe
+    """
 
     NOM = u"Sexualité"
 

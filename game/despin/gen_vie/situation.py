@@ -64,6 +64,9 @@ class Situation:
         if idCarac == metier.Metier.Carac_METIER:
             metier.regenererCaracsMetier(self)
 
+    def SetValCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
+        self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
+
     def AjouterACarac(self, idCarac, valCarac):
         # si la carac n'existe pas encore, la créer
         if not idCarac in self.caracs_:
@@ -86,12 +89,12 @@ class Situation:
 
     def GetValCarac(self, idCarac):
         if ( idCarac not in self.caracs_):
-            return ""
+            self.caracs_[idCarac] = ""
         return self.caracs_[idCarac]
 
     def GetValCaracInt(self, idCarac):
         if ( idCarac not in self.caracs_):
-            return 0
+            self.caracs_[idCarac] = 0
         return self.caracs_[idCarac]
 
     def DescriptionTraits(self, traits):

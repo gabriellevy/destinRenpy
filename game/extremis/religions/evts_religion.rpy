@@ -18,23 +18,26 @@ init -5 python:
             return True
         return False
 
-    def conversionReligieuse(religion, forceConversion=False):
+    def conversionReligieuse(p_religion, forceConversion=False):
         """
         forceConversion : si True le perso est immédiatement converti, sinon il a des chances de ne aps l'être si il a déjà une religion
         """
         global situation_
-        religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
+
+        religionCaracStr = religion.Religion.C_RELIGION
+        religionActuelle = situation_.GetValCarac(religionCaracStr)
         if religionActuelle == "":
             # pas de religion
-            situation_.SetValCarac(religion.Religion.C_RELIGION, religionActuelle)
+            situation_.SetValCarac(religion.Religion.C_RELIGION, p_religion)
             return True
-        elif religionActuelle == religion:
+        elif religionActuelle == p_religion:
             # déjà de cette religion
             return False
         else:
             randVal = random.uniform(0, 1.0)
+            # conversion pas 100% sûr
             if randVal < 0.7:
-                situation_.SetValCarac(religion.Religion.C_RELIGION, religionActuelle)
+                situation_.SetValCarac(religion.Religion.C_RELIGION, p_religion)
                 return True
             else:
                 return False

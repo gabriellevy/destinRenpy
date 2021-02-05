@@ -7,7 +7,7 @@ class Coterie:
 
     Carac_NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
     NB_UNIV_TOTAL = 3 #nombre total d'université que doit suivre un personnage
-    
+
     Carac_NB_MOIS_UNIV_A_FAIRE = "Nombre de mois à faire dans l'université actuelle"
     NB_MOIS_UNIV_TOTAL_A_FAIRE = 6 # nombre de "modules" obligatoires à suivre quand on rejoint une université de coterie
 
@@ -31,35 +31,46 @@ class Coterie:
         # return m_Quartier
         return ""
 
-    def Compatibilite(self, situation, aleatoire):
-        proba = 0.5
+    def GetCaracsCompatibles(self):
+        """
+        si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie
+        """
+        return "doit être overridée"
+
+    def GetCaracsIncompatibles(self):
+        """
+        si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
+        """
+        return "doit être overridée"
+
+
+    def CalculerAffinite(self, situation, aleatoire = False):
+        affinite = 0.5
         """
         plus le personnage est compatible avec la coterie, plus le résultat est élevé
-        ---
-        if ( aleatoire)
-            proba = Aleatoire::GetAl()->Entre0Et1();
-
-        for ( shared_ptr<Condition> cond : this->m_TraitsCompatible) {
-            if ( cond->Tester()) {
-                proba += 0.2;
-            }
-        }
-        for ( shared_ptr<Condition> cond : this->m_TraitsIncompatible) {
-            if ( cond->Tester()) {
-                proba -= 0.2;
-            }
-        }
-        for (QString idMetier: this->m_MetiersAssocies) {
-            if ( hum->GetValeurCarac(Coterie::C_COTERIE) == idMetier) {
-                proba += 0.3;
-            }
-        }
-
-        // baisse de compatibilité si déjà dans une coterie :
-        if ( hum->GetValeurCarac(Coterie::C_COTERIE) != "")
-           proba -= 0.1;
         """
-        return proba
+        #if ( aleatoire)
+        #    proba = Aleatoire::GetAl()->Entre0Et1();
+
+        CaracsCompatibles = self.GetCaracsCompatibles()
+        CaracsInCompatibles = self.GetCaracsIncompatibles()
+        coeffCompatibles = len(CaracsInCompatibles)
+        coeffIncompatibles = len(CaracsCompatibles)
+        affinite = 0
+
+        for idCarac in CaracsCompatibles:
+            if situation[idCarac] != "" and  situation[idCarac] > 0:
+                affinite = affinite + coeffCompatibles
+
+        for idCarac in CaracsInCompatibles:
+            if situation[idCarac] != "" and  situation[idCarac] > 0:
+                affinite = affinite - coeffIncompatibles
+
+        # baisse de compatibilité si déjà dans une coterie :
+        #if ( hum->GetValeurCarac(Coterie::C_COTERIE) != "")
+        #   proba -= 0.1;
+
+        return affinite
 
     def GetMusique(self):
         return ""

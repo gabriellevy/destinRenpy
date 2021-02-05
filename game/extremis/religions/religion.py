@@ -3,9 +3,9 @@ import random
 class Religion:
 
     # caracs liées :
-    C_RELIGION = "Religion" # carac à laquelle on applique le nom de la religion
-    C_FOI = "Foi" # niveau de foi dans sa religion (1 à 10)
-    C_MIRACLE = "Faiseur de miracles" # capacité à créer des miracles (1 à 10)
+    C_RELIGION = u"Religion" # carac à laquelle on applique le nom de la religion
+    C_FOI = u"Foi" # niveau de foi dans sa religion (1 à 10)
+    C_MIRACLE = u"Faiseur de miracles" # capacité à créer des miracles (1 à 10)
 
     def __init__(self):
        self.nom_ = "pas de nom de religion, doit être overridé"

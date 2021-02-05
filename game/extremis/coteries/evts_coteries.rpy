@@ -22,6 +22,23 @@ init -5 python:
         decUnivCoterie.AjouterCondition(conditionPasUniv)
         selecteur_.ajouterDeclencheur(decUnivCoterie)
 
+    def ChoisirCoterie():
+        global situation_, coteries_, traits_, metiers_
+
+        # calculer els coefficient d'intérêt du perso pour chaque coterie :
+        indexCoteries = dict()
+        for idCoterie in coteries_.lCoteries_:
+            affinite = coteries_.lCoteries_[idCoterie].CalculerAffinite(situation_)
+            indexCoteries[idCoterie] = affinite
+            print("coterie {} -> affinité {}".format(idCoterie, affinite))
+
+        # éliminer les coeff inférieurs à 1
+
+        # trier les autres par ordre décroissant
+
+        # puis lancer les tests pour les rejoindre
+
+
 label decUnivCoterie:
     $ numUnivCoteries = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_UNIV)
     if numUnivCoteries < 1:
@@ -31,10 +48,16 @@ label decUnivCoterie:
             "Vous avez accompli vos années d'université légales. Il est temps de se lancer dans la vie active."
             "Choix éventuel PAS FAIT"
             $ situation_.SetValCarac(coterie.Coterie.Carac_UNIV_COURANTE, "fini")
-            jump fin_cycle
+            jump choixUniv
         else:
             "Cette année d'université se termine, place à la suivante."
     $ situation_.SetCarac(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE, coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE)
     $ situation_.AjouterACarac(coterie.Coterie.Carac_NB_UNIV, 1)
     $ univ = coteries_.DebuterProchaineUniversite()
     $ renpy.jump(univ)
+
+label choixUniv:
+    # le joueur va éventuellement choisir une université
+    $ ChoisirCoterie()
+    "Affinités calculées mais pas utilisées !! PAS FAIT"
+    jump fin_cycle
