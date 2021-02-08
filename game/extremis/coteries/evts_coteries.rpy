@@ -25,7 +25,7 @@ init -5 python:
     def ChoisirCoterie():
         global situation_, coteries_, traits_, metiers_
 
-        # calculer els coefficient d'intérêt du perso pour chaque coterie :
+        # calculer les coefficient d'intérêt du perso pour chaque coterie :
         indexCoteries = dict()
         for idCoterie in coteries_.lCoteries_:
             affinite = coteries_.lCoteries_[idCoterie].CalculerAffinite(situation_)
@@ -33,10 +33,22 @@ init -5 python:
             print("coterie {} -> affinité {}".format(idCoterie, affinite))
 
         # éliminer les coeff inférieurs à 1
+        for cle in indexCoteries.keys():
+            resAffinite = indexCoteries[cle]
+            if resAffinite < 1:
+                print("retire {}".format(cle))
+                indexCoteries.pop(cle)
 
         # trier les autres par ordre décroissant
+        coterieChoisie = ""
+        plusHautRes = 0
+        for cle in indexCoteries.keys():
+            if indexCoteries[cle] > plusHautRes:
+                plusHautRes = indexCoteries[cle]
+                coterieChoisie = cle
 
-        # puis lancer les tests pour les rejoindre
+        print("coterieChoisie {}".format(coterieChoisie))
+        return coterieChoisie
 
 
 label decUnivCoterie:
@@ -58,6 +70,11 @@ label decUnivCoterie:
 
 label choixUniv:
     # le joueur va éventuellement choisir une université
-    $ ChoisirCoterie()
-    "Affinités calculées mais pas utilisées !! PAS FAIT"
+    $ coterieChoisie = ChoisirCoterie()
+    if coterieChoisie == "":
+        "Après réflexion aucune coterie ne répond à vos désirs et intérêts profonds. Vous préférez suivre votre propre route pour l'instant."
+    else:
+        $ labelPostuleCoterie = "{}{}".format(coterieChoisie, "Postule")
+        $ renpy.jump(labelPostuleCoterie)
+
     jump fin_cycle

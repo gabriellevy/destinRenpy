@@ -168,3 +168,7 @@ label univTempliers_evt11:
 label univTempliers_evt12:
     "univTempliers_evt12 PAS FAIT"
     jump fin_cycle
+
+label TempliersPostule:
+    "Postulation aux templiers : pas fait !"
+    jump fin_cycle

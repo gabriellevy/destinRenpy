@@ -153,3 +153,8 @@ label univTranshumanistes_evt11:
 label univTranshumanistes_evt12:
     "univTranshumanistes_evt12 PAS FAIT"
     jump fin_cycle
+
+label TranshumanistesPostule:
+    scene bg univ_transhumanistes
+    "Postulation aux Transhumanistes : pas fait !"
+    jump fin_cycle
