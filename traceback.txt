@@ -1,20 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 38, in script
-    jump choixUniv # tmp
-Exception: Possible infinite loop.
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "game/generationUnivers.rpy", line 16, in <module>
+    blessures_ = pbsante.CollectionBlessures()
+AttributeError: CollectionBlessures instance has no attribute 'SetBlessure'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 38, in script
-    jump choixUniv # tmp
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 59, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "game/generationUnivers.rpy", line 1, in script
+    init -2 python:
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/generationUnivers.rpy", line 16, in <module>
+    blessures_ = pbsante.CollectionBlessures()
+  File "extremis/humanite/sante/pbsante.py", line 94, in __init__
+AttributeError: CollectionBlessures instance has no attribute 'SetBlessure'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Mon Feb 08 20:32:25 2021
+ 
+Tue Feb 09 20:18:19 2021

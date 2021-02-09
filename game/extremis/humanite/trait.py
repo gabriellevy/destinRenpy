@@ -31,7 +31,7 @@ class Trait:
 
     def PeutEtrePrisALaNaissance(self):
         """
-        Renvoie true si il s'agit d'un trait qui peut être choisi dès la crréation du personnage
+        Renvoie true si il s'agit d'un trait qui peut être choisi dès la création du personnage
         Renvoie false si c'est un trait uniquement 'acquis'
         """
         return True
