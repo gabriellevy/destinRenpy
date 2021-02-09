@@ -250,12 +250,14 @@ label decAccident:
     label decAccident_blessureLegere:
         show medecin_peste at right
         with moveinright
-        "decAccident_blessureLegere -> PAS FAIT"
+        $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 5)
+        "Vous avez subi une blessure légère : [blessure]."
 
     label decAccident_blessureGrave:
         show medecin_peste at right
         with moveinright
-        "decAccident_blessureGrave -> PAS FAIT"
+        $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
+        "Vous avez subi une blessure grave : [blessure]."
 
     label decAccident_assuranceVoiture:
         "decAccident_assuranceVoiture -> PAS FAIT"
