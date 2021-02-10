@@ -111,6 +111,19 @@ class Situation:
                 str = u"{}{} ({})".format(str, descr, trait.eTrait_)
         return str
 
+    def DescriptionBlessures(self, blessures):
+        """
+        Description des blessures actuelles du personnage
+        """
+        str = u""
+        for blessureK in blessures.lBlessures_.keys():
+            blessure = blessures[blessureK]
+            # print("{} : {}".format(blessureK, self.GetValCarac(blessureK)))
+            if self.GetValCarac(blessureK) != u"":
+                str = u"{}\n{}".format(str, blessure.nom_)
+                print("str : {}".format(str))
+        return str
+
     def AffichageAge(self):
         nbJoursVecus = temps.Date(self.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(self.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
         if isinstance(nbJoursVecus, int):

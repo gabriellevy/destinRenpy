@@ -1534,6 +1534,7 @@ style slider_pref_slider:
 screen valeurs_traits():
     tag interface_personnage
     $ descriptionTrait = situation_.DescriptionTraits(traits_)
+    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
     $ affAge = situation_.AffichageAge()
     $ affDate = situation_.AffichageDate()
     $ strMetier = situation_.AffichageMetier()
@@ -1544,3 +1545,4 @@ screen valeurs_traits():
             text _(u"[strMetier]")
             text _(u"[affAge]\n")
             text _(u"[descriptionTrait]")
+            text _(u"[descriptionBlessures]")

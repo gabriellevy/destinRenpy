@@ -134,6 +134,9 @@ class JambeAmputee(Blessure):
     def GetNbJoursConvalescence(self):
         return 40
 
+    def GetDescriptionRecu(self):
+        return "Votre jambe est si gravement endommagée qu'on doit vous l'amputer."
+
 class BrasAmpute(Blessure):
 
     NOM = u"Bras amputé"
