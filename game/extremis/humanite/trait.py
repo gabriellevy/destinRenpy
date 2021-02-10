@@ -725,12 +725,12 @@ class Force(TraitGraduel):
         else:
             return ""
 
-class Resistance(TraitGraduel):
+class Constitution(TraitGraduel):
 
-    NOM = u"Résistance"
+    NOM = u"Constitution"
 
     def __init__(self):
-        self.eTrait_ = Resistance.NOM
+        self.eTrait_ = Constitution.NOM
 
     def GetDescription(self, situation):
         val = situation[self.eTrait_]
@@ -991,8 +991,8 @@ class CollectionTraits:
         self.SetTrait(Taille.NOM, taille)
         poids = Poids()
         self.SetTrait(Poids.NOM, poids)
-        resistance = Resistance()
-        self.SetTrait(Resistance.NOM, resistance)
+        resistance = Constitution()
+        self.SetTrait(Constitution.NOM, resistance)
         force = Force()
         self.SetTrait(Force.NOM, force)
         patriarcat = Patriarcat()

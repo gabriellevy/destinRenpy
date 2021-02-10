@@ -220,7 +220,7 @@ label decAccident:
         else:
             "Vous bondissez de la voiture mais c'est déjà dangereux à petite vitesse, sur l'autoroute c'est presque du suicide."
             "Vous vous brisez plusieurs os dans votre chute et restez inconscient."
-            $ resisteBlessure = situation_.TesterDifficulte(trait.Resistance.NOM, 7)
+            $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 7)
             if resisteBlessure:
                 jump decAccident_blessureLegere
             else:
@@ -233,7 +233,7 @@ label decAccident:
             jump decAccident_fin
         else:
             "Impossible de reprendre le contrôle, vous arrivez sur le camion à pleine vitesse."
-            $ resisteBlessure = situation_.TesterDifficulte(trait.Resistance.NOM, 7)
+            $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 7)
             if resisteBlessure:
                 jump decAccident_blessureLegere
             else:
@@ -241,7 +241,7 @@ label decAccident:
 
     label decAccident_Choc:
         "Vous avez moins d'une seconde pour constater que votre ceinture était bien attachée puis vous vous couvrez le visage."
-        $ resisteBlessure = situation_.TesterDifficulte(trait.Resistance.NOM, 6)
+        $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 6)
         if resisteBlessure:
             jump decAccident_blessureLegere
         else:

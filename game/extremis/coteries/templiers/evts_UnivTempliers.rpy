@@ -137,6 +137,7 @@ label univTempliers_evt8:
 
 label univTempliers_evt9:
     # chasseur de sorciers
+    scene bg formation_demon
     "Les templiers méprisent la magie égoïste et imprévisible qui vient des hommes car c'est le diable qui la leur inspire. Ils vous forment donc dans la compréhension de ce qu'est la magie maléfique et de la différence avec les miracles divins."
     "Ils vous montrent aussi comment repérer les monstres et les démons qui complotent toujours dans l'ombre des hommes."
     $ situation_.AjouterACarac(metier.TueurDeMonstres.NOM, 1)
