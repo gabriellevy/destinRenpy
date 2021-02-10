@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/religions/evts_religion.rpy", line 34: invalid syntax
-        elif:
-             ^
-    
+File "game/evts_vie_courante/conduiteVehicule.rpy", line 277: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+            "Mais c'est l'affaire d'un mois avant d'en avoir une nouvelle, avec cette fois de meilleurs freins espérons le.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Feb 01 19:26:32 2021
+Wed Feb 10 20:44:46 2021

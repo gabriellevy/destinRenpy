@@ -251,18 +251,31 @@ label decAccident:
         show medecin_peste at right
         with moveinright
         $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 5)
-        "Vous avez subi une blessure légère : [blessure]."
+        jump decAccident_blessureTexte
 
     label decAccident_blessureGrave:
         show medecin_peste at right
         with moveinright
         $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
-        "Vous avez subi une blessure grave : [blessure]."
+        jump decAccident_blessureTexte
+
+    label decAccident_blessureTexte:
+        $ texteBlessure = blessure.GetDescriptionRecu()
+        "[texteBlessure]."
+        jump decAccident_assuranceVoiture
 
     label decAccident_assuranceVoiture:
-        "decAccident_assuranceVoiture -> PAS FAIT"
-        "Faire une genre de test sur le niveau d'assurance du personnage pour voir si il perd de la richesse."
+        # pour tester si les frais l'appauvrissent on fait un test de richesse (substitut pour l'assurance)
+        $ diffAssurance = 4
+        $ affdiffAssurance = situation_.AffichagePourcentageReussite(trait.Richesse.NOM, diffAssurance)
+        menu:
+            "La voiture est dans un état catastrophique. [affdiffAssurance]":
+                $ reussi = situation_.TesterDifficulte(trait.Richesse.NOM, diffAssurance)
+                if not reussi:
+                    "L'assurance couvre très mal les frais de réparation, la réparation vous revient cher."
+                    $ situation_.RetirerACarac(trait.Richesse.NOM, 2)
+        "Mais c'est l'affaire d'un mois avant d'en avoir une nouvelle, avec cette fois de meilleurs freins espérons le."
 
     label decAccident_fin:
-    $ actionFinConduiteVehicule()
-    jump fin_cycle
+        $ actionFinConduiteVehicule()
+        jump fin_cycle

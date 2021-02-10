@@ -1,27 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 259, in script
-    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 259, in <module>
-    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
-NameError: global name 'C_JOURS_DHOPITAL' is not defined
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 263, in script
+    $ texteBlessure = blessure.GetDescriptionRecu()
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 263, in <module>
+    $ texteBlessure = blessure.GetDescriptionRecu()
+NameError: global name 'nom_' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 259, in script
-    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 263, in script
+    $ texteBlessure = blessure.GetDescriptionRecu()
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 259, in <module>
-    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 6, 10)
-  File "extremis/humanite/sante/pbsante.py", line 154, in InfligerBlessureAleatoire
-NameError: global name 'C_JOURS_DHOPITAL' is not defined
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 263, in <module>
+    $ texteBlessure = blessure.GetDescriptionRecu()
+  File "extremis/humanite/sante/pbsante.py", line 55, in GetDescriptionRecu
+NameError: global name 'nom_' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Feb 09 21:15:01 2021
+Wed Feb 10 20:47:08 2021

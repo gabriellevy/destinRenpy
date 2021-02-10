@@ -48,6 +48,12 @@ class PbSante:
         """
         return False
 
+    def GetDescriptionRecu(self):
+        """
+        texte affiché quand le perspnnage attrape ce problème de santé
+        """
+        return "GetDescriptionRecu pas faite pour {}".format(self.nom_)
+
 class Blessure(PbSante):
 
     def __repr__(self):
@@ -72,6 +78,9 @@ class OeilCreve(Blessure):
 
     def GetNbJoursConvalescence(self):
         return 30
+
+    def GetDescriptionRecu(self):
+        return "Un de vos yeux est crevé."
 
 class DoigtArrache(Blessure):
 
