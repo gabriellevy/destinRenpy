@@ -1,5 +1,6 @@
 
 from extremis.socio_eco.metiers import metier
+from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
 import random
 
@@ -116,12 +117,17 @@ class Situation:
         Description des blessures actuelles du personnage
         """
         str = u""
+        # affichage des blessures
         for blessureK in blessures.lBlessures_.keys():
             blessure = blessures[blessureK]
-            # print("{} : {}".format(blessureK, self.GetValCarac(blessureK)))
             if self.GetValCarac(blessureK) != u"":
                 str = u"{}\n{}".format(str, blessure.nom_)
-                print("str : {}".format(str))
+
+        # affichage des jours de convalescence
+        nbJoursConvalescence = self.GetValCaracInt(pbsante.PbSante.C_JOURS_DHOPITAL)
+        if nbJoursConvalescence > 0:
+            str = u"{}\nJours de convalescence : {}".format(str, nbJoursConvalescence)
+
         return str
 
     def AffichageAge(self):
@@ -148,14 +154,27 @@ class Situation:
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])
 
+    def AvanceDeXJours(self, nbJoursPasses):
+        nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
+        self.caracs_[temps.Date.DATE] = nouvelleDate
+        self.caracs_[temps.Date.AGE_ANNEES] = self.AgeEnAnnees()
+
+        # avancée des caracs de jours qui passent :
+        # jours de convalescence :
+        nbJoursConvalescence = self.GetValCaracInt(pbsante.PbSante.C_JOURS_DHOPITAL)
+        if nbJoursConvalescence > 0:
+            nbJoursConvalescence = nbJoursConvalescence - nbJoursPasses
+            if nbJoursConvalescence < 0:
+                nbJoursConvalescence = 0
+            self.caracs_[pbsante.PbSante.C_JOURS_DHOPITAL] = nbJoursConvalescence
+
+
     def TourSuivant(self):
         """
         Passage au "tour" suivant dans un destin extermis c'est à dire grosso modo à un mois un peu randomisé
         """
         nbJoursPasses = 20 + random.randint(0, 20)
-        nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
-        self.caracs_[temps.Date.DATE] = nouvelleDate
-        self.caracs_[temps.Date.AGE_ANNEES] = self.AgeEnAnnees()
+        self.AvanceDeXJours(nbJoursPasses)
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""

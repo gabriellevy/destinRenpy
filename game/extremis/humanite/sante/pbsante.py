@@ -163,6 +163,9 @@ class TraumatismeCranien(Blessure):
     def GetNbJoursConvalescence(self):
         return 30
 
+    def GetDescriptionRecu(self):
+        return "Vous vous heurtez la tête violemment au point de perdre connaissance."
+
 class HemoragieInterne(Blessure):
 
     NOM = u"Hemoragie Interne"
@@ -175,6 +178,9 @@ class HemoragieInterne(Blessure):
 
     def GetNbJoursConvalescence(self):
         return 40
+
+    def GetDescriptionRecu(self):
+        return "Vous pensiez vous en tirer à plutôt bon compte avec des blessures légères quand vous crachez du sang dans une douleur épouvantable. Vous avez une hémorragie interne."
 
 class OreilleCoupee(Blessure):
 
