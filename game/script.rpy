@@ -27,6 +27,7 @@ init -1 python:
     AjouterEvtsUnivTranshumanistes()
     AjouterEvtsUnivTempliers()
     AjouterEvtsUnivElfes()
+    AjouterEvtsMaladies()
 
 # Le jeu commence ici
 label start:

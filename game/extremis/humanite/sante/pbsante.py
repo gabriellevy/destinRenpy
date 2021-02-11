@@ -243,8 +243,9 @@ class CollectionBlessures:
 
     def InfligerBlessureAleatoire(self, situation, minGravite = 0, maxGravite = 10):
         blessure = self.getBlessureAleatoire(minGravite, maxGravite)
-        if blessure != "":
-            situation[PbSante.C_JOURS_DHOPITAL] = blessure.GetNbJoursConvalescence()
+        if blessure != None:
+            nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
+            situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + blessure.GetNbJoursConvalescence()
             situation[blessure.nom_] = 1
         return blessure
 
@@ -271,7 +272,6 @@ class CollectionBlessures:
             str = str + blessure + ","
         return str
 
-
 class Peste(Maladie):
 
     NOM = u"Peste"
@@ -285,12 +285,35 @@ class Peste(Maladie):
     def GetNbJoursConvalescence(self):
         return 60
 
+    def GetDescriptionRecu(self):
+        return u"Vous vous sentez faible. Vous avez de la fièvre et frissonnez sans cesse. Tout votre corps est courbaturé. Vous avez du attraper une maladie grave."
+
+class Rhume(Maladie):
+
+    NOM = u"Rhume"
+
+    def __init__(self):
+        self.nom_ = Rhume.NOM
+
+    def GetGravite(self):
+        return 1
+
+    def GetNbJoursConvalescence(self):
+        return 1
+
+    def GetDescriptionRecu(self):
+        return u"Vous avez attrapé un vilain rhume."
+
 class CollectionMaladies:
 
     def __init__(self):
         self.lMaladies_ = dict()
+
         peste = Peste()
         self.SetMaladie(Peste.NOM, peste)
+
+        rhume = Rhume()
+        self.SetMaladie(Rhume.NOM, rhume)
 
     def getMaladieAleatoire(self, minGravite = 0, maxGravite = 10):
         if minGravite == 0 and maxGravite == 10:
@@ -298,7 +321,15 @@ class CollectionMaladies:
         # tmp
         return random.choice(list(self.lMaladies_.values()))
 
-    def __getitem__(self, idMetier):
+    def TomberMaladeAleatoirement(self, situation, minGravite = 0, maxGravite = 10):
+        maladie = self.getMaladieAleatoire(minGravite, maxGravite)
+        if maladie != None:
+            nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
+            situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + maladie.GetNbJoursConvalescence()
+            situation[maladie.nom_] = 1
+        return maladie
+
+    def __getitem__(self, idMaladie):
         if not idMaladie in self.lMaladies_:
             self.CreerMaladie(idMaladie)
         return self.lMaladies_[idMaladie]

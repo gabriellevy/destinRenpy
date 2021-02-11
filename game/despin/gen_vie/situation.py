@@ -96,6 +96,8 @@ class Situation:
     def GetValCaracInt(self, idCarac):
         if ( idCarac not in self.caracs_):
             self.caracs_[idCarac] = 0
+        elif self.caracs_[idCarac] == "":
+            self.caracs_[idCarac] = 0
         return self.caracs_[idCarac]
 
     def DescriptionTraits(self, traits):
@@ -122,12 +124,23 @@ class Situation:
             blessure = blessures[blessureK]
             if self.GetValCarac(blessureK) != u"":
                 str = u"{}\n{}".format(str, blessure.nom_)
+        return str
+
+    def DescriptionMaladies(self, maladies):
+        """
+        Description des maladies actuelles du personnage
+        """
+        str = u""
+        # affichage des maladies
+        for maladieK in maladies.lMaladies_.keys():
+            maladie = maladies[maladieK]
+            if self.GetValCarac(maladieK) != u"":
+                str = u"{}\n{}".format(str, maladie.nom_)
 
         # affichage des jours de convalescence
         nbJoursConvalescence = self.GetValCaracInt(pbsante.PbSante.C_JOURS_DHOPITAL)
         if nbJoursConvalescence > 0:
             str = u"{}\nJours de convalescence : {}".format(str, nbJoursConvalescence)
-
         return str
 
     def AffichageAge(self):

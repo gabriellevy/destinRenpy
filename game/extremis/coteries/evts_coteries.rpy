@@ -20,6 +20,7 @@ init -5 python:
         decUnivCoterie = declencheur.Declencheur(proba.Proba(1.0, False), "decUnivCoterie")
         decUnivCoterie.AjouterCondition(conditionAgeCoterie)
         decUnivCoterie.AjouterCondition(conditionPasUniv)
+        decUnivCoterie.AjouterCondition(conditionUnivPasTerminee)
         selecteur_.ajouterDeclencheur(decUnivCoterie)
 
     def ChoisirCoterie():
@@ -30,7 +31,7 @@ init -5 python:
         for idCoterie in coteries_.lCoteries_:
             affinite = coteries_.lCoteries_[idCoterie].CalculerAffinite(situation_)
             indexCoteries[idCoterie] = affinite
-            print("coterie {} -> affinité {}".format(idCoterie, affinite))
+            # print("coterie {} -> affinité {}".format(idCoterie, affinite))
 
         # éliminer les coeff inférieurs à 1
         for cle in indexCoteries.keys():

@@ -28,6 +28,7 @@ class Condition:
         else:
             # test de valeurs forcément arithmétiques :
             assert isinstance(valCarac, int), "Test de valeur arithmétique sur une valeur de carac ({}) qui n'est pas arithmétique : '{}'".format(self._m_CaracId, valCarac)
+            valCarac = situation.GetValCaracInt(self._m_CaracId)
             if (self._m_Comparateur == Condition.INFERIEUR_EGAL):
                 return valCarac <= self._m_Valeur
             elif (self._m_Comparateur == Condition.INFERIEUR):

@@ -1,71 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 197, in script
-    "Alors que vous roulez à grande vitesse sur une nationale en banlieue parisienne votre voiture dérape violemment et vous perdez le contrôle."
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1537, in execute
-    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
-  File "game/screens.rpy", line 1537, in <module>
-    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
-KeyError: u'Doigt arrach\xe9'
+  File "game/extremis/humanite/sante/evts_maladies.rpy", line 30, in script
+    "[texteMaladie]"
+Exception: The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 197, in script
-    "Alors que vous roulez à grande vitesse sur une nationale en banlieue parisienne votre voiture dérape violemment et vous perdez le contrôle."
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 671, in execute
-    statement_name("say")
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 45, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1537, in execute
-    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
-  File "game/screens.rpy", line 1537, in <module>
-    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
-  File "despin/gen_vie/situation.py", line 121, in DescriptionBlessures
-KeyError: u'Doigt arrach\xe9'
+  File "game/extremis/humanite/sante/evts_maladies.rpy", line 30, in script
+    "[texteMaladie]"
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 575, in display_say
+    raise Exception("The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.")
+Exception: The displayable with id 'what' was not given the exact contents of the what variable given to the say screen.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Wed Feb 10 21:18:21 2021
+Thu Feb 11 21:58:53 2021
