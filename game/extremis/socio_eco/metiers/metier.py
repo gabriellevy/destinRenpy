@@ -57,6 +57,16 @@ class Musicien(Metier):
     def __init__(self):
         self.nom_ = Musicien.NOM
 
+class Dessinateur(Metier):
+    NOM = u"Dessinateur"
+    def __init__(self):
+        self.nom_ = Dessinateur.NOM
+
+class Bibliothecaire(Metier):
+    NOM = u"Bibliothécaire"
+    def __init__(self):
+        self.nom_ = Bibliothecaire.NOM
+
 class Cartographe(Metier):
     NOM = u"Cartographe"
     def __init__(self):
@@ -195,6 +205,12 @@ class CollectionMetiers:
 
         paysan = Paysan()
         self.SetMetier(Paysan.NOM, paysan)
+
+        bibliothecaire = Bibliothecaire()
+        self.SetMetier(Bibliothecaire.NOM, bibliothecaire)
+
+        dessinateur = Dessinateur()
+        self.SetMetier(Dessinateur.NOM, dessinateur)
 
         musicien = Musicien()
         self.SetMetier(Musicien.NOM, musicien)

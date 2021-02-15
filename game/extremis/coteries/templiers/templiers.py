@@ -29,6 +29,8 @@ class Templiers(coterie.Coterie):
             metier.Chevalier.NOM, \
             metier.Policier.NOM, \
             metier.Vigile.NOM, \
+            metier.Dessinateur.NOM, \
+            metier.Bibliothecaire.NOM, \
             metier.GardeDuCorps.NOM \
             ]
 

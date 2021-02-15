@@ -22,7 +22,8 @@ init -5 python:
         evts = ["univTempliers_evt1", "univTempliers_evt2", "univTempliers_evt3",
         "univTempliers_evt4", "univTempliers_evt5", "univTempliers_evt6",
         "univTempliers_evt7", "univTempliers_evt8", "univTempliers_evt9",
-        "univTempliers_evt10", "univTempliers_evt11", "univTempliers_evt12" ]
+        "univTempliers_evt10", "univTempliers_evt11", "univTempliers_evt12",
+        "univTempliers_evt13"  ]
 
         renpy.jump( random.choice(evts))
 
@@ -97,8 +98,8 @@ label univTempliers_evt5:
     if religionCourante != religion.Christianisme.NOM:
         jump univTempliers_evt1
     scene bg priant
-    "Le christianisme est au coeur du temple et apprendre les rudiments de la prêtrise est ainsi à la abse de la formation d'un bon templier."
-    "C'est aussi son rêve le plus cher d'aller au bout de formation si il s'en montre digne."
+    "Le christianisme est au coeur du temple ; apprendre les rudiments de la prêtrise est à la base de la formation d'un bon templier."
+    "C'est aussi son rêve le plus cher d'aller au bout de formation si il s'en montre digne. Pour l'heure vous apprenez suffisament pour aiderun prêtre à l'office."
     $ situation_.AjouterACarac(metier.Pretre.NOM, 1)
     jump fin_cycle
 
@@ -167,8 +168,29 @@ label univTempliers_evt11:
     jump fin_cycle
 
 label univTempliers_evt12:
-    "univTempliers_evt12 PAS FAIT"
+    # ascétisme dans les forêts
+    scene bg ermite
+    "L'introspection et la solitude forgent la foi en Dieu et la détermination disent les écritures."
+    "Les templiers croient en cette devise et à l'image de Saint-François ils envoient leurs apprentis vivre dans les bois avec les oiseaux pour unique compagnie."
+    "Vous restez ainsi en pleine forêt dans une petite cabane avec juste le nécessaire pour manger et vous recueillir en paix."
+    $ religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
+    if religionActuelle != religion.Christianisme.NOM:
+        $ conversion = conversionReligieuse(religion.Christianisme.NOM)
+        if conversion:
+            "Vous vous convertissez au christianisme."
+            $ situation_.AjouterACarac(religion.Religion.C_FOI,  1)
+    $ situation_.AjouterACarac(trait.Ascetisme.NOM, 2)
+    "Quand votre maître vient vous chercher un mois plus tard vous êtes profondément transformé par l'expérience."
     jump fin_cycle
+
+label univTempliers_evt13:
+    # enluminure
+    scene bg bibliotheque
+    "L'entretien de la grande biblothèque est une tâche sacrée de l'ordre des templiers tout comme reproduire, propager et commenter ses manuscrits innombrables."
+    "Vous recevez une formation dans toutes ces tâches et avez l'honneur d'approcher une partie des manuscrits anciens. Un jour peut-être serez vous autorisé à les lire."
+    $ situation_.AjouterACarac(metier.Dessinateur.NOM, 1)
+    $ situation_.AjouterACarac(metier.Bibliothecaire.NOM, 1)
+
 
 label TempliersPostule:
     "Postulation aux templiers : pas fait !"
