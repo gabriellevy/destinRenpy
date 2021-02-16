@@ -36,7 +36,7 @@ label start:
 
 label debut_cycle:
     show screen valeurs_traits
-    # jump decAccident # tmp test
+    # jump TempliersPostule # tmp test
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)

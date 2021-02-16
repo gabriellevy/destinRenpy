@@ -1,27 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in script
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in <module>
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-NameError: global name 'situation_' is not defined
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 292, in script
+    $ reussi = situation_.TesterDifficulte(religion.Religion.C_MIRACLE, 2)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 292, in <module>
+    $ reussi = situation_.TesterDifficulte(religion.Religion.C_MIRACLE, 2)
+TypeError: cannot concatenate 'str' and 'int' objects
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in script
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 292, in script
+    $ reussi = situation_.TesterDifficulte(religion.Religion.C_MIRACLE, 2)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in <module>
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-  File "extremis/coteries/collection_coteries.py", line 31, in DebuterProchaineUniversite
-NameError: global name 'situation_' is not defined
+  File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 292, in <module>
+    $ reussi = situation_.TesterDifficulte(religion.Religion.C_MIRACLE, 2)
+  File "despin/gen_vie/situation.py", line 212, in TesterDifficulte
+  File "despin/gen_vie/situation.py", line 307, in CalculerPourcentageReussite
+TypeError: cannot concatenate 'str' and 'int' objects
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Feb 16 02:12:57 2021
+Tue Feb 16 22:00:15 2021

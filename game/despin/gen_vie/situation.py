@@ -1,5 +1,6 @@
 
 from extremis.socio_eco.metiers import metier
+from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
 import random
@@ -164,6 +165,11 @@ class Situation:
             return ""
         return self.caracs_[metier.Metier.Carac_METIER]
 
+    def AffichageReligion(self):
+        if ( religion.Religion.C_RELIGION not in self.caracs_):
+            return ""
+        return self.caracs_[religion.Religion.C_RELIGION]
+
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])
 
@@ -257,7 +263,7 @@ class Situation:
                 valCarac = valCarac + self.GetValCarac(carac)
             valCarac = valCarac / len(carac)
         else:
-            valCarac = self.GetValCarac(idCarac)
+            valCarac = self.GetValCaracInt(idCarac)
 
         diff = [
         [ 80,  40,   0,   0,   0,   0,   0,  0,  0,  0], # -20 très handicapé

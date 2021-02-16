@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 181: expected statement.
-    situation_.AjouterACarac(religion.Religion.C_FOI,  1)
-                                                         ^
+File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 271: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    "Votre reprenez votre longue marche pendant Dieu seul sait combien de longues très longues minutes ou heures."
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Feb 15 22:22:07 2021
+Tue Feb 16 21:59:25 2021
