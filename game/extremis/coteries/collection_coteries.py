@@ -20,9 +20,16 @@ class CollectionCoteries:
     def getCoterieAleatoire(self):
         return random.choice(list(self.lCoteries_.values()))
 
-    def DebuterProchaineUniversite(self):
+    def DebuterProchaineUniversite(self, situation):
         coterie = self.getCoterieAleatoire()
         labelProchainEvt = coterie.getLabelUniversite()
+
+        while situation.GetValCaracInt(labelProchainEvt) == 1:
+            coterie = self.getCoterieAleatoire()
+            labelProchainEvt = coterie.getLabelUniversite()
+
+        situation.SetValCarac(labelProchainEvt, 1)
+
         return labelProchainEvt
 
     def __getitem__(self, idCoterie):

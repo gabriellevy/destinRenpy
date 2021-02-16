@@ -25,7 +25,12 @@ init -5 python:
         "univTempliers_evt10", "univTempliers_evt11", "univTempliers_evt12",
         "univTempliers_evt13"  ]
 
-        renpy.jump( random.choice(evts))
+        prochainEvt = random.choice(evts)
+        while situation_.GetValCaracInt(prochainEvt) == 1:
+            prochainEvt = random.choice(evts)
+
+        situation_.SetValCarac(prochainEvt, 1)
+        renpy.jump( prochainEvt)
 
 label univTempliers:
     scene bg univ_templiers

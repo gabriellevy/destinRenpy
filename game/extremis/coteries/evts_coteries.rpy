@@ -66,7 +66,7 @@ label decUnivCoterie:
             "Cette année d'université se termine, place à la suivante."
     $ situation_.SetCarac(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE, coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE)
     $ situation_.AjouterACarac(coterie.Coterie.Carac_NB_UNIV, 1)
-    $ univ = coteries_.DebuterProchaineUniversite()
+    $ univ = coteries_.DebuterProchaineUniversite(situation_)
     $ renpy.jump(univ)
 
 label choixUniv:

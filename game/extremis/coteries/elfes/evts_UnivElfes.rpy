@@ -24,7 +24,12 @@ init -5 python:
         "univElfes_evt7", "univElfes_evt8", "univElfes_evt9",
         "univElfes_evt10", "univElfes_evt11", "univElfes_evt12" ]
 
-        renpy.jump( random.choice(evts))
+        prochainEvt = random.choice(evts)
+        while situation_.GetValCaracInt(prochainEvt) == 1:
+            prochainEvt = random.choice(evts)
+
+        situation_.SetValCarac(prochainEvt, 1)
+        renpy.jump( prochainEvt)
 
 label univElfes:
     scene bg univ_elfes
