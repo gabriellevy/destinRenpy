@@ -5,6 +5,9 @@ class Coterie:
     classe de base de toutes les coteries
     """
 
+    C_COTERIE = "Coterie"
+
+    # UNIVERSITE
     Carac_NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
     NB_UNIV_TOTAL = 3 #nombre total d'université que doit suivre un personnage
 
@@ -80,7 +83,6 @@ class Coterie:
 
     def RejoindreCoterie(self, situation):
         """
-        hum->SetValeurACaracId(Coterie::C_COTERIE, GetId());
         QString nom = this->CreerPatronyme();
         hum->MajNom(nom);
         eff->m_Texte += "\nVous rejoignez la coterie : " + GetNom() + ". Vous vous appelez maintenant " + nom + ".";
@@ -102,6 +104,8 @@ class Coterie:
             }
         }
         """
+        situation[Coterie.C_COTERIE] = self.nom_
+        
         return True
 
     def Initialisation(self):

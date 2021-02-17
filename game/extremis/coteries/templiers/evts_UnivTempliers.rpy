@@ -317,5 +317,12 @@ label TempliersPostule:
         show ordonnateur at right
         with moveinright
         ordo "Bravo mon fils tu as prouvé ta valeur morale et physique. Tu es digne de nous rejoindre dès aujourd'hui"
+        jump TempliersRejoindre
 
+    jump fin_cycle
+
+label TempliersRejoindre:
+    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+    $ print(coterieTempliers)
+    $ coterieTempliers.RejoindreCoterie(situation_)
     jump fin_cycle

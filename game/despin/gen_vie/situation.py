@@ -1,5 +1,6 @@
 
 from extremis.socio_eco.metiers import metier
+from extremis.coteries import coterie
 from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
@@ -169,6 +170,11 @@ class Situation:
         if ( religion.Religion.C_RELIGION not in self.caracs_):
             return ""
         return self.caracs_[religion.Religion.C_RELIGION]
+
+    def AffichageCoterie(self):
+        if ( coterie.Coterie.C_COTERIE not in self.caracs_):
+            return ""
+        return self.caracs_[coterie.Coterie.C_COTERIE]
 
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])
