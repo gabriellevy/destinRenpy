@@ -1,4 +1,5 @@
 import random
+from extremis.humanite import identite
 
 class Coterie:
     """
@@ -83,9 +84,6 @@ class Coterie:
 
     def RejoindreCoterie(self, situation):
         """
-        QString nom = this->CreerPatronyme();
-        hum->MajNom(nom);
-        eff->m_Texte += "\nVous rejoignez la coterie : " + GetNom() + ". Vous vous appelez maintenant " + nom + ".";
         QString musique = GetMusique();
         if ( musique != "") {
             eff->m_Son = musique;
@@ -105,8 +103,22 @@ class Coterie:
         }
         """
         situation[Coterie.C_COTERIE] = self.nom_
-        
+        situation[identite.Identite.C_PRENOM] = self.CreerPrenom(True)
+        situation[identite.Identite.C_NOM] = self.CreerNom(True)
+
         return True
+
+    def CreerNom(self, masculin):
+        """
+        génère un patronyme correspondant à la coterie en question
+        """
+        return "pas de nom ! à overrider!"
+
+    def CreerPrenom(self, masculin):
+        """
+        génère un patronyme correspondant à la coterie en question
+        """
+        return "pas de prénom ! à overrider!"
 
     def Initialisation(self):
         """

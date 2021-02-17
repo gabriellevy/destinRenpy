@@ -7,6 +7,7 @@ init -5 python:
     import random
     from extremis.coteries.templiers import templiers
     from extremis.socio_eco.metiers import metier
+    from extremis.humanite import identite
     from extremis.religions import religion
 
     def AjouterEvtsUnivTempliers():
@@ -322,7 +323,16 @@ label TempliersPostule:
     jump fin_cycle
 
 label TempliersRejoindre:
+    scene bg univ_templiers
+    show ordonnateur at right
+    with moveinright
+
     $ coterieTempliers = coteries_[templiers.Templiers.NOM]
-    $ print(coterieTempliers)
     $ coterieTempliers.RejoindreCoterie(situation_)
+    $ prenom = situation_[identite.Identite.C_PRENOM]
+    $ nom = situation_[identite.Identite.C_NOM]
+    ordo "Dorénavant vous vous appelez [prenom] [nom]."
+    ordo "Voici votre robe blanche marquée du symbole de l'ordre."
+    ordo "Portez cette croix avec fierté et honneur, que tous les hommes qui vous croiseront continuent à y voir un symbole de pureté et de force comme ça a toujours été le cas depuis la fondation de notre Ordre il y a plus de deux mille ans."
+
     jump fin_cycle

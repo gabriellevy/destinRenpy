@@ -4,6 +4,7 @@ from extremis.coteries import coterie
 from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
+from extremis.humanite import identite
 import random
 
 class Situation:
@@ -175,6 +176,11 @@ class Situation:
         if ( coterie.Coterie.C_COTERIE not in self.caracs_):
             return ""
         return self.caracs_[coterie.Coterie.C_COTERIE]
+
+    def AffichagePatronyme(self):
+        if ( identite.Identite.C_PRENOM not in self.caracs_):
+            return ""
+        return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
 
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])

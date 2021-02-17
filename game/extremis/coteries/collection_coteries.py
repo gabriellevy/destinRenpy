@@ -93,19 +93,19 @@ class CollectionCoteries:
         """
         return "truc"
 
-        def GetNRandomCoteries(self, nombre, critereCoterie):
-            """
-            QVector<shared_ptr<Coterie>> m_Coteries = {};
+    def GetNRandomCoteries(self, nombre, critereCoterie):
+        """
+        QVector<shared_ptr<Coterie>> m_Coteries = {};
 
-            while (n > 0) {
-                shared_ptr<Coterie> coterie = GetCoterieAleatoire(critereCoterie);
+        while (n > 0) {
+            shared_ptr<Coterie> coterie = GetCoterieAleatoire(critereCoterie);
 
-                if ( m_Coteries.indexOf(coterie) == -1) {
-                    m_Coteries.push_back(coterie);
-                    n--;
-                }
+            if ( m_Coteries.indexOf(coterie) == -1) {
+                m_Coteries.push_back(coterie);
+                n--;
             }
+        }
 
-            return m_Coteries
-            """
-            return "truc"
+        return m_Coteries
+        """
+        return "truc"

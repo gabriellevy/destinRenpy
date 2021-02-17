@@ -1541,10 +1541,12 @@ screen valeurs_traits():
     $ strMetier = situation_.AffichageMetier()
     $ strReligion = situation_.AffichageReligion()
     $ strCoterie = situation_.AffichageCoterie()
+    $ patronyme = situation_.AffichagePatronyme()
     frame:
         xpos 5 ypos 5
         vbox:
             text _(u"[affDate]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
+            text _(u"[patronyme]")
             text _(u"[strCoterie]")
             text _(u"[strMetier]")
             text _(u"[strReligion]")
