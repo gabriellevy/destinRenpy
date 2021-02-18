@@ -1,7 +1,11 @@
 
+ # persos
 image ordonnateur = "coteries/templiers/ordonnateur.png"
-
 define ordo = Character('Ordonnateur', color="#e30909")
+
+# musiques
+define audio.principale_temple = "musique/templiers/principale.mp3"
+define audio.rejoindre_temple = "musique/templiers/rejoindre_doux_spirituel.mp3"
 
 init -5 python:
     import random
@@ -45,6 +49,7 @@ label univTempliers:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
+        play music principale_temple
         "Le temple est basée sur la foi inébranlable en Dieu et sur l'honneur guerrier de l'aristocratie franque."
         "Les templiers sont avant tout des guerriers saints avec un code de l'honneur très strict. "
         "Ce code de l'honneur méprise la cupidité et l'ostentation mais l'enrichissement n'est pas interdit, surtout lorsqu'il est utilisé pour financer les nombreux hopitaux de l'ordre. "
@@ -326,6 +331,7 @@ label TempliersRejoindre:
     scene bg univ_templiers
     show ordonnateur at right
     with moveinright
+    play music rejoindre_temple
 
     $ coterieTempliers = coteries_[templiers.Templiers.NOM]
     $ coterieTempliers.RejoindreCoterie(situation_)
