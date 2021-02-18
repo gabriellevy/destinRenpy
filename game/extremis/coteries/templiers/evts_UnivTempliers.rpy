@@ -102,7 +102,7 @@ label univTempliers_evt3:
 
 label univTempliers_evt4:
     # effet Cavalerie
-    "Savoir s'occuper d'un cheval est indispensable chez les templiers. Que ce soit pour être chevalier ou simple paysan."
+    "Savoir s'occuper d'un cheval est indispensable dans l'Ordre du Temple. Que ce soit pour être chevalier ou simple paysan."
     "Votre formateur vous apprends les bases de l'équitation et de tout ce qui tourne autour de l'entretien des chevaux."
     $ situation_.AjouterACarac(metier.Paysan.NOM, 1)
     $ situation_.AjouterACarac(metier.Chevalier.NOM, 2)
@@ -122,7 +122,7 @@ label univTempliers_evt5:
 label univTempliers_evt6:
     # effet architecte
     scene bg chateau
-    "La construction de châteaux imprenables est la spécialité des templiers. Avec l'interdiction des guerres les châteaux sont peu importants. Les compétences en architecture des templiers restent bien utiles et votre tuteur vous en fait profiter"
+    "La construction de châteaux imprenables est la spécialité de l'Ordre du Temple. Avec l'interdiction des guerres les châteaux sont peu importants. Les compétences en architecture des templiers restent bien utiles et votre tuteur vous en fait profiter"
     $ situation_.AjouterACarac(metier.Architecte.NOM, 2)
     jump fin_cycle
 
@@ -202,7 +202,7 @@ label univTempliers_evt12:
 label univTempliers_evt13:
     # enluminure
     scene bg bibliotheque
-    "L'entretien de la grande biblothèque est une tâche sacrée de l'ordre des templiers tout comme reproduire, propager et commenter ses manuscrits innombrables."
+    "L'entretien de la grande biblothèque est une tâche sacrée de l'Ordre du Temple tout comme reproduire, propager et commenter ses manuscrits innombrables."
     "Vous recevez une formation dans toutes ces tâches et avez l'honneur d'approcher une partie des manuscrits anciens. Un jour peut-être serez vous autorisé à les lire."
     $ situation_.AjouterACarac(metier.Dessinateur.NOM, 1)
     $ situation_.AjouterACarac(metier.Bibliothecaire.NOM, 1)
