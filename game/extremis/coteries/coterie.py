@@ -35,13 +35,19 @@ class Coterie:
         # return m_Quartier
         return ""
 
-    def GetCaracsCompatibles(self):
+    def GetTraitsCompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie
         """
         return "doit être overridée"
 
-    def GetCaracsIncompatibles(self):
+    def GetMetiersCompatibles(self):
+        """
+        si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués
+        """
+        return "GetMetiersCompatibles doit être overridée"
+
+    def GetTraitsIncompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """
@@ -56,23 +62,63 @@ class Coterie:
         #if ( aleatoire)
         #    proba = Aleatoire::GetAl()->Entre0Et1();
 
-        CaracsCompatibles = self.GetCaracsCompatibles()
-        CaracsInCompatibles = self.GetCaracsIncompatibles()
+        # un score d'affinité est calculé selon les traits compatibles ou incompatibles du personnage avec la coterie
+        CaracsCompatibles = self.GetTraitsCompatibles()
+        CaracsInCompatibles = self.GetTraitsIncompatibles()
+        # les deux coeffs suivants servent à rééquilibrer le score final en donnant plus de valeurs aux côté qui contient le moins de traits
         coeffCompatibles = len(CaracsInCompatibles)
         coeffIncompatibles = len(CaracsCompatibles)
         affinite = 0
 
         for idCarac in CaracsCompatibles:
-            if situation[idCarac] != "" and  situation[idCarac] > 0:
-                affinite = affinite + coeffCompatibles
+            if situation[idCarac] != "":
+                val = situation.GetValCaracInt(idCarac)
+                bonus = 1
+                if val > 5:
+                    bonus = 2
+                    if val > 10:
+                        bonus = 3
+                elif val < 0:
+                    bonus = -1
+                    if val < -5:
+                        bonus = -2
+                        if val < -10:
+                            bonus = -3
+                affinite = affinite + bonus * coeffCompatibles
 
         for idCarac in CaracsInCompatibles:
-            if situation[idCarac] != "" and  situation[idCarac] > 0:
-                affinite = affinite - coeffIncompatibles
+            if situation[idCarac] != "":
+                val = situation.GetValCaracInt(idCarac)
+                bonus = 1
+                if val > 5:
+                    bonus = 2
+                    if val > 10:
+                        bonus = 3
+                elif val < 0:
+                    bonus = -1
+                    if val < -5:
+                        bonus = -2
+                        if val < -10:
+                            bonus = -3
+                affinite = affinite - bonus * coeffIncompatibles
+
+        # bonus pour les métiers liés
+        metiersCompatibles = self.GetMetiersCompatibles()
+        for idMetier in metiersCompatibles:
+            if situation[idMetier] != "":
+                val = situation.GetValCaracInt(idCarac)
+                affinite = affinite + val
+
+        # petit malus de rééquilibrage au cas où il y abeaucoup de métiers liés :
+        valEquilibre = len(metiersCompatibles)%3
+        affinite = affinite - valEquilibre
+
 
         # baisse de compatibilité si déjà dans une coterie :
         #if ( hum->GetValeurCarac(Coterie::C_COTERIE) != "")
         #   proba -= 0.1;
+
+        print (u"Coterie {} affinité {}".format(self.nom_, affinite))
 
         return affinite
 

@@ -693,7 +693,7 @@ class Ambition(TraitGraduel):
             assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
         if val <= Trait.SEUIL_A_PAS:
-            return u"Désintéressé"
+            return u"Sans ambition"
         elif val >= Trait.SEUIL_A:
             return u"Ambitieux"
         else:

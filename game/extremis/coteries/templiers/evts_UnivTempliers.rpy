@@ -207,6 +207,7 @@ label univTempliers_evt13:
     $ situation_.AjouterACarac(metier.Dessinateur.NOM, 1)
     $ situation_.AjouterACarac(metier.Bibliothecaire.NOM, 1)
 
+    jump fin_cycle
 
 label TempliersPostule:
     $ conversionReligieuse(religion.Christianisme.NOM) # tmp !!!

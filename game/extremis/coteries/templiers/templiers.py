@@ -13,7 +13,7 @@ class Templiers(coterie.Coterie):
     def getLabelUniversite(self):
         return "univTempliers"
 
-    def GetCaracsCompatibles(self):
+    def GetTraitsCompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie
         """
@@ -23,9 +23,16 @@ class Templiers(coterie.Coterie):
             trait.Violence.NOM, \
             trait.Ascetisme.NOM, \
             trait.Altruisme.NOM, \
+            trait.Franchise.NOM, \
+            ]
+
+    def GetMetiersCompatibles(self):
+        """
+        si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués
+        """
+        return [ \
             metier.Pretre.NOM, \
             metier.TueurDeMonstres.NOM, \
-            trait.Franchise.NOM, \
             metier.Guerrier.NOM, \
             metier.Chevalier.NOM, \
             metier.Policier.NOM, \
@@ -35,7 +42,7 @@ class Templiers(coterie.Coterie):
             metier.GardeDuCorps.NOM \
             ]
 
-    def GetCaracsIncompatibles(self):
+    def GetTraitsIncompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """

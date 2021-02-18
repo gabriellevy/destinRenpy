@@ -12,7 +12,7 @@ class Elfes(coterie.Coterie):
     def getLabelUniversite(self):
         return "univElfes"
 
-    def GetCaracsCompatibles(self):
+    def GetTraitsCompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie
         """
@@ -21,12 +21,19 @@ class Elfes(coterie.Coterie):
             trait.Artiste.NOM, \
             trait.Serenite.NOM, \
             trait.Sensibilite.NOM, \
+            ]
+
+    def GetMetiersCompatibles(self):
+        """
+        si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués
+        """
+        return [ \
             metier.Musicien.NOM, \
             metier.Poete.NOM, \
             metier.Alchimiste.NOM \
             ]
 
-    def GetCaracsIncompatibles(self):
+    def GetTraitsIncompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """

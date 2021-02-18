@@ -1,20 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-IOError: [Errno 13] Permission denied: 'D:\\boulot\\RenPy\\destinRenpy\\game\\saves\\navigation.json.new'
+While running game code:
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in script
+    $ devientAthee = devientAthee()
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in <module>
+    $ devientAthee = devientAthee()
+  File "game/extremis/religions/evts_religion.rpy", line 13, in devientAthee
+    religion = situation_.GetValCarac(religion.Religion.C_RELIGION)
+UnboundLocalError: local variable 'religion' referenced before assignment
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 534, in main
-    renpy.dump.dump(False)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\dump.py", line 249, in dump
-    with file(new, "w") as f:
-IOError: [Errno 13] Permission denied: 'D:\\boulot\\RenPy\\destinRenpy\\game\\saves\\navigation.json.new'
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in script
+    $ devientAthee = devientAthee()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in <module>
+    $ devientAthee = devientAthee()
+  File "game/extremis/religions/evts_religion.rpy", line 13, in devientAthee
+    religion = situation_.GetValCarac(religion.Religion.C_RELIGION)
+UnboundLocalError: local variable 'religion' referenced before assignment
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Thu Feb 18 20:33:58 2021
+Thu Feb 18 23:25:51 2021

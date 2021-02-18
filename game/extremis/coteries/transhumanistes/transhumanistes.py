@@ -12,7 +12,7 @@ class Transhumanistes(coterie.Coterie):
     def getLabelUniversite(self):
         return "univTranshumanistes"
 
-    def GetCaracsCompatibles(self):
+    def GetTraitsCompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie
         """
@@ -23,15 +23,22 @@ class Transhumanistes(coterie.Coterie):
             trait.Opportunisme.NOM, \
             trait.Ambition.NOM, \
             trait.Industrie.NOM, \
+            # classe sociale élevée
+            ]
+
+    def GetMetiersCompatibles(self):
+        """
+        si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués
+        """
+        return [ \
             metier.Marchand.NOM, \
             metier.Informaticien.NOM, \
             metier.Cyberneticien.NOM, \
             metier.Geneticien.NOM, \
             metier.Commercial.NOM \
-            # classe sociale élevée
             ]
 
-    def GetCaracsIncompatibles(self):
+    def GetTraitsIncompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """
