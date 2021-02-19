@@ -10,8 +10,8 @@ init -5 python:
         return False si le perso n'avait aps de religion
         """
         global situation_
-        religion = situation_.GetValCarac(religion.Religion.C_RELIGION)
-        if religion == "" or religion == religion.Atheisme.NOM:
+        religionCourante = situation_.GetValCarac(religion.Religion.C_RELIGION)
+        if religionCourante == "" or religionCourante == religion.Atheisme.NOM:
             situation_.SetCarac(religion.Religion.C_RELIGION,  religion.Atheisme.NOM)
             situation_.SetCarac(religion.Religion.C_FOI,  0)
             situation_.SetCarac(religion.Religion.C_MIRACLE,  0)

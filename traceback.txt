@@ -1,30 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in script
-    $ devientAthee = devientAthee()
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in <module>
-    $ devientAthee = devientAthee()
-  File "game/extremis/religions/evts_religion.rpy", line 13, in devientAthee
-    religion = situation_.GetValCarac(religion.Religion.C_RELIGION)
-UnboundLocalError: local variable 'religion' referenced before assignment
+While processing text tag {/i} in u"et je jure que j'ob\xe9irai, \xe0 toi et \xe0 tes successeurs, jusqu'\xe0 la mort.{/i}".:
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 150, in script
+    "et je jure que j'obéirai, à toi et à tes successeurs, jusqu'à la mort.{/i}"
+Exception: u'/i' closes a text tag that isn't open.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in script
-    $ devientAthee = devientAthee()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 113, in <module>
-    $ devientAthee = devientAthee()
-  File "game/extremis/religions/evts_religion.rpy", line 13, in devientAthee
-    religion = situation_.GetValCarac(religion.Religion.C_RELIGION)
-UnboundLocalError: local variable 'religion' referenced before assignment
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 150, in script
+    "et je jure que j'obéirai, à toi et à tes successeurs, jusqu'à la mort.{/i}"
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3194, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2094, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 490, in renpy.display.render.render_screen (gen\renpy.display.render.c:6805)
+    rv = render(root, width, height, st, st)
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 675, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\layout.py", line 1127, in render
+    st, at)
+  File "renpy/display/render.pyx", line 166, in renpy.display.render.render (gen\renpy.display.render.c:4075)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 259, in renpy.display.render.render (gen\renpy.display.render.c:3520)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\text\text.py", line 1996, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\text\text.py", line 597, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\text\text.py", line 969, in segment
+    raise Exception("%r closes a text tag that isn't open." % text)
+Exception: u'/i' closes a text tag that isn't open.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Thu Feb 18 23:25:51 2021
+Fri Feb 19 20:34:25 2021

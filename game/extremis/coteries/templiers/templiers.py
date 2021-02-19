@@ -7,6 +7,9 @@ class Templiers(coterie.Coterie):
 
     NOM = u"Ordre du Temple"
 
+    C_RICHESSE = "Richesse du temple" # tous les templiers ont renoncé aux biens matériels, ils ont tous cette richesse (basse)
+    RICHESSE_TEMPLE = -4 # richesse de départ du temple, et peu de chance de beaucoup bouger
+
     def __init__(self):
         self.nom_ = Templiers.NOM
 

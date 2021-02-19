@@ -7,6 +7,10 @@ class Religion:
     C_FOI = u"Foi" # niveau de foi dans sa religion (1 à 10)
     C_MIRACLE = u"Faiseur de miracles" # capacité à créer des miracles (1 à 10)
 
+    # caracs de "voeux" religieux
+    C_VOEU_CHASTETE = u"Voeu de chasteté"
+    C_VOEU_PAUVRETE = u"Voeu de pauvreté" # sa richesse ne doit plus pouvoir bouger, elle es
+
     def __init__(self):
        self.nom_ = "pas de nom de religion, doit être overridé"
 
