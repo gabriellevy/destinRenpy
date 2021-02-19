@@ -9,13 +9,13 @@ class CollectionCoteries:
         self.lCoteries_ = dict()
 
         templier = templiers.Templiers()
-        self.SetCoterie(templiers.Templiers.NOM, templier)
+        self.SetCoterie(templiers.Templiers.ID, templier)
 
         transhumaniste = transhumanistes.Transhumanistes()
-        self.SetCoterie(transhumanistes.Transhumanistes.NOM, transhumaniste)
+        self.SetCoterie(transhumanistes.Transhumanistes.ID, transhumaniste)
 
         elfe = elfes.Elfes()
-        self.SetCoterie(elfes.Elfes.NOM, elfe)
+        self.SetCoterie(elfes.Elfes.ID, elfe)
 
     def getCoterieAleatoire(self):
         return random.choice(list(self.lCoteries_.values()))

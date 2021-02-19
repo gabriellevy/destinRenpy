@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/coteries/templiers/evts_UnivTempliers.rpy", line 271: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
-    "Votre reprenez votre longue marche pendant Dieu seul sait combien de longues très longues minutes ou heures."
-    ^
+File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 16: expected ':' not found.
+    label Ordre du TemplePostule:
+                ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Feb 16 21:59:25 2021
+Fri Feb 19 21:23:33 2021

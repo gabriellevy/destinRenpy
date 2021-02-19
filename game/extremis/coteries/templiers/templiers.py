@@ -6,6 +6,7 @@ import random
 class Templiers(coterie.Coterie):
 
     NOM = u"Ordre du Temple"
+    ID = u"templiers"
 
     C_RICHESSE = "Richesse du temple" # tous les templiers ont renoncé aux biens matériels, ils ont tous cette richesse (basse)
     RICHESSE_TEMPLE = -4 # richesse de départ du temple, et peu de chance de beaucoup bouger

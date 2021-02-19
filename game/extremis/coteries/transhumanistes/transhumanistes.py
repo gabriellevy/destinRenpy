@@ -5,6 +5,7 @@ from extremis.humanite import trait
 class Transhumanistes(coterie.Coterie):
 
     NOM = u"Transhumanistes"
+    ID = u"transhumanistes"
 
     def __init__(self):
         self.nom_ = Transhumanistes.NOM

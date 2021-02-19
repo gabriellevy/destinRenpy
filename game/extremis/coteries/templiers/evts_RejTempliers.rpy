@@ -13,7 +13,7 @@ init -5 python:
     from extremis.humanite import identite
     from extremis.religions import religion
 
-label TempliersPostule:
+label templiersPostule:
     "Vous souhaitez rejoindre l'Ordre du Temple."
     scene bg catacombes
     $ religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)

@@ -5,6 +5,7 @@ from extremis.humanite import trait
 class Elfes(coterie.Coterie):
 
     NOM = u"Elfes"
+    ID = u"elfes"
 
     def __init__(self):
         self.nom_ = Elfes.NOM
