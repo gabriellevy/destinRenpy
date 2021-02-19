@@ -8,6 +8,9 @@ init -5 python:
     from despin.abs import condition
     from extremis.socio_eco.metiers import metier
     from extremis.humanite import trait
+    from extremis.coteries import coterie
+    from extremis.coteries.templiers import templiers
+    from extremis.religions import religion
 
     def AjouterEvtsRien():
         global selecteur_, situation_
@@ -23,6 +26,16 @@ init -5 python:
 
         if situation_.GetValCaracInt(trait.Pilotage.NOM) > 0:
             evtsVides_.append("evtRien_Conduite")
+
+        nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
+        nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
+        if nomCoterie ==  templiers.Templiers.NOM or nomCoterieUniv == templiers.Templiers.NOM:
+            evtsVides_.append("evtRien_Templiers_1")
+            evtsVides_.append("evtRien_Templiers_2")
+            evtsVides_.append("evtRien_Templiers_3")
+            evtsVides_.append("evtRien_Templiers_4")
+            evtsVides_.append("evtRien_Templiers_5")
+
 
         # en lance un au hasard
         renpy.jump(random.choice(evtsVides_))
