@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 16: expected ':' not found.
-    label Ordre du TemplePostule:
-                ^
+File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 30: invalid syntax
+    label decRejPaysan:
+                      ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Feb 19 21:23:33 2021
+Sun Feb 21 19:20:06 2021

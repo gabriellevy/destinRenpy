@@ -19,6 +19,7 @@ init -1 python:
 
     # métiers
     AjouterEvtsAdministratif()
+    AjouterEvtsRejMetier()
     # vie courante
     AjouterEvtsPilotage()
     AjouterEvtsRien()

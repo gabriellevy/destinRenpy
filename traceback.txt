@@ -1,28 +1,29 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/evts_coteries.rpy", line 79, in script
-    $ renpy.jump(labelPostuleCoterie)
-ScriptError: could not find label 'Ordre du TemplePostule'.
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in script
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in <module>
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+NameError: global name 'estDeBureau' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
-    run(restart)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
-    renpy.execution.run_context(True)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
-    context.run()
-  File "game/extremis/coteries/evts_coteries.rpy", line 79, in script
-    $ renpy.jump(labelPostuleCoterie)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'Ordre du TemplePostule'.
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in script
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in <module>
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+  File "despin/gen_vie/situation.py", line 76, in SetValCarac
+  File "despin/gen_vie/situation.py", line 73, in SetCarac
+  File "extremis/socio_eco/metiers/metier.py", line 47, in regenererCaracsMetier
+NameError: global name 'estDeBureau' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Fri Feb 19 21:04:18 2021
+Sun Feb 21 19:46:44 2021

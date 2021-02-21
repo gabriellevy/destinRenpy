@@ -13,6 +13,7 @@ init -2 python:
     traits_ = trait.CollectionTraits()
     coteries_ = collection_coteries.CollectionCoteries()
     metiers_ = metier.CollectionMetiers()
+    situation_.collectionMetiers = metiers_
     blessures_ = pbsante.CollectionBlessures()
     maladies_ = pbsante.CollectionMaladies()
 

@@ -10,7 +10,7 @@ class Metier:
      - etc
     """
 
-    Carac_METIER = u"Métier"
+    C_METIER = u"Métier"
     C_COMPETENCE_METIER  = u"Compétence Métier"
 
     # types de métiers
@@ -19,7 +19,7 @@ class Metier:
     def __init__(self):
         """
          le membre 'nom_' sert à la fois :
-         -  d'identifiant du métier en étant la valeur de la carac 'Carac_METIER'
+         -  d'identifiant du métier en étant la valeur de la carac 'C_METIER'
          - de niveau de compétence dans ce métier en étant l'identifiant d'une carac chiffré correspondant à ce niveau
          """
         self.nom_ = "pas de nom de métier, doit être overridé"
@@ -38,14 +38,16 @@ class Metier:
         """
         return False
 
-    def regenererCaracsMetier(situation):
+    def regenererCaracsMetier(self, situation):
         if not aUnMetier(situation):
             # pas de métier
             return
-        nomMetier = situation[Metier.Carac_METIER]
+        nomMetier = situation[Metier.C_METIER]
         situation[Metier.C_COMPETENCE_METIER] = situation[nomMetier]
-        if estDeBureau(nomMetier):
+        if self.estDeBureau(nomMetier):
             situation[Metier.ADMINISTRATIF] = 1
+        else:
+            situation[Metier.ADMINISTRATIF] = ""
 
 class Paysan(Metier):
     NOM = u"Paysan"
@@ -315,4 +317,4 @@ class CollectionMetiers:
 
 
 def aUnMetier(situation):
-    return situation[Metier.Carac_METIER] != ""
+    return situation[Metier.C_METIER] != ""

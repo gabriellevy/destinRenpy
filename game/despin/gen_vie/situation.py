@@ -23,6 +23,7 @@ class Situation:
         date = temps.Date()
         self.caracs_[temps.Date.DATE] = date.nbJours_
         self.caracs_[temps.Date.AGE_ANNEES] = 0
+        self.collectionMetiers = None
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -54,6 +55,7 @@ class Situation:
             self.valsMax_[idCarac] = valeurMax
 
     def SetCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
+        global metiers_
         # si la carac n'existe pas encore, la créer
         if not idCarac in self.caracs_:
             self.CreerCarac(idCarac, valCarac, valeurMin, valeurMax)
@@ -65,8 +67,10 @@ class Situation:
             self.valsMax_[idCarac] = valeurMax
 
         # modifier certaines caracs peut impliquer des changements implicites à d'autres :
-        if idCarac == metier.Metier.Carac_METIER:
-            metier.regenererCaracsMetier(self)
+        if idCarac == metier.Metier.C_METIER:
+            metierStr = valCarac
+            metierCourant = self.collectionMetiers[metierStr]
+            metierCourant.regenererCaracsMetier(self)
 
     def SetValCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
         self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
@@ -163,9 +167,9 @@ class Situation:
         return 0
 
     def AffichageMetier(self):
-        if ( metier.Metier.Carac_METIER not in self.caracs_):
+        if ( metier.Metier.C_METIER not in self.caracs_):
             return ""
-        return self.caracs_[metier.Metier.Carac_METIER]
+        return self.caracs_[metier.Metier.C_METIER]
 
     def AffichageReligion(self):
         if ( religion.Religion.C_RELIGION not in self.caracs_):

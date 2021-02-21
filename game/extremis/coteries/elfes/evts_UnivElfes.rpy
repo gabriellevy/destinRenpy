@@ -132,6 +132,6 @@ label univElfes_evt12:
     "univElfes_evt12 PAS FAIT"
     jump fin_cycle
 
-label ElfesPostule:
+label elfesPostule:
     "Postulation aux Elfes : pas fait !"
     jump fin_cycle
