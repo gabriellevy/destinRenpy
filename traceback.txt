@@ -5,9 +5,9 @@ While running game code:
     init -1 python:
   File "game/script.rpy", line 22, in <module>
     AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 28, in AjouterEvtsRejMetier
-    probaMusicien = Proba(0.0005, False)
-NameError: global name 'Proba' is not defined
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 34, in AjouterEvtsRejMetier
+    probaMusicien.ajouterModifProbaViaVals(0.05, estConquistaror)
+NameError: global name 'estConquistaror' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -20,11 +20,11 @@ Full traceback:
     exec bytecode in globals, locals
   File "game/script.rpy", line 22, in <module>
     AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 28, in AjouterEvtsRejMetier
-    probaMusicien = Proba(0.0005, False)
-NameError: global name 'Proba' is not defined
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 34, in AjouterEvtsRejMetier
+    probaMusicien.ajouterModifProbaViaVals(0.05, estConquistaror)
+NameError: global name 'estConquistaror' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
-Sun Feb 21 20:10:54 2021
+Sun Feb 21 22:21:40 2021

@@ -28,6 +28,7 @@ init -1 python:
     AjouterEvtsUnivTranshumanistes()
     AjouterEvtsUnivTempliers()
     AjouterEvtsUnivElfes()
+    AjouterEvtsUnivConquistadors()
     AjouterEvtsMaladies()
 
 # Le jeu commence ici

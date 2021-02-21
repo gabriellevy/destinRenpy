@@ -1,5 +1,6 @@
 from extremis.coteries.templiers import templiers
 from extremis.coteries.elfes import elfes
+from extremis.coteries.conquistadors import conquistadors
 from extremis.coteries.transhumanistes import transhumanistes
 import random
 
@@ -16,6 +17,9 @@ class CollectionCoteries:
 
         elfe = elfes.Elfes()
         self.SetCoterie(elfes.Elfes.ID, elfe)
+
+        conqu = conquistadors.Conquistadors()
+        self.SetCoterie(conquistadors.Conquistadors.ID, conqu)
 
     def getCoterieAleatoire(self):
         return random.choice(list(self.lCoteries_.values()))

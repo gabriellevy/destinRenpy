@@ -59,7 +59,7 @@ class Musicien(Metier):
     def __init__(self):
         self.nom_ = Musicien.NOM
 
-class Dessinateur(Metier):
+class Dessinateur(Metier): # pas ajouté aux événements de rejoindre "AjouterEvtsRejMetier" à partir de là
     NOM = u"Dessinateur"
     def __init__(self):
         self.nom_ = Dessinateur.NOM
