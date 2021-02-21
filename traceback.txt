@@ -1,29 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in script
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in <module>
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
-NameError: global name 'estDeBureau' is not defined
+  File "game/script.rpy", line 16, in script
+    init -1 python:
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsRejMetier()
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 28, in AjouterEvtsRejMetier
+    probaMusicien = Proba(0.0005, False)
+NameError: global name 'Proba' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in script
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+  File "game/script.rpy", line 16, in script
+    init -1 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 33, in <module>
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
-  File "despin/gen_vie/situation.py", line 76, in SetValCarac
-  File "despin/gen_vie/situation.py", line 73, in SetCarac
-  File "extremis/socio_eco/metiers/metier.py", line 47, in regenererCaracsMetier
-NameError: global name 'estDeBureau' is not defined
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsRejMetier()
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 28, in AjouterEvtsRejMetier
+    probaMusicien = Proba(0.0005, False)
+NameError: global name 'Proba' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Sun Feb 21 19:46:44 2021
+ 
+Sun Feb 21 20:10:54 2021

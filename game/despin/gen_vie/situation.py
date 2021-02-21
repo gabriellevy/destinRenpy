@@ -24,6 +24,10 @@ class Situation:
         self.caracs_[temps.Date.DATE] = date.nbJours_
         self.caracs_[temps.Date.AGE_ANNEES] = 0
         self.collectionMetiers = None
+        self.collectionTraits = None
+        self.collectionCoteries = None
+        self.collectionBlessures = None
+        self.collectionMaladies = None
 
     def __getitem__(self, key):
         if key not in self.caracs_:

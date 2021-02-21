@@ -18,21 +18,27 @@ init -5 python:
         global selecteur_
         aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
         univFinie = condition.Condition(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.NB_UNIV_TOTAL, condition.Condition.SUPERIEUR_EGAL)
+        # a telle carac
+        aArtiste = condition.Condition(trait.Artiste.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
 
         decRejPaysan = declencheur.Declencheur(0.1, "decRejPaysan")
         decRejPaysan.AjouterCondition(aPasDeMetier)
         selecteur_.ajouterDeclencheur(decRejPaysan)
 
-    # actions maj poste changement de métier
-    def majPosteCHangementMetier():
-        global situation_
+        probaMusicien = proba.Proba(0.0005, True)
+        probaMusicien.ajouterModifProbaViaVals(0.3, aArtiste)
+        decRejMusicien = declencheur.Declencheur(probaMusicien, "decRejMusicien")
+        decRejMusicien.AjouterCondition(aPasDeMetier)
+        selecteur_.ajouterDeclencheur(decRejMusicien)
 
 label decRejPaysan:
     # devient paysan
     "Vous êtes maintenant un paysan."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
-    $ majPosteCHangementMetier()
-    menu:
-        "tmp pause":
-            "ok !!!!!"
+    jump fin_cycle
+
+label decRejMusicien:
+    # devient paysan
+    "Vous êtes maintenant un Musicien."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Musicien.NOM)
     jump fin_cycle
