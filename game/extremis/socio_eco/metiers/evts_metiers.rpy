@@ -20,15 +20,22 @@ init -5 python:
         univFinie = condition.Condition(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.NB_UNIV_TOTAL, condition.Condition.SUPERIEUR_EGAL)
         # a telle carac
         aArtiste = condition.Condition(trait.Artiste.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        # est de telle coterie
+        estElfe = condition.Condition(coterie.Coterie.C_COTERIE, 1, elfes.Elfes.ID)
+        # estConquistaror = condition.Condition(coterie.conquistador.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
 
         decRejPaysan = declencheur.Declencheur(0.1, "decRejPaysan")
         decRejPaysan.AjouterCondition(aPasDeMetier)
+        decRejPaysan.AjouterCondition(univFinie)
         selecteur_.ajouterDeclencheur(decRejPaysan)
 
         probaMusicien = proba.Proba(0.0005, True)
-        probaMusicien.ajouterModifProbaViaVals(0.3, aArtiste)
+        probaMusicien.ajouterModifProbaViaVals(0.1, aArtiste)
+        # probaMusicien.ajouterModifProbaViaVals(0.05, estConquistaror)
+        probaMusicien.ajouterModifProbaViaVals(0.03, estElfe)
         decRejMusicien = declencheur.Declencheur(probaMusicien, "decRejMusicien")
         decRejMusicien.AjouterCondition(aPasDeMetier)
+        decRejMusicien.AjouterCondition(univFinie)
         selecteur_.ajouterDeclencheur(decRejMusicien)
 
 label decRejPaysan:
