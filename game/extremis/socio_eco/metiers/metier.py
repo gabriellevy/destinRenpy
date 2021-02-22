@@ -69,6 +69,11 @@ class Bibliothecaire(Metier):
     def __init__(self):
         self.nom_ = Bibliothecaire.NOM
 
+class Poete(Metier):
+    NOM = u"Poète"
+    def __init__(self):
+        self.nom_ = Poete.NOM
+
 class Cartographe(Metier):
     NOM = u"Cartographe"
     def __init__(self):
@@ -78,11 +83,6 @@ class Marchand(Metier):
     NOM = u"Marchand"
     def __init__(self):
         self.nom_ = Marchand.NOM
-
-class Poete(Metier):
-    NOM = u"Poète"
-    def __init__(self):
-        self.nom_ = Poete.NOM
 
 class Mineur(Metier):
     NOM = u"Mineur"

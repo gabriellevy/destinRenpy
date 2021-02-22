@@ -13,6 +13,7 @@ init -5 python:
     from extremis.socio_eco.metiers import metier
 
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
+    # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier,
     # les très rares ont une proba de 0.0001 (tueur de monstre,
     def AjouterEvtsRejMetier():
         global selecteur_
@@ -73,10 +74,84 @@ init -5 python:
         decRejCartographe.AjouterCondition(univFinie)
         selecteur_.ajouterDeclencheur(decRejCartographe)
 
+        # Marchand
+        prob = proba.Proba(0.01, True)
+        decRejMarchand = declencheur.Declencheur(prob, "decRejMarchand")
+        decRejMarchand.AjouterCondition(aPasDeMetier)
+        decRejMarchand.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejMarchand)
+
+        # Mineur
+        prob = proba.Proba(0.01, True)
+        decRejMineur = declencheur.Declencheur(prob, "decRejMineur")
+        decRejMineur.AjouterCondition(aPasDeMetier)
+        decRejMineur.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejMineur)
+
+        # Pretre
+        prob = proba.Proba(0.002, True)
+        decRejPretre = declencheur.Declencheur(prob, "decRejPretre")
+        decRejPretre.AjouterCondition(aPasDeMetier)
+        decRejPretre.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejPretre)
+
+        # Ouvrier
+        prob = proba.Proba(0.1, True)
+        decRejOuvrier = declencheur.Declencheur(prob, "decRejOuvrier")
+        decRejOuvrier.AjouterCondition(aPasDeMetier)
+        decRejOuvrier.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejOuvrier)
+
+        # Politique
+        prob = proba.Proba(0.002, True)
+        decRejPolitique = declencheur.Declencheur(prob, "decRejPolitique")
+        decRejPolitique.AjouterCondition(aPasDeMetier)
+        decRejPolitique.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejPolitique)
+
+        # Forgeron
+        prob = proba.Proba(0.002, True)
+        decRejForgeron = declencheur.Declencheur(prob, "decRejForgeron")
+        decRejForgeron.AjouterCondition(aPasDeMetier)
+        decRejForgeron.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejForgeron)
+
+        # Alchimiste
+        prob = proba.Proba(0.0001, True)
+        prob.ajouterModifProbaViaVals(0.03, estElfe)
+        decRejAlchimiste = declencheur.Declencheur(prob, "decRejAlchimiste")
+        decRejAlchimiste.AjouterCondition(aPasDeMetier)
+        decRejAlchimiste.AjouterCondition(univFinie)
+        selecteur_.ajouterDeclencheur(decRejAlchimiste)
+
+label decRejForgeron:
+    # devient Forgeron
+    "Vous êtes maintenant un Forgeron."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Forgeron.NOM)
+    jump fin_cycle
+
+label decRejAlchimiste:
+    # devient Alchimiste
+    "Vous êtes maintenant un Alchimiste."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Alchimiste.NOM)
+    jump fin_cycle
+
 label decRejPaysan:
     # devient paysan
     "Vous êtes maintenant un paysan."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+    jump fin_cycle
+
+label decRejPolitique:
+    # devient Politique
+    "Vous êtes maintenant un Politique."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Politique.NOM)
+    jump fin_cycle
+
+label decRejOuvrier:
+    # devient Ouvrier
+    "Vous êtes maintenant un Ouvrier."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Ouvrier.NOM)
     jump fin_cycle
 
 label decRejMusicien:
@@ -102,4 +177,19 @@ label decRejBibliothecaire:
 label decRejCartographe:
     "Vous êtes maintenant un cartographe."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Cartographe.NOM)
+    jump fin_cycle
+
+label decRejMarchand:
+    "Vous êtes maintenant un marchand."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Marchand.NOM)
+    jump fin_cycle
+
+label decRejMineur:
+    "Vous êtes maintenant un Mineur."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Mineur.NOM)
+    jump fin_cycle
+
+label decRejPretre:
+    "Vous êtes maintenant un Prêtre."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Pretre.NOM)
     jump fin_cycle
