@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 30: invalid syntax
-    label decRejPaysan:
-                      ^
-    
+The label decRejBanquier is defined twice, at
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 271 and
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 277.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Feb 21 19:20:06 2021
+Tue Feb 23 00:14:53 2021
