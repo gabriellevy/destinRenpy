@@ -35,6 +35,12 @@ class Coterie:
         # return m_Quartier
         return ""
 
+    def GetGentile(masculin):
+        if masculin:
+            return "pas de gentilé masculin, à overrider !"
+        else:
+            return "pas de gentilé féminin, à overrider !"
+
     def GetTraitsCompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de vouloir rejoindre cette coterie

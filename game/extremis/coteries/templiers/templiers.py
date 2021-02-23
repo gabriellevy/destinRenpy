@@ -1,6 +1,7 @@
 from extremis.coteries import coterie
 from extremis.socio_eco.metiers import metier
 from extremis.humanite import trait
+from extremis.geographie import quartier
 import random
 
 class Templiers(coterie.Coterie):
@@ -13,6 +14,7 @@ class Templiers(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Templiers.NOM
+        self.quartier_ = quartier.SaintDenis.NOM
 
     def getLabelUniversite(self):
         return "univTempliers"
@@ -55,6 +57,12 @@ class Templiers(coterie.Coterie):
             trait.Opportunisme.NOM, \
             trait.Sexualite.NOM \
             ]
+
+    def GetGentile(masculin):
+        if masculin:
+            return "templier"
+        else:
+            return "templière"
 
     def CreerNom(self, masculin):
         """

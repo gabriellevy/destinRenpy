@@ -1541,6 +1541,7 @@ screen valeurs_traits():
     $ strMetier = situation_.AffichageMetier()
     $ strReligion = situation_.AffichageReligion()
     $ strCoterie = situation_.AffichageCoterie()
+    $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
     frame:
         xpos 5 ypos 5
@@ -1549,6 +1550,7 @@ screen valeurs_traits():
             text _(u"[patronyme]")
             text _(u"[strCoterie]")
             text _(u"[strMetier]")
+            text _(u"[strQuartier]")
             text _(u"[strReligion]")
             text _(u"[affAge]\n")
             text _(u"[descriptionTrait]")

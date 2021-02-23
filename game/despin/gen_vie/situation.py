@@ -5,6 +5,7 @@ from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
 from extremis.humanite import identite
+from extremis.geographie import quartier
 import random
 
 class Situation:
@@ -28,6 +29,7 @@ class Situation:
         self.collectionCoteries = None
         self.collectionBlessures = None
         self.collectionMaladies = None
+        self.collectionQuartiers = None
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -174,6 +176,11 @@ class Situation:
         if ( metier.Metier.C_METIER not in self.caracs_):
             return ""
         return self.caracs_[metier.Metier.C_METIER]
+
+    def AffichageQuartier(self):
+        if ( quartier.Quartier.C_QUARTIER not in self.caracs_):
+            return ""
+        return self.caracs_[quartier.Quartier.C_QUARTIER]
 
     def AffichageReligion(self):
         if ( religion.Religion.C_RELIGION not in self.caracs_):

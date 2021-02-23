@@ -2,6 +2,7 @@ init -2 python:
     from despin.abs import carac
     from despin.gen_vie import situation
     from extremis.humanite import trait
+    from extremis.geographie import quartier
     from extremis.constitution import temps
     from extremis.coteries import collection_coteries
     from extremis.socio_eco.metiers import metier
@@ -20,6 +21,8 @@ init -2 python:
     situation_.collectionBlessures = blessures_
     maladies_ = pbsante.CollectionMaladies()
     situation_.collectionMaladies = maladies_
+    quartiers_ = quartier.CollectionQuartiers()
+    situation_.collectionQuartiers = quartiers_
 
     def DeterminerPerso():
         global situation_
