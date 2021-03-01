@@ -1543,7 +1543,7 @@ screen valeurs_traits():
     $ strCoterie = situation_.AffichageCoterie()
     $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
-    $ adressePortrait = situation_.DeterminerPortrait()
+    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
     frame:
         xpos 5 ypos 5
         vbox:

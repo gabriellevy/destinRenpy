@@ -1,21 +1,21 @@
-Mon Mar 01 19:54:27 2021
+Mon Mar 01 21:01:05 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
 Bootstrap to the start of init.init took 0.07s
-Early init took 0.00s
+Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.12s
-Loading save slot metadata. took 0.02s
+Loading script took 0.11s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.15s
+Running init code took 0.14s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -32,7 +32,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.02s
+Interface start took 0.03s
 
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
@@ -413,14 +413,14 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.09200000763s
+Total time until interface ready: 1.06500005722s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.004000 seconds.
-- Frame drawn at 0.020000 seconds.
-- Frame drawn at 0.037000 seconds.
-- Frame drawn at 0.054000 seconds.
-- 0.054000 seconds to render 5 frames.
+- Frame drawn at 0.010000 seconds.
+- Frame drawn at 0.026000 seconds.
+- Frame drawn at 0.042000 seconds.
+- Frame drawn at 0.059000 seconds.
+- 0.059000 seconds to render 5 frames.
 1.0
 0.6
 0.6
@@ -432,4 +432,28 @@ Total time until interface ready: 1.09200000763s
 0.6
 0.6
 0.6
-0
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+Coterie Transhumanistes affinité 10
+Coterie Conquistadors affinité -11
+Coterie Ordre du Temple affinité 0
+Coterie Elfes affinité -9
+retire conquistadors
+retire templiers
+retire elfes
+coterieChoisie transhumanistes
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1276, 718) drawable=(1276, 718)
+Root FBO is: 0
+FBO Maximum Texture Size: 2048

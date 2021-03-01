@@ -32,13 +32,13 @@ class Situation:
         self.collectionMaladies = None
         self.collectionQuartiers = None
 
-    def DeterminerPortrait(self):
+    def DeterminerPortrait(self, coteries, metiers, traits):
         """
         récupérer une liste de portraits selon les caracs du perso et en choisir un aléatoirement
         celui est choisi est stocké dans une carac mais en cas de changement important (âge, métier, coterie...) on en recalcule un
         """
         portr = portrait.Portrait()
-        portraitStr = portr.DeterminerPortraits(self, True)
+        portraitStr = portr.DeterminerPortraits(self, True, coteries, metiers, traits)
         self.SetCarac(portrait.Portrait.C_PORTRAIT, portraitStr)
         return self.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
@@ -124,6 +124,30 @@ class Situation:
         elif self.caracs_[idCarac] == "":
             self.caracs_[idCarac] = 0
         return self.caracs_[idCarac]
+
+    def GetMetier(self, metiers):
+        valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
+        if valMetierStr == "":
+            return None
+        return metiers[valMetierStr]
+
+    def GetCoterie(self, coteries):
+        valCoterieStr = self.GetValCarac(coterie.Coterie.C_COTERIE)
+        if valCoterieStr == "":
+            return None
+        return coteries[valCoterieStr]
+
+    def GetTraits(self, traits):
+        """
+        renvoi la liste des traits du perso sous forme de 'Trait'
+        """
+        traitsPerso = []
+        for traitK in traits.lTraits_.keys():
+            valTrait = self.GetValCarac(traitK)
+            if valTrait != "" and valTrait != 0:
+                traitsPerso.append(traits[traitK])
+        return traitsPerso
+
 
     def DescriptionTraits(self, traits):
         """
@@ -225,7 +249,6 @@ class Situation:
             if nbJoursConvalescence < 0:
                 nbJoursConvalescence = 0
             self.caracs_[pbsante.PbSante.C_JOURS_DHOPITAL] = nbJoursConvalescence
-
 
     def TourSuivant(self):
         """

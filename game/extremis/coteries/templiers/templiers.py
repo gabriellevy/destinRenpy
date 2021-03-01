@@ -87,6 +87,24 @@ class Templiers(coterie.Coterie):
         else:
             return random.choice(Templiers.PRENOMS_F)
 
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
+        """
+        if masculin:
+            if age > 20:
+                if age > 30:
+                    if age > 50:
+                        if age > 60:
+                            portraits.append("images/coteries/templiers/portraits/60+.jpg")
+                        portraits.append("images/coteries/templiers/portraits/50+.jpg")
+                        portraits.append("images/coteries/templiers/portraits/50+_b.jpg")
+                    portraits.append("images/coteries/templiers/portraits/30+.jpg")
+                if age < 40:
+                    portraits.append("images/coteries/templiers/portraits/20-40.jpg")
+
+        return portraits
+
     NOMS = [
         "d'Aiglemont", "d'Aiguemorte", "d'Aiguevive", "d'Aspremont", "de Beaulieu", "de Beaupré", "de Belleforest",
         "de Bellegarde", "de Bénévent", "de Blancmoustier", "de Boisjoli", "de Boutefeu", "de Clairefontaine",

@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 60, in script
+  File "game/evts_generaux/rien.rpy", line 54, in script
     with Dissolve(.5)
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1546, in execute
-    $ adressePortrait = situation_.DeterminerPortrait()
+    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
   File "game/screens.rpy", line 1546, in <module>
-    $ adressePortrait = situation_.DeterminerPortrait()
-NameError: global name 'portrait' is not defined
+    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
+AttributeError: 'NoneType' object has no attribute 'GenererPortraits'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 60, in script
+  File "game/evts_generaux/rien.rpy", line 54, in script
     with Dissolve(.5)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
     renpy.exports.with_statement(trans, paired)
@@ -49,14 +49,14 @@ Full traceback:
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1546, in execute
-    $ adressePortrait = situation_.DeterminerPortrait()
+    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
   File "game/screens.rpy", line 1546, in <module>
-    $ adressePortrait = situation_.DeterminerPortrait()
+    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
   File "despin/gen_vie/situation.py", line 41, in DeterminerPortrait
-  File "extremis/humanite/portrait.py", line 51, in DeterminerPortraits
-NameError: global name 'portrait' is not defined
+  File "extremis/humanite/portrait.py", line 20, in DeterminerPortraits
+AttributeError: 'NoneType' object has no attribute 'GenererPortraits'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Mon Mar 01 19:53:59 2021
+Mon Mar 01 20:59:51 2021
