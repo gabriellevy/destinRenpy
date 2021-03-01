@@ -100,7 +100,7 @@ label univElfes_evt5:
     scene bg poesie
     if situation_.GetValCarac(trait.Artiste.NOM) < 1:
         jump univElfes_evt2
-    "Vu votre poentiel d'artiste les elfes trouvent indispensable de vous former à la poésie, la pierre angulaire de la sensibilité elfique."
+    "Vu votre potentiel d'artiste les elfes trouvent indispensable de vous former à la poésie, la pierre angulaire de la sensibilité elfique."
     $ situation_.AjouterACarac(metier.Poete.NOM, 1)
     jump fin_cycle
 

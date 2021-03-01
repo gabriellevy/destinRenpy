@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-The label decRejBanquier is defined twice, at
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 271 and
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 277.
+File "game/screens.rpy", line 1549: u'foreground' is not a keyword argument or valid child for the vbox statement.
+    foreground "images/portraits/inconnu.jpg"
+              ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Feb 23 00:14:53 2021
+Mon Mar 01 18:32:54 2021

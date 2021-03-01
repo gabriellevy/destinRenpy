@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 66, in script
+  File "game/evts_generaux/rien.rpy", line 60, in script
     with Dissolve(.5)
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1544, in execute
-    $ strQuartier = situation_.AffichageQuartier()
-  File "game/screens.rpy", line 1544, in <module>
-    $ strQuartier = situation_.AffichageQuartier()
-NameError: global name 'quartier' is not defined
+  File "game/screens.rpy", line 1546, in execute
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "game/screens.rpy", line 1546, in <module>
+    $ adressePortrait = situation_.DeterminerPortrait()
+NameError: global name 'portrait' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 66, in script
+  File "game/evts_generaux/rien.rpy", line 60, in script
     with Dissolve(.5)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
     renpy.exports.with_statement(trans, paired)
@@ -48,14 +48,15 @@ Full traceback:
     screen valeurs_traits():
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1544, in execute
-    $ strQuartier = situation_.AffichageQuartier()
-  File "game/screens.rpy", line 1544, in <module>
-    $ strQuartier = situation_.AffichageQuartier()
-  File "despin/gen_vie/situation.py", line 179, in AffichageQuartier
-NameError: global name 'quartier' is not defined
+  File "game/screens.rpy", line 1546, in execute
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "game/screens.rpy", line 1546, in <module>
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "despin/gen_vie/situation.py", line 41, in DeterminerPortrait
+  File "extremis/humanite/portrait.py", line 51, in DeterminerPortraits
+NameError: global name 'portrait' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Feb 23 20:58:47 2021
+Mon Mar 01 19:53:59 2021

@@ -6,6 +6,7 @@ from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
 from extremis.humanite import identite
 from extremis.geographie import quartier
+from extremis.humanite import portrait
 import random
 
 class Situation:
@@ -30,6 +31,16 @@ class Situation:
         self.collectionBlessures = None
         self.collectionMaladies = None
         self.collectionQuartiers = None
+
+    def DeterminerPortrait(self):
+        """
+        récupérer une liste de portraits selon les caracs du perso et en choisir un aléatoirement
+        celui est choisi est stocké dans une carac mais en cas de changement important (âge, métier, coterie...) on en recalcule un
+        """
+        portr = portrait.Portrait()
+        portraitStr = portr.DeterminerPortraits(self, True)
+        self.SetCarac(portrait.Portrait.C_PORTRAIT, portraitStr)
+        return self.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
     def __getitem__(self, key):
         if key not in self.caracs_:
@@ -77,6 +88,7 @@ class Situation:
             metierStr = valCarac
             metierCourant = self.collectionMetiers[metierStr]
             metierCourant.regenererCaracsMetier(self)
+
 
     def SetValCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
         self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)

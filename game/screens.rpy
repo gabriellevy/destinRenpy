@@ -1543,10 +1543,12 @@ screen valeurs_traits():
     $ strCoterie = situation_.AffichageCoterie()
     $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
+    $ adressePortrait = situation_.DeterminerPortrait()
     frame:
         xpos 5 ypos 5
         vbox:
             text _(u"[affDate]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
+            add "[adressePortrait]"
             text _(u"[patronyme]")
             text _(u"[strCoterie]")
             text _(u"[strMetier]")
