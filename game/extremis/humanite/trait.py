@@ -322,6 +322,8 @@ class Spiritualite(TraitTernaire):
         if val <= Trait.SEUIL_A_PAS:
             return u"Matérialiste"
         elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Mystique"
             return u"Spirituel" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
         else:
             return u""

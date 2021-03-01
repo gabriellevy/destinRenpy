@@ -190,6 +190,7 @@ label univTempliers_evt12:
             "Vous vous convertissez au christianisme."
             $ situation_.AjouterACarac(religion.Religion.C_FOI,  1)
     $ situation_.AjouterACarac(trait.Ascetisme.NOM, 2)
+    $ situation_.AjouterACarac(trait.Spiritualite.NOM, 1)
     "Quand votre maître vient vous chercher un mois plus tard vous êtes profondément transformé par l'expérience."
     jump fin_cycle
 

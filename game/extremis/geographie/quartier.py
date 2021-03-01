@@ -31,7 +31,7 @@ class SaintDenis(Quartier):
 
     def __init__(self):
         self.nom_ = SaintDenis.NOM
-        self.imageDeFond_ = u"bg univ_templiers"
+        self.imageDeFond_ = u"bg saint_denis"
 
 class CollectionQuartiers:
 

@@ -421,4 +421,30 @@ Total time until interface ready: 6.19800019264s
 - Frame drawn at 0.029000 seconds.
 - Frame drawn at 0.045000 seconds.
 - Frame drawn at 0.063000 seconds.
--
+- 0.063000 seconds to render 5 frames.
+1.0
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+0.6
+Coterie Transhumanistes affinité 22
+Coterie Conquistadors affinité 10
+Coterie Ordre du Temple affinité -6
+Coterie Elfes affinité -1
+retire templiers
+retire elfes
+coterieChoisie transhumanistes
