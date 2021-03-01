@@ -58,11 +58,19 @@ class Templiers(coterie.Coterie):
             trait.Sexualite.NOM \
             ]
 
-    def GetGentile(masculin):
+    def GetGentile(self, masculin):
         if masculin:
             return "templier"
         else:
             return "templière"
+
+    def GetPoidsDemo(self):
+        """
+        à quel point cette coterie est nombreuse dans la population
+        1.0 = normal
+        0.1 = 10 fois moins que la moyenne
+        """
+        return 0.3
 
     def CreerNom(self, masculin):
         """

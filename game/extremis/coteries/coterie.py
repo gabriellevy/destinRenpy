@@ -35,11 +35,19 @@ class Coterie:
         # return m_Quartier
         return ""
 
-    def GetGentile(masculin):
+    def GetGentile(self, masculin):
         if masculin:
             return "pas de gentilé masculin, à overrider !"
         else:
             return "pas de gentilé féminin, à overrider !"
+
+    def GetPoidsDemo(self):
+        """
+        à quel point cette coterie est nombreuse dans la population
+        1.0 = normal
+        0.1 = 10 fois moins que la moyenne
+        """
+        return 1.0
 
     def GetTraitsCompatibles(self):
         """

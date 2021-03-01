@@ -18,7 +18,7 @@ init -5 python:
     def AjouterEvtsRejMetier():
         global selecteur_
         aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
-        univFinie = condition.Condition(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.NB_UNIV_TOTAL, condition.Condition.SUPERIEUR_EGAL)
+        univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)
         # a telle carac
         aArtiste = condition.Condition(trait.Artiste.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         aBeaute = condition.Condition(trait.Beaute.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
