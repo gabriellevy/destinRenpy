@@ -136,6 +136,13 @@ class Coterie:
 
         return affinite
 
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
+        A OVERRIDER
+        """
+        return portraits
+
     def GetMusique(self):
         return ""
 

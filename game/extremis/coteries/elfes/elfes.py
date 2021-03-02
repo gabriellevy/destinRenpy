@@ -45,4 +45,32 @@ class Elfes(coterie.Coterie):
             # les blessures en particuliers être défiguré
             ]
 
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
+        """
+        if masculin:
+            if age > 15:
+                if age > 20:
+                    if age > 30:
+                        portraits.append("images/coteries/elfes/portraits/portrait_30+.jpg")
+                        if age > 50:
+                            portraits.append("images/coteries/elfes/portraits/portrait_50+.jpg")
+                            portraits.append("images/coteries/elfes/portraits/portrait50+.png")
+                    if age < 40:
+                        portraits.append("images/coteries/elfes/portraits/portrait20-40.png")
+                if age < 40:
+                    portraits.append("images/coteries/elfes/portraits/portrait_15-40_b.jpg")
+                    portraits.append("images/coteries/elfes/portraits/portrait_15-40_c.jpg")
+                    portraits.append("images/coteries/elfes/portraits/portrait_15-40_d.jpg")
+                    if age < 30:
+                        portraits.append("images/coteries/elfes/portraits/portrait_15-30.jpg")
+        else:
+            if age > 20:
+                if age < 40:
+                    portraits.append("images/coteries/elfes/portraits/Fportrait20-40.png")
+                    portraits.append("images/coteries/elfes/portraits/Fportrait20-40_2.png")
+
+        return portraits
+
     # pour intégrer la coterie tests sur : beauté (dur) taille, habileté, poids

@@ -44,7 +44,7 @@ label univTempliers:
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
         play music principale_temple
-        "Le temple est basée sur la foi inébranlable en Dieu et sur l'honneur guerrier de l'aristocratie franque."
+        "Le temple est basé sur la foi inébranlable en Dieu et sur l'honneur guerrier de l'aristocratie franque."
         "Les templiers sont avant tout des guerriers saints avec un code de l'honneur très strict. "
         "Ce code de l'honneur méprise la cupidité et l'ostentation mais l'enrichissement n'est pas interdit, surtout lorsqu'il est utilisé pour financer les nombreux hopitaux de l'ordre. "
         "Ainsi les templiers sont aussi mercenaires tant que la cause est jugée honorable par l'ordre. "

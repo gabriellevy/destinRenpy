@@ -52,3 +52,50 @@ class Transhumanistes(coterie.Coterie):
             metier.Pretre.NOM \
             # classe sociale basse
             ]
+
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
+        """
+        if masculin:
+            if age > 10:
+                if age > 15:
+                    if age > 20:
+                        if age > 35: # > 35
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait35+.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait35+_2.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait35+_3.jpg")
+                            if age > 40: # > 40
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait40+.jpg")
+                                if age > 50: # > 50
+                                    portraits.append("images/coteries/transhumanistes/portraits/portrait50+.jpg")
+                                    if age > 60: # > 60
+                                        portraits.append("images/coteries/transhumanistes/portraits/portrait60+.jpg")
+                                        portraits.append("images/coteries/transhumanistes/portraits/portrait60+_2.jpg")
+                                        if age > 60: # > 60
+                                            portraits.append("images/coteries/transhumanistes/portraits/portrait70+.jpg")
+                        if age > 30:
+                            if age < 50: # 30 à 50
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait30-50.jpg")
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait30-50_2.jpg")
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait30-50_2.png")
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait30-50_3.jpg")
+                        if age < 50: # 20 à 50
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait20-50.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait20-50.png")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait20-50_2.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait20-50_3.jpg")
+                            if age < 40: # 20 à 40
+                                portraits.append("images/coteries/transhumanistes/portraits/portrait20-40.jpg")
+                    if age < 40:
+                        if age < 30: # 15 à 30
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait15-30.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait15-30_2.jpg")
+                            portraits.append("images/coteries/transhumanistes/portraits/portrait15-30_3.jpg")
+                if age < 20: # 10 à 20
+                    portraits.append("images/coteries/transhumanistes/portraits/portrait10-20.jpg")
+        # else:
+        #    if age > 20:
+        #        if age < 40:
+
+        return portraits
