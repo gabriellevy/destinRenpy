@@ -1543,6 +1543,7 @@ screen valeurs_traits():
     $ strCoterie = situation_.AffichageCoterie()
     $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
+    $ strCrime = situation_.AffichageCrime()
     $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
     frame:
         xpos 5 ypos 5
@@ -1554,6 +1555,7 @@ screen valeurs_traits():
             text _(u"[strMetier]")
             text _(u"[strQuartier]")
             text _(u"[strReligion]")
+            text _(u"[strCrime]")
             text _(u"[affAge]\n")
             text _(u"[descriptionTrait]")
             text _(u"[descriptionBlessures]")

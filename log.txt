@@ -1,21 +1,22 @@
-Tue Mar 02 21:49:31 2021
+Wed Mar 03 21:34:55 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.10s
+Loading script took 0.14s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.14s
+Running init code took 0.16s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.06s
+Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -24,12 +25,12 @@ Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.08s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -413,14 +414,14 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.00699996948s
+Total time until interface ready: 1.3220000267s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.005000 seconds.
-- Frame drawn at 0.020000 seconds.
-- Frame drawn at 0.037000 seconds.
-- Frame drawn at 0.054000 seconds.
-- 0.054000 seconds to render 5 frames.
+- Frame drawn at 0.012000 seconds.
+- Frame drawn at 0.027000 seconds.
+- Frame drawn at 0.044000 seconds.
+- Frame drawn at 0.061000 seconds.
+- 0.061000 seconds to render 5 frames.
 1.0
 0.6
 0.6
@@ -440,18 +441,10 @@ Total time until interface ready: 1.00699996948s
 0.6
 0.6
 0.6
-Coterie Transhumanistes affinité 22
+Coterie Transhumanistes affinité 10
 Coterie Conquistadors affinité 10
-Coterie Ordre du Temple affinité -12
-Coterie Elfes affinité 5
+Coterie Ordre du Temple affinité 0
+Coterie Elfes affinité -2
 retire templiers
+retire elfes
 coterieChoisie transhumanistes
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1276, 718) drawable=(1276, 718)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048

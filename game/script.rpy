@@ -20,6 +20,8 @@ init -1 python:
     # métiers
     AjouterEvtsAdministratif()
     AjouterEvtsRejMetier()
+    # crime / loi
+    AjouterEvtsCrime()
     # vie courante
     AjouterEvtsPilotage()
     AjouterEvtsRien()

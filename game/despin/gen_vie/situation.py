@@ -7,6 +7,7 @@ from extremis.constitution import temps
 from extremis.humanite import identite
 from extremis.geographie import quartier
 from extremis.humanite import portrait
+from extremis.socio_eco.crime import crime
 import random
 
 class Situation:
@@ -217,6 +218,11 @@ class Situation:
         if ( quartier.Quartier.C_QUARTIER not in self.caracs_):
             return ""
         return self.caracs_[quartier.Quartier.C_QUARTIER]
+
+    def AffichageCrime(self):
+        if ( crime.Crime.C_CRIMINEL not in self.caracs_):
+            return ""
+        return self.GetValCarac(crime.Crime.C_CRIMINEL)
 
     def AffichageReligion(self):
         if ( religion.Religion.C_RELIGION not in self.caracs_):
