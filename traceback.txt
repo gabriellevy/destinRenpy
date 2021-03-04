@@ -1,61 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 66, in script
-    with Dissolve(.5)
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1546, in execute
-    $ strCrime = situation_.AffichageCrime(crimes_)
-  File "game/screens.rpy", line 1546, in <module>
-    $ strCrime = situation_.AffichageCrime(crimes_)
-AttributeError: 'module' object has no attribute 'GetDescription'
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 144, in script
+    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 144, in <module>
+    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+AttributeError: CollectionCoteries instance has no attribute 'CreerCoterie'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 66, in script
-    with Dissolve(.5)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1534, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1546, in execute
-    $ strCrime = situation_.AffichageCrime(crimes_)
-  File "game/screens.rpy", line 1546, in <module>
-    $ strCrime = situation_.AffichageCrime(crimes_)
-  File "despin/gen_vie/situation.py", line 229, in AffichageCrime
-AttributeError: 'module' object has no attribute 'GetDescription'
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 144, in script
+    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 144, in <module>
+    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+  File "extremis/coteries/collection_coteries.py", line 41, in __getitem__
+AttributeError: CollectionCoteries instance has no attribute 'CreerCoterie'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Thu Mar 04 19:19:14 2021
+Thu Mar 04 20:03:52 2021

@@ -38,7 +38,10 @@ class CollectionCoteries:
 
     def __getitem__(self, idCoterie):
         if not idCoterie in self.lCoteries_:
-            self.CreerCoterie(idCoterie)
+            erreur = u"Pas de coterie d'id '{}'".format(idCoterie)
+            print(erreur)
+            assert erreur # pas sûr que ça marche ça !
+            return erreur
         return self.lCoteries_[idCoterie]
 
     def __setitem__(self, idCoterie, coterie):

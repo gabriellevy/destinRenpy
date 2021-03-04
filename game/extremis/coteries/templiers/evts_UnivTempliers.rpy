@@ -13,7 +13,7 @@ init -5 python:
         Quand on s'enrôle dans une université on doit accomplir un certain nombre de modules
         """
         global selecteur_
-        conditionDansUniv = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, templiers.Templiers.NOM, condition.Condition.EGAL)
+        conditionDansUniv = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, templiers.Templiers.ID, condition.Condition.EGAL)
 
         # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
         univTempliers = declencheur.Declencheur(proba.Proba(0.6, False), "univTempliers")
@@ -39,7 +39,7 @@ init -5 python:
 label univTempliers:
     scene bg univ_templiers
 
-    $ situation_.SetCarac(coterie.Coterie.Carac_UNIV_COURANTE, templiers.Templiers.NOM)
+    $ situation_.SetCarac(coterie.Coterie.Carac_UNIV_COURANTE, templiers.Templiers.ID)
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :

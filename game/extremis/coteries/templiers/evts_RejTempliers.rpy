@@ -123,7 +123,7 @@ label templiersPostule:
         "PAS FAIT : seulement deux tests pour l'instant, un de plus ça serait bien !"
 
     label TempliersPostule_reussi:
-        "Vous marcez encore presque une heure dans l'obscurité quandenfin vous appercevez des rayons de lumière du jour."
+        "Vous marchez encore presque une heure dans l'obscurité quandenfin vous appercevez des rayons de lumière du jour."
         "Le tunnel finit en un escalier de métal qui remonte en plein quinzième arrondissement."
         show ordonnateur at right
         with moveinright
@@ -141,7 +141,7 @@ label TempliersRejoindre:
     "Exauce, nous t'en prions, Seigneur, nos prières, de sorte que tu daignes bénir ton serviteur qui ce jour avec ton assentiment a ceint le glaive,"
     "qu'il soit le défenseur contre la cruauté de païens et de tous les méchants, et le protecteur des églises, des veuves, des orphelins, de tous tes serviteurs,"
     "et qu'avec ton aide il soit la terreur et l'épouvante de tous ceux qui rejettent la sainte foi."
-    $ coterieTempliers = coteries_[templiers.Templiers.NOM]
+    $ coterieTempliers = coteries_[templiers.Templiers.ID]
     $ coterieTempliers.RejoindreCoterie(situation_)
     $ prenom = situation_[identite.Identite.C_PRENOM]
     $ nom = situation_[identite.Identite.C_NOM]

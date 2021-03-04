@@ -17,13 +17,18 @@ init -5 python:
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
+        estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
+        estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         # a telle carac
+        estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
+        estObsede = condition.Condition(trait.Sexualite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estParesseux = condition.Condition(trait.Industrie.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estMenteur = condition.Condition(trait.Sincerite.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estSournois = condition.Condition(trait.Franchise.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estInstinctif = condition.Condition(trait.Honorabilite.NOM, -3, condition.Condition.INFERIEUR_EGAL) # non honorable /loyal
         estCupide = condition.Condition(trait.Cupidite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estOpportuniste = condition.Condition(trait.Opportunisme.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        estPerversSexuel = condition.Condition(trait.Sexualite.NOM, 11, condition.Condition.SUPERIEUR_EGAL)
 
         # devient petit délinquant
         prob = proba.Proba(0.002, True)
@@ -35,8 +40,18 @@ init -5 python:
         prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
         decDevientDelinquant = declencheur.Declencheur(prob, "decDevientDelinquant")
         decDevientDelinquant.AjouterCondition(estPauvre)
-        decDevientDelinquant.AjouterCondition(estPasCriminel)
+        decDevientDelinquant.AjouterCondition(estPasVoleur)
         selecteur_.ajouterDeclencheur(decDevientDelinquant)
+
+        # devient violeur
+        prob = proba.Proba(0.0001, True)
+        prob.ajouterModifProbaViaVals(0.01, estCruel)
+        prob.ajouterModifProbaViaVals(0.01, estObsede)
+        prob.ajouterModifProbaViaVals(0.01, estPerversSexuel)
+        prob.ajouterModifProbaViaVals(0.01, estSournois)
+        decDevientVioleur = declencheur.Declencheur(prob, "decDevientVioleur")
+        decDevientVioleur.AjouterCondition(estPasVioleur)
+        selecteur_.ajouterDeclencheur(decDevientVioleur)
 
         # A FAIRE : événement devient un voleur de plus en plus dangereux
 
@@ -46,3 +61,12 @@ label decDevientDelinquant:
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
     jump fin_cycle
+
+label decDevientVioleur:
+    # devient obsédé sexuel
+    "Vos obsessions sexuels sont de plus en plus obsessionnelles. Vous vous mettez à suivre des femmes dans la rue, à les tripoter, à fantasmer sur leur viol."
+    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+    $ situation_.SetValCarac(crime.Violeur.NOM, 1)
+    jump fin_cycle
+    # A FAIRE : devient un vrai violeur :
+    # "Vos perversions vous poussent à devenir un violeur de plus en plus dépravé."

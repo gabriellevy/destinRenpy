@@ -29,7 +29,7 @@ init -5 python:
 
         nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
         nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
-        if nomCoterie ==  templiers.Templiers.NOM or nomCoterieUniv == templiers.Templiers.NOM:
+        if nomCoterie ==  templiers.Templiers.ID or nomCoterieUniv == templiers.Templiers.ID:
             evtsVides_.append("evtRien_Templiers_1")
             evtsVides_.append("evtRien_Templiers_2")
             evtsVides_.append("evtRien_Templiers_3")

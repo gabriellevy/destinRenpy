@@ -54,13 +54,48 @@ class Voleur(Crime):
         else:
             return ""
 
+class Violeur(Crime):
+    """
+    La valeur associée à la carac est la gravité du crime:
+     - 1 : tripotteur
+     - 2 :  harceleur
+     - 5 : violeur
+     - 10 : violeur compulsif ultraviolent
+     """
+
+    NOM = u"Voleur"
+
+    def __init__(self):
+        self.nom_ = Voleur.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.nom_]
+        if val == "":
+            val = 0
+            situation[self.nom_] = val
+        if not isinstance(val, int):
+            assert "Ce type de crime n'a pas comme valeur un int. Crime : {}. Valeur : {}".format(self.nom_, val)
+
+        if val > 8:
+            return u"Violeur en série"
+        elif val > 4:
+            return u"Violeur"
+        elif val > 0:
+            return u"Délinquant sexuel"
+        else:
+            return ""
+
 
 class CollectionCrimes:
 
     def __init__(self):
         self.lCrimes_ = dict()
+
         voleur = Voleur()
         self.SetCrime(Voleur.NOM, voleur)
+
+        violeur = Violeur()
+        self.SetCrime(Violeur.NOM, violeur)
 
     def getCrimeAleatoire(self):
         return random.choice(list(self.lCrimes_.values()))
