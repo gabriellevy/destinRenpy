@@ -38,8 +38,11 @@ init -5 python:
         decDevientDelinquant.AjouterCondition(estPasCriminel)
         selecteur_.ajouterDeclencheur(decDevientDelinquant)
 
+        # A FAIRE : événement devient un voleur de plus en plus dangereux
+
 label decDevientDelinquant:
     # devient petit voleur délinquant
     "Vous vous mettez à voler à droite à gauche pour survivre et échapper à la misère."
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+    $ situation_.SetValCarac(crime.Voleur.NOM, 1)
     jump fin_cycle

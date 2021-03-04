@@ -7,6 +7,7 @@ init -2 python:
     from extremis.coteries import collection_coteries
     from extremis.socio_eco.metiers import metier
     from extremis.humanite.sante import pbsante
+    from extremis.socio_eco.crime import crime
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
@@ -23,6 +24,8 @@ init -2 python:
     situation_.collectionMaladies = maladies_
     quartiers_ = quartier.CollectionQuartiers()
     situation_.collectionQuartiers = quartiers_
+    crimes_ = crime.CollectionCrimes()
+    situation_.collectionCrimes = crimes_
 
     def DeterminerPerso():
         global situation_

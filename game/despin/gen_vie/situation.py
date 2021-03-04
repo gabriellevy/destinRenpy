@@ -32,6 +32,7 @@ class Situation:
         self.collectionBlessures = None
         self.collectionMaladies = None
         self.collectionQuartiers = None
+        self.collectionCrimes = None
 
     def DeterminerPortrait(self, coteries, metiers, traits):
         """
@@ -219,10 +220,19 @@ class Situation:
             return ""
         return self.caracs_[quartier.Quartier.C_QUARTIER]
 
-    def AffichageCrime(self):
-        if ( crime.Crime.C_CRIMINEL not in self.caracs_):
-            return ""
-        return self.GetValCarac(crime.Crime.C_CRIMINEL)
+    def AffichageCrime(self, crimes):
+        str = self.GetValCarac(crime.Crime.C_CRIMINEL)
+
+        # affichage des crimes dans le détail
+        for crimeK in crimes.lCrimes_.keys():
+            crimeCarac = crimes[crimeK]
+            descr = u"{}".format(crimeCarac.GetDescription(self))
+            if descr != "":
+                if str != "":
+                    str = u"{}\n".format(str)
+                str = u"{}{} ({})".format(str, descr, crimeCarac.nom_)
+
+        return str
 
     def AffichageReligion(self):
         if ( religion.Religion.C_RELIGION not in self.caracs_):

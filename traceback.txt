@@ -8,10 +8,10 @@ While running game code:
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1546, in execute
-    $ strCrime = situation_.AffichageCrime()
+    $ strCrime = situation_.AffichageCrime(crimes_)
   File "game/screens.rpy", line 1546, in <module>
-    $ strCrime = situation_.AffichageCrime()
-TypeError: 'NoneType' object is not callable
+    $ strCrime = situation_.AffichageCrime(crimes_)
+AttributeError: 'module' object has no attribute 'GetDescription'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -49,12 +49,13 @@ Full traceback:
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1546, in execute
-    $ strCrime = situation_.AffichageCrime()
+    $ strCrime = situation_.AffichageCrime(crimes_)
   File "game/screens.rpy", line 1546, in <module>
-    $ strCrime = situation_.AffichageCrime()
-TypeError: 'NoneType' object is not callable
+    $ strCrime = situation_.AffichageCrime(crimes_)
+  File "despin/gen_vie/situation.py", line 229, in AffichageCrime
+AttributeError: 'module' object has no attribute 'GetDescription'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Wed Mar 03 21:19:00 2021
+Thu Mar 04 19:19:14 2021
