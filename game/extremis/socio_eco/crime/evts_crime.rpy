@@ -17,6 +17,7 @@ init -5 python:
     def AjouterEvtsCrime():
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
+        aUnMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.DIFFERENT)
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
         # statut criminel
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
@@ -77,9 +78,32 @@ init -5 python:
 
         # A FAIRE : événement devient une brute de plus en plus dangereuse
 
+        # si déjà criminel et au travail => devient vendeur de drogue
+        prob = proba.Proba(0.001, True)
+        prob.ajouterModifProbaViaVals(0.01, estCupide)
+        prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
+        prob.ajouterModifProbaViaVals(0.01, estMenteur)
+        prob.ajouterModifProbaViaVals(0.01, estSournois)
+        prob.ajouterModifProbaViaVals(0.01, estInstinctif)
+        decVendeurDeDrogueAuBoulot = declencheur.Declencheur(prob, "decVendeurDeDrogueAuBoulot")
+        decVendeurDeDrogueAuBoulot.AjouterCondition(estPasVendeurDrogue)
+        decVendeurDeDrogueAuBoulot.AjouterCondition(aUnMetier)
+        selecteur_.ajouterDeclencheur(decVendeurDeDrogueAuBoulot)
+
+label decVendeurDeDrogueAuBoulot:
+    "Vous mettez en place un petit réseau de revente de drogue sur votre lieu de travail qui vous fait bien voir de certains de vos collègues mais qui arrondit surtout confortablement vos revenus."
+    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+    $ situation_.SetValCarac(crime.VendeurDrogue.NOM, 3)
+    $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
+    jump fin_cycle
+
 label decDevientCriminelViolent:
     # devient criminel violent
     "Vous vous battez de plus en plus souvent, au point d'avoir plusieurs blessés à votre actif et d'être signalé à la police."
+    menu:
+        "devient criminel violent!"
+        "zut":
+            pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
     jump fin_cycle
@@ -87,6 +111,10 @@ label decDevientCriminelViolent:
 label decDevientDelinquant:
     # devient petit voleur délinquant
     "Vous vous mettez à voler à droite à gauche pour survivre et échapper à la misère."
+    menu:
+        "devient petit voleur!"
+        "zut":
+            pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
     jump fin_cycle
@@ -94,6 +122,10 @@ label decDevientDelinquant:
 label decDevientVioleur:
     # devient obsédé sexuel
     "Vos obsessions sexuels sont de plus en plus obsessionnelles. Vous vous mettez à suivre des femmes dans la rue, à les tripoter, à fantasmer sur leur viol."
+    menu:
+        "devient violeur!"
+        "zut":
+            pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.Violeur.NOM, 1)
     jump fin_cycle

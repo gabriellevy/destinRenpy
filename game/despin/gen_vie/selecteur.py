@@ -26,7 +26,6 @@ class Selecteur:
         # proba absolues (où le total des proba absolues ne peut pas dépasser 1.0 car une proba de 0.5 est VRAIMENT une proba de 50%
         resProba = random.uniform(0, 1.0)
         if resProba <= probaCompleteAbs:
-            print(probaCompleteAbs)
             if probaCompleteAbs > 1.0:
                 return "probaAbsoluesSup100"
             for declencheur in self.declencheurs_:

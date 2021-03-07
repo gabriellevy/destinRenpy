@@ -55,14 +55,3 @@ class Condition:
     # Les conditions sont (intégralement?) non mutables
     # m_CaracId = property(_get_m_CaracId)
     # m_Valeur = property(_get_m_Valeur)
-
-# stupides tests
-'''
-print("------tests Condition")
-situation = Situation()
-testCarac = "testCarac"
-situation.CreerCarac(testCarac, 2)
-condition = Condition(testCarac, 4, Comparateur.INFERIEUR)
-print(condition.m_Valeur)
-print(condition.Tester())
-'''

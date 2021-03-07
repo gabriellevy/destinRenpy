@@ -45,6 +45,10 @@ init -5 python:
 label decCaptureParPolice:
     # devient criminel violent
     "Vous avez été capturé par la police pour vos méfaits."
+    menu:
+        "capturé par la police!"
+        "zut":
+            pass
     $ situation_.SetValCarac(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE)
     # perd son métier :
     $ situation_.SetValCarac(metier.Metier.C_METIER, "")
