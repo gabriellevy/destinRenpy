@@ -55,7 +55,7 @@ label decProces:
     "Le jour de votre procès est venu."
 
     menu:
-        "A FAIRE : Crime::PrononcerLaSentence(humain, effet);":
+        "TMP : A FAIRE : Crime::PrononcerLaSentence(humain, effet);":
             pass
 
     jump fin_cycle
@@ -64,7 +64,7 @@ label decCaptureParPolice:
     # devient criminel violent
     "Vous avez été capturé par la police pour vos méfaits."
     menu:
-        "capturé par la police!"
+        "TMP : capturé par la police!"
         "zut":
             pass
     $ situation_.SetValCarac(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE)

@@ -16,10 +16,12 @@ init -5 python:
     # les très rares ont une proba de 0.0001 (tueur de monstre,
     def AjouterEvtsCrime():
         global selecteur_
-        estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
+        estPauvre = condition.Condition(trait.Richesse.NOM, -3, condition.Condition.INFERIEUR_EGAL)
+        estMiserable = condition.Condition(trait.Richesse.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         aUnMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.DIFFERENT)
         # statut criminel
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
+        estCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.DIFFERENT)
         estPasDansGang = condition.Condition(crime.Crime.C_GANG, "", condition.Condition.EGAL)
         estDansGang = condition.Condition(crime.Crime.C_GANG, "", condition.Condition.DIFFERENT)
         estDelinquant = condition.Condition(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT, condition.Condition.EGAL)
@@ -119,6 +121,22 @@ init -5 python:
         decRejoindreGang.AjouterCondition(estPasDansGang)
         selecteur_.ajouterDeclencheur(decRejoindreGang)
 
+        # Misérable qui devient pauvre par le crime
+        prob = proba.Proba(0.002, True)
+        prob.ajouterModifProbaViaVals(0.01, estCriminel)
+        prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
+        prob.ajouterModifProbaViaVals(0.01, estInstinctif)
+        decMiserableDevientPauvreCriminel = declencheur.Declencheur(prob, "decMiserableDevientPauvreCriminel")
+        decDevientMalhonnete.AjouterCondition(estMiserable)
+        selecteur_.ajouterDeclencheur(decMiserableDevientPauvreCriminel)
+
+label decMiserableDevientPauvreCriminel:
+    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
+    $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
+    $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
+    "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
+    jump fin_cycle
+
 label decRejoindreGang:
     $ gang = crime.Crime.GenererNomGang();
     $ situation_.SetValCarac(crime.Crime.C_GANG, gang)
@@ -128,7 +146,7 @@ label decRejoindreGang:
 label decDevientMalhonnete:
     "Par désoeuvrement et mépris du monde vous prenez l'habitude de vous battre et de voler."
     menu:
-        "devient petit criminel voleur et violent"
+        "TMP : devient petit criminel voleur et violent"
         "zut":
             pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
@@ -147,7 +165,7 @@ label decDevientCriminelViolent:
     # devient criminel violent
     "Vous vous battez de plus en plus souvent, au point d'avoir plusieurs blessés à votre actif et d'être signalé à la police."
     menu:
-        "devient criminel violent!"
+        "TMP : devient criminel violent!"
         "zut":
             pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
@@ -158,7 +176,7 @@ label decDevientDelinquant:
     # devient petit voleur délinquant
     "Vous vous mettez à voler à droite à gauche pour survivre et échapper à la misère."
     menu:
-        "devient petit voleur!"
+        "TMP : devient petit voleur!"
         "zut":
             pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
@@ -169,7 +187,7 @@ label decDevientVioleur:
     # devient obsédé sexuel
     "Vos obsessions sexuels sont de plus en plus obsessionnelles. Vous vous mettez à suivre des femmes dans la rue, à les tripoter, à fantasmer sur leur viol."
     menu:
-        "devient violeur!"
+        "TMP : devient violeur!"
         "zut":
             pass
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)

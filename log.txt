@@ -1,38 +1,39 @@
-Sun Mar 07 16:30:40 2021
+Sun Mar 07 17:15:08 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.08s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.12s
+Loading error handling took 0.03s
+Loading script took 0.19s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
+Running init code took 0.15s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.07s
+Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
+Dump and make backups. took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
 Creating interface object took 0.06s
 Cleaning stores took 0.00s
-Init translation took 0.02s
+Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.07s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.07s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.03s
+Interface start took 0.02s
 
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
@@ -413,13 +414,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.11599993706s
+Total time until interface ready: 1.3029999733s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.011000 seconds.
-- Frame drawn at 0.026000 seconds.
-- Frame drawn at 0.042000 seconds.
-- Frame drawn at 0.059000 seconds.
-- 0.059000 seconds to render 5 frames.
-Coterie Transhumanistes affinité -2
-Coterie Conquistad
+- Frame drawn at 0.005000 seconds.
+- Frame drawn at 0.021000 seconds.
+- Frame drawn at 0.038000 seconds.
+- Frame drawn at 0.054000 seconds.
+- 

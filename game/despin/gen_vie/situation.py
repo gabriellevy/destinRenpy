@@ -92,6 +92,19 @@ class Situation:
             metierCourant.regenererCaracsMetier(self)
 
 
+    def SetValCaracSiInferieur(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
+        """
+        ne modifie la valeur de carac que si elle était précédemment inférieur à la valeur qu'on veut lui donner
+        """
+        if not idCarac in self.caracs_:
+            self.SetValCarac(idCarac, valCarac, valeurMin, valeurMax)
+        else:
+            valCourante = self.GetValCaracInt(idCarac)
+            if valCourante > valCarac:
+                return
+
+        self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
+
     def SetValCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
         self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
 
@@ -149,7 +162,6 @@ class Situation:
             if valTrait != "" and valTrait != 0:
                 traitsPerso.append(traits[traitK])
         return traitsPerso
-
 
     def DescriptionTraits(self, traits):
         """
