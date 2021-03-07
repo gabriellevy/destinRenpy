@@ -9,6 +9,7 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.socio_eco.metiers import metier
     from extremis.socio_eco.crime import crime
+    from extremis.socio_eco.crime import justice
 
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
@@ -17,8 +18,10 @@ init -5 python:
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
+        # statut criminel
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
+        estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
         # a telle carac
         estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         estObsede = condition.Condition(trait.Sexualite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
@@ -32,8 +35,8 @@ init -5 python:
         estAventureux = condition.Condition(trait.Prudence.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estMenteur = condition.Condition(trait.Sincerite.NOM, -3, condition.Condition.INFERIEUR_EGAL)
 
-        # devient petit délinquant
-        prob = proba.Proba(0.002, True)
+        # devient petit voleur
+        prob = proba.Proba(0.0, True)
         prob.ajouterModifProbaViaVals(0.01, estParesseux)
         prob.ajouterModifProbaViaVals(0.01, estMenteur)
         prob.ajouterModifProbaViaVals(0.01, estSournois)
@@ -48,7 +51,7 @@ init -5 python:
         # A FAIRE : événement devient un voleur de plus en plus dangereux
 
         # devient violeur
-        prob = proba.Proba(0.0001, True)
+        prob = proba.Proba(0.0, True)
         prob.ajouterModifProbaViaVals(0.01, estCruel)
         prob.ajouterModifProbaViaVals(0.01, estObsede)
         prob.ajouterModifProbaViaVals(0.01, estPerversSexuel)
@@ -60,7 +63,7 @@ init -5 python:
         # A FAIRE : événement devient un violeur de plus en plus dangereux
 
         # devient criminel violent
-        prob = proba.Proba(0.0001, True)
+        prob = proba.Proba(0.0, True)
         prob.ajouterModifProbaViaVals(0.01, estAventureux)
         prob.ajouterModifProbaViaVals(0.01, estCupide)
         prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
@@ -69,7 +72,7 @@ init -5 python:
         prob.ajouterModifProbaViaVals(0.01, estParesseux)
         prob.ajouterModifProbaViaVals(0.01, estInstinctif)
         decDevientCriminelViolent = declencheur.Declencheur(prob, "decDevientCriminelViolent")
-        decDevientCriminelViolent.AjouterCondition(estPasVioleur)
+        decDevientCriminelViolent.AjouterCondition(estPasCriminelViolent)
         selecteur_.ajouterDeclencheur(decDevientCriminelViolent)
 
         # A FAIRE : événement devient une brute de plus en plus dangereuse
@@ -80,7 +83,6 @@ label decDevientCriminelViolent:
     $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
     jump fin_cycle
-
 
 label decDevientDelinquant:
     # devient petit voleur délinquant

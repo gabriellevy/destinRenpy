@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1549: u'foreground' is not a keyword argument or valid child for the vbox statement.
-    foreground "images/portraits/inconnu.jpg"
-              ^
+File "game/extremis/socio_eco/crime/evts_justice.rpy", line 49: expected statement.
+    m_ModificateursCaracs[GenVieHumain::C_LIBERTE] = Crime::CAPTURE_POLICE;
+                                                   ^
+
+File "game/extremis/socio_eco/crime/evts_justice.rpy", line 51: expected statement.
+    m_ModificateursCaracs[Metier::C_METIER] = "";
+                                            ^
+
+File "game/extremis/socio_eco/crime/evts_justice.rpy", line 52: expected statement.
+    m_ModificateursCaracs[Metier::C_COMPETENCE_METIER] = "";
+                                                       ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Mar 01 18:32:54 2021
+Sun Mar 07 13:09:22 2021

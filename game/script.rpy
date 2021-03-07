@@ -22,6 +22,7 @@ init -1 python:
     AjouterEvtsRejMetier()
     # crime / loi
     AjouterEvtsCrime()
+    AjouterEvtsJustice()
     # vie courante
     AjouterEvtsPilotage()
     AjouterEvtsRien()
