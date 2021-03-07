@@ -18,10 +18,13 @@ init -5 python:
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
         estCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.DIFFERENT)
+        # statut criminel
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
+        # statut judiciaire
+        estEnPrisonPreventive = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE, condition.Condition.EGAL) # attente de jugement
         # a telle carac
         estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         estObsede = condition.Condition(trait.Sexualite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
@@ -41,6 +44,21 @@ init -5 python:
         decCaptureParPolice = declencheur.Declencheur(prob, "decCaptureParPolice")
         decCaptureParPolice.AjouterCondition(estCriminel)
         selecteur_.ajouterDeclencheur(decCaptureParPolice)
+
+        # jugement
+        prob = proba.Proba(0.1, True)
+        decProces = declencheur.Declencheur(prob, "decProces")
+        decProces.AjouterCondition(estEnPrisonPreventive)
+        selecteur_.ajouterDeclencheur(decProces)
+
+label decProces:
+    "Le jour de votre procès est venu."
+
+    menu:
+        "A FAIRE : Crime::PrononcerLaSentence(humain, effet);":
+            pass
+
+    jump fin_cycle
 
 label decCaptureParPolice:
     # devient criminel violent

@@ -23,6 +23,7 @@ init -5 python:
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
+        estPasVendeurDrogue = condition.Condition(crime.VendeurDrogue.NOM, "", condition.Condition.EGAL)
         # a telle carac
         estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         estObsede = condition.Condition(trait.Sexualite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
