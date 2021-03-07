@@ -1,29 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 72, in script
-    $ situation_.SetValCarac(metier.Metier.C_METIER, "")
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 72, in <module>
-    $ situation_.SetValCarac(metier.Metier.C_METIER, "")
-AttributeError: CollectionMetiers instance has no attribute 'CreerMetier'
+  File "game/script.rpy", line 53, in script
+    $ situation_.TourSuivant()
+  File "game/script.rpy", line 53, in <module>
+    $ situation_.TourSuivant()
+NameError: global name 'justice' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 72, in script
-    $ situation_.SetValCarac(metier.Metier.C_METIER, "")
+  File "game/script.rpy", line 53, in script
+    $ situation_.TourSuivant()
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 72, in <module>
-    $ situation_.SetValCarac(metier.Metier.C_METIER, "")
-  File "despin/gen_vie/situation.py", line 109, in SetValCarac
-  File "despin/gen_vie/situation.py", line 91, in SetCarac
-  File "extremis/socio_eco/metiers/metier.py", line 322, in __getitem__
-AttributeError: CollectionMetiers instance has no attribute 'CreerMetier'
+  File "game/script.rpy", line 53, in <module>
+    $ situation_.TourSuivant()
+  File "despin/gen_vie/situation.py", line 296, in TourSuivant
+  File "despin/gen_vie/situation.py", line 283, in AvanceDeXJours
+NameError: global name 'justice' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Mar 07 18:11:13 2021
+Sun Mar 07 19:09:04 2021

@@ -8,6 +8,7 @@ from extremis.humanite import identite
 from extremis.geographie import quartier
 from extremis.humanite import portrait
 from extremis.socio_eco.crime import crime
+from extremis.socio_eco.crime import justice
 import random
 
 class Situation:
@@ -91,7 +92,6 @@ class Situation:
             if metierStr != "":
                 metierCourant = self.collectionMetiers[metierStr]
                 metierCourant.regenererCaracsMetier(self)
-
 
     def SetValCaracSiInferieur(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
         """
@@ -263,6 +263,7 @@ class Situation:
             return ""
         return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
 
+    # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------
     def AffichageDate(self):
         return temps.Date(self.caracs_[temps.Date.DATE])
 
@@ -279,6 +280,13 @@ class Situation:
             if nbJoursConvalescence < 0:
                 nbJoursConvalescence = 0
             self.caracs_[pbsante.PbSante.C_JOURS_DHOPITAL] = nbJoursConvalescence
+        # prison
+        nbJoursPrison = self.GetValCaracInt(justice.Justice.C_JOURS_PRISON)
+        if nbJoursPrison > 0:
+            nbJoursPrison = nbJoursPrison - nbJoursPasses
+            if nbJoursPrison < 0:
+                nbJoursPrison = 0
+            self.caracs_[justice.Justice.C_JOURS_PRISON] = nbJoursPrison
 
     def TourSuivant(self):
         """

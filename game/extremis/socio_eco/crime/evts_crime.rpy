@@ -11,6 +11,21 @@ init -5 python:
     from extremis.socio_eco.crime import crime
     from extremis.socio_eco.crime import justice
 
+    def MajStatutCriminel(situation):
+        # si au moins un nveau de 1 dans un crime c'est un délinquant
+        # si au moins un nveau de 5 dans un crime c'est un criminel
+        estDelinquant = False
+
+        for crimeK in situation.collectionCrimes.lCrimes_.keys():
+            crimeCarac = crimes[crimeK]
+            if crimeCarac > 0:
+                estDelinquant = True
+                if crimeCarac > 4:
+                    situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
+                    return
+        if estDelinquant:
+            situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
@@ -138,21 +153,6 @@ init -5 python:
         decPauvreDevientMoyenCriminel = declencheur.Declencheur(prob, "decPauvreDevientMoyenCriminel")
         decPauvreDevientMoyenCriminel.AjouterCondition(estPauvre)
         selecteur_.ajouterDeclencheur(decPauvreDevientMoyenCriminel)
-
-    def MajStatutCriminel(situation):
-        # si au moins un nveau de 1 dans un crime c'est un délinquant
-        # si au moins un nveau de 5 dans un crime c'est un criminel
-        estDelinquant = False
-
-        for crimeK in situation.collectionCrimes.lCrimes_.keys():
-            crimeCarac = crimes[crimeK]
-            if crimeCarac > 0:
-                estDelinquant = True
-                if crimeCarac > 4:
-                    situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
-                    return
-        if estDelinquant:
-            situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
 
 label decPauvreDevientMoyenCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)

@@ -24,6 +24,8 @@ init -5 python:
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
         # statut judiciaire
+        estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
+        aZeroMoisDePrison = condition.Condition(justice.Justice.C_JOURS_PRISON, 0, condition.Condition.EGAL)
         estEnPrisonPreventive = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE, condition.Condition.EGAL) # attente de jugement
         # a telle carac
         estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
@@ -50,6 +52,18 @@ init -5 python:
         decProces = declencheur.Declencheur(prob, "decProces")
         decProces.AjouterCondition(estEnPrisonPreventive)
         selecteur_.ajouterDeclencheur(decProces)
+
+        # Libéré de prison
+        prob = proba.Proba(0.5, False)
+        decLiberePrison = declencheur.Declencheur(prob, "decLiberePrison")
+        decLiberePrison.AjouterCondition(estEnPrison)
+        decLiberePrison.AjouterCondition(aZeroMoisDePrison)
+        selecteur_.ajouterDeclencheur(decLiberePrison)
+
+label decLiberePrison:
+    "Vous êtes enfin libéré de prison."
+    $ situation_.SetValCarac(justice.Justice.C_LIBERTE, "")
+    jump fin_cycle
 
 label decProces:
     "Le jour de votre procès est venu."
