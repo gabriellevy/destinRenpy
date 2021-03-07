@@ -9,6 +9,7 @@ from extremis.geographie import quartier
 from extremis.humanite import portrait
 from extremis.socio_eco.crime import crime
 from extremis.socio_eco.crime import justice
+from extremis.humanite import trait
 import random
 
 class Situation:
@@ -164,12 +165,14 @@ class Situation:
                 traitsPerso.append(traits[traitK])
         return traitsPerso
 
+    # affichage des caracs dans l'interface
     def DescriptionTraits(self, traits):
         """
         Description des traits
         """
         str = u""
         for traitK in traits.lTraits_.keys():
+            # A FAIRE : cacher trait.Richesse.NOM
             trait = traits[traitK]
             descr = u"{}".format(trait.GetDescription(self))
             if descr != "":
@@ -179,9 +182,9 @@ class Situation:
                 str = u"{}{}".format(str, descr)
         return str
 
-    def DescriptionBlessures(self, blessures):
+    def DescriptionBlessuresEtMaladies(self, blessures, maladies):
         """
-        Description des blessures actuelles du personnage
+        Description des blessures et maladies actuelles actuelles du personnage
         """
         str = u""
         # affichage des blessures
@@ -189,13 +192,7 @@ class Situation:
             blessure = blessures[blessureK]
             if self.GetValCarac(blessureK) != u"":
                 str = u"{}\n{}".format(str, blessure.nom_)
-        return str
 
-    def DescriptionMaladies(self, maladies):
-        """
-        Description des maladies actuelles du personnage
-        """
-        str = u""
         # affichage des maladies
         for maladieK in maladies.lMaladies_.keys():
             maladie = maladies[maladieK]
@@ -206,6 +203,9 @@ class Situation:
         nbJoursConvalescence = self.GetValCaracInt(pbsante.PbSante.C_JOURS_DHOPITAL)
         if nbJoursConvalescence > 0:
             str = u"{}\nJours de convalescence : {}".format(str, nbJoursConvalescence)
+
+        if str == "":
+            str = "Sain"
         return str
 
     def AffichageAge(self):
@@ -226,12 +226,23 @@ class Situation:
 
     def AffichageMetier(self):
         if ( metier.Metier.C_METIER not in self.caracs_):
-            return ""
-        return self.caracs_[metier.Metier.C_METIER]
+            return "Sans emploi"
+        strMetier = self.caracs_[metier.Metier.C_METIER]
+        if strMetier == "":
+            return "Sans emploi"
+        return strMetier
+
+    def AffichageRichesse(self):
+        if ( trait.Richesse.NOM not in self.caracs_):
+            return u"Classe moyenne"
+        strRichesse = self.collectionTraits[trait.Richesse.NOM].GetDescription(self)
+        if strRichesse == "":
+            strRichesse = u"Classe moyenne"
+        return strRichesse
 
     def AffichageQuartier(self):
         if ( quartier.Quartier.C_QUARTIER not in self.caracs_):
-            return ""
+            return u"Pas d'habitation !!"
         return self.caracs_[quartier.Quartier.C_QUARTIER]
 
     def AffichageCrime(self, crimes):
@@ -245,12 +256,21 @@ class Situation:
                 if str != "":
                     str = u"{}\n".format(str)
                 str = u"{}{} ({})".format(str, descr, crimeCarac.nom_)
-
+        if str != "":
+            str = "{}\n".format(str)
+        str = "{}{}".format(str, self.GetValCarac(justice.Justice.C_LIBERTE))
+        if str != "":
+            str = "{}\n".format(str)
+        nbJoursPrison = self.GetValCaracInt(justice.Justice.C_JOURS_PRISON)
+        if nbJoursPrison > 0:
+            str = "{}{} mois de prison".format(str, nbJoursPrison/30 + 1)
+        if str == "":
+            str ="Casier vierge"
         return str
 
     def AffichageReligion(self):
         if ( religion.Religion.C_RELIGION not in self.caracs_):
-            return ""
+            return "Sans religion"
         return self.caracs_[religion.Religion.C_RELIGION]
 
     def AffichageCoterie(self):
@@ -260,7 +280,7 @@ class Situation:
 
     def AffichagePatronyme(self):
         if ( identite.Identite.C_PRENOM not in self.caracs_):
-            return ""
+            return "!!! Pas de nom !!!!"
         return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
 
     # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------

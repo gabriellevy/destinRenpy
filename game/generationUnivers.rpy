@@ -26,6 +26,15 @@ init -2 python:
     situation_.collectionQuartiers = quartiers_
     crimes_ = crime.CollectionCrimes()
     situation_.collectionCrimes = crimes_
+    interfaceMode_ = 0
+    nbInterfaceMode_ = 8
+
+    def InterfaceSuivante():
+        global interfaceMode_, nbInterfaceMode_
+        interfaceMode_ = interfaceMode_ + 1
+        if interfaceMode_ >= nbInterfaceMode_:
+            interfaceMode_ = 0
+        print(interfaceMode_)
 
     def DeterminerPerso():
         global situation_

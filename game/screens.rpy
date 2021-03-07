@@ -1534,8 +1534,7 @@ style slider_pref_slider:
 screen valeurs_traits():
     tag interface_personnage
     $ descriptionTrait = situation_.DescriptionTraits(traits_)
-    $ descriptionBlessures = situation_.DescriptionBlessures(blessures_)
-    $ descriptionMaladies = situation_.DescriptionMaladies(maladies_)
+    $ descriptionBlessures = situation_.DescriptionBlessuresEtMaladies(blessures_, maladies_)
     $ affAge = situation_.AffichageAge()
     $ affDate = situation_.AffichageDate()
     $ strMetier = situation_.AffichageMetier()
@@ -1544,19 +1543,31 @@ screen valeurs_traits():
     $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
     $ strCrime = situation_.AffichageCrime(crimes_)
+    $ strRichesse = situation_.AffichageRichesse()
     $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
     frame:
         xpos 5 ypos 5
         vbox:
-            text _(u"[affDate]\n") # affichage de date temporaire. Serait mieux dans une fenêtre dédiée affichée facultativement
-            add "[adressePortrait]"
-            text _(u"[patronyme]")
-            text _(u"[strCoterie]")
-            text _(u"[strMetier]")
-            text _(u"[strQuartier]")
-            text _(u"[strReligion]")
-            text _(u"[strCrime]")
-            text _(u"[affAge]\n")
-            text _(u"[descriptionTrait]")
-            text _(u"[descriptionBlessures]")
-            text _(u"[descriptionMaladies]")
+            textbutton _("Description suivante"):
+                action Function(InterfaceSuivante)
+            if interfaceMode_ == 0: # résumé, portrait, nom...
+                add "[adressePortrait]"
+                text _(u"[patronyme]")
+                text _(u"[strCoterie]")
+                text _(u"[affAge]")
+            elif interfaceMode_ == 1: # age, blessures, maladies
+                text _(u"[affAge]")
+                text _(u"[descriptionBlessures]")
+            elif interfaceMode_ == 2: # traits
+                text _(u"[descriptionTrait]")
+            elif interfaceMode_ == 3: # général
+                text _(u"[affDate]\n")
+            elif interfaceMode_ == 4: # économie
+                text _(u"[strMetier]")
+                text _(u"[strRichesse]")
+            elif interfaceMode_ == 5: # religion
+                text _(u"[strReligion]")
+            elif interfaceMode_ == 6: # géographie
+                text _(u"[strQuartier]")
+            elif interfaceMode_ == 7: # loi
+                text _(u"[strCrime]")

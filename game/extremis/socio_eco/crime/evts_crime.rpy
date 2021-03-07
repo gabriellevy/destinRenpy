@@ -17,7 +17,7 @@ init -5 python:
         estDelinquant = False
 
         for crimeK in situation.collectionCrimes.lCrimes_.keys():
-            crimeCarac = crimes[crimeK]
+            crimeCarac = situation.collectionCrimes[crimeK]
             if crimeCarac > 0:
                 estDelinquant = True
                 if crimeCarac > 4:
