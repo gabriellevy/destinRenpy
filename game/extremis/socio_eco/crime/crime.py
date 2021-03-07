@@ -10,7 +10,7 @@ class Crime:
 
     # valeurs de C_CRIMINEL : ("" signifie innocent). Note : être jugé innocent même si n est coupable remet en ""
     DELINQUANT = u"Délinquant";
-    CRIMINEL = u"Criminel"; # violeur, assassin, braqueur...
+    CRIMINEL = u"Criminel"; # violeur, assassin, braqueur... => a au moins un niveau de 5 dans un des crimes des classes suivantes
 
     def __init__(self):
         """
@@ -72,7 +72,7 @@ class Violeur(Crime):
      - 10 : violeur compulsif ultraviolent
      """
 
-    NOM = u"Voleur"
+    NOM = u"Violeur"
 
     def __init__(self):
         self.nom_ = Violeur.NOM
@@ -90,7 +90,7 @@ class Violeur(Crime):
         elif val > 4:
             return u"Violeur"
         elif val > 0:
-            return u"Délinquant sexuel"
+            return u"Petit délinquant sexuel"
         else:
             return ""
 

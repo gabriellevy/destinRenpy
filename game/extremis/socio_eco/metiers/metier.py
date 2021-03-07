@@ -319,7 +319,7 @@ class CollectionMetiers:
 
     def __getitem__(self, idMetier):
         if not idMetier in self.lMetiers_:
-            self.CreerMetier(idMetier)
+            print("ce métier n'existe pas ! : {}".format(idMetier))
         return self.lMetiers_[idMetier]
 
     def __setitem__(self, idMetier, metier):

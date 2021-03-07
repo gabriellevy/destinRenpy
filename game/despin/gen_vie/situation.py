@@ -88,8 +88,9 @@ class Situation:
         # modifier certaines caracs peut impliquer des changements implicites à d'autres :
         if idCarac == metier.Metier.C_METIER:
             metierStr = valCarac
-            metierCourant = self.collectionMetiers[metierStr]
-            metierCourant.regenererCaracsMetier(self)
+            if metierStr != "":
+                metierCourant = self.collectionMetiers[metierStr]
+                metierCourant.regenererCaracsMetier(self)
 
 
     def SetValCaracSiInferieur(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):

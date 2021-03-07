@@ -130,17 +130,49 @@ init -5 python:
         decDevientMalhonnete.AjouterCondition(estMiserable)
         selecteur_.ajouterDeclencheur(decMiserableDevientPauvreCriminel)
 
-label decMiserableDevientPauvreCriminel:
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
+        # Pauvre qui s'enrichit par le crime
+        prob = proba.Proba(0.002, True)
+        prob.ajouterModifProbaViaVals(0.01, estCriminel)
+        prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
+        prob.ajouterModifProbaViaVals(0.01, estInstinctif)
+        decPauvreDevientMoyenCriminel = declencheur.Declencheur(prob, "decPauvreDevientMoyenCriminel")
+        decPauvreDevientMoyenCriminel.AjouterCondition(estPauvre)
+        selecteur_.ajouterDeclencheur(decPauvreDevientMoyenCriminel)
+
+    def MajStatutCriminel(situation):
+        # si au moins un nveau de 1 dans un crime c'est un délinquant
+        # si au moins un nveau de 5 dans un crime c'est un criminel
+        estDelinquant = False
+
+        for crimeK in situation.collectionCrimes.lCrimes_.keys():
+            crimeCarac = crimes[crimeK]
+            if crimeCarac > 0:
+                estDelinquant = True
+                if crimeCarac > 4:
+                    situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
+                    return
+        if estDelinquant:
+            situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+
+label decPauvreDevientMoyenCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
     $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
     "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
+    $ MajStatutCriminel(situation_)
+    jump fin_cycle
+
+label decMiserableDevientPauvreCriminel:
+    $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
+    $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
+    "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decRejoindreGang:
     $ gang = crime.Crime.GenererNomGang();
     $ situation_.SetValCarac(crime.Crime.C_GANG, gang)
     "Vous rejoignez le gang [gang]."
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decDevientMalhonnete:
@@ -149,16 +181,16 @@ label decDevientMalhonnete:
         "TMP : devient petit criminel voleur et violent"
         "zut":
             pass
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decVendeurDeDrogueAuBoulot:
     "Vous mettez en place un petit réseau de revente de drogue sur votre lieu de travail qui vous fait bien voir de certains de vos collègues mais qui arrondit surtout confortablement vos revenus."
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.VendeurDrogue.NOM, 3)
     $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decDevientCriminelViolent:
@@ -168,8 +200,8 @@ label decDevientCriminelViolent:
         "TMP : devient criminel violent!"
         "zut":
             pass
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decDevientDelinquant:
@@ -179,8 +211,8 @@ label decDevientDelinquant:
         "TMP : devient petit voleur!"
         "zut":
             pass
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
 
 label decDevientVioleur:
@@ -190,8 +222,8 @@ label decDevientVioleur:
         "TMP : devient violeur!"
         "zut":
             pass
-    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
     $ situation_.SetValCarac(crime.Violeur.NOM, 1)
+    $ MajStatutCriminel(situation_)
     jump fin_cycle
     # A FAIRE : devient un vrai violeur :
     # "Vos perversions vous poussent à devenir un violeur de plus en plus dépravé."
