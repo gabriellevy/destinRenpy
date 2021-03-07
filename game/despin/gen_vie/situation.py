@@ -162,7 +162,8 @@ class Situation:
             if descr != "":
                 if str != "":
                     str = u"{}\n".format(str)
-                str = u"{}{} ({})".format(str, descr, trait.eTrait_)
+                # str = u"{}{} ({})".format(str, descr, trait.eTrait_) # activer pour plus de détails sur els traits
+                str = u"{}{}".format(str, descr)
         return str
 
     def DescriptionBlessures(self, blessures):

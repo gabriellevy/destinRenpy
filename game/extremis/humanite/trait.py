@@ -674,7 +674,7 @@ class Rancune(TraitGraduel):
             return u"Oublieux"
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Magnanime"
+                return u"Implacable"
             return u"Rancunier"
         else:
             return ""

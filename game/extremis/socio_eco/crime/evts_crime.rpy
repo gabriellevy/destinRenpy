@@ -18,11 +18,15 @@ init -5 python:
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
         aUnMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.DIFFERENT)
-        estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
         # statut criminel
+        estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
+        estPasDansGang = condition.Condition(crime.Crime.C_GANG, "", condition.Condition.EGAL)
+        estDansGang = condition.Condition(crime.Crime.C_GANG, "", condition.Condition.DIFFERENT)
+        estDelinquant = condition.Condition(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT, condition.Condition.EGAL)
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
+        estCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estPasVendeurDrogue = condition.Condition(crime.VendeurDrogue.NOM, "", condition.Condition.EGAL)
         # a telle carac
         estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
@@ -36,6 +40,9 @@ init -5 python:
         estPerversSexuel = condition.Condition(trait.Sexualite.NOM, 11, condition.Condition.SUPERIEUR_EGAL)
         estAventureux = condition.Condition(trait.Prudence.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estMenteur = condition.Condition(trait.Sincerite.NOM, -3, condition.Condition.INFERIEUR_EGAL)
+        estViolent = condition.Condition(trait.Violence.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        estRancunier = condition.Condition(trait.Rancune.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        estUltraViolent = condition.Condition(trait.Violence.NOM, 11, condition.Condition.SUPERIEUR_EGAL)
 
         # devient petit voleur
         prob = proba.Proba(0.0, True)
@@ -69,8 +76,6 @@ init -5 python:
         prob.ajouterModifProbaViaVals(0.01, estAventureux)
         prob.ajouterModifProbaViaVals(0.01, estCupide)
         prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
-        prob.ajouterModifProbaViaVals(0.01, estMenteur)
-        prob.ajouterModifProbaViaVals(0.01, estSournois)
         prob.ajouterModifProbaViaVals(0.01, estParesseux)
         prob.ajouterModifProbaViaVals(0.01, estInstinctif)
         decDevientCriminelViolent = declencheur.Declencheur(prob, "decDevientCriminelViolent")
@@ -83,13 +88,53 @@ init -5 python:
         prob = proba.Proba(0.001, True)
         prob.ajouterModifProbaViaVals(0.01, estCupide)
         prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
-        prob.ajouterModifProbaViaVals(0.01, estMenteur)
+        prob.ajouterModifProbaViaVals(0.01, estViolent)
+        prob.ajouterModifProbaViaVals(0.01, estUltraViolent)
         prob.ajouterModifProbaViaVals(0.01, estSournois)
         prob.ajouterModifProbaViaVals(0.01, estInstinctif)
         decVendeurDeDrogueAuBoulot = declencheur.Declencheur(prob, "decVendeurDeDrogueAuBoulot")
         decVendeurDeDrogueAuBoulot.AjouterCondition(estPasVendeurDrogue)
         decVendeurDeDrogueAuBoulot.AjouterCondition(aUnMetier)
         selecteur_.ajouterDeclencheur(decVendeurDeDrogueAuBoulot)
+
+        # honnête devient petit délinquant par violence et désoeuvrement
+        prob = proba.Proba(0.002, True)
+        prob.ajouterModifProbaViaVals(0.01, estViolent)
+        prob.ajouterModifProbaViaVals(0.01, estUltraViolent)
+        prob.ajouterModifProbaViaVals(0.01, estRancunier)
+        prob.ajouterModifProbaViaVals(0.01, estCruel)
+        prob.ajouterModifProbaViaVals(0.01, estSournois)
+        prob.ajouterModifProbaViaVals(0.01, estParesseux)
+        prob.ajouterModifProbaViaVals(0.01, estInstinctif)
+        decDevientMalhonnete = declencheur.Declencheur(prob, "decDevientMalhonnete")
+        decDevientMalhonnete.AjouterCondition(estPasCriminel)
+        decDevientMalhonnete.AjouterCondition(estPauvre)
+        selecteur_.ajouterDeclencheur(decDevientMalhonnete)
+
+        # rejoindre un gang
+        prob = proba.Proba(0.002, True)
+        decRejoindreGang = declencheur.Declencheur(prob, "decRejoindreGang")
+        decRejoindreGang.AjouterCondition(estDelinquant)
+        decRejoindreGang.AjouterCondition(estCriminelViolent)
+        decRejoindreGang.AjouterCondition(estPasDansGang)
+        selecteur_.ajouterDeclencheur(decRejoindreGang)
+
+label decRejoindreGang:
+    $ gang = crime.Crime.GenererNomGang();
+    $ situation_.SetValCarac(crime.Crime.C_GANG, gang)
+    "Vous rejoignez le gang [gang]."
+    jump fin_cycle
+
+label decDevientMalhonnete:
+    "Par désoeuvrement et mépris du monde vous prenez l'habitude de vous battre et de voler."
+    menu:
+        "devient petit criminel voleur et violent"
+        "zut":
+            pass
+    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+    $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
+    $ situation_.SetValCarac(crime.Voleur.NOM, 1)
+    jump fin_cycle
 
 label decVendeurDeDrogueAuBoulot:
     "Vous mettez en place un petit réseau de revente de drogue sur votre lieu de travail qui vous fait bien voir de certains de vos collègues mais qui arrondit surtout confortablement vos revenus."
