@@ -1,4 +1,4 @@
-Thu Mar 04 20:08:58 2021
+Sun Mar 07 12:05:06 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -6,17 +6,17 @@ Ren'Py 7.3.5.606
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.26s
-Loading save slot metadata. took 0.02s
+Loading error handling took 0.07s
+Loading script took 0.52s
+Loading save slot metadata. took 0.29s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.14s
-Loading analysis data took 0.02s
+Running init code took 0.34s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
-Dump and make backups. took 0.09s
+Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -24,13 +24,13 @@ DPI scale factor: 1.000000
 Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.02s
-Build styles took 0.01s
-Load screen analysis took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.01s
 Analyze screens took 0.01s
 Save screen analysis took 0.08s
-Prepare screens took 0.07s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.07s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -414,37 +414,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.38899993896s
+Total time until interface ready: 2.17299985886s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.015000 seconds.
-- Frame drawn at 0.030000 seconds.
-- Frame drawn at 0.047000 seconds.
-- Frame drawn at 0.063000 seconds.
-- 0.063000 seconds to render 5 frames.
-1.0
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-0.6
-Coterie Transhumanistes affinité 19
-Coterie Conquistadors affinité 34
-Coterie Ordre du Temple affinité -12
-Coterie Elfes affinité -9
-retire templiers
-retire elfes
-coterieChoisie conquistadors
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.034000 seconds.
+- Frame drawn at 0.051000 seconds.
+- Frame drawn at 0.067000 seconds.
+-

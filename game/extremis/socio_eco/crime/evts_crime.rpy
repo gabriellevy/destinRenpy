@@ -29,6 +29,8 @@ init -5 python:
         estCupide = condition.Condition(trait.Cupidite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estOpportuniste = condition.Condition(trait.Opportunisme.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estPerversSexuel = condition.Condition(trait.Sexualite.NOM, 11, condition.Condition.SUPERIEUR_EGAL)
+        estAventureux = condition.Condition(trait.Prudence.NOM, -3, condition.Condition.INFERIEUR_EGAL)
+        estMenteur = condition.Condition(trait.Sincerite.NOM, -3, condition.Condition.INFERIEUR_EGAL)
 
         # devient petit délinquant
         prob = proba.Proba(0.002, True)
@@ -43,6 +45,8 @@ init -5 python:
         decDevientDelinquant.AjouterCondition(estPasVoleur)
         selecteur_.ajouterDeclencheur(decDevientDelinquant)
 
+        # A FAIRE : événement devient un voleur de plus en plus dangereux
+
         # devient violeur
         prob = proba.Proba(0.0001, True)
         prob.ajouterModifProbaViaVals(0.01, estCruel)
@@ -53,7 +57,30 @@ init -5 python:
         decDevientVioleur.AjouterCondition(estPasVioleur)
         selecteur_.ajouterDeclencheur(decDevientVioleur)
 
-        # A FAIRE : événement devient un voleur de plus en plus dangereux
+        # A FAIRE : événement devient un violeur de plus en plus dangereux
+
+        # devient criminel violent
+        prob = proba.Proba(0.0001, True)
+        prob.ajouterModifProbaViaVals(0.01, estAventureux)
+        prob.ajouterModifProbaViaVals(0.01, estCupide)
+        prob.ajouterModifProbaViaVals(0.01, estOpportuniste)
+        prob.ajouterModifProbaViaVals(0.01, estMenteur)
+        prob.ajouterModifProbaViaVals(0.01, estSournois)
+        prob.ajouterModifProbaViaVals(0.01, estParesseux)
+        prob.ajouterModifProbaViaVals(0.01, estInstinctif)
+        decDevientCriminelViolent = declencheur.Declencheur(prob, "decDevientCriminelViolent")
+        decDevientCriminelViolent.AjouterCondition(estPasVioleur)
+        selecteur_.ajouterDeclencheur(decDevientCriminelViolent)
+
+        # A FAIRE : événement devient une brute de plus en plus dangereuse
+
+label decDevientCriminelViolent:
+    # devient criminel violent
+    "Vous vous battez de plus en plus souvent, au point d'avoir plusieurs blessés à votre actif et d'être signalé à la police."
+    $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+    $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
+    jump fin_cycle
+
 
 label decDevientDelinquant:
     # devient petit voleur délinquant
