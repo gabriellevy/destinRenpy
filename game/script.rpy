@@ -54,7 +54,8 @@ label fin_cycle:
 
     if situation_["Santé"] != "Mort":
         jump debut_cycle
-
+        
+label mort:
     "Fin de vie."
     return
 

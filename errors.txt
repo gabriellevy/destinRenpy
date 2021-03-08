@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/generationUnivers.rpy", line 32: invalid syntax
-    def InterfaceSuivante()
+File "game/extremis/socio_eco/crime/evts_justice.rpy", line 113: invalid syntax
+    nbAnneesPrison = nbJoursPrison / 360) + 1
+                                         ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Mar 07 20:21:08 2021
+Mon Mar 08 21:03:06 2021

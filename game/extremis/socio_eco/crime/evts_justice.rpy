@@ -60,17 +60,63 @@ init -5 python:
         decLiberePrison.AjouterCondition(aZeroMoisDePrison)
         selecteur_.ajouterDeclencheur(decLiberePrison)
 
+    def CalculerGraviteCrime(situation, crimes):
+        graviteCrime = random.randint(0, 4)
+        # < 5  = petit délinquant
+        # > 10 crime capital
+        for crimeK in crimes.lCrimes_.keys():
+            crimeCarac = crimes[crimeK]
+            valCrime = situation.GetValCaracInt(crimeK)
+            if valCrime > 0:
+                graviteCrime = graviteCrime + 1
+                if valCrime > 3:
+                    graviteCrime = graviteCrime + 1
+                    if valCrime > 5:
+                        graviteCrime = graviteCrime + 1
+                        if valCrime > 8:
+                            graviteCrime = graviteCrime + 1
+        print("graviteCrime : {}".format(graviteCrime))
+
+        return graviteCrime
+
+    def CalculerNbJoursPrison(graviteCrime):
+        nbMoisPrison = random.randint(graviteCrime, graviteCrime * 5 * 12) # 1 mois à 50 ans de prison
+        nbJoursPrison =nbMoisPrison * 30
+        return nbJoursPrison
+
+
 label decLiberePrison:
     "Vous êtes enfin libéré de prison."
     $ situation_.SetValCarac(justice.Justice.C_LIBERTE, "")
     jump fin_cycle
 
 label decProces:
+    menu:
+        "ATTENTION DEBUT DE PROCES : message temp pour jauger":
+            pass
+
     "Le jour de votre procès est venu."
 
-    menu:
-        "TMP : A FAIRE : Crime::PrononcerLaSentence(humain, effet);":
-            pass
+    $ graviteCrime = CalculerGraviteCrime(situation_, crimes_)
+
+    if graviteCrime < 5:
+        # relaché
+        $ situation_.SetValCarac(justice.Justice.C_LIBERTE, "")
+        $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
+        "Miracle ! Vous êtes jugé innocent et relâché."
+    elif graviteCrime < 10:
+        # prison
+        $ nbJoursPrison = CalculerNbJoursPrison(graviteCrime)
+        $ situation_.SetValCarac(justice.Justice.C_LIBERTE, justice.Justice.PRISON)
+        $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
+        $ situation.SetValCarac(justice.Justice.C_JOURS_PRISON, nbJoursPrison)
+        $ nbAnneesPrison = (nbJoursPrison / 360) + 1
+
+        "Vous êtes condamné à [nbAnneesPrison] années de prison."
+
+    else:
+        "Vous êtes jugé et condamné à mort pour vos crimes. La sentence est exécutée le mois suivant."
+        jump mort
 
     jump fin_cycle
 
