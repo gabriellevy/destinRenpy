@@ -133,7 +133,7 @@ class Situation:
     def GetValCarac(self, idCarac):
         if ( idCarac not in self.caracs_):
             self.caracs_[idCarac] = ""
-        return self.caracs_[idCarac]
+        return u"{}".format(self.caracs_[idCarac])
 
     def GetValCaracInt(self, idCarac):
         if ( idCarac not in self.caracs_):
@@ -257,15 +257,15 @@ class Situation:
                     str = u"{}\n".format(str)
                 str = u"{}{}".format(str, descr)
         if str != "":
-            str = "{}\n".format(str)
-        str = "{}{}".format(str, self.GetValCarac(justice.Justice.C_LIBERTE))
+            str = u"{}\n".format(str)
+        str = u"{}{}".format(str, self.GetValCarac(justice.Justice.C_LIBERTE))
         if str != "":
-            str = "{}\n".format(str)
+            str = u"{}\n".format(str)
         nbJoursPrison = self.GetValCaracInt(justice.Justice.C_JOURS_PRISON)
         if nbJoursPrison > 0:
-            str = "{}{} mois de prison".format(str, nbJoursPrison/30 + 1)
+            str = u"{}{} mois de prison".format(str, nbJoursPrison/30 + 1)
         if str == "":
-            str ="Casier vierge"
+            str =u"Casier vierge"
         return str
 
     def AffichageReligion(self):

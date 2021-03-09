@@ -290,6 +290,9 @@ class CollectionMetiers:
         pilote = Pilote()
         self.SetMetier(Pilote.NOM, pilote)
 
+        chevalier = Chevalier()
+        self.SetMetier(Chevalier.NOM, chevalier)
+
         informaticien = Informaticien()
         self.SetMetier(Informaticien.NOM, informaticien)
 

@@ -24,6 +24,7 @@ init -5 python:
         estPasVoleur = condition.Condition(crime.Voleur.NOM, "", condition.Condition.EGAL)
         estPasCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, "", condition.Condition.EGAL)
         # statut judiciaire
+        estLibre = condition.Condition(justice.Justice.C_LIBERTE, "", condition.Condition.EGAL)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
         aZeroMoisDePrison = condition.Condition(justice.Justice.C_JOURS_PRISON, 0, condition.Condition.EGAL)
         estEnPrisonPreventive = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE, condition.Condition.EGAL) # attente de jugement
@@ -44,6 +45,7 @@ init -5 python:
         # A FAIRE : complexifier un peu ça
         prob = proba.Proba(0.01, True)
         decCaptureParPolice = declencheur.Declencheur(prob, "decCaptureParPolice")
+        decCaptureParPolice.AjouterCondition(estLibre)
         decCaptureParPolice.AjouterCondition(estCriminel)
         selecteur_.ajouterDeclencheur(decCaptureParPolice)
 
@@ -123,10 +125,6 @@ label decProces:
 label decCaptureParPolice:
     # devient criminel violent
     "Vous avez été capturé par la police pour vos méfaits."
-    menu:
-        "TMP : capturé par la police!"
-        "zut":
-            pass
     $ situation_.SetValCarac(justice.Justice.C_LIBERTE, justice.Justice.CAPTURE_POLICE)
     # perd son métier :
     $ situation_.SetValCarac(metier.Metier.C_METIER, "")
