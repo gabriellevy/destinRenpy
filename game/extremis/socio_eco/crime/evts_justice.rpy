@@ -42,7 +42,7 @@ init -5 python:
 
         # capturé par la police
         # A FAIRE : complexifier un peu ça
-        prob = proba.Proba(0.005, True)
+        prob = proba.Proba(0.01, True)
         decCaptureParPolice = declencheur.Declencheur(prob, "decCaptureParPolice")
         decCaptureParPolice.AjouterCondition(estCriminel)
         selecteur_.ajouterDeclencheur(decCaptureParPolice)
@@ -61,7 +61,7 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decLiberePrison)
 
     def CalculerGraviteCrime(situation, crimes):
-        graviteCrime = random.randint(0, 4)
+        graviteCrime = random.randint(0, 5)
         # < 5  = petit délinquant
         # > 10 crime capital
         for crimeK in crimes.lCrimes_.keys():
@@ -102,14 +102,14 @@ label decProces:
     if graviteCrime < 5:
         # relaché
         $ situation_.SetValCarac(justice.Justice.C_LIBERTE, "")
-        $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
+        $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, "")
         "Miracle ! Vous êtes jugé innocent et relâché."
     elif graviteCrime < 10:
         # prison
         $ nbJoursPrison = CalculerNbJoursPrison(graviteCrime)
         $ situation_.SetValCarac(justice.Justice.C_LIBERTE, justice.Justice.PRISON)
-        $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
-        $ situation.SetValCarac(justice.Justice.C_JOURS_PRISON, nbJoursPrison)
+        $ situation_.SetValCarac(crime.Crime.C_CRIMINEL, "")
+        $ situation_.SetValCarac(justice.Justice.C_JOURS_PRISON, nbJoursPrison)
         $ nbAnneesPrison = (nbJoursPrison / 360) + 1
 
         "Vous êtes condamné à [nbAnneesPrison] années de prison."

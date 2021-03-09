@@ -30,6 +30,7 @@ init -1 python:
     AjouterEvtsCoteries()
     AjouterEvtsUnivTranshumanistes()
     AjouterEvtsUnivTempliers()
+    AjouterEvtsTempliers()
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
     AjouterEvtsMaladies()
@@ -42,7 +43,7 @@ label start:
 label debut_cycle:
     show screen valeurs_traits
     #"tmp stop" # tmp test
-    #jump TempliersRejoindre # tmp test
+    # jump recrutementTemplierEnPrison # tmp test
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
@@ -54,7 +55,7 @@ label fin_cycle:
 
     if situation_["Santé"] != "Mort":
         jump debut_cycle
-        
+
 label mort:
     "Fin de vie."
     return

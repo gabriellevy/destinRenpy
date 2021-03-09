@@ -26,7 +26,7 @@ init -2 python:
     situation_.collectionQuartiers = quartiers_
     crimes_ = crime.CollectionCrimes()
     situation_.collectionCrimes = crimes_
-    interfaceMode_ = 0
+    interfaceMode_ = 7
     nbInterfaceMode_ = 8
 
     def InterfaceSuivante():
