@@ -1,4 +1,6 @@
 
+define audio.tedonimum = "musique/templiers/tedonimum.mp3"
+
 init -5 python:
     import random
     from extremis.coteries.templiers import templiers
@@ -12,6 +14,7 @@ init -5 python:
         """
         global selecteur_
         estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
+        estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
         estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
 
@@ -20,6 +23,11 @@ init -5 python:
         recrutementTemplierEnPrison.AjouterCondition(estPasTemplier)
         recrutementTemplierEnPrison.AjouterCondition(estEnPrison)
         selecteur_.ajouterDeclencheur(recrutementTemplierEnPrison)
+
+        # Grande cérémonie
+        templiersGrandeCeremonie = declencheur.Declencheur(proba.Proba(0.01, False), "templiersGrandeCeremonie")
+        templiersGrandeCeremonie.AjouterCondition(estChretien)
+        selecteur_.ajouterDeclencheur(templiersGrandeCeremonie)
 
 label recrutementTemplierEnPrison:
     # Conversion en prison
@@ -53,4 +61,22 @@ label recrutementTemplierEnPrison:
     else:
         "Ses arguments ne vous convainquent pas de rejoindre l'Ordre."
 
+    jump fin_cycle
+
+label templiersGrandeCeremonie:
+    play music tedonimum
+    # "Grande cérémonie => A FAIRE transférer ça dans un fichier d'événements chrétiens
+    "Vous assistez aux offices de pâques. La cérémonie est si parfaite que vous en êtes très affecté, comme si vous étiez purifié de vos péchés."
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.AjouterACarac(trait.Altruisme.NOM, 1)
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.AjouterACarac(trait.Franchise.NOM, 1)
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.AjouterACarac(trait.Sincerite.NOM, 1)
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.RetirerACarac(trait.Ascetisme.NOM, 1)
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.RetirerACarac(trait.Cupidite.NOM, 1)
+    if random.uniform(0, 1.0) < 0.2:
+        $ situation_.RetirerACarac(trait.Sexualite.NOM, 1)
     jump fin_cycle

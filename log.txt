@@ -1,13 +1,13 @@
-Tue Mar 09 21:49:54 2021
+Tue Mar 09 23:27:54 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.16s
+Loading script took 0.17s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -27,10 +27,10 @@ Init translation took 0.02s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.08s
+Save screen analysis took 0.07s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.07s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -414,11 +414,41 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.25300002098s
+controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
+Total time until interface ready: 1.30399990082s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.013000 seconds.
-- Frame drawn at 0.029000 seconds.
-- Frame drawn at 0.045000 seconds.
-- Frame drawn at 0.062000 seconds.
--
+- Frame drawn at 0.012000 seconds.
+- Frame drawn at 0.028000 seconds.
+- Frame drawn at 0.044000 seconds.
+- Frame drawn at 0.061000 seconds.
+- 0.061000 seconds to render 5 frames.
+MajStatutCriminel
+estDelinquant : True
+Coterie Transhumanistes affinité 10
+Coterie Conquistadors affinité 102
+Coterie Ordre du Temple affinité -6
+Coterie Elfes affinité -1
+retire templiers
+retire elfes
+coterieChoisie conquistadors
+ce métier n'existe pas ! : Chevalier
+Alerte ! Il n'y a pas d'attribut 'report_traceback' dans l'objet 'Situation actuelle :  0 (Politique),   (Peste),  Christianisme (Religion),  1 (Vigile),  0 (Mineur),   (Liberté),  51384 (Date de naissance),  Deharbe (Nom),  11 (Cupidité),  -16 (Richesse),  0 (Tueur de monstres),  2 (Architecte),  1 (Voleur),  Chevalier (Métier),  1 (Garde du corps),  11 (Violence),  0 (Bibliothécaire),  Délinquant (Est criminel),  0 (Poids),  1 (univTempliers),  0 (Forgeron),  -1 (Ascétisme),  1 (Criminel violent),  1 (Guerrier),  0 (Cartographe),  0 (Dessinateur),   (Oeil crevé),  0 (Assurance),  0 (Prêtre),  1 (univElfes_evt8),  0 (Violeur),  0 (Conducteur),  0 (Rancune),  1 (univElfes_evt1),  1 (univElfes_evt3),  -14 (Altruisme),  0 (Ambition),   (Gang),  1 (univTempliers_evt7),  1 (univTempliers_evt6),  1 (univTempliers_evt5),  1 (univTempliers_evt4),  1 (univTempliers_evt2),  19 (Age),  fini (Université actuelle),  1 (Policier),  0 (Poète),  0 (Intelligence),  images/portraits/portrait15-35.png (Portrait),   (Traumatisme crânien),  0 (Spiritualité),  0 (Constitution),  11 (Opportunisme),  2 (Chevalier),   (Jambe amputée),  -13 (Honorabilité),  -13 (Industrie),   (Nature),  0 (Alchimiste),  0 (Commercial),  0 (Charme),  58622 (Date),  1 (Cybernéticien),  -1 (Sérénité),   (Santé),  Mathieu (Prenom),  0 (Sensibilité),  1 (univElfes_evt11),  1 (univElfes_evt10),  2 (Banquier),  1 (Paysan),  0 (Vendeur de drogue),   (Defiguré),  1 (univTempliers_evt11),   (Doigt arraché),  1 (univTranshumanistes_evt9),  1 (univTranshumanistes_evt8),  0 (Force),  0 (Taille),  1 (univTranshumanistes_evt1),  1 (univTranshumanistes_evt7),  1 (univTranshumanistes_evt6),  1 (univTranshumanistes_evt4),   (Cicatrice au visage),   (Oreille coupée),  0 (Sens de l'observation),   (Rhume),  0 (Marchand),  0 (Ouvrier),  0 (Habileté),  0 (Médecin),  -13 (Sincérité),   (Coterie),  0 (Musicien),  -13 (Prudence),  0 (Nombre de mois à faire dans l'université actuelle),  0 (Jours d'hopital),   (Bras amputé),  0 (Pilotage),  2 (Beauté),  -13 (Franchise),  1 (Généticien),  11 (Sexualité),  0 (Mois de prison restants),  0 (Parasite),  0 (Intellectualisme),  0 (MétierAdministratif),  0 (Pilote),  0 (Informaticien),  1 (univElfes_evt12),  0 (Artiste),  0 (Pragmatisme),  3 (Nombre d'universités terminées),  1 (univElfes),   (Hemoragie Interne),  0 (Rapport entre les sexes),  1 (univTranshumanistes), ' !
+Alerte ! Il n'y a pas d'attribut 'report_traceback' dans l'objet 'Situation actuelle :  0 (Politique),   (Peste),  Christianisme (Religion),  1 (Vigile),  0 (Mineur),   (Liberté),  51384 (Date de naissance),  Deharbe (Nom),  11 (Cupidité),  -16 (Richesse),  0 (Tueur de monstres),  2 (Architecte),  1 (Voleur),  Chevalier (Métier),  1 (Garde du corps),  11 (Violence),  0 (Bibliothécaire),  Délinquant (Est criminel),  0 (Poids),  1 (univTempliers),  0 (Forgeron),  -1 (Ascétisme),  1 (Criminel violent),  1 (Guerrier),  0 (Cartographe),  0 (Dessinateur),   (Oeil crevé),  0 (Assurance),  0 (Prêtre),  1 (univElfes_evt8),  0 (Violeur),  0 (Conducteur),  0 (Rancune),  1 (univElfes_evt1),  1 (univElfes_evt3),  -14 (Altruisme),  0 (Ambition),   (Gang),  1 (univTempliers_evt7),  1 (univTempliers_evt6),  1 (univTempliers_evt5),  1 (univTempliers_evt4),  1 (univTempliers_evt2),  19 (Age),  fini (Université actuelle),  1 (Policier),  0 (Poète),  0 (Intelligence),  images/portraits/portrait15-35.png (Portrait),   (Traumatisme crânien),  0 (Spiritualité),  0 (Constitution),  11 (Opportunisme),  2 (Chevalier),   (Jambe amputée),  -13 (Honorabilité),  -13 (Industrie),   (Nature),  0 (Alchimiste),  0 (Commercial),  0 (Charme),  58622 (Date),  1 (Cybernéticien),  -1 (Sérénité),   (Santé),  Mathieu (Prenom),  0 (Sensibilité),  1 (univElfes_evt11),  1 (univElfes_evt10),  2 (Banquier),  1 (Paysan),  0 (Vendeur de drogue),   (Defiguré),  1 (univTempliers_evt11),   (Doigt arraché),  1 (univTranshumanistes_evt9),  1 (univTranshumanistes_evt8),  0 (Force),  0 (Taille),  1 (univTranshumanistes_evt1),  1 (univTranshumanistes_evt7),  1 (univTranshumanistes_evt6),  1 (univTranshumanistes_evt4),   (Cicatrice au visage),   (Oreille coupée),  0 (Sens de l'observation),   (Rhume),  0 (Marchand),  0 (Ouvrier),  0 (Habileté),  0 (Médecin),  -13 (Sincérité),   (Coterie),  0 (Musicien),  -13 (Prudence),  0 (Nombre de mois à faire dans l'université actuelle),  0 (Jours d'hopital),   (Bras amputé),  0 (Pilotage),  2 (Beauté),  -13 (Franchise),  1 (Généticien),  11 (Sexualité),  0 (Mois de prison restants),  0 (Parasite),  0 (Intellectualisme),  0 (MétierAdministratif),  0 (Pilote),  0 (Informaticien),  1 (univElfes_evt12),  0 (Artiste),  0 (Pragmatisme),  3 (Nombre d'universités terminées),  1 (univElfes),   (Hemoragie Interne),  0 (Rapport entre les sexes),  1 (univTranshumanistes), ' !
+
+Full traceback:
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in script
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in <module>
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+  File "despin/gen_vie/situation.py", line 111, in SetValCarac
+  File "despin/gen_vie/situation.py", line 94, in SetCarac
+  File "extremis/socio_eco/metiers/metier.py", line 323, in __getitem__
+KeyError: u'Chevalier'
+
+While running game code:
+  File "game/extremis/socio_eco/

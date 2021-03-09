@@ -246,7 +246,7 @@ class Situation:
         return self.caracs_[quartier.Quartier.C_QUARTIER]
 
     def AffichageCrime(self, crimes):
-        str = self.GetValCarac(crime.Crime.C_CRIMINEL)
+        str = u"{}".format(self.GetValCarac(crime.Crime.C_CRIMINEL))
 
         # affichage des crimes dans le détail
         for crimeK in crimes.lCrimes_.keys():
@@ -255,7 +255,7 @@ class Situation:
             if descr != "":
                 if str != "":
                     str = u"{}\n".format(str)
-                str = u"{}{} ({})".format(str, descr, crimeCarac.nom_)
+                str = u"{}{}".format(str, descr)
         if str != "":
             str = "{}\n".format(str)
         str = "{}{}".format(str, self.GetValCarac(justice.Justice.C_LIBERTE))

@@ -40,7 +40,36 @@ init -5 python:
         # effetNarrationVide->AjouterChangeurDeCarac(ClasseSociale::C_CLASSE_SOCIALE, clas);
         return
 
+    def genererTruand(situation, tousLesTraits):
+        """
+        création d'un perso qui a de très fortes chances de mal tourner
+        """
+        situation[trait.Sexualite.NOM] = 11
+        situation[trait.Richesse.NOM] = -13
+        situation[trait.Sincerite.NOM] = -13
+        situation[trait.Honorabilite.NOM] = -13
+        situation[trait.Industrie.NOM] = -13
+        situation[trait.Franchise.NOM] = -13
+        situation[trait.Prudence.NOM] = -13
+        situation[trait.Altruisme.NOM] = -13
+        situation[trait.Cupidite.NOM] = 11
+        situation[trait.Opportunisme.NOM] = 11
+        situation[trait.Violence.NOM] = 11
+
+        # A FAIRE Mathieu : génération de la famille
+        # Famille::GenererParents(effetNarrationVide);
+
+        # TODO : générer ces données aléatoirement quand la bdd de noms sera ajoutée
+        situation[u"Nom"] = "Deharbe"
+        situation[u"Prenom"] = "Mathieu"
+
+        # A FAIRE : génération classe sociale :
+        # QString clas = ClasseSociale::GetClasseSocialeAleatoire();
+        # effetNarrationVide->AjouterChangeurDeCarac(ClasseSociale::C_CLASSE_SOCIALE, clas);
+        return
+
 label naissance:
     $ genererDateNaissance(situation_)
-    $ genererTraits(situation_, traits_)
+    # $ genererTraits(situation_, traits_)
+    $ genererTruand(situation_, traits_)
     jump debut_cycle

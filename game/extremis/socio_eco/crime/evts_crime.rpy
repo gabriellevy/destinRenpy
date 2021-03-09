@@ -11,20 +11,23 @@ init -5 python:
     from extremis.socio_eco.crime import crime
     from extremis.socio_eco.crime import justice
 
-    def MajStatutCriminel(situation):
+    def MajStatutCriminel():
+        global situation_
         # si au moins un nveau de 1 dans un crime c'est un délinquant
         # si au moins un nveau de 5 dans un crime c'est un criminel
         estDelinquant = False
+        print("MajStatutCriminel")
 
-        for crimeK in situation.collectionCrimes.lCrimes_.keys():
-            crimeCarac = situation.collectionCrimes[crimeK]
+        for crimeK in situation_.collectionCrimes.lCrimes_.keys():
+            crimeCarac = situation_[crimeK]
             if crimeCarac > 0:
                 estDelinquant = True
                 if crimeCarac > 4:
-                    situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
+                    situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.CRIMINEL)
                     return
         if estDelinquant:
-            situation.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+            situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
+        print("estDelinquant : {}".format(estDelinquant))
 
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
@@ -158,21 +161,21 @@ label decPauvreDevientMoyenCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
     $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
     "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decMiserableDevientPauvreCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
     $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
     "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decRejoindreGang:
     $ gang = crime.Crime.GenererNomGang();
     $ situation_.SetValCarac(crime.Crime.C_GANG, gang)
     "Vous rejoignez le gang [gang]."
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decDevientMalhonnete:
@@ -183,14 +186,14 @@ label decDevientMalhonnete:
             pass
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decVendeurDeDrogueAuBoulot:
     "Vous mettez en place un petit réseau de revente de drogue sur votre lieu de travail qui vous fait bien voir de certains de vos collègues mais qui arrondit surtout confortablement vos revenus."
     $ situation_.SetValCarac(crime.VendeurDrogue.NOM, 3)
     $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decDevientCriminelViolent:
@@ -201,7 +204,7 @@ label decDevientCriminelViolent:
         "zut":
             pass
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decDevientDelinquant:
@@ -212,7 +215,7 @@ label decDevientDelinquant:
         "zut":
             pass
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
 
 label decDevientVioleur:
@@ -223,7 +226,7 @@ label decDevientVioleur:
         "zut":
             pass
     $ situation_.SetValCarac(crime.Violeur.NOM, 1)
-    $ MajStatutCriminel(situation_)
+    $ MajStatutCriminel()
     jump fin_cycle
     # A FAIRE : devient un vrai violeur :
     # "Vos perversions vous poussent à devenir un violeur de plus en plus dépravé."

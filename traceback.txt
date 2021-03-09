@@ -1,26 +1,29 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 105, in script
-    $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 105, in <module>
-    $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
-AttributeError: 'module' object has no attribute 'SetValCarac'
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in script
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in <module>
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+KeyError: u'Chevalier'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 105, in script
-    $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in script
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/socio_eco/crime/evts_justice.rpy", line 105, in <module>
-    $ situation.SetValCarac(crime.Crime.C_CRIMINEL, "")
-AttributeError: 'module' object has no attribute 'SetValCarac'
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 351, in <module>
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+  File "despin/gen_vie/situation.py", line 111, in SetValCarac
+  File "despin/gen_vie/situation.py", line 94, in SetCarac
+  File "extremis/socio_eco/metiers/metier.py", line 323, in __getitem__
+KeyError: u'Chevalier'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Mar 09 21:35:03 2021
+Tue Mar 09 23:35:46 2021

@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 33: reached end of line when expecting ':'.
-    if resProba < 0.3
-                     ^
-
-File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 37: reached end of line when expecting ':'.
-    if resProba < 0.3
-                     ^
-
-File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 41: reached end of line when expecting ':'.
-    if resProba < 0.3
-                     ^
+File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 69: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    effet->m_Son = "qrc:/sons/croisade/hornsofhattinandaftermath.mp3";
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Mar 09 21:33:51 2021
+Tue Mar 09 22:45:36 2021
