@@ -1544,6 +1544,7 @@ screen valeurs_traits():
     $ patronyme = situation_.AffichagePatronyme()
     $ strCrime = situation_.AffichageCrime(crimes_)
     $ strRichesse = situation_.AffichageRichesse()
+    $ strPossessions = situation_.AffichagePossessions()
     $ adressePortrait = situation_.DeterminerPortrait()
     frame:
         xpos 5 ypos 5
@@ -1563,11 +1564,13 @@ screen valeurs_traits():
             elif interfaceMode_ == 3: # général
                 text _(u"[affDate]\n")
             elif interfaceMode_ == 4: # économie
-                text _(u"[strMetier]")
                 text _(u"[strRichesse]")
+                text _(u"[strMetier]")
             elif interfaceMode_ == 5: # religion
                 text _(u"[strReligion]")
             elif interfaceMode_ == 6: # géographie
                 text _(u"[strQuartier]")
             elif interfaceMode_ == 7: # loi
                 text _(u"[strCrime]")
+            elif interfaceMode_ == 8: # Possessions
+                text _(u"[strPossessions]")

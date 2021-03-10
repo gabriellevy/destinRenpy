@@ -11,6 +11,7 @@ class Templiers(coterie.Coterie):
 
     C_RICHESSE = "Richesse du temple" # tous les templiers ont renoncé aux biens matériels, ils ont tous cette richesse (basse)
     RICHESSE_TEMPLE = -4 # richesse de départ du temple, et peu de chance de beaucoup bouger
+    C_EPEE_SACREE = u"Épée sacrée"
 
     def __init__(self):
         self.nom_ = Templiers.NOM

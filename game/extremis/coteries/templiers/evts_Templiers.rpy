@@ -1,5 +1,6 @@
 
 define audio.tedonimum = "musique/templiers/tedonimum.mp3"
+define audio.saladinbesiegejerusalem = "musique/templiers/saladinbesiegejerusalem.mp3"
 
 init -5 python:
     import random
@@ -15,11 +16,13 @@ init -5 python:
         global selecteur_
         estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
         estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
+        aPasEpeeSacree = condition.Condition(templiers.Templiers.C_EPEE_SACREE, "", condition.Condition.EGAL)
         estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
         # guerrier
         estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
         estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
+        estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
         estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
         estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
 
@@ -42,6 +45,22 @@ init -5 python:
         templiersEntrainementAuCombat.AjouterCondition(estTemplier)
         templiersEntrainementAuCombat.AjouterCondition(estPasGuerrierSupreme)
         selecteur_.ajouterDeclencheur(templiersEntrainementAuCombat)
+
+        # Don d'une épée sacrée
+        prob = proba.Proba(0.05, True)
+        templiersDonEpeeSacree = declencheur.Declencheur(prob, "templiersDonEpeeSacree")
+        templiersDonEpeeSacree.AjouterCondition(estTemplier)
+        templiersDonEpeeSacree.AjouterCondition(aPasEpeeSacree)
+        templiersDonEpeeSacree.AjouterCondition(estChretien)
+        templiersDonEpeeSacree.AjouterCondition(estBonGuerrier)
+        selecteur_.ajouterDeclencheur(templiersDonEpeeSacree)
+
+label templiersDonEpeeSacree:
+    # Don d'une épée sacrée
+    play music saladinbesiegejerusalem
+    "Pour votre dévotion chrétienne fervente et en signe que vos compétences au combat sont reconnues suffisantes, l'ordre vous affecte une épée sacrée bénie par un évèque. Nul doute qu'elle facilitera grandement vos miracles."
+    $ situation_.AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+    $ situation_.AjouterACarac(religion.Religion.C_MIRACLE, 1)
 
 label templiersEntrainementAuCombat:
     # Entrainement au combat

@@ -63,7 +63,7 @@ init -5 python:
 
         # TODO : générer ces données aléatoirement quand la bdd de noms sera ajoutée
         situation[u"Nom"] = "Deharbe"
-        situation[u"Prenom"] = "Mathieu"
+        situation[u"Prénom"] = "Mathieu"
 
         # A FAIRE : génération classe sociale :
         # QString clas = ClasseSociale::GetClasseSocialeAleatoire();
@@ -72,7 +72,7 @@ init -5 python:
 
 label naissance:
     $ genererDateNaissance(situation_)
-    # $ genererTraits(situation_, traits_)
-    $ genererTruand(situation_, traits_)
+    $ genererTraits(situation_, traits_)
+    # $ genererTruand(situation_, traits_)
     # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle

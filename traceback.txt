@@ -1,35 +1,25 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/socio_eco/crime/evts_crime.rpy", line 180, in script
-    "Par désoeuvrement et mépris du monde vous prenez l'habitude de vous battre et de voler."
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
+  File "game/evts_generaux/rien.rpy", line 54, in script
+    with Dissolve(.5)
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1542, in execute
-    $ strCoterie = situation_.AffichageCoterie()
-  File "game/screens.rpy", line 1542, in <module>
-    $ strCoterie = situation_.AffichageCoterie()
-AttributeError: 'NoneType' object has no attribute 'nom_'
+  File "game/screens.rpy", line 1547, in execute
+    $ strPossessions = situation_.AffichagePossessions()
+  File "game/screens.rpy", line 1547, in <module>
+    $ strPossessions = situation_.AffichagePossessions()
+NameError: global name 'strRichesse' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/socio_eco/crime/evts_crime.rpy", line 180, in script
-    "Par désoeuvrement et mépris du monde vous prenez l'habitude de vous battre et de voler."
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 671, in execute
-    statement_name("say")
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 45, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
+  File "game/evts_generaux/rien.rpy", line 54, in script
+    with Dissolve(.5)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
+    renpy.exports.with_statement(trans, paired)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
     return renpy.game.interface.do_with(trans, paired, clear=clear)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
@@ -58,14 +48,14 @@ Full traceback:
     screen valeurs_traits():
   File "game/screens.rpy", line 1534, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1542, in execute
-    $ strCoterie = situation_.AffichageCoterie()
-  File "game/screens.rpy", line 1542, in <module>
-    $ strCoterie = situation_.AffichageCoterie()
-  File "despin/gen_vie/situation.py", line 283, in AffichageCoterie
-AttributeError: 'NoneType' object has no attribute 'nom_'
+  File "game/screens.rpy", line 1547, in execute
+    $ strPossessions = situation_.AffichagePossessions()
+  File "game/screens.rpy", line 1547, in <module>
+    $ strPossessions = situation_.AffichagePossessions()
+  File "despin/gen_vie/situation.py", line 263, in AffichagePossessions
+NameError: global name 'strRichesse' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Wed Mar 10 21:12:35 2021
+Wed Mar 10 22:42:00 2021

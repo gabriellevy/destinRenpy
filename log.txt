@@ -1,4 +1,4 @@
-Wed Mar 10 21:13:40 2021
+Wed Mar 10 22:44:33 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -11,25 +11,25 @@ Loading script took 0.12s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.15s
+Running init code took 0.16s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.06s
+Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
-Build styles took 0.00s
-Load screen analysis took 0.04s
+Build styles took 0.01s
+Load screen analysis took 0.02s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.08s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -414,173 +414,11 @@ Texture testing:
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.21499991417s
+Total time until interface ready: 1.09800004959s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.015000 seconds.
-- Frame drawn at 0.030000 seconds.
-- Frame drawn at 0.047000 seconds.
-- Frame drawn at 0.063000 seconds.
-- 0.063000 seconds to render 5 frames.
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-0
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-1
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-2
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-3
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-4
-DeterminerPortraits cot : None 
-5
-DeterminerPortraits cot : None 
-6
-DeterminerPortraits cot : None 
-7
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-DeterminerPortraits cot : None 
-Coterie Transhumanistes affinit√
+- Frame drawn at 0.008000 seconds.
+- Frame drawn at 0.024000 seconds.
+- Frame drawn at 0.040000 seconds.
+- Frame drawn at 0.057000 seconds.
+- 0.057000 seconds to ren

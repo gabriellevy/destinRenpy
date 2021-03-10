@@ -1,6 +1,7 @@
 
 from extremis.socio_eco.metiers import metier
 from extremis.coteries import coterie
+from extremis.coteries.templiers import templiers
 from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
@@ -228,11 +229,23 @@ class Situation:
         return 0
 
     def AffichageMetier(self):
+        strMetier = u""
         if ( metier.Metier.C_METIER not in self.caracs_):
-            return "Sans emploi"
+            strMetier = u"Sans emploi"
         strMetier = self.caracs_[metier.Metier.C_METIER]
         if strMetier == "":
-            return "Sans emploi"
+            strMetier = u"Sans emploi"
+
+        # afficher les compétences :
+        strComp = u""
+        for metierK in self.collectionMetiers.lMetiers_.keys():
+            valMetier = self.GetValCaracInt(metierK)
+            if valMetier != "" and valMetier != 0:
+                strComp = u"{}\n - {} ({})".format(strComp, metierK, valMetier)
+
+        if strComp != "":
+            strMetier = u"{}\n\nCompétences : {}".format(strMetier, strComp)
+
         return strMetier
 
     def AffichageRichesse(self):
@@ -242,6 +255,15 @@ class Situation:
         if strRichesse == "":
             strRichesse = u"Classe moyenne"
         return strRichesse
+
+    def AffichagePossessions(self):
+        strPossession = u""
+        if ( templiers.Templiers.C_EPEE_SACREE in self.caracs_):
+            strPossession = u"{}\n{}".format(strPossession, self.GetValCarac(templiers.Templiers.C_EPEE_SACREE))
+
+        if strPossession == "":
+            strPossession = u"Aucune possession"
+        return strPossession
 
     def AffichageQuartier(self):
         if ( quartier.Quartier.C_QUARTIER not in self.caracs_):
