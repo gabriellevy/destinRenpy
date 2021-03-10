@@ -16,7 +16,6 @@ init -5 python:
         # si au moins un nveau de 1 dans un crime c'est un délinquant
         # si au moins un nveau de 5 dans un crime c'est un criminel
         estDelinquant = False
-        print("MajStatutCriminel")
 
         for crimeK in situation_.collectionCrimes.lCrimes_.keys():
             crimeCarac = situation_[crimeK]
@@ -27,7 +26,6 @@ init -5 python:
                     return
         if estDelinquant:
             situation_.SetValCarac(crime.Crime.C_CRIMINEL, crime.Crime.DELINQUANT)
-        print("estDelinquant : {}".format(estDelinquant))
 
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
@@ -180,10 +178,6 @@ label decRejoindreGang:
 
 label decDevientMalhonnete:
     "Par désoeuvrement et mépris du monde vous prenez l'habitude de vous battre et de voler."
-    menu:
-        "TMP : devient petit criminel voleur et violent"
-        "zut":
-            pass
     $ situation_.SetValCarac(crime.CriminelViolent.NOM, 1)
     $ situation_.SetValCarac(crime.Voleur.NOM, 1)
     $ MajStatutCriminel()

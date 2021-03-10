@@ -1544,7 +1544,7 @@ screen valeurs_traits():
     $ patronyme = situation_.AffichagePatronyme()
     $ strCrime = situation_.AffichageCrime(crimes_)
     $ strRichesse = situation_.AffichageRichesse()
-    $ adressePortrait = situation_.DeterminerPortrait(coteries_, metiers_, traits_)
+    $ adressePortrait = situation_.DeterminerPortrait()
     frame:
         xpos 5 ypos 5
         vbox:

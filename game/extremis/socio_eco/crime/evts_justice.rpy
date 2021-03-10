@@ -93,10 +93,6 @@ label decLiberePrison:
     jump fin_cycle
 
 label decProces:
-    menu:
-        "ATTENTION DEBUT DE PROCES : message temp pour jauger":
-            pass
-
     "Le jour de votre procès est venu."
 
     $ graviteCrime = CalculerGraviteCrime(situation_, crimes_)

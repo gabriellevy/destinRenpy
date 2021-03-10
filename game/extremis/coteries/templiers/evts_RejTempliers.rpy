@@ -72,7 +72,7 @@ label templiersPostule:
         jump TempliersPostule_t1_rate
 
     label TempliersPostule_t1_rate:
-        "Échouer si rapidement à des instructions si simples. L'Ordre est très déçu, vous aurez peut-être ue autre chance un jour..."
+        "Échouer si rapidement à des instructions si simples. L'Ordre est très déçu, vous aurez peut-être une autre chance un jour..."
         "PAS FAIT : développer cette rencontre pourrait être marrant !"
         jump fin_cycle
 

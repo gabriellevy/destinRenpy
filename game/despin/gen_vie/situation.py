@@ -36,13 +36,13 @@ class Situation:
         self.collectionQuartiers = None
         self.collectionCrimes = None
 
-    def DeterminerPortrait(self, coteries, metiers, traits):
+    def DeterminerPortrait(self):
         """
         récupérer une liste de portraits selon les caracs du perso et en choisir un aléatoirement
         celui est choisi est stocké dans une carac mais en cas de changement important (âge, métier, coterie...) on en recalcule un
         """
         portr = portrait.Portrait()
-        portraitStr = portr.DeterminerPortraits(self, True, coteries, metiers, traits)
+        portraitStr = portr.DeterminerPortraits(self, True)
         self.SetCarac(portrait.Portrait.C_PORTRAIT, portraitStr)
         return self.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
@@ -142,27 +142,30 @@ class Situation:
             self.caracs_[idCarac] = 0
         return self.caracs_[idCarac]
 
-    def GetMetier(self, metiers):
+    def GetMetier(self):
         valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
         if valMetierStr == "":
             return None
-        return metiers[valMetierStr]
+        return self.collectionMetiers[valMetierStr]
 
-    def GetCoterie(self, coteries):
+    def GetCoterie(self):
         valCoterieStr = self.GetValCarac(coterie.Coterie.C_COTERIE)
         if valCoterieStr == "":
             return None
-        return coteries[valCoterieStr]
+        print("GetCoterie valCoterieStr : {}".format(valCoterieStr))
+        cot = self.collectionCoteries[valCoterieStr]
+        print("GetCoterie coterie : {}".format(cot))
+        return cot
 
-    def GetTraits(self, traits):
+    def GetTraits(self):
         """
         renvoi la liste des traits du perso sous forme de 'Trait'
         """
         traitsPerso = []
-        for traitK in traits.lTraits_.keys():
+        for traitK in self.collectionTraits.lTraits_.keys():
             valTrait = self.GetValCarac(traitK)
             if valTrait != "" and valTrait != 0:
-                traitsPerso.append(traits[traitK])
+                traitsPerso.append(self.collectionTraits[traitK])
         return traitsPerso
 
     # affichage des caracs dans l'interface
@@ -276,7 +279,10 @@ class Situation:
     def AffichageCoterie(self):
         if ( coterie.Coterie.C_COTERIE not in self.caracs_):
             return ""
-        return self.caracs_[coterie.Coterie.C_COTERIE]
+        cot = self.GetCoterie()
+        if cot is None:
+            return ""
+        return cot.nom_
 
     def AffichagePatronyme(self):
         if ( identite.Identite.C_PRENOM not in self.caracs_):

@@ -17,17 +17,38 @@ init -5 python:
         estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
         estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
+        # guerrier
+        estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
+        estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
+        estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
+        estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
 
         # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
-        recrutementTemplierEnPrison = declencheur.Declencheur(proba.Proba(0.1, False), "recrutementTemplierEnPrison")
+        recrutementTemplierEnPrison = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementTemplierEnPrison")
         recrutementTemplierEnPrison.AjouterCondition(estPasTemplier)
         recrutementTemplierEnPrison.AjouterCondition(estEnPrison)
         selecteur_.ajouterDeclencheur(recrutementTemplierEnPrison)
 
         # Grande cérémonie
-        templiersGrandeCeremonie = declencheur.Declencheur(proba.Proba(0.01, False), "templiersGrandeCeremonie")
+        templiersGrandeCeremonie = declencheur.Declencheur(proba.Proba(0.01, True), "templiersGrandeCeremonie")
         templiersGrandeCeremonie.AjouterCondition(estChretien)
         selecteur_.ajouterDeclencheur(templiersGrandeCeremonie)
+
+        # Entrainement au combat
+        prob = proba.Proba(0.01, True)
+        prob.ajouterModifProbaViaVals(0.01, estGuerrierNul)
+        prob.ajouterModifProbaViaVals(0.005, estPasGrandGuerrier)
+        templiersEntrainementAuCombat = declencheur.Declencheur(prob, "templiersEntrainementAuCombat")
+        templiersEntrainementAuCombat.AjouterCondition(estTemplier)
+        templiersEntrainementAuCombat.AjouterCondition(estPasGuerrierSupreme)
+        selecteur_.ajouterDeclencheur(templiersEntrainementAuCombat)
+
+label templiersEntrainementAuCombat:
+    # Entrainement au combat
+    "Même quand il n'est pas un guerrier professionnel un templier se doit d'être expert en combat ce qui est encore loin d'être votre cas."
+    "Une série de séances avec un maître d'armes améliore grandement vos compétences."
+    $ situation_.AjouterACarac(metier.Guerrier.NOM, 1)
+    jump fin_cycle
 
 label recrutementTemplierEnPrison:
     # Conversion en prison

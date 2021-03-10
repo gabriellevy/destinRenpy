@@ -6,16 +6,16 @@ class Portrait:
 
     C_PORTRAIT = u"Portrait"
 
-    def DeterminerPortraits(self, situation, masculin, coteries, metiers, traits):
+    def DeterminerPortraits(self, situation, masculin):
         """
         retourne l'adresse du portrait à afficher pour le perso courant
         """
         portraits = []
         portraitCourant = situation.GetValCarac(Portrait.C_PORTRAIT)
         age = situation.AgeEnAnnees()
-        cot = situation.GetCoterie(coteries)
-        met = situation.GetMetier(metiers)
-        traitsPerso = situation.GetTraits(traits)
+        cot = situation.GetCoterie()
+        met = situation.GetMetier()
+        traitsPerso = situation.GetTraits()
 
         if cot != None:
             portraits = cot.GenererPortraits(age, masculin, met, portraits)

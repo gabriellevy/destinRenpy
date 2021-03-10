@@ -8,6 +8,8 @@ init -5 python:
     from despin.abs import condition
     from extremis.humanite import trait
     from extremis.constitution import temps
+    from extremis.coteries.templiers import templiers
+    from extremis.coteries import coterie
 
     def genererDateNaissance(situation):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
@@ -72,4 +74,5 @@ label naissance:
     $ genererDateNaissance(situation_)
     # $ genererTraits(situation_, traits_)
     $ genererTruand(situation_, traits_)
+    # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle
