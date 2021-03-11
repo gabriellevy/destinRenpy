@@ -9,6 +9,7 @@ class Elfes(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Elfes.NOM
+        self.id_ = Elfes.ID
 
     def getLabelUniversite(self):
         return "univElfes"

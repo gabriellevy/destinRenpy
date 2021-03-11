@@ -30,10 +30,11 @@ init -5 python:
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
+    estMiserable = condition.Condition(trait.Richesse.NOM, -13, condition.Condition.INFERIEUR_EGAL)
+    
     def AjouterEvtsCrime():
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -3, condition.Condition.INFERIEUR_EGAL)
-        estMiserable = condition.Condition(trait.Richesse.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         aUnMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.DIFFERENT)
         # statut criminel
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)

@@ -169,7 +169,7 @@ class Situation:
                 traitsPerso.append(self.collectionTraits[traitK])
         return traitsPerso
 
-    # affichage des caracs dans l'interface
+    # ---------------------------------- affichage des caracs dans l'interface
     def DescriptionTraits(self, traits):
         """
         Description des traits

@@ -1,6 +1,7 @@
 
 define audio.tedonimum = "musique/templiers/tedonimum.mp3"
 define audio.saladinbesiegejerusalem = "musique/templiers/saladinbesiegejerusalem.mp3"
+define audio.guyderosesquandary = "musique/templiers/guyderosesquandary.mp3"
 
 init -5 python:
     import random
@@ -19,12 +20,14 @@ init -5 python:
         aPasEpeeSacree = condition.Condition(templiers.Templiers.C_EPEE_SACREE, "", condition.Condition.EGAL)
         estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
+        estDansQuartierTemplier = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintDenis.NOM, condition.Condition.EGAL)
         # guerrier
         estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
         estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
         estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
         estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
         estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
+
 
         # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
         recrutementTemplierEnPrison = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementTemplierEnPrison")
@@ -54,6 +57,19 @@ init -5 python:
         templiersDonEpeeSacree.AjouterCondition(estChretien)
         templiersDonEpeeSacree.AjouterCondition(estBonGuerrier)
         selecteur_.ajouterDeclencheur(templiersDonEpeeSacree)
+
+        # Recevoir l'aumône
+        prob = proba.Proba(0.03, True)
+        templiersRecevoirAumone = declencheur.Declencheur(prob, "templiersRecevoirAumone")
+        templiersRecevoirAumone.AjouterCondition(estMiserable)
+        templiersRecevoirAumone.AjouterCondition(estDansQuartierTemplier)
+        selecteur_.ajouterDeclencheur(templiersRecevoirAumone)
+
+label templiersRecevoirAumone:
+    # Recevoir l'aumône
+    play music guyderosesquandary
+    "Votre misère attendrit un chrétien templier qui vous fait un gros don."
+    $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
 
 label templiersDonEpeeSacree:
     # Don d'une épée sacrée

@@ -15,6 +15,7 @@ class Templiers(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Templiers.NOM
+        self.id_ = Templiers.ID
         self.quartier_ = quartier.SaintDenis.NOM
 
     def getLabelUniversite(self):

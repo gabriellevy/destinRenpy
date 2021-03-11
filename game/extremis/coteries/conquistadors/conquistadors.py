@@ -9,6 +9,7 @@ class Conquistadors(coterie.Coterie):
 
     def __init__(self):
         self.nom_ = Conquistadors.NOM
+        self.id_ = Conquistadors.ID
 
     def getLabelUniversite(self):
         return "univConquistadors"

@@ -120,7 +120,7 @@ label univTranshumanistes_evt5:
     # petits boulots
     "L'université transhumaniste est hors de prix. Vous êtes obligé de prendre des petits boulots à côté pour vous en sortir."
     "L'université voit cela d'un bon oeil car ça donne de la main d'oeuvre pas cher à son conglomérat et forme les étudiants au monde du travail."
-    $ situation_.AjouterACarac(trait.Richesse.NOM, 2)
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 2)
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.5:
         $ situation_.AjouterACarac(trait.Industrie.NOM, 1)

@@ -18,7 +18,8 @@ class Coterie:
     Carac_UNIV_COURANTE = "Université actuelle"
 
     def __init__(self):
-        self.nom_ = "pas de nom, à overrider" # enum Trait qui servira à identifier le trait pour lui affecter des caracs secondaires
+        self.nom_ = "pas de nom, à overrider"
+        self.id_ = "pas de id, à overrider"
 
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
@@ -169,7 +170,7 @@ class Coterie:
             }
         }
         """
-        situation[Coterie.C_COTERIE] = self.nom_
+        situation[Coterie.C_COTERIE] = self.id_
         situation[identite.Identite.C_PRENOM] = self.CreerPrenom(True)
         situation[identite.Identite.C_NOM] = self.CreerNom(True)
 

@@ -2,7 +2,7 @@ import random
 
 class Quartier:
     """
-    quartier de Paris
+    quartier de Paris principal du perso
     sert à identifier où se trouve le perso, où il travaille et des événements liés
     """
     C_QUARTIER = "Quartier"
