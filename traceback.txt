@@ -1,20 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-WindowsError: [Error 32] Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus
+While running game code:
+  File "game/script.rpy", line 16, in script
+    init -1 python:
+  File "game/script.rpy", line 38, in <module>
+    AjouterEvtsChretiens()
+  File "game/extremis/religions/evts_religion.rpy", line 53, in AjouterEvtsChretiens
+    nominationEveque.AjouterCondition(estChretien)
+NameError: global name 'estChretien' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 534, in main
-    renpy.dump.dump(False)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\dump.py", line 255, in dump
-    os.rename(new, args.json_dump)
-WindowsError: [Error 32] Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus
+  File "game/script.rpy", line 16, in script
+    init -1 python:
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 38, in <module>
+    AjouterEvtsChretiens()
+  File "game/extremis/religions/evts_religion.rpy", line 53, in AjouterEvtsChretiens
+    nominationEveque.AjouterCondition(estChretien)
+NameError: global name 'estChretien' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Thu Mar 11 22:50:48 2021
+ 
+Thu Mar 11 23:18:06 2021

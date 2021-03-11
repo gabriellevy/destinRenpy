@@ -34,6 +34,8 @@ init -1 python:
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
     AjouterEvtsMaladies()
+    # religion
+    AjouterEvtsChretiens()
 
 # Le jeu commence ici
 label start:

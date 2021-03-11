@@ -9,7 +9,7 @@ class Religion:
 
     # caracs de "voeux" religieux
     C_VOEU_CHASTETE = u"Voeu de chasteté"
-    C_VOEU_PAUVRETE = u"Voeu de pauvreté" # sa richesse ne doit plus pouvoir bouger, elle es
+    C_VOEU_PAUVRETE = u"Voeu de pauvreté" # sa richesse ne doit plus pouvoir bouger, elle est fixe
 
     def __init__(self):
        self.nom_ = "pas de nom de religion, doit être overridé"
@@ -18,6 +18,8 @@ class Religion:
 class Christianisme(Religion):
 
     NOM = u"Christianisme"
+
+    EVEQUE = u"Évèque"
 
     def __init__(self):
        self.nom_ = Christianisme.NOM

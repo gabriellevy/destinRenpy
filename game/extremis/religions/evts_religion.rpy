@@ -1,8 +1,17 @@
 
+define audio.sanctus = "musique/templiers/sanctus.mp3"
+define audio.turexgloriae = "musique/templiers/turexgloriae.mp3"
 
 init -5 python:
     import random
     from extremis.religions import religion
+
+    estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
+    # traits
+    estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
+    estEgoiste = condition.Condition(trait.Altruisme.NOM, -3, condition.Condition.INFERIEUR_EGAL)
+    estGenereux = condition.Condition(trait.Altruisme.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+    estAltruiste = condition.Condition(trait.Altruisme.NOM, 11, condition.Condition.SUPERIEUR_EGAL)
 
     def devientAthee():
         """
@@ -41,3 +50,38 @@ init -5 python:
                 return True
             else:
                 return False
+
+    def AjouterEvtsChretiens():
+        global selecteur_
+        estPretreNiv5 = condition.Condition(metier.Pretre.NOM, 5, condition.Condition.SUPERIEUR_EGAL)
+        estPasEveque = condition.Condition(metier.Metier.C_TITRE, religion.Christianisme.EVEQUE, condition.Condition.DIFFERENT)
+
+        # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
+        nominationEveque = declencheur.Declencheur(proba.Proba(0.01, True), "nominationEveque")
+        nominationEveque.AjouterCondition(estChretien)
+        nominationEveque.AjouterCondition(estPretreNiv5)
+        nominationEveque.AjouterCondition(estPasEveque)
+        selecteur_.ajouterDeclencheur(nominationEveque)
+
+        # Don aux pauvres
+        prob = proba.Proba(0.003, True)
+        prob.ajouterModifProbaViaVals(0.01, estGenereux)
+        prob.ajouterModifProbaViaVals(0.02, estAltruiste)
+        prob.ajouterModifProbaViaVals(-0.003, estEgoiste)
+        donAuxPauvres = declencheur.Declencheur(prob, "donAuxPauvres")
+        donAuxPauvres.AjouterCondition(estChretien)
+        selecteur_.ajouterDeclencheur(donAuxPauvres)
+
+label donAuxPauvres:
+    # Don aux pauvres
+    play music turexgloriae
+    "Vous donnez une grande partie de votre argent pour soutenir les pauvres."
+    $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
+    jump fin_cycle
+
+label nominationEveque:
+    # Nomination comme évèque";
+    play music sanctus
+    "Pour vos fortes compétences et votre ancienneté, et pour votre foi bien sûr, vous êtes nommé évèque."
+    $ situation_.SetCarac(metier.Metier.C_TITRE, religion.Religion.EVEQUE)
+    jump fin_cycle

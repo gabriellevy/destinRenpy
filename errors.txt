@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 69: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    effet->m_Son = "qrc:/sons/croisade/hornsofhattinandaftermath.mp3";
+File "game/extremis/religions/evts_religion.rpy", line 78: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    m_Son = "qrc:/sons/croisade/turexgloriae.mp3";
     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Mar 09 22:45:36 2021
+Thu Mar 11 23:29:26 2021

@@ -486,7 +486,7 @@ class Altruisme(TraitGraduel):
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
                 return u"Altruiste"
-            return u"Désintéressé"
+            return u"Généreux"
         else:
             return ""
 

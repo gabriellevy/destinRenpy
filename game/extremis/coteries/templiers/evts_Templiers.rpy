@@ -16,7 +16,6 @@ init -5 python:
         """
         global selecteur_
         estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
-        estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
         aPasEpeeSacree = condition.Condition(templiers.Templiers.C_EPEE_SACREE, "", condition.Condition.EGAL)
         estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
         estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
@@ -70,6 +69,7 @@ label templiersRecevoirAumone:
     play music guyderosesquandary
     "Votre misère attendrit un chrétien templier qui vous fait un gros don."
     $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
+    jump fin_cycle
 
 label templiersDonEpeeSacree:
     # Don d'une épée sacrée
@@ -77,6 +77,7 @@ label templiersDonEpeeSacree:
     "Pour votre dévotion chrétienne fervente et en signe que vos compétences au combat sont reconnues suffisantes, l'ordre vous affecte une épée sacrée bénie par un évèque. Nul doute qu'elle facilitera grandement vos miracles."
     $ situation_.AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
     $ situation_.AjouterACarac(religion.Religion.C_MIRACLE, 1)
+    jump fin_cycle
 
 label templiersEntrainementAuCombat:
     # Entrainement au combat

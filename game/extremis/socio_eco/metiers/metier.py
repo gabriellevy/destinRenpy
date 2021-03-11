@@ -12,6 +12,7 @@ class Metier:
 
     C_METIER = u"Métier"
     C_COMPETENCE_METIER  = u"Compétence Métier"
+    C_TITRE = u"Titre"
 
     # types de métiers
     ADMINISTRATIF = u"MétierAdministratif"

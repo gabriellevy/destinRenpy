@@ -31,7 +31,7 @@ init -5 python:
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
     estMiserable = condition.Condition(trait.Richesse.NOM, -13, condition.Condition.INFERIEUR_EGAL)
-    
+
     def AjouterEvtsCrime():
         global selecteur_
         estPauvre = condition.Condition(trait.Richesse.NOM, -3, condition.Condition.INFERIEUR_EGAL)
@@ -48,7 +48,6 @@ init -5 python:
         estCriminelViolent = condition.Condition(crime.CriminelViolent.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estPasVendeurDrogue = condition.Condition(crime.VendeurDrogue.NOM, "", condition.Condition.EGAL)
         # a telle carac
-        estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
         estObsede = condition.Condition(trait.Sexualite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estParesseux = condition.Condition(trait.Industrie.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estMenteur = condition.Condition(trait.Sincerite.NOM, -3, condition.Condition.INFERIEUR_EGAL)
