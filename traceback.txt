@@ -1,27 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in script
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in <module>
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-AttributeError: Conquistadors instance has no attribute 'quartier_'
+  File "game/evts_generaux/rien.rpy", line 59, in script
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 59, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 43, in LancerEvtVide
+    quartierStr = situation.GetValCarac(quartier.Quartier.C_QUARTIER)
+UnboundLocalError: local variable 'quartier' referenced before assignment
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in script
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
+  File "game/evts_generaux/rien.rpy", line 59, in script
+    $ LancerEvtVide(situation_)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/evts_coteries.rpy", line 69, in <module>
-    $ univ = coteries_.DebuterProchaineUniversite(situation_)
-  File "extremis/coteries/collection_coteries.py", line 36, in DebuterProchaineUniversite
-AttributeError: Conquistadors instance has no attribute 'quartier_'
+  File "game/evts_generaux/rien.rpy", line 59, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 43, in LancerEvtVide
+    quartierStr = situation.GetValCarac(quartier.Quartier.C_QUARTIER)
+UnboundLocalError: local variable 'quartier' referenced before assignment
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Tue Mar 16 21:46:14 2021
+Tue Mar 16 22:20:45 2021

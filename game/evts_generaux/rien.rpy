@@ -11,6 +11,7 @@ init -5 python:
     from extremis.coteries import coterie
     from extremis.coteries.templiers import templiers
     from extremis.religions import religion
+    from extremis.geographie import quartier
 
     def AjouterEvtsRien():
         global selecteur_, situation_
@@ -18,6 +19,7 @@ init -5 python:
         selecteur_.ajouterDeclencheur(selecteurDEvenementVide)
 
     def LancerEvtVide(situation):
+        sceneParDefaut = ""
         # régénère les événements compatibles avec la situation
         evtsVides_ = ["evtRien1", "evtRien2", "evtRien3" ]
 
@@ -36,7 +38,20 @@ init -5 python:
             evtsVides_.append("evtRien_Templiers_4")
             evtsVides_.append("evtRien_Templiers_5")
 
+        # fond selon quartier
+        if sceneParDefaut == "":
+            quartierCourant = situation.GetQuartier()
+            if quartierCourant != None:
+                sceneParDefaut = quartierCourant.imageDeFond_
 
+        if sceneParDefaut == "":
+            sceneParDefaut = "bg rue_haussmann"
+
+        # fond
+        if sceneParDefaut != "":
+            renpy.scene()
+            renpy.show(sceneParDefaut)
+            print("sceneParDefaut : {}".format(sceneParDefaut))
         # en lance un au hasard
         renpy.jump(random.choice(evtsVides_))
 
@@ -50,19 +65,16 @@ label evtRien_Conduite:
     jump fin_cycle
 
 label evtRien1:
-    scene bg rue_haussmann
     with Dissolve(.5)
     "Et encore une journée de plus."
     jump fin_cycle
 
 label evtRien2:
-    scene bg rue_haussmann
     with Dissolve(.5)
     "Les jours se suivent et se ressemblent."
     jump fin_cycle
 
 label evtRien3:
-    scene bg rue_haussmann
     with Dissolve(.5)
     "Un jour c'est sûr quelque chose vous arrivera."
     jump fin_cycle

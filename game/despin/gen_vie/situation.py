@@ -143,6 +143,13 @@ class Situation:
             self.caracs_[idCarac] = 0
         return self.caracs_[idCarac]
 
+    # get objets tirés des caracs du perso
+    def GetQuartier(self):
+        valQuartierStr = self.GetValCarac(quartier.Quartier.C_QUARTIER)
+        if valQuartierStr == "":
+            return None
+        return self.collectionQuartiers[valQuartierStr]
+
     def GetMetier(self):
         valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
         if valMetierStr == "":
