@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/extremis/religions/evts_religion.rpy", line 78: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    m_Son = "qrc:/sons/croisade/turexgloriae.mp3";
-    ^
+File "game/evts_generaux/naissance.rpy", line 33: is not terminated with a newline. (Check strings and parenthesis.)
+            situation.SetCarac(quartier.Quartier.C_QUARTIER, quartierDeDepartStr.nom_
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Mar 11 23:29:26 2021
+Tue Mar 16 20:59:44 2021

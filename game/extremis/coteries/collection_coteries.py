@@ -2,6 +2,7 @@ from extremis.coteries.templiers import templiers
 from extremis.coteries.elfes import elfes
 from extremis.coteries.conquistadors import conquistadors
 from extremis.coteries.transhumanistes import transhumanistes
+from extremis.geographie import quartier
 import random
 
 class CollectionCoteries:
@@ -28,10 +29,11 @@ class CollectionCoteries:
         coterie = self.getCoterieAleatoire()
         labelProchainEvt = coterie.getLabelUniversite()
 
-        while situation.GetValCaracInt(labelProchainEvt) == 1:
+        while situation.GetValCaracInt(labelProchainEvt) == 1: # détection de si cette coterie a déjà été effectuée par le personnage
             coterie = self.getCoterieAleatoire()
             labelProchainEvt = coterie.getLabelUniversite()
 
+        situation.SetValCarac(quartier.Quartier.C_QUARTIER, coterie.quartier_)
         situation.SetValCarac(labelProchainEvt, 1)
 
         return labelProchainEvt

@@ -1,6 +1,7 @@
 from extremis.coteries import coterie
 from extremis.socio_eco.metiers import metier
 from extremis.humanite import trait
+from extremis.geographie import quartier
 
 class Elfes(coterie.Coterie):
 
@@ -10,6 +11,7 @@ class Elfes(coterie.Coterie):
     def __init__(self):
         self.nom_ = Elfes.NOM
         self.id_ = Elfes.ID
+        self.quartier_ = quartier.SaintGermainEnLaye.NOM
 
     def getLabelUniversite(self):
         return "univElfes"

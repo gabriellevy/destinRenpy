@@ -10,6 +10,7 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.coteries.templiers import templiers
     from extremis.coteries import coterie
+    from extremis.geographie import quartier
 
     def genererDateNaissance(situation):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
@@ -28,8 +29,8 @@ init -5 python:
                 situation[trait.eTrait_] = trait.GetValeurALaNaissance()
                 nbTraits = nbTraits - 1
 
-        # situation[u"Pilotage"] = 1 # tmp A FAIRE : ajouter un événement (passage de permis) pour gagner ce trait à peu près sûr entre 18 et 25 ans)
-
+        quartierDeDepart = situation.collectionQuartiers.getQuartierAleatoire(True)
+        situation.SetCarac(quartier.Quartier.C_QUARTIER, quartierDeDepart.nom_)
         # A FAIRE Mathieu : génération de la famille
         # Famille::GenererParents(effetNarrationVide);
 

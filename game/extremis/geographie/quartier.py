@@ -10,6 +10,7 @@ class Quartier:
     def __init__(self):
         self.nom_ = u"nom à overrider"
         self.imageDeFond_ = u"adresse image de fond à overrider"
+        self.poidsDemographique_ = 1 # poids par rapport aux autres quartiers de Paris (1 étant le poids "moyen"
 
     def GetDescription(self, situation):
         return "Valeur de description non trouvée pour : Quartier : {}".format(self.nom_)
@@ -32,15 +33,75 @@ class SaintDenis(Quartier):
     def __init__(self):
         self.nom_ = SaintDenis.NOM
         self.imageDeFond_ = u"bg saint_denis"
+        self.poidsDemographique_ = 1
+
+class SaintGermainEnLaye(Quartier):
+    """
+    quartier des elfes
+    """
+
+    NOM = u"Saint Germain en Laye"
+
+    def __init__(self):
+        self.nom_ = SaintGermainEnLaye.NOM
+        self.imageDeFond_ = u"bg saint_germain_en_laye"
+        self.poidsDemographique_ = 1
+
+class LaDefense(Quartier):
+    """
+    quartier des transhumanistes
+    """
+
+    NOM = u"La Défense"
+
+    def __init__(self):
+        self.nom_ = LaDefense.NOM
+        self.imageDeFond_ = u"bg la_defense"
+        self.poidsDemographique_ = 1
+
+class SaintMalo(Quartier):
+    """
+    quartier des conquistadors
+    """
+
+    NOM = u"Saint Malo"
+
+    def __init__(self):
+        self.nom_ = SaintMalo.NOM
+        self.imageDeFond_ = u"bg saint_malo"
+        self.poidsDemographique_ = 1
 
 class CollectionQuartiers:
 
     def __init__(self):
         self.lQuartiers_ = dict()
+
         saintDenis = SaintDenis()
         self.SetQuartier(SaintDenis.NOM, saintDenis)
 
-    def getQuartierAleatoire(self):
+        laDefense = LaDefense()
+        self.SetQuartier(LaDefense.NOM, laDefense)
+
+        saintGermainEnLaye = SaintGermainEnLaye()
+        self.SetQuartier(SaintGermainEnLaye.NOM, saintGermainEnLaye)
+
+        saintMalo = SaintMalo()
+        self.SetQuartier(SaintMalo.NOM, saintMalo)
+
+    def getQuartierAleatoire(self, selonPoidsDemo):
+        if selonPoidsDemo:
+            poidsTotal = 0
+            for quartierObj in self.lQuartiers_.values():
+                poidsTotal = poidsTotal + quartierObj.poidsDemographique_
+
+            randVal = random.uniform(0, poidsTotal)
+
+            for quartierObj in self.lQuartiers_.values():
+                if randVal <= quartierObj.poidsDemographique_:
+                    return quartierObj
+                else:
+                    randVal = randVal - quartierObj.poidsDemographique_
+
         return random.choice(list(self.lQuartiers_.values()))
 
     def __getitem__(self, idQuartier):

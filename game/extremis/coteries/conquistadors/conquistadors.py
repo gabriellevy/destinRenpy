@@ -1,6 +1,7 @@
 from extremis.coteries import coterie
 from extremis.socio_eco.metiers import metier
 from extremis.humanite import trait
+from extremis.geographie import quartier
 
 class Conquistadors(coterie.Coterie):
 
@@ -10,6 +11,7 @@ class Conquistadors(coterie.Coterie):
     def __init__(self):
         self.nom_ = Conquistadors.NOM
         self.id_ = Conquistadors.ID
+        self.quartier_ = quartier.SaintMalo.NOM
 
     def getLabelUniversite(self):
         return "univConquistadors"
