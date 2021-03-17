@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/transhumanistes/evts_Transhumanistes.rpy", line 39, in script
-    $ texte = blessures_.SoignerMaladieAleatoire(situation_)
-  File "game/extremis/coteries/transhumanistes/evts_Transhumanistes.rpy", line 39, in <module>
-    $ texte = blessures_.SoignerMaladieAleatoire(situation_)
-AttributeError: CollectionBlessures instance has no attribute 'SoignerMaladieAleatoire'
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 144, in script
+    $ affdiffCode = situation_.AffichagePourcentageReussite(\
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 145, in <module>
+    [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+TypeError: unsupported operand type(s) for +: 'int' and 'unicode'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/transhumanistes/evts_Transhumanistes.rpy", line 39, in script
-    $ texte = blessures_.SoignerMaladieAleatoire(situation_)
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 144, in script
+    $ affdiffCode = situation_.AffichagePourcentageReussite(\
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/transhumanistes/evts_Transhumanistes.rpy", line 39, in <module>
-    $ texte = blessures_.SoignerMaladieAleatoire(situation_)
-AttributeError: CollectionBlessures instance has no attribute 'SoignerMaladieAleatoire'
+  File "game/evts_vie_courante/conduiteVehicule.rpy", line 145, in <module>
+    [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+  File "despin/gen_vie/situation.py", line 395, in AffichagePourcentageReussite
+  File "despin/gen_vie/situation.py", line 418, in CalculerPourcentageReussite
+TypeError: unsupported operand type(s) for +: 'int' and 'unicode'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Wed Mar 17 21:32:46 2021
+Wed Mar 17 21:43:34 2021

@@ -415,7 +415,8 @@ class Situation:
         valCarac = 0
         if isinstance(idCarac, list):
             for carac in idCarac:
-                valCarac = valCarac + self.GetValCarac(carac)
+                val = self.GetValCaracInt(carac)
+                valCarac = valCarac + val
             valCarac = valCarac / len(carac)
         else:
             valCarac = self.GetValCaracInt(idCarac)
