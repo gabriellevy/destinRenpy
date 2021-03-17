@@ -249,6 +249,20 @@ class CollectionBlessures:
             situation[blessure.nom_] = 1
         return blessure
 
+    def SoignerBlessureAleatoire(self, situation):
+        """
+        retourne le texte de soin de la blessure aléatoire soignée
+        (ou rien si le perso n'était pas blessé)
+        """
+        # soin de blessure
+        for blessureK in self.lBlessures_.keys():
+            blessure = self[blessureK]
+            if situation.GetValCarac(blessureK) != "":
+                situation.SetValCarac(blessureK, "")
+                return "Vous n'êtes plus {}.".format(blessure.nom_)
+
+        return ""
+
     def __getitem__(self, idBlessure):
         if not idBlessure in self.lBlessures_:
             self.CreerBlessure(idBlessure)
@@ -328,6 +342,20 @@ class CollectionMaladies:
             situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + maladie.GetNbJoursConvalescence()
             situation[maladie.nom_] = 1
         return maladie
+
+    def SoignerMaladieAleatoire(self, situation):
+        """
+        retourne le texte de soin de la maladie aléatoire soignée
+        (ou rien si le perso n'était pas malade)
+        """
+        # sinon soin de maladie
+        for maladieK in self.lMaladies_.keys():
+            maladie = self[maladieK]
+            if situation.GetValCarac(maladieK) != "":
+                situation.SetValCarac(maladieK, "")
+                return "Vous avez été soigné de {}.".format(maladie.nom_)
+
+        return ""
 
     def __getitem__(self, idMaladie):
         if not idMaladie in self.lMaladies_:

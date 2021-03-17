@@ -33,7 +33,7 @@ init -1 python:
 
     AjouterEvtsUnivTempliers()
     AjouterEvtsTempliers()
-    
+
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
     AjouterEvtsMaladies()
