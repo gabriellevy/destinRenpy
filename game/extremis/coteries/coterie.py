@@ -172,8 +172,12 @@ class Coterie:
         }
         """
         situation[Coterie.C_COTERIE] = self.id_
-        situation[identite.Identite.C_PRENOM] = self.CreerPrenom(True)
-        situation[identite.Identite.C_NOM] = self.CreerNom(True)
+        prenom = self.CreerPrenom(True)
+        if prenom != None:
+            situation[identite.Identite.C_PRENOM] = prenom
+        nom = self.CreerNom(True)
+        if nom != None:
+            situation[identite.Identite.C_NOM] = nom
         situation.SetValCarac(quartier.Quartier.C_QUARTIER, self.quartier_)
 
         return True
@@ -181,14 +185,16 @@ class Coterie:
     def CreerNom(self, masculin):
         """
         génère un patronyme correspondant à la coterie en question
+        None signifie qu'il n'y a pas de prénom spécifique à cette coterie
         """
-        return "pas de nom ! à overrider!"
+        return None
 
     def CreerPrenom(self, masculin):
         """
         génère un patronyme correspondant à la coterie en question
+        None signifie qu'il n'y a pas de nom spécifique à cette coterie
         """
-        return "pas de prénom ! à overrider!"
+        return None
 
     def Initialisation(self):
         """

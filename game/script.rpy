@@ -29,8 +29,11 @@ init -1 python:
     # coteries
     AjouterEvtsCoteries()
     AjouterEvtsUnivTranshumanistes()
+    AjouterEvtsTranshumanistes()
+
     AjouterEvtsUnivTempliers()
     AjouterEvtsTempliers()
+    
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
     AjouterEvtsMaladies()

@@ -73,7 +73,7 @@ label univElfes_evt2:
 label univElfes_evt3:
     # effet frustration sexuelle
     "Vous êtes fasciné et tout émoustillé par la quantité incroyable de jeunes beautés que vous rencontrez à l'université elfique. "
-    "Malheureusement elles n'ont que mérpis et moquerie pour vous et votre physique médiocre."
+    "Malheureusement elles n'ont que mépris et moquerie pour vous et votre physique médiocre."
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.6:
         "Vous en intériosez une forte angoisse sur votre propre valeur."

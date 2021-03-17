@@ -42,6 +42,17 @@ class Transhumanistes(coterie.Coterie):
             metier.Commercial.NOM \
             ]
 
+    def GetGentile(self, masculin):
+        return "transhumaniste"
+
+    def GetPoidsDemo(self):
+        """
+        à quel point cette coterie est nombreuse dans la population
+        1.0 = normal
+        0.1 = 10 fois moins que la moyenne
+        """
+        return 1.0
+
     def GetTraitsIncompatibles(self):
         """
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
