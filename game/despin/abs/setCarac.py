@@ -21,8 +21,8 @@ class SetCarac:
     def Appliquer(self):
         situation = Situation()
         if self.m_ModifCaracType == ModifCaracType.SET:
-            situation.SetCarac(self.m_CaracId, self.m_Valeur)
+            SetCarac(self.m_CaracId, self.m_Valeur)
         elif self.m_ModifCaracType == ModifCaracType.AJOUTE:
-            situation.AjouterACarac(self.m_CaracId, self.m_Valeur)
+            AjouterACarac(self.m_CaracId, self.m_Valeur)
         elif self.m_ModifCaracType == ModifCaracType.RETIRE:
-            situation.RetirerACarac(self.m_CaracId, self.m_Valeur)
+            RetirerACarac(self.m_CaracId, self.m_Valeur)

@@ -1,33 +1,34 @@
-Wed Mar 17 21:58:44 2021
+Thu Mar 18 23:27:54 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.09s
 Early init took 0.00s
-Loader init took 0.02s
+Loader init took 0.01s
 Loading error handling took 0.03s
-Loading script took 0.12s
-Loading save slot metadata. took 0.02s
+Loading script took 0.48s
+Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
+Running init code took 0.15s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Dump and make backups. took 0.07s
+Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
+Dump and make backups. took 0.19s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.06s
+Creating interface object took 0.07s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.04s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.06s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.09s
+Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.08s
 Running _start took 0.00s
@@ -414,51 +415,30 @@ Texture testing:
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.26699995995s
+Total time until interface ready: 1.84699988365s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.011000 seconds.
-- Frame drawn at 0.025000 seconds.
-- Frame drawn at 0.042000 seconds.
-- Frame drawn at 0.058000 seconds.
-- 0.058000 seconds to render 5 frames.
-sceneParDefaut : bg saint_malo
-sceneParDefaut : bg saint_malo
-sceneParDefaut : bg saint_malo
-sceneParDefaut : bg saint_malo
-sceneParDefaut : bg saint_malo
+- Frame drawn at 0.005000 seconds.
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.032000 seconds.
+- Frame drawn at 0.049000 seconds.
+- 0.049000 seconds to render 5 frames.
+sceneParDefaut : bg la_defense
+sceneParDefaut : bg la_defense
 sceneParDefaut : bg saint_malo
 sceneParDefaut : bg saint_malo
 sceneParDefaut : bg saint_germain_en_laye
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-5
-6
-7
-8
-0
-Coterie Transhumanistes affinité -8
-Coterie Conquistadors affinité -14
-Coterie Ordre du Temple affinité 0
-Coterie Elfes affinité -3
-retire transhumanistes
-retire conquistadors
+sceneParDefaut : bg saint_germain_en_laye
+Coterie Transhumanistes affinité 4
+Coterie Conquistadors affinité 9
+Coterie Ordre du Temple affinité -6
+Coterie Elfes affinité -9
 retire templiers
 retire elfes
-coterieChoisie 
-1
-2
-3
-4
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
+coterieChoisie conquistadors
+sceneParDefaut : bg saint_germain_en_laye
+sceneParDefaut : bg saint_germain_en_laye
+sceneParDefaut : bg saint_germain_en_laye
 5
 6
 7
@@ -466,6 +446,4 @@ sceneParDefaut : bg saint_denis
 0
 1
 2
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_denis
-sceneParDefaut : bg saint_deni
+sceneParDefaut : bg saint_germain_en_laye

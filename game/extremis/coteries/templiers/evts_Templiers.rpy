@@ -68,22 +68,22 @@ label templiersRecevoirAumone:
     # Recevoir l'aumône
     play music guyderosesquandary
     "Votre misère attendrit un chrétien templier qui vous fait un gros don."
-    $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
+    $ AjouterACarac(trait.Richesse.NOM, 1)
     jump fin_cycle
 
 label templiersDonEpeeSacree:
     # Don d'une épée sacrée
     play music saladinbesiegejerusalem
     "Pour votre dévotion chrétienne fervente et en signe que vos compétences au combat sont reconnues suffisantes, l'ordre vous affecte une épée sacrée bénie par un évèque. Nul doute qu'elle facilitera grandement vos miracles."
-    $ situation_.AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
-    $ situation_.AjouterACarac(religion.Religion.C_MIRACLE, 1)
+    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+    $ AjouterACarac(religion.Religion.C_MIRACLE, 1)
     jump fin_cycle
 
 label templiersEntrainementAuCombat:
     # Entrainement au combat
     "Même quand il n'est pas un guerrier professionnel un templier se doit d'être expert en combat ce qui est encore loin d'être votre cas."
     "Une série de séances avec un maître d'armes améliore grandement vos compétences."
-    $ situation_.AjouterACarac(metier.Guerrier.NOM, 1)
+    $ AjouterACarac(metier.Guerrier.NOM, 1)
     jump fin_cycle
 
 label recrutementTemplierEnPrison:
@@ -96,11 +96,11 @@ label recrutementTemplierEnPrison:
     $ affecte = False # est-ce que le prêche l'a affecté
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.3:
-        $ situation_.AjouterACarac(trait.Honorabilite.NOM, 1)
+        $ AjouterACarac(trait.Honorabilite.NOM, 1)
         $ affecte = True
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.3:
-        $ situation_.AjouterACarac(trait.Franchise.NOM, 1)
+        $ AjouterACarac(trait.Franchise.NOM, 1)
         $ affecte = True
     $ resProba = random.uniform(0, 1.0)
     if resProba < 0.3:
@@ -125,15 +125,15 @@ label templiersGrandeCeremonie:
     # "Grande cérémonie => A FAIRE transférer ça dans un fichier d'événements chrétiens
     "Vous assistez aux offices de pâques. La cérémonie est si parfaite que vous en êtes très affecté, comme si vous étiez purifié de vos péchés."
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.AjouterACarac(trait.Altruisme.NOM, 1)
+        $ AjouterACarac(trait.Altruisme.NOM, 1)
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.AjouterACarac(trait.Franchise.NOM, 1)
+        $ AjouterACarac(trait.Franchise.NOM, 1)
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.AjouterACarac(trait.Sincerite.NOM, 1)
+        $ AjouterACarac(trait.Sincerite.NOM, 1)
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.RetirerACarac(trait.Ascetisme.NOM, 1)
+        $ RetirerACarac(trait.Ascetisme.NOM, 1)
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.RetirerACarac(trait.Cupidite.NOM, 1)
+        $ RetirerACarac(trait.Cupidite.NOM, 1)
     if random.uniform(0, 1.0) < 0.2:
-        $ situation_.RetirerACarac(trait.Sexualite.NOM, 1)
+        $ RetirerACarac(trait.Sexualite.NOM, 1)
     jump fin_cycle

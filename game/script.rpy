@@ -47,14 +47,15 @@ label start:
 
 label debut_cycle:
     show screen valeurs_traits
+    #show screen fading_text("sniff", 3.0, 400, 300, 600, 600, color="#fff", size=24)
     #"tmp stop" # tmp test
-    # jump templiersGrandeCeremonie # tmp test
 
     $ prochainEvt = determinationEvtCourant(situation_)
     $ renpy.jump(prochainEvt)
 
 label fin_cycle:
     # "Fin d'un cycle."
+    # jump univTranshumanistes_evt1 # tmp test
 
     $ situation_.TourSuivant()
 

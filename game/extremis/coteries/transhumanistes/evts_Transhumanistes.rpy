@@ -24,7 +24,6 @@ init -5 python:
         # santé
         estAHopital = condition.Condition(pbsante.PbSante.C_JOURS_DHOPITAL, 0, condition.Condition.SUPERIEUR)
 
-
         # hôpital transhumaniste
         prob = proba.Proba(0.9, True)
         transhumanistesHopital = declencheur.Declencheur(prob, "transhumanistesHopital")

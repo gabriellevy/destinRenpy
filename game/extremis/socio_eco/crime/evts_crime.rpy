@@ -157,14 +157,14 @@ init -5 python:
 
 label decPauvreDevientMoyenCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
-    $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
+    $ AjouterACarac(trait.Richesse.NOM, 3)
     "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
     $ MajStatutCriminel()
     jump fin_cycle
 
 label decMiserableDevientPauvreCriminel:
     $ situation_.SetValCaracSiInferieur(crime.Voleur.NOM, 3)
-    $ situation_.AjouterACarac(trait.Richesse.NOM, 3)
+    $ AjouterACarac(trait.Richesse.NOM, 3)
     "Par un crime très astucieux vous parvenez à vous enrichir considérablement."
     $ MajStatutCriminel()
     jump fin_cycle
@@ -186,7 +186,7 @@ label decDevientMalhonnete:
 label decVendeurDeDrogueAuBoulot:
     "Vous mettez en place un petit réseau de revente de drogue sur votre lieu de travail qui vous fait bien voir de certains de vos collègues mais qui arrondit surtout confortablement vos revenus."
     $ situation_.SetValCarac(crime.VendeurDrogue.NOM, 3)
-    $ situation_.AjouterACarac(trait.Richesse.NOM, 1)
+    $ AjouterACarac(trait.Richesse.NOM, 1)
     $ MajStatutCriminel()
     jump fin_cycle
 

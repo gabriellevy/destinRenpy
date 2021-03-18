@@ -2,8 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/evts_generaux/naissance.rpy", line 33: is not terminated with a newline. (Check strings and parenthesis.)
-            situation.SetCarac(quartier.Quartier.C_QUARTIER, quartierDeDepartStr.nom_
+File "game/generationUnivers.rpy", line 38: expected an indented block
+    def InterfaceSuivante():
+       ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Mar 16 20:59:44 2021
+Thu Mar 18 19:31:15 2021

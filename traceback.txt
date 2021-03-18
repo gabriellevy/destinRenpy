@@ -1,28 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 144, in script
-    $ affdiffCode = situation_.AffichagePourcentageReussite(\
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 145, in <module>
-    [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
-TypeError: unsupported operand type(s) for +: 'int' and 'unicode'
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 65, in script
+    $ AjouterACarac(metier.Geneticien.NOM, 1)
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 65, in <module>
+    $ AjouterACarac(metier.Geneticien.NOM, 1)
+  File "game/generationUnivers.rpy", line 35, in AjouterACarac
+    renpy.call_screen(textChangtCarac, 3.0, 600, 100, 600, 400, color="#fff", size=24)
+Exception: Screen Généticien is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 144, in script
-    $ affdiffCode = situation_.AffichagePourcentageReussite(\
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 65, in script
+    $ AjouterACarac(metier.Geneticien.NOM, 1)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/evts_vie_courante/conduiteVehicule.rpy", line 145, in <module>
-    [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
-  File "despin/gen_vie/situation.py", line 395, in AffichagePourcentageReussite
-  File "despin/gen_vie/situation.py", line 418, in CalculerPourcentageReussite
-TypeError: unsupported operand type(s) for +: 'int' and 'unicode'
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 65, in <module>
+    $ AjouterACarac(metier.Geneticien.NOM, 1)
+  File "game/generationUnivers.rpy", line 35, in AjouterACarac
+    renpy.call_screen(textChangtCarac, 3.0, 600, 100, 600, 400, color="#fff", size=24)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 2900, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 1107, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen Généticien is not known.
+
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Wed Mar 17 21:43:34 2021
+Thu Mar 18 19:34:33 2021

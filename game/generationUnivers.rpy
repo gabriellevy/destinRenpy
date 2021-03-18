@@ -29,6 +29,29 @@ init -2 python:
     interfaceMode_ = 4
     nbInterfaceMode_ = 9
 
+    # text fade system
+    time_ = 2.0 # seconds of fade
+    x_debut = 100
+    y_debut = 10
+    x_fin = 650
+    y_fin = 10
+
+    def AjouterACarac(caracId, num):
+        global situation_
+        textChangtCarac = u"{} + {}".format(caracId, num)
+        renpy.show_screen("fading_text", textChangtCarac, time_, x_debut, y_debut, x_fin, y_fin, color="#fff", size=24, alpha=1.0)
+        renpy.pause(time_)
+        renpy.hide_screen("fading_text")
+        situation_.AjouterACarac(caracId, num)
+
+    def RetirerACarac(caracId, num):
+        global situation_
+        textChangtCarac = u"{} - {}".format(caracId, num)
+        renpy.show_screen("fading_text", textChangtCarac, time_, x_debut, y_debut, x_fin, y_fin, color="#e11", size=24, alpha=1.0)
+        renpy.pause(time_)
+        renpy.hide_screen("fading_text")
+        situation_.RetirerACarac(caracId, num)
+
     def InterfaceSuivante():
         global interfaceMode_, nbInterfaceMode_
         interfaceMode_ = interfaceMode_ + 1

@@ -150,8 +150,8 @@ label decPermis:
                                 $ nivReussite = situation_.TesterDegreReussite([trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
                                 if nivReussite>0:
                                     "Bravo c'est une réussite vous avez maintenant le code et le permis."
-                                    $ situation_.AjouterACarac(trait.Assurance.NOM, 2)
-                                    $ situation_.SetCarac(trait.Pilotage.NOM, 1)
+                                    $ AjouterACarac(trait.Assurance.NOM, 2)
+                                    $ SetCarac(trait.Pilotage.NOM, 1)
                                     jump decPermis_fin
                                 elif nivReussite <-1:
                                     "C'est un échec catastrophique. Vous êtes tellement angoissé que vous démarrez avec le frein à main enclenché. Vous avez même failli causer un accident."
@@ -161,7 +161,7 @@ label decPermis:
                                 else:
                                     "Vous faites presque un sans faute mais une erreur d'inattention et une petite erreur de code vous font échouer."
                                     monit "Il a fait une petite erreur mais il fera mieux la prochaine fois."
-                                    $ situation_.AjouterACarac(trait.Assurance.NOM, 1)
+                                    $ AjouterACarac(trait.Assurance.NOM, 1)
                                     jump decPermis_ReessayerPermis
                                 label decPermis_ReessayerPermis:
                                     $ diffRepasser = 2

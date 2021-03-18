@@ -60,14 +60,14 @@ label univElfes_evt1:
         "La beauté est primordiale pour les elfes et ils font en sorte que votre médiocrité ne soit pas un frein pour vous intégrer et vous sentir l'un des leurs. "
     "Pour cela ils utilisent une myriades d'outils et d'objets merveilleux. Des pommades, des bains, des amulettes et même des potions enchantées."
     "Le résultat est stupéfiant. "
-    $ situation_.AjouterACarac(trait.Beaute.NOM, 2)
+    $ AjouterACarac(trait.Beaute.NOM, 2)
     jump fin_cycle
 
 label univElfes_evt2:
     # effet devient artiste
     "Tous les elfes doivent être artistes, sinon ils redeviennent lentement de simples humains. "
     "L'université se doit de consacrer un grand nombre d'heures à rendre votre esprit ouvert à l'art et à la beauté."
-    $ situation_.AjouterACarac(trait.Artiste.NOM, 2)
+    $ AjouterACarac(trait.Artiste.NOM, 2)
     jump fin_cycle
 
 label univElfes_evt3:
@@ -80,10 +80,10 @@ label univElfes_evt3:
         $ situation_.RetirerACarac(trait.Serenite.NOM, 1)
     elif resProba < 0.75:
         "Vous trouvez ça injuste et vous sentez profondément énervé contre elles et contre la société en général."
-        $ situation_.AjouterACarac(trait.Violence.NOM, 1)
+        $ AjouterACarac(trait.Violence.NOM, 1)
     else:
         "Vous décidez de vous concentrer sur votre propre amélioration et enrichissement pour un jour avoir votre chance avec une femme aussi belle"
-        $ situation_.AjouterACarac(trait.Ambition.NOM, 1)
+        $ AjouterACarac(trait.Ambition.NOM, 1)
     jump fin_cycle
 
 label univElfes_evt4:
@@ -92,7 +92,7 @@ label univElfes_evt4:
     if situation_.GetValCarac(trait.Artiste.NOM) < 1:
         jump univElfes_evt2
     "Vu votre potentiel d'artiste les elfes trouvent indispensable de vous former à la musique, le plus noble de tous les arts."
-    $ situation_.AjouterACarac(metier.Musicien.NOM, 1)
+    $ AjouterACarac(metier.Musicien.NOM, 1)
     jump fin_cycle
 
 label univElfes_evt5:
@@ -101,7 +101,7 @@ label univElfes_evt5:
     if situation_.GetValCarac(trait.Artiste.NOM) < 1:
         jump univElfes_evt2
     "Vu votre potentiel d'artiste les elfes trouvent indispensable de vous former à la poésie, la pierre angulaire de la sensibilité elfique."
-    $ situation_.AjouterACarac(metier.Poete.NOM, 1)
+    $ AjouterACarac(metier.Poete.NOM, 1)
     jump fin_cycle
 
 label univElfes_evt6:
@@ -110,7 +110,7 @@ label univElfes_evt6:
     "La fabrication de potions, de filtres, de pommades est une composante essentielle de l'art elfique. "
     "Leurs usages sont innombrables et vont de potions de soins aux meilleurs produits de beauté du monde. "
     "Un maître herboriste détecte un certain potentiel chez vous et décide de vous apprendre les bases."
-    $ situation_.AjouterACarac(metier.Alchimiste.NOM, 1)
+    $ AjouterACarac(metier.Alchimiste.NOM, 1)
     jump fin_cycle
 
 label univElfes_evt7:
