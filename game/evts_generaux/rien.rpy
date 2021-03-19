@@ -51,7 +51,6 @@ init -5 python:
         if sceneParDefaut != "":
             renpy.scene()
             renpy.show(sceneParDefaut)
-            print("sceneParDefaut : {}".format(sceneParDefaut))
         # en lance un au hasard
         renpy.jump(random.choice(evtsVides_))
 

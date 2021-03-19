@@ -296,6 +296,22 @@ init -5 python:
         condNiv10 = condition.Condition(nomMetier, 10, condition.Condition.SUPERIEUR_EGAL)
         prob.ajouterModifProbaViaVals(0.05, condNiv10)
 
+    def DeterminerProfessionLaPlusMaitrisee():
+        """
+        renvoie l'id de la profession la plus maitrisée par le personnage
+        "" si aucune
+        """
+        global situation_
+        professionMaitrisee = ""
+        valMaxCourante = 0
+
+        for metierK in situation_.collectionMetiers.lMetiers_.keys():
+            valMetier = self.GetValCaracInt(metierK)
+            if valMetier != "" and valMetier > valMaxCourante:
+                valMaxCourante = valMetier
+                professionMaitrisee = metierK
+                
+        return professionMaitrisee
 
 label decReGardeDuCorps:
     # devient GardeDuCorps

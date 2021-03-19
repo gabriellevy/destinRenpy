@@ -62,6 +62,11 @@ class Paysan(Metier):
     def __init__(self):
         self.nom_ = Paysan.NOM
 
+class Robotique(Metier):
+    NOM = u"Robotique"
+    def __init__(self):
+        self.nom_ = Robotique.NOM
+
 class Musicien(Metier):
     NOM = u"Musicien"
     def __init__(self):
@@ -226,10 +231,21 @@ class GardeDuCorps(Metier):
     def __init__(self):
         self.nom_ = GardeDuCorps.NOM
 
+class Electronique(Metier):
+    NOM = u"Electronique"
+    def __init__(self):
+        self.nom_ = Electronique.NOM
+
 class CollectionMetiers:
 
     def __init__(self):
         self.lMetiers_ = dict()
+
+        electronique = Electronique()
+        self.SetMetier(Electronique.NOM, electronique)
+
+        robotique = Robotique()
+        self.SetMetier(Robotique.NOM, robotique)
 
         paysan = Paysan()
         self.SetMetier(Paysan.NOM, paysan)

@@ -145,17 +145,34 @@ label univTranshumanistes_evt6:
     jump fin_cycle
 
 label univTranshumanistes_evt7:
-    "univTranshumanistes_evt7 PAS FAIT"
+    # robotique
+    scene bg robotique
+    "Même si elle n'est pas très répandue dans la société, la robotique est très avancée. Le consul en est la meilleure preuve. Mais rares sont les coteries à la maîtriser."
+    "Bien que ce ne soit pas leur domaine de prédilection les transhumanistes tiennent à y tenir leur place comme dans toutes les techniques avancées. Vous recevez donc une formation sommaire."
+    $ AjouterACarac(metier.Robotique.NOM, 1)
+    $ AjouterACarac(metier.Electronique.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt8:
-    "univTranshumanistes_evt8 PAS FAIT"
+    # séminaire de confiance en soi
+    "Un bon humaniste se doit d'avoir foi en l'avenir. Un bon séminaire de motivation par l'hypnose et l'effet de foule et vous ne douterez plus jamais de vous et de ce que vous méritez."
+    $ AjouterACarac(trait.Assurance.NOM, 3)
     jump fin_cycle
+
 label univTranshumanistes_evt9:
-    "univTranshumanistes_evt9 PAS FAIT"
+    # médecine
+    "Le but principal des transhumanistes est la perfection du corps humain. La médecine en est l'indispensable premier pas et ses bases sont dans le programme."
+    $ AjouterACarac(metier.Medecin.NOM, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt10:
-    "univTranshumanistes_evt10 PAS FAIT"
+    $ professionLaPlusMaitrisee = DeterminerProfessionLaPlusMaitrisee()
+    if  == "":
+        jump univTranshumanistes_evt1
+    "La société transhumaniste est fonctionnelle et la plus optimisée possible. Plutôt que multiplier les connaissances ils préfèrent vous pousser à vous spécialiser là où vous avez déjà des bonnes bases, pour que vous deveniez un bon [professionLaPlusMaitrisee]."
+    $ AjouterACarac(professionLaPlusMaitrisee, 1)
     jump fin_cycle
+
 label univTranshumanistes_evt11:
     "univTranshumanistes_evt11 PAS FAIT"
     jump fin_cycle
