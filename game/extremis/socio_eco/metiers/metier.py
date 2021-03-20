@@ -236,10 +236,28 @@ class Electronique(Metier):
     def __init__(self):
         self.nom_ = Electronique.NOM
 
+class Journaliste(Metier):
+    NOM = u"Journaliste"
+    def __init__(self):
+        self.nom_ = Journaliste.NOM
+
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en parametre
+        """
+        if masculin:
+            if age > 25:
+                if age < 50:
+                    portraits.append("images/coteries/transhumanistes/portraits/journaliste25-50.jpg")
+        return portraits
+
 class CollectionMetiers:
 
     def __init__(self):
         self.lMetiers_ = dict()
+
+        journaliste = Journaliste()
+        self.SetMetier(Journaliste.NOM, journaliste)
 
         electronique = Electronique()
         self.SetMetier(Electronique.NOM, electronique)
