@@ -11,7 +11,7 @@ init -2 python:
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
-    filtre_ = filtres_action.FiltreAction()
+    filtre_ = filtres_action.FiltreAction() # objet contenant les préférences du joueur pour les actions à afficher ou cacher en priorité
     traits_ = trait.CollectionTraits()
     situation_.collectionTraits = traits_
     coteries_ = collection_coteries.CollectionCoteries()

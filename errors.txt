@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/generationUnivers.rpy", line 38: expected an indented block
-    def InterfaceSuivante():
-       ^
+File "game/generationUnivers.rpy", line 13: invalid syntax
+    default situation_ = situation.Situation() 
+                      ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Mar 18 19:31:15 2021
+Sat Mar 20 20:44:01 2021

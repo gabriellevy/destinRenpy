@@ -47,6 +47,16 @@ init -5 python:
         global situation_
 
 label decPermis:
+    if filtre_.importanceChoix_ < 1: # choix non immportant
+        jump decPermisHistoire
+    else:
+        jump decPermisAutomatique
+
+label decPermisAutomatique:
+    "passage de permis automatique PAS FAIT"
+    jump fin_cycle
+
+label decPermisHistoire:
     $ actionDebutConduiteVehicule()
     "Vous êtes éligible au permis et vous avez les moyens de vous le payer."
     menu:

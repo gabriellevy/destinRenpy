@@ -77,7 +77,6 @@ class Situation:
             self.valsMax_[idCarac] = valeurMax
 
     def SetCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
-        global metiers_
         # si la carac n'existe pas encore, la créer
         if not idCarac in self.caracs_:
             self.CreerCarac(idCarac, valCarac, valeurMin, valeurMax)
