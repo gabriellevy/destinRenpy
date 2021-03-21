@@ -167,7 +167,7 @@ label univTranshumanistes_evt9:
 
 label univTranshumanistes_evt10:
     $ professionLaPlusMaitrisee = DeterminerProfessionLaPlusMaitrisee()
-    if  == "":
+    if professionLaPlusMaitrisee == "":
         jump univTranshumanistes_evt1
     "La société transhumaniste est fonctionnelle et la plus optimisée possible. Plutôt que multiplier les connaissances ils préfèrent vous pousser à vous spécialiser là où vous avez déjà des bonnes bases, pour que vous deveniez un bon [professionLaPlusMaitrisee]."
     $ AjouterACarac(professionLaPlusMaitrisee, 1)

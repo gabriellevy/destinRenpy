@@ -75,6 +75,8 @@ class Conquistadors(coterie.Coterie):
                 if age > 20:
                     if age > 40:
                         portraits.append("images/coteries/conquistadors/portraits/portrait_40+.jpg")
+                        if age > 50:
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_50+.jpg")
 
                     # age > 20 ans
                         if age < 50:

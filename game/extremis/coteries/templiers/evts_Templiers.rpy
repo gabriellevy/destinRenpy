@@ -12,7 +12,7 @@ init -5 python:
 
     def AjouterEvtsTempliers():
         """
-        événements génriques qui concernent les templiers
+        événements génériques qui concernent les templiers
         """
         global selecteur_
         estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)

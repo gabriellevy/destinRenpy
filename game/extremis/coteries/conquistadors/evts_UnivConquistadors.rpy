@@ -88,7 +88,7 @@ label univConquistadors_evt5:
     scene bg carte
     "Les conquistadors ont bâti le plus grand empire du monde et sont donc ceux qui le connaissent le mieux depuis la destructions massives causées par la dernière guerre. "
     "Cette connaissance est primordiale et c'est pourquoi comme toutes les jeunes recrues vous êtes formé à la cartographie pour contempler la plus grande gloire de la coterie."
-    $ AjouterACarac(metier.Carthographe.NOM, 2)
+    $ AjouterACarac(metier.Cartographe.NOM, 2)
     jump fin_cycle
 
 label univConquistadors_evt6:
