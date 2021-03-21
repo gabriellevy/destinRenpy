@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-The label conquistadorsPostule is defined twice, at
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 12 and
-  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 102.
+File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 69: expected statement.
+    "Seuls les grands guerriers peuvent espérer devenir des conquistadors et affronter les horreurs des terres désolées. Votre formation contient bien sûr un entrainement avec de célbres maîtres d'armes.",
+                                                                                                                                                                                                            ^
+
+File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 90: expected statement.
+    "Cette connaissance est primordiale et c'est pourquoi comme toutes les jeunes recrues vous êtes formé à la cartographie pour contempler la plus grande gloire de la coterie.",
+                                                                                                                                                                                 ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Mar 21 21:14:29 2021
+Sun Mar 21 22:23:53 2021

@@ -52,27 +52,50 @@ label univConquistadors:
     jump fin_cycle
 
 label univConquistadors_evt1:
-    "univConquistadors_evt1 PAS FAIT"
+    # formation religieuse
+    scene bg conquistadors_priant
+    "Un conquistador se doit d'être un fervent catholique confiant dans le destin que Dieu trace devant lui et qui le mènera à la gloire et la richesse. Vous passez des jours entiers à prier dans la dévotion des images saintes à suivre les cours de catéchisme des prêtres catholiques."
+    $ religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
+    if religionActuelle != religion.Christianisme.NOM:
+        $ conversion = conversionReligieuse(religion.Christianisme.NOM)
+        if conversion:
+            "Vous vous convertissez au christianisme."
+        else:
+            "Mais votre propre foi était trop forte, vous restez sourd à celle ci."
     jump fin_cycle
 
 label univConquistadors_evt2:
-    "univConquistadors_evt2 PAS FAIT"
+    # effetCombat
+    "Seuls les grands guerriers peuvent espérer devenir des conquistadors et affronter les horreurs des terres désolées. Votre formation contient bien sûr un entrainement avec de célbres maîtres d'armes."
+    $ AjouterACarac(metier.Guerrier.NOM, 1)
     jump fin_cycle
 
 label univConquistadors_evt3:
-    "univConquistadors_evt3 PAS FAIT"
+    # effetForgeron
+    "Les conquistadors sont des experts de la forge, leurs armures sont les meilleures du monde. De plus il est indispensable qu'en expédition ils soient capables de réparer et entretenir leur matériel donc même les aventuriers se doivent d'avoir des rudiments techniques."
+    "Vous êtes donc formé par un maître forgeron pour connaître les bases du métier."
+    $ AjouterACarac(metier.Forgeron.NOM, 1) # meilleur forgeron
     jump fin_cycle
 
 label univConquistadors_evt4:
-    "univConquistadors_evt4 PAS FAIT"
+    # effet Musicien
+    "Les conquistadors ne sont pas seulement des aventuriers, ce sont aussi des baladins itinérants qui divertissent les hôtes qui veulent bien les accueillir dans leurs nombreuses aventures. Ainsi ils peuvent chanter leurs exploits mais aussi ceux de leurs ancêtres et de leur clan."
+    $ AjouterACarac(metier.Musicien.NOM, 1)
     jump fin_cycle
 
 label univConquistadors_evt5:
-    "univConquistadors_evt5 PAS FAIT"
+    # effet Cartographe
+    scene bg carte
+    "Les conquistadors ont bâti le plus grand empire du monde et sont donc ceux qui le connaissent le mieux depuis la destructions massives causées par la dernière guerre. "
+    "Cette connaissance est primordiale et c'est pourquoi comme toutes les jeunes recrues vous êtes formé à la cartographie pour contempler la plus grande gloire de la coterie."
+    $ AjouterACarac(metier.Carthographe.NOM, 2)
     jump fin_cycle
 
 label univConquistadors_evt6:
-    "univConquistadors_evt6 PAS FAIT"
+    # effet Marchand
+    "Par leur maîtrise des mers et de nombreuses contrées étrangères les conquistadors contrôlent une énorme partie du commerce mondiale. De plus par leurs pillages ils doivent savoir estimer rapidement la valeur des objets pour ne pas faire d'erreur. "
+    "Jamais une expédition ne part sans au moins un marchand. Votre tuteur décide donc de vous y former pour estimer vos talents en la matière."
+    $ AjouterACarac(metier.Marchand.NOM, 1)
     jump fin_cycle
 
 label univConquistadors_evt7:

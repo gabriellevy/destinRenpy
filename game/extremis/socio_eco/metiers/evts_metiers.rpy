@@ -306,14 +306,14 @@ init -5 python:
         valMaxCourante = 0
 
         for metierK in situation_.collectionMetiers.lMetiers_.keys():
-            valMetier = self.GetValCaracInt(metierK)
-            if valMetier != "" and valMetier > valMaxCourante:
+            valMetier = situation_.GetValCaracInt(metierK)
+            if valMetier > valMaxCourante:
                 valMaxCourante = valMetier
                 professionMaitrisee = metierK
-                
+
         return professionMaitrisee
 
-label decReGardeDuCorps:
+label decRejGardeDuCorps:
     # devient GardeDuCorps
     "Vous êtes maintenant un garde du corps."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.GardeDuCorps.NOM)

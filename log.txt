@@ -1,4 +1,4 @@
-Sun Mar 21 21:18:31 2021
+Sun Mar 21 22:31:22 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -6,15 +6,16 @@ Ren'Py 7.3.5.606
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.03s
-Loading script took 0.12s
+Loading error handling took 0.02s
+Loading script took 0.19s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
+Running init code took 0.17s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
 Dump and make backups. took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -24,9 +25,9 @@ Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.08s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.08s
@@ -413,38 +414,38 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.22300004959s
+Total time until interface ready: 1.4279999733s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
 - Frame drawn at 0.004000 seconds.
-- Frame drawn at 0.017000 seconds.
-- Frame drawn at 0.034000 seconds.
-- Frame drawn at 0.052000 seconds.
-- 0.052000 seconds to render 5 frames.
-Coterie Transhumanistes affinité 4
-Coterie Conquistadors affinité 7
-Coterie Ordre du Temple affinité -6
-Coterie Elfes affinité -6
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.033000 seconds.
+- Frame drawn at 0.050000 seconds.
+- 0.050000 seconds to render 5 frames.
+Coterie Transhumanistes affinité 28
+Coterie Conquistadors affinité -27
+Coterie Ordre du Temple affinité -12
+Coterie Elfes affinité 2
+retire conquistadors
 retire templiers
-retire elfes
-coterieChoisie conquistadors
+coterieChoisie transhumanistes
 
 Full traceback:
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in script
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in <module>
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "extremis/coteries/coterie.py", line 175, in RejoindreCoterie
-  File "extremis/coteries/conquistadors/conquistadors.py", line 79, in CreerPrenom
-NameError: global name 'random' is not defined
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "game/script.rpy", line 54, in script
+    $ renpy.jump(prochainEvt)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'decRejGardeDuCorps'.
 
 While running game code:
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in script
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in <module>
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-NameError: global name 'random' is not defined
+  File "game/script.rpy", line 54, in script
+    $ renpy.jump(prochainEvt)
+ScriptError: could not find label 'decRejGardeDuCorps'.
