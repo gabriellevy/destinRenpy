@@ -66,6 +66,33 @@ class Conquistadors(coterie.Coterie):
         """
         return 0.7
 
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en paramètre (et à la coterie courante)
+        """
+        if masculin:
+            if age > 15:
+                if age > 20:
+                    if age > 40:
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_40+.jpg")
+
+                    # age > 20 ans
+                        if age < 50:
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50.jpg")
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_b.jpg")
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_c.jpg")
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_d.jpg")
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_e.jpg")
+                            if age < 40:
+                                portraits.append("images/coteries/conquistadors/portraits/portrait_20-40.jpg")
+                # age > 15 ans
+                if age < 40:
+                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_b.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_c.jpg")
+
+        return portraits
+
     def CreerNom(self, masculin):
         """
         génère un patronyme correspondant à la coterie en question

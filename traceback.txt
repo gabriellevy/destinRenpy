@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 54, in script
-    $ renpy.jump(prochainEvt)
-ScriptError: could not find label 'decRejGardeDuCorps'.
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 4, in script
+    init -5 python:
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 6, in <module>
+    from extremis.coteries.conquistadors import conquistadors
+SyntaxError: 'return' outside function (extremis/coteries/conquistadors/conquistadors.py, line 94)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
-    renpy.main.main()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
-    run(restart)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
-    renpy.execution.run_context(True)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
-    context.run()
-  File "game/script.rpy", line 54, in script
-    $ renpy.jump(prochainEvt)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'decRejGardeDuCorps'.
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 4, in script
+    init -5 python:
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 6, in <module>
+    from extremis.coteries.conquistadors import conquistadors
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: 'return' outside function (extremis/coteries/conquistadors/conquistadors.py, line 94)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Sun Mar 21 22:37:17 2021
+ 
+Sun Mar 21 22:54:40 2021

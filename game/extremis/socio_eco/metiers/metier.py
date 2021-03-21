@@ -97,6 +97,18 @@ class Marchand(Metier):
     def __init__(self):
         self.nom_ = Marchand.NOM
 
+    def GenererPortraits(self, age, masculin, metier, portraits):
+        """
+        ajoute des portraits correspondants aux caracs en parametre et au métier
+        """
+        if masculin:
+            if age > 15:
+                if age > 50:
+                    portraits.append("images/metiers/marchand/portraits/portrait_marchand_50+.jpg")
+                if age < 50:
+                    portraits.append("images/metiers/marchand/portraits/portrait_marchand_15-50.jpg")
+        return portraits
+
 class Mineur(Metier):
     NOM = u"Mineur"
     def __init__(self):
