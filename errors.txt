@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/generationUnivers.rpy", line 13: invalid syntax
-    default situation_ = situation.Situation() 
-                      ^
-    
+The label conquistadorsPostule is defined twice, at
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 12 and
+  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 102.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Mar 20 20:44:01 2021
+Sun Mar 21 21:14:29 2021

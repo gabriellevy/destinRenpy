@@ -98,7 +98,3 @@ label univConquistadors_evt11:
 label univConquistadors_evt12:
     "univConquistadors_evt12 PAS FAIT"
     jump fin_cycle
-
-label conquistadorsPostule:
-    "Postulation aux Conquistadors : pas fait !"
-    jump fin_cycle

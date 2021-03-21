@@ -157,5 +157,5 @@ label TempliersRejoindre:
     ordo "Portez cette croix avec fierté et honneur, que tous les hommes qui vous croiseront continuent à y voir un symbole de pureté et de force comme ça a toujours été le cas depuis la fondation de notre Ordre il y a plus de deux mille ans."
 
     "Vous vous installez dans le quartier du Temple à Saint Denis"
-    $ situation_.SetValCarac(quartier.Quartier.C_QUARTIER,coterieTempliers. quartier_)
+    $ situation_.SetValCarac(quartier.Quartier.C_QUARTIER, coterieTempliers.quartier_)
     jump fin_cycle

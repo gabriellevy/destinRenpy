@@ -1,13 +1,13 @@
-Sat Mar 20 21:08:06 2021
+Sun Mar 21 21:18:31 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.08s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.03s
-Loading script took 0.13s
+Loading script took 0.12s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -15,21 +15,21 @@ Running init code took 0.16s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.06s
+Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.02s
+Load screen analysis took 0.05s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -413,12 +413,38 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.17200016975s
+Total time until interface ready: 1.22300004959s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.007000 seconds.
-- Frame drawn at 0.022000 seconds.
-- Frame drawn at 0.039000 seconds.
-- Frame drawn at 0.056000 seconds.
-- 0.056000 seconds to ren
+- Frame drawn at 0.004000 seconds.
+- Frame drawn at 0.017000 seconds.
+- Frame drawn at 0.034000 seconds.
+- Frame drawn at 0.052000 seconds.
+- 0.052000 seconds to render 5 frames.
+Coterie Transhumanistes affinité 4
+Coterie Conquistadors affinité 7
+Coterie Ordre du Temple affinité -6
+Coterie Elfes affinité -6
+retire templiers
+retire elfes
+coterieChoisie conquistadors
+
+Full traceback:
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in script
+    $ coterieConquistadors.RejoindreCoterie(situation_)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in <module>
+    $ coterieConquistadors.RejoindreCoterie(situation_)
+  File "extremis/coteries/coterie.py", line 175, in RejoindreCoterie
+  File "extremis/coteries/conquistadors/conquistadors.py", line 79, in CreerPrenom
+NameError: global name 'random' is not defined
+
+While running game code:
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in script
+    $ coterieConquistadors.RejoindreCoterie(situation_)
+  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 20, in <module>
+    $ coterieConquistadors.RejoindreCoterie(situation_)
+NameError: global name 'random' is not defined

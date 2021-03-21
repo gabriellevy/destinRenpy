@@ -52,7 +52,7 @@ class Templiers(coterie.Coterie):
 
     def GetTraitsIncompatibles(self):
         """
-        si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
+        si le perso a ces caracs il a moins de chances de ne pas vouloir rejoindre cette coterie
         """
         return [ \
             trait.Cupidite.NOM, \

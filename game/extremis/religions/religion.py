@@ -19,6 +19,7 @@ class Christianisme(Religion):
 
     NOM = u"Christianisme"
 
+    # valeurs de metier.Metier.C_TITRE quand le eprso est prêtre
     EVEQUE = u"Évèque"
 
     def __init__(self):
