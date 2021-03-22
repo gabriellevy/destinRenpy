@@ -1,26 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 91, in script
-    $ AjouterACarac(metier.Carthographe.NOM, 2)
-  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 91, in <module>
-    $ AjouterACarac(metier.Carthographe.NOM, 2)
-AttributeError: 'module' object has no attribute 'Carthographe'
+  File "game/evts_generaux/rien.rpy", line 58, in script
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 58, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 43, in LancerEvtVide
+    quartierCourant = situation.GetQuartier()
+NameError: global name 'quartier' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 91, in script
-    $ AjouterACarac(metier.Carthographe.NOM, 2)
+  File "game/evts_generaux/rien.rpy", line 58, in script
+    $ LancerEvtVide(situation_)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/conquistadors/evts_UnivConquistadors.rpy", line 91, in <module>
-    $ AjouterACarac(metier.Carthographe.NOM, 2)
-AttributeError: 'module' object has no attribute 'Carthographe'
+  File "game/evts_generaux/rien.rpy", line 58, in <module>
+    $ LancerEvtVide(situation_)
+  File "game/evts_generaux/rien.rpy", line 43, in LancerEvtVide
+    quartierCourant = situation.GetQuartier()
+  File "despin/gen_vie/situation.py", line 146, in GetQuartier
+NameError: global name 'quartier' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Mar 21 23:46:04 2021
+Tue Mar 23 00:06:34 2021

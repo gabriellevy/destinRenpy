@@ -1,5 +1,6 @@
 import random
 from extremis.humanite import identite
+from extremis.geographie import quartier
 
 class Coterie:
     """
