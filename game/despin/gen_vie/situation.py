@@ -10,6 +10,7 @@ from extremis.geographie import quartier
 from extremis.humanite import portrait
 from extremis.socio_eco.crime import crime
 from extremis.socio_eco.crime import justice
+from extremis.humanite import pnj
 from extremis.humanite import trait
 import random
 
@@ -43,7 +44,7 @@ class Situation:
         celui est choisi est stocké dans une carac mais en cas de changement important (âge, métier, coterie...) on en recalcule un
         """
         portr = portrait.Portrait()
-        portraitStr = portr.DeterminerPortraits(self, True)
+        portraitStr = portr.DeterminerPortraitPersoPrincipal(self, True)
         self.SetCarac(portrait.Portrait.C_PORTRAIT, portraitStr)
         return self.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
@@ -133,7 +134,7 @@ class Situation:
     def GetValCarac(self, idCarac):
         if ( idCarac not in self.caracs_):
             self.caracs_[idCarac] = ""
-        return u"{}".format(self.caracs_[idCarac])
+        return self.caracs_[idCarac]
 
     def GetValCaracInt(self, idCarac):
         if ( idCarac not in self.caracs_):
@@ -253,6 +254,38 @@ class Situation:
             strMetier = u"{}\n\nCompétences : {}".format(strMetier, strComp)
 
         return strMetier
+
+    def AffichagePortraitPere(self):
+        # père
+        str = u""
+        pere = self.GetValCarac(pnj.Pnj.C_PERE)
+        if isinstance(pere, pnj.Pnj) :
+            return pere.portraitStr_
+        return ""
+
+    def AffichagePortraitMere(self):
+        # mère
+        str = u""
+        mere = self.GetValCarac(pnj.Pnj.C_MERE)
+        if isinstance(mere, pnj.Pnj) :
+            return mere.portraitStr_
+        return ""
+
+    def AffichagePere(self):
+        # père
+        str = u""
+        pere = self.GetValCarac(pnj.Pnj.C_PERE)
+        if isinstance(pere, pnj.Pnj) :
+            str = u"{}".format(pere)
+        return str
+
+    def AffichageMere(self):
+        # mère
+        str = u""
+        mere = self.GetValCarac(pnj.Pnj.C_MERE)
+        if isinstance(mere, pnj.Pnj) :
+            str = u"{}".format(mere)
+        return str
 
     def AffichageRichesse(self):
         if ( trait.Richesse.NOM not in self.caracs_):

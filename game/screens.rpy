@@ -1560,6 +1560,10 @@ screen valeurs_traits():
     $ strRichesse = situation_.AffichageRichesse()
     $ strPossessions = situation_.AffichagePossessions()
     $ adressePortrait = situation_.DeterminerPortrait()
+    $ strAffichagePortraitPere = situation_.AffichagePortraitPere()
+    $ strAffichagePere = situation_.AffichagePere()
+    $ strAffichagePortraitMere = situation_.AffichagePortraitMere()
+    $ strAffichageMere = situation_.AffichageMere()
     frame:
         xpos 5 ypos 5
         vbox:
@@ -1588,3 +1592,10 @@ screen valeurs_traits():
                 text _(u"[strCrime]")
             elif interfaceMode_ == 8: # Possessions
                 text _(u"[strPossessions]")
+            elif interfaceMode_ == 9: # Famille
+                text _("Père :")
+                add "[strAffichagePortraitPere]"
+                text _(u"[strAffichagePere]")
+                text _("Mère :")
+                add "[strAffichagePortraitMere]"
+                text _(u"[strAffichageMere]")

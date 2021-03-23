@@ -6,22 +6,29 @@ class Portrait:
 
     C_PORTRAIT = u"Portrait"
 
-    def DeterminerPortraits(self, situation, masculin):
+    def DeterminerPortraitPersoPrincipal(self, situation, masculin):
+        """
+        retourne l'adresse du portrait à afficher pour le perso courant
+        """
+        age = situation.AgeEnAnnees()
+        cotObj = situation.GetCoterie()
+        metObj = situation.GetMetier()
+        traitsPerso = situation.GetTraits()
+
+        return self.DeterminerPortraits(situation, age, cotObj, metObj, traitsPerso, masculin)
+
+    def DeterminerPortraits(self, situation, age, cotObj, metObj, traitsPerso, masculin):
         """
         retourne l'adresse du portrait à afficher pour le perso courant
         """
         portraits = []
         portraitCourant = situation.GetValCarac(Portrait.C_PORTRAIT)
-        age = situation.AgeEnAnnees()
-        cot = situation.GetCoterie()
-        met = situation.GetMetier()
-        traitsPerso = situation.GetTraits()
 
-        if cot != None:
-            portraits = cot.GenererPortraits(age, masculin, met, portraits)
+        if cotObj != None:
+            portraits = cotObj.GenererPortraits(age, masculin, metObj, portraits)
 
-        if met != None:
-            portraits = met.GenererPortraits(age, masculin, met, portraits)
+        if metObj != None:
+            portraits = metObj.GenererPortraits(age, masculin, portraits)
 
         if len(portraits) == 0:
             # portrait neutres indépendants du métier et de la coterie

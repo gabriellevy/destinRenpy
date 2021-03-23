@@ -7,6 +7,7 @@ init -5 python:
     from despin.gen_vie import proba
     from despin.abs import condition
     from extremis.humanite import trait
+    from extremis.humanite import pnj
     from extremis.constitution import temps
     from extremis.coteries.templiers import templiers
     from extremis.coteries import coterie
@@ -58,7 +59,6 @@ init -5 python:
         situation[trait.Cupidite.NOM] = 11
         situation[trait.Opportunisme.NOM] = 11
         situation[trait.Violence.NOM] = 11
-
         # A FAIRE Mathieu : génération de la famille
         # Famille::GenererParents(effetNarrationVide);
 
@@ -71,9 +71,16 @@ init -5 python:
         # effetNarrationVide->AjouterChangeurDeCarac(ClasseSociale::C_CLASSE_SOCIALE, clas);
         return
 
+    def genererParents(situation):
+        pere = pnj.GenererPNJPapa(situation)
+        situation.SetValCarac(pnj.Pnj.C_PERE, pere)
+        mere = pnj.GenererPNJMaman(situation)
+        situation.SetValCarac(pnj.Pnj.C_MERE, mere)
+
 label naissance:
     $ genererDateNaissance(situation_)
     $ genererTraits(situation_, traits_)
-    # $ genererTruand(situation_, traits_)
+    # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
+    $ genererParents(situation_)
     # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle
