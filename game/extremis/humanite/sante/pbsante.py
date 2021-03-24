@@ -259,7 +259,7 @@ class CollectionBlessures:
             blessure = self[blessureK]
             if situation.GetValCarac(blessureK) != "":
                 situation.SetValCarac(blessureK, "")
-                return "Vous n'êtes plus {}.".format(blessure.nom_)
+                return u"Vous n'êtes plus {}.".format(blessure.nom_)
 
         return ""
 

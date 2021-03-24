@@ -1,5 +1,6 @@
 import random
 from extremis.humanite import portrait
+from extremis.constitution import temps
 
 class Pnj:
 
@@ -57,23 +58,34 @@ class Pnj:
             metObj = situation.collectionMetiers[self.metier_]
         self.portraitStr_ = portr.DeterminerPortraits(situation, self.nbJours_, cotObj, metObj, [], self.sexeMasculin_)
 
-def GenererPNJ(sexeMasculin, situation):
+def GenererPNJ(sexeMasculin, situation, ageJours):
     """
-
+    Génère un PNJ aléatoire avec un ensemble de caracs
+    Il pourra ensuite être stocké dans la situation
     """
     pnj = Pnj()
-    pnj.nom_ = u"Deharbe"
-    pnj.prenom_ = u"Mathieu"
-    pnj.nbJours_ = 20*12*30
-    pnj.coterie_ = ""
-    pnj.metier_ = u"Médecin"
+    cotObj = situation.collectionCoteries.getCoterieAleatoire(True)
+    pnj.nom_ = cotObj.CreerNom(sexeMasculin)
+    pnj.prenom_ = cotObj.CreerPrenom(sexeMasculin)
+    pnj.nbJours_ = ageJours
+    pnj.coterie_ = cotObj.id_
+    pnj.metier_ = situation.collectionMetiers.getMetierAleatoire().nom_
     pnj.sexeMasculin_ = sexeMasculin
     pnj.portraitStr_ = ""
     pnj.MajPortrait(situation)
     return pnj
 
 def GenererPNJPapa(situation):
-    return GenererPNJ(True, situation)
+    nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
+    ageJours = (29 + random.randint(0, 30)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
+    return GenererPNJ(True, situation, ageJours)
 
 def GenererPNJMaman(situation):
-    return GenererPNJ(False, situation)
+    nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
+    ageJours = (29 + random.randint(0, 50)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
+    return GenererPNJ(False, situation, ageJours)
+
+def GenererRelationAmoureuse(situation):
+    nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
+    ageJours = nbJoursVecusPerso + (random.randint(0, 15) - random.randint(0, 15)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
+    return GenererPNJ(False, situation, ageJours)

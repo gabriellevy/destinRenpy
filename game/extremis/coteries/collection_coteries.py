@@ -22,15 +22,18 @@ class CollectionCoteries:
         conqu = conquistadors.Conquistadors()
         self.SetCoterie(conquistadors.Conquistadors.ID, conqu)
 
-    def getCoterieAleatoire(self):
-        return random.choice(list(self.lCoteries_.values()))
+    def getCoterieAleatoire(self, selonDemographie):
+        if selonDemographie:
+            return random.choice(list(self.lCoteries_.values())) # A FAIRE MATHIEU
+        else:
+            return random.choice(list(self.lCoteries_.values()))
 
     def DebuterProchaineUniversite(self, situation):
-        coterie = self.getCoterieAleatoire()
+        coterie = self.getCoterieAleatoire(False)
         labelProchainEvt = coterie.getLabelUniversite()
 
         while situation.GetValCaracInt(labelProchainEvt) == 1: # détection de si cette coterie a déjà été effectuée par le personnage
-            coterie = self.getCoterieAleatoire()
+            coterie = self.getCoterieAleatoire(False)
             labelProchainEvt = coterie.getLabelUniversite()
 
         situation.SetValCarac(quartier.Quartier.C_QUARTIER, coterie.quartier_)
