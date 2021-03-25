@@ -71,27 +71,61 @@ class Conquistadors(coterie.Coterie):
         ajoute des portraits correspondants aux caracs en paramètre (et à la coterie courante)
         """
         if masculin:
-            if age > 15:
-                if age > 20:
-                    if age > 40:
-                        portraits.append("images/coteries/conquistadors/portraits/portrait_40+.jpg")
-                        if age > 50:
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_50+.jpg")
+            if age >= 15:
+                if age >= 20:
+                    if age >= 30:
+                        if age >= 40:
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_40+.jpg")
+                            if age >= 50:
+                                portraits.append("images/coteries/conquistadors/portraits/portrait_50+.jpg")
+                                portraits.append("images/coteries/conquistadors/portraits/portrait_50+_b.jpg.jpg")
+                                if age >= 60:
+                                    portraits.append("images/coteries/conquistadors/portraits/portrait_60+.jpg")
+                        # age > 30 ans
+                        if age <= 60:
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_30-60.jpg")
 
                     # age > 20 ans
-                        if age < 50:
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50.jpg")
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_b.jpg")
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_c.jpg")
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_d.jpg")
-                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_e.jpg")
-                            if age < 40:
-                                portraits.append("images/coteries/conquistadors/portraits/portrait_20-40.jpg")
-                # age > 15 ans
-                if age < 40:
-                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40.jpg")
-                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_b.jpg")
-                    portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_c.jpg")
+                    if age <= 50:
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50.jpg")
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_b.jpg")
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_c.jpg")
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_d.jpg")
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_e.jpg")
+                        portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_f.jpg")
+                        if metier == metier.Pretre.NOM:
+                            portraits.append("images/coteries/conquistadors/portraits/pretre_20-50.jpg")
+                        if age < 40:
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-40.jpg")
+                            portraits.append("images/coteries/conquistadors/portraits/portrait_20-40_b.jpg")
+            # age > 15 ans
+            if age < 40:
+                portraits.append("images/coteries/conquistadors/portraits/portrait_15-40.jpg")
+                portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_b.jpg")
+                portraits.append("images/coteries/conquistadors/portraits/portrait_15-40_c.jpg")
+        else:
+            if age > 15:
+                if age < 35:
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35_b.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35_c.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35_d.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35_e.jpg")
+                    portraits.append("images/coteries/conquistadors/portraits/femme15_35_f.jpg")
+                if age >= 20:
+                    if age >= 30:
+                        if age <= 50:
+                            portraits.append("images/coteries/conquistadors/portraits/femme30_50.jpg")
+                        if age >= 40:
+                            portraits.append("images/coteries/conquistadors/portraits/femme40+.jpg")
+                            if age >= 50:
+                                portraits.append("images/coteries/conquistadors/portraits/femme50+.jpg")
+                    # age > 20 ans
+                    if age < 45:
+                        portraits.append("images/coteries/conquistadors/portraits/femme20_45.jpg")
+                        if age < 35:
+                            portraits.append("images/coteries/conquistadors/portraits/femme20_35.jpg")
+
 
         return portraits
 
@@ -392,11 +426,11 @@ class Conquistadors(coterie.Coterie):
     "AbadÃ­a","Abarca","AbellÃ¡n","Abiego","Acorella","AdriÃ¡n","Agea","Ager","Agramunt","AgustÃ­n","AlbarracÃ­n",
     "AlberÃ³","AlcalÃ¡","Alcolea","Alfaro","Alicante","Almunia","Alos","Amalric","AragonÃ©s","Arcas","Aymerich",
     "Aznar","Balaguer","Baldovinos","BandrÃ©s","Baptista","Barrachina","Batista","Bautista","Bermund","Boix",
-    "Bonfill","Borrell","Bruguer","Burguera","Burrell","CaballerÃ­a","Caballero","Cabra","Cacho","Cajal","Calasanz",
-    "CalderÃ³n","Canyelles","Castellblanc","CebriÃ¡n","Centelles","CerdÃ¡n","Ceret","Cirera","Claver","Clemente",
+    "Bonfill","Borrell","Bruguer","Burguera","Burrell","Caballer­a","Caballero","Cabra","Cacho","Cajal","Calasanz",
+    "Calderaña","Canyelles","Castellblanc","Cebriaña","Centelles","Cerdaña","Ceret","Cirera","Claver","Clemente",
     "Desclot","Donat","Egea","Ena","Entenza","Ermengol","Escolano","EstÃ©banez","Estanyol","Feliu","Ferrer",
-    "Font","FortiÃ ","Garcia","Gironella","Grau","Gualba","Guitarra","Jofre","Lagos","Latorre","March","Marquet",
-    "Martell","Martorell","Mas","Massa","Massot","MirÃ³","Morer","Muntaner","Murillo","Navarro","Noguera","Notario",
+    "Font","Fortiaño ","Garcia","Gironella","Grau","Gualba","Guitarra","Jofre","Lagos","Latorre","March","Marquet",
+    "Martell","Martorell","Mas","Massa","Massot","Miran","Morer","Muntaner","Murillo","Navarro","Noguera","Notario",
     "Oms","Penyafort","Planas","Ponts","Prat","Puig","Rami­rez","Ramon","Riba","Riera","Roca","Roig","Roldaño","Romero","Rosellao","Rovira","Sacristaño","Sagarra","Samper","Sanz","Segarra","Texidor","Torquelles","VallÃ¨s","Vilagrassa","Vilaregut","de Arcas","de la CaballerÃ­a"
     "Aguilar",
     "Aguilera",
