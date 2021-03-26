@@ -2,6 +2,7 @@ from extremis.coteries import coterie
 from extremis.socio_eco.metiers import metier
 from extremis.humanite import trait
 from extremis.geographie import quartier
+import random
 
 class Elfes(coterie.Coterie):
 
@@ -52,27 +53,45 @@ class Elfes(coterie.Coterie):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         """
+        global situation_
         if masculin:
-            if age > 15:
-                if age > 20:
-                    if age > 30:
+            if age >= 15:
+                if age >= 20:
+                    if age >= 30:
                         portraits.append("images/coteries/elfes/portraits/portrait_30+.jpg")
-                        if age > 50:
+                        if age >= 50:
                             portraits.append("images/coteries/elfes/portraits/portrait_50+.jpg")
                             portraits.append("images/coteries/elfes/portraits/portrait50+.png")
-                    if age < 40:
-                        portraits.append("images/coteries/elfes/portraits/portrait20-40.png")
-                if age < 40:
-                    portraits.append("images/coteries/elfes/portraits/portrait_15-40_b.jpg")
+
+                    if age <= 50:
+                        if situation_.GetValCaracInt(trait.Franchise.NOM) <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
+                            portraits.append("images/coteries/elfes/portraits/sournois20_50.jpg")
+                        if age <= 40:
+                            portraits.append("images/coteries/elfes/portraits/portrait20-40.png")
+                if age <= 40:
                     portraits.append("images/coteries/elfes/portraits/portrait_15-40_c.jpg")
                     portraits.append("images/coteries/elfes/portraits/portrait_15-40_d.jpg")
-                    if age < 30:
+                    if age <= 30:
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30.jpg")
         else:
-            if age > 20:
-                if age < 40:
-                    portraits.append("images/coteries/elfes/portraits/Fportrait20-40.png")
-                    portraits.append("images/coteries/elfes/portraits/Fportrait20-40_2.png")
+            if age >= 15:
+                if age >= 20:
+                    if age >= 30:
+                        portraits.append("images/coteries/elfes/portraits/femme30+.jpg")
+                        # > 30 ans
+                        if age <= 60:
+                            portraits.append("images/coteries/elfes/portraits/portrait_30_60.jpg")
+                    # >= 20 ans
+                    if age <= 40:
+                        portraits.append("images/coteries/elfes/portraits/Fportrait20-40.png")
+                        portraits.append("images/coteries/elfes/portraits/Fportrait20-40_2.png")
+
+                # age >= 15
+                if age <= 40:
+                    portraits.append("images/coteries/elfes/portraits/femme15_40.jpg")
+                    if age <= 30:
+                        portraits.append("images/coteries/elfes/portraits/portrait_15-30_b.jpg")
+                        portraits.append("images/coteries/elfes/portraits/portrait_15-30_c.jpg")
 
         return portraits
 
