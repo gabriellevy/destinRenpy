@@ -14,6 +14,7 @@ class Pnj:
         self.coterie_ = ""
         self.metier_ = ""
         self.sexeMasculin_ = True
+        self.traits_ = {} # dico contenant une liste de traits comme clés et leur valeur comme valeur
         self.portraitStr_ = ""
 
     def __format__(self, format):
@@ -57,7 +58,7 @@ class Pnj:
             cotObj = situation.collectionCoteries[self.coterie_]
         if self.metier_ != "":
             metObj = situation.collectionMetiers[self.metier_]
-        self.portraitStr_ = portr.DeterminerPortraits(situation, ageNbAnnees, cotObj, metObj, {}, self.sexeMasculin_)
+        self.portraitStr_ = portr.DeterminerPortraits(situation, ageNbAnnees, cotObj, metObj, self.traits_, self.sexeMasculin_)
 
 def GenererPNJ(sexeMasculin, situation, ageJours):
     """
@@ -73,6 +74,16 @@ def GenererPNJ(sexeMasculin, situation, ageJours):
     pnj.metier_ = situation.collectionMetiers.getMetierAleatoire().nom_
     pnj.sexeMasculin_ = sexeMasculin
     pnj.portraitStr_ = ""
+    # génération des traits :
+
+    nbTraits = 2 + random.randint(0,5)
+    m_Traits = []
+    while nbTraits > 0:
+        trait = situation.collectionTraits.getTraitAleatoire()
+        if trait.PeutEtrePrisALaNaissance():
+            pnj.traits_[trait.eTrait_] = trait.GetValeurALaNaissance()
+            nbTraits = nbTraits - 1
+
     pnj.MajPortrait(situation)
     return pnj
 
