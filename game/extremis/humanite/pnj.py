@@ -65,17 +65,23 @@ def GenererPNJ(sexeMasculin, situation, ageJours):
     Génère un PNJ aléatoire avec un ensemble de caracs
     Il pourra ensuite être stocké dans la situation
     """
+    ageAnnees = ageJours/360
     pnj = Pnj()
     cotObj = situation.collectionCoteries.getCoterieAleatoire(True)
     pnj.nom_ = cotObj.CreerNom(sexeMasculin)
     pnj.prenom_ = cotObj.CreerPrenom(sexeMasculin)
     pnj.nbJours_ = ageJours
     pnj.coterie_ = cotObj.id_
-    pnj.metier_ = situation.collectionMetiers.getMetierAleatoire().nom_
+    # métier :
+    metierStr = ""
+    if ageAnnees >= 20:
+        # a un métier
+        metier = situation.collectionMetiers.getMetierAleatoire(True, sexeMasculin, cotObj)
+        metierStr = metier.nom_
+    pnj.metier_ = metierStr
     pnj.sexeMasculin_ = sexeMasculin
     pnj.portraitStr_ = ""
     # génération des traits :
-
     nbTraits = 2 + random.randint(0,5)
     m_Traits = []
     while nbTraits > 0:

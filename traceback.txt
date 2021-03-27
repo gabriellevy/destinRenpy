@@ -7,7 +7,7 @@ While running game code:
     $ genererParents(situation_)
   File "game/evts_generaux/naissance.rpy", line 75, in genererParents
     pere = pnj.GenererPNJPapa(situation)
-NameError: global name 'self' is not defined
+TypeError: getMetierAleatoire() takes exactly 3 arguments (4 given)
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -22,11 +22,11 @@ Full traceback:
     $ genererParents(situation_)
   File "game/evts_generaux/naissance.rpy", line 75, in genererParents
     pere = pnj.GenererPNJPapa(situation)
-  File "extremis/humanite/pnj.py", line 93, in GenererPNJPapa
-  File "extremis/humanite/pnj.py", line 84, in GenererPNJ
-NameError: global name 'self' is not defined
+  File "extremis/humanite/pnj.py", line 99, in GenererPNJPapa
+  File "extremis/humanite/pnj.py", line 79, in GenererPNJ
+TypeError: getMetierAleatoire() takes exactly 3 arguments (4 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sat Mar 27 15:50:48 2021
+Sat Mar 27 18:28:51 2021
