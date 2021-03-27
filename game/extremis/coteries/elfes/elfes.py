@@ -49,9 +49,10 @@ class Elfes(coterie.Coterie):
             # les blessures en particuliers être défiguré
             ]
 
-    def GenererPortraits(self, age, masculin, metier, portraits):
+    def GenererPortraits(self, age, masculin, metier, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
+        valeursTraits : dico contenant en clé le nom des traits possédés par le personnage et en valeur leur niveau
         """
         global situation_
         if masculin:
@@ -64,7 +65,7 @@ class Elfes(coterie.Coterie):
                             portraits.append("images/coteries/elfes/portraits/portrait50+.png")
 
                     if age <= 50:
-                        if situation_.GetValCaracInt(trait.Franchise.NOM) <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
+                        if valeursTraits[trait.Franchise.NOM] <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
                             portraits.append("images/coteries/elfes/portraits/sournois20_50.jpg")
                         if age <= 40:
                             portraits.append("images/coteries/elfes/portraits/portrait20-40.png")

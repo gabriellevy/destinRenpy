@@ -176,6 +176,19 @@ class Situation:
                 traitsPerso.append(self.collectionTraits[traitK])
         return traitsPerso
 
+    def GetDicoTraits(self):
+        """
+        renvoi la liste des traits du perso sous forme d'un dico avec comme clé l'id du trait et comme valeur son contenu
+        les traits à "" ou 0 ne sont pas renvoyés
+        """
+        traitsPerso = {}
+        for traitK in self.collectionTraits.lTraits_.keys():
+            valTrait = self.GetValCarac(traitK)
+            if valTrait != "" and valTrait != 0:
+                trait = self.collectionTraits[traitK]
+                traitsPerso[trait.eTrait_] = valTrait
+        return traitsPerso
+
     # ---------------------------------- affichage des caracs dans l'interface
     def DescriptionTraits(self, traits):
         """

@@ -67,7 +67,7 @@ class Transhumanistes(coterie.Coterie):
             # classe sociale basse
             ]
 
-    def GenererPortraits(self, age, masculin, metier, portraits):
+    def GenererPortraits(self, age, masculin, metier, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         """

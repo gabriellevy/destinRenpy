@@ -89,7 +89,7 @@ class Templiers(coterie.Coterie):
         else:
             return random.choice(Templiers.PRENOMS_F)
 
-    def GenererPortraits(self, age, masculin, metier, portraits):
+    def GenererPortraits(self, age, masculin, metier, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         """

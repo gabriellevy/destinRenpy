@@ -7,15 +7,11 @@ While running game code:
     screen valeurs_traits():
   File "game/screens.rpy", line 1548, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1567, in execute
-    frame:
-  File "game/screens.rpy", line 1569, in execute
-    vbox:
-  File "game/screens.rpy", line 1572, in execute
-    if interfaceMode_ == 0: # résumé, portrait, nom...
-  File "game/screens.rpy", line 1597, in execute
-    add "[strAffichagePortraitPere]"
-Exception: DynamicImage u'[strAffichagePortraitPere]': could not find image. ('images/coteries/conquistadors/portraits/portrait_50+_b.jpg.jpg')
+  File "game/screens.rpy", line 1562, in execute
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "game/screens.rpy", line 1562, in <module>
+    $ adressePortrait = situation_.DeterminerPortrait()
+AttributeError: Sincerite instance has no attribute 'nom_'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -52,25 +48,16 @@ Full traceback:
     screen valeurs_traits():
   File "game/screens.rpy", line 1548, in execute
     screen valeurs_traits():
-  File "game/screens.rpy", line 1567, in execute
-    frame:
-  File "game/screens.rpy", line 1569, in execute
-    vbox:
-  File "game/screens.rpy", line 1572, in execute
-    if interfaceMode_ == 0: # résumé, portrait, nom...
-  File "game/screens.rpy", line 1597, in execute
-    add "[strAffichagePortraitPere]"
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\sl2\sldisplayables.py", line 430, in sl2add
-    d = renpy.easy.displayable(d, scope=scope)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\easy.py", line 110, in displayable
-    return renpy.display.image.DynamicImage(d, scope=scope)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 570, in __init__
-    self.find_target(scope)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\image.py", line 651, in find_target
-    raise Exception(error)
-Exception: DynamicImage u'[strAffichagePortraitPere]': could not find image. ('images/coteries/conquistadors/portraits/portrait_50+_b.jpg.jpg')
+  File "game/screens.rpy", line 1562, in execute
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "game/screens.rpy", line 1562, in <module>
+    $ adressePortrait = situation_.DeterminerPortrait()
+  File "despin/gen_vie/situation.py", line 47, in DeterminerPortrait
+  File "extremis/humanite/portrait.py", line 16, in DeterminerPortraitPersoPrincipal
+  File "despin/gen_vie/situation.py", line 189, in GetDicoTraits
+AttributeError: Sincerite instance has no attribute 'nom_'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Fri Mar 26 23:42:18 2021
+Sat Mar 27 15:22:09 2021

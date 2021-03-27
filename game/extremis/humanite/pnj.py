@@ -50,13 +50,14 @@ class Pnj:
         à appeler de temps en temps (changement de boulot, passage de dizaines en âge etc, je sais pas trop
         """
         portr = portrait.Portrait()
+        ageNbAnnees = self.nbJours_/365
         cotObj = None
         metObj = None
         if self.coterie_ != "":
             cotObj = situation.collectionCoteries[self.coterie_]
         if self.metier_ != "":
             metObj = situation.collectionMetiers[self.metier_]
-        self.portraitStr_ = portr.DeterminerPortraits(situation, self.nbJours_, cotObj, metObj, [], self.sexeMasculin_)
+        self.portraitStr_ = portr.DeterminerPortraits(situation, ageNbAnnees, cotObj, metObj, {}, self.sexeMasculin_)
 
 def GenererPNJ(sexeMasculin, situation, ageJours):
     """
@@ -77,12 +78,12 @@ def GenererPNJ(sexeMasculin, situation, ageJours):
 
 def GenererPNJPapa(situation):
     nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
-    ageJours = (29 + random.randint(0, 30)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
+    ageJours = (30 + random.randint(0, 35)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
     return GenererPNJ(True, situation, ageJours)
 
 def GenererPNJMaman(situation):
     nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
-    ageJours = (29 + random.randint(0, 50)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
+    ageJours = (30 + random.randint(0, 25)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
     return GenererPNJ(False, situation, ageJours)
 
 def GenererRelationAmoureuse(situation):

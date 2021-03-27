@@ -66,7 +66,7 @@ label univConquistadors_evt1:
 
 label univConquistadors_evt2:
     # effetCombat
-    "Seuls les grands guerriers peuvent espérer devenir des conquistadors et affronter les horreurs des terres désolées. Votre formation contient bien sûr un entrainement avec de célbres maîtres d'armes."
+    "Seuls les grands guerriers peuvent espérer devenir des conquistadors et affronter les horreurs des terres désolées. Vous suivez donc un entrainement avec de célèbres maîtres d'armes."
     $ AjouterACarac(metier.Guerrier.NOM, 1)
     jump fin_cycle
 

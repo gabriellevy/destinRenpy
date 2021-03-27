@@ -50,7 +50,7 @@ class Metier:
         else:
             situation[Metier.ADMINISTRATIF] = ""
 
-    def GenererPortraits(self, age, masculin, portraits):
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en parametre
         A OVERRIDER
@@ -97,7 +97,7 @@ class Marchand(Metier):
     def __init__(self):
         self.nom_ = Marchand.NOM
 
-    def GenererPortraits(self, age, masculin, portraits):
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en parametre et au métier
         """
@@ -192,7 +192,7 @@ class Cyberneticien(Metier):
     def __init__(self):
         self.nom_ = Cyberneticien.NOM
 
-    def GenererPortraits(self, age, masculin, portraits):
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en parametre
         """
@@ -206,7 +206,7 @@ class Geneticien(Metier):
     def __init__(self):
         self.nom_ = Geneticien.NOM
 
-    def GenererPortraits(self, age, masculin, portraits):
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en parametre
         """
@@ -253,7 +253,7 @@ class Journaliste(Metier):
     def __init__(self):
         self.nom_ = Journaliste.NOM
 
-    def GenererPortraits(self, age, masculin, portraits):
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en parametre
         """

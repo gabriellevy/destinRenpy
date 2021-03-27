@@ -139,7 +139,7 @@ class Coterie:
 
         return affinite
 
-    def GenererPortraits(self, age, masculin, metier, portraits):
+    def GenererPortraits(self, age, masculin, metier, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         A OVERRIDER

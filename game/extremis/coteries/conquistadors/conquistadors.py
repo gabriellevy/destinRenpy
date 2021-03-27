@@ -66,9 +66,10 @@ class Conquistadors(coterie.Coterie):
         """
         return 0.7
 
-    def GenererPortraits(self, age, masculin, metier, portraits):
+    def GenererPortraits(self, age, masculin, metier, portraits, traits):
         """
         ajoute des portraits correspondants aux caracs en paramètre (et à la coterie courante)
+        traits : liste de tous les traits du perso sous forme d'objets 'Trait'
         """
         if masculin:
             if age >= 15:
