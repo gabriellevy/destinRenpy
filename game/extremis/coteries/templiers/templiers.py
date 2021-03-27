@@ -94,16 +94,23 @@ class Templiers(coterie.Coterie):
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         """
         if masculin:
-            if age > 20:
-                if age > 30:
-                    if age > 50:
-                        if age > 60:
+            if age >= 20:
+                if age >= 30:
+                    if age >= 50:
+                        if age >= 60:
                             portraits.append("images/coteries/templiers/portraits/60+.jpg")
                         portraits.append("images/coteries/templiers/portraits/50+.jpg")
                         portraits.append("images/coteries/templiers/portraits/50+_b.jpg")
                     portraits.append("images/coteries/templiers/portraits/30+.jpg")
-                if age < 40:
+                if age <= 40:
                     portraits.append("images/coteries/templiers/portraits/20-40.jpg")
+        else:
+            if age >= 15:
+                if age <= 30:
+                    portraits.append("images/coteries/templiers/portraits/femme15_30.jpg")
+                if age >= 20:
+                    if age <= 40:
+                        portraits.append("images/coteries/templiers/portraits/femme20_40.jpg")
 
         return portraits
 

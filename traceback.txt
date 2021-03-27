@@ -7,7 +7,7 @@ While running game code:
     $ genererParents(situation_)
   File "game/evts_generaux/naissance.rpy", line 75, in genererParents
     pere = pnj.GenererPNJPapa(situation)
-TypeError: getMetierAleatoire() takes exactly 3 arguments (4 given)
+KeyError: u'Franchise'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -23,10 +23,13 @@ Full traceback:
   File "game/evts_generaux/naissance.rpy", line 75, in genererParents
     pere = pnj.GenererPNJPapa(situation)
   File "extremis/humanite/pnj.py", line 99, in GenererPNJPapa
-  File "extremis/humanite/pnj.py", line 79, in GenererPNJ
-TypeError: getMetierAleatoire() takes exactly 3 arguments (4 given)
+  File "extremis/humanite/pnj.py", line 93, in GenererPNJ
+  File "extremis/humanite/pnj.py", line 61, in MajPortrait
+  File "extremis/humanite/portrait.py", line 29, in DeterminerPortraits
+  File "extremis/coteries/elfes/elfes.py", line 68, in GenererPortraits
+KeyError: u'Franchise'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sat Mar 27 18:28:51 2021
+Sat Mar 27 19:03:49 2021

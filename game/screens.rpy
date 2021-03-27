@@ -1594,8 +1594,12 @@ screen valeurs_traits():
                 text _(u"[strPossessions]")
             elif interfaceMode_ == 9: # Famille
                 text _("Père :")
-                add "[strAffichagePortraitPere]"
-                text _(u"[strAffichagePere]")
-                text _("Mère :")
-                add "[strAffichagePortraitMere]"
-                text _(u"[strAffichageMere]")
+                hbox:
+                    add "[strAffichagePortraitPere]"
+                    vbox:
+                        text _(u"[strAffichagePere]")
+                text _("\nMère :")
+                hbox:
+                    add "[strAffichagePortraitMere]"
+                    vbox:
+                        text _(u"[strAffichageMere]")

@@ -65,7 +65,7 @@ class Elfes(coterie.Coterie):
                             portraits.append("images/coteries/elfes/portraits/portrait50+.png")
 
                     if age <= 50:
-                        if valeursTraits[trait.Franchise.NOM] <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
+                        if trait.Franchise.NOM in valeursTraits and valeursTraits[trait.Franchise.NOM] <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
                             portraits.append("images/coteries/elfes/portraits/sournois20_50.jpg")
                         if age <= 40:
                             portraits.append("images/coteries/elfes/portraits/portrait20-40.png")

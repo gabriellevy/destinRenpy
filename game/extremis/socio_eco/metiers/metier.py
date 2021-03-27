@@ -74,6 +74,29 @@ class Paysan(Metier):
     def __init__(self):
         self.nom_ = Paysan.NOM
 
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
+        """
+        ajoute des portraits correspondants aux caracs en parametre
+        """
+        if masculin:
+            if age >= 60:
+                portraits.append("images/metiers/paysan/portraits/paysan60+.jpg")
+        else:
+            if age >= 15:
+                if age >= 60:
+                    portraits.append("images/metiers/paysan/portraits/femme60+.jpg")
+                if age <= 30:
+                        portraits.append("images/metiers/paysan/portraits/femme15_30.jpg")
+                        portraits.append("images/metiers/paysan/portraits/femme15_30_b.jpg")
+                # >= 15
+                if age >= 20:
+                    if age <= 50:
+                        portraits.append("images/metiers/paysan/portraits/femme20_50.jpg")
+                        portraits.append("images/metiers/paysan/portraits/femme20_50_b.jpg")
+                        portraits.append("images/metiers/paysan/portraits/femme20_50_c.jpg")
+
+        return portraits
+
 class Robotique(Metier):
     NOM = u"Robotique"
     def __init__(self):
@@ -357,9 +380,6 @@ class Geneticien(Metier):
         return poids
 
     def GenererPortraits(self, age, masculin, portraits, valeursTraits):
-        """
-        ajoute des portraits correspondants aux caracs en parametre
-        """
         if masculin:
             if age > 60:
                 portraits.append("images/metiers/cyberneticien/portraits/60+.jpg")
@@ -380,6 +400,23 @@ class Policier(Metier):
     NOM = u"Policier"
     def __init__(self):
         self.nom_ = Policier.NOM
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.3
+        if masculin:
+            poids = 1.5
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.3
+        return poids
+
+    def GenererPortraits(self, age, masculin, portraits, valeursTraits):
+        if masculin:
+            pass
+        else:
+            if age >= 20:
+                if age <= 30:
+                    portraits.append("images/metiers/policier/portraits/femme20_30.jpg")
+        return portraits
 
 class Vigile(Metier):
     NOM = u"Vigile"

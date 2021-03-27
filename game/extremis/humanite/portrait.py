@@ -67,6 +67,10 @@ class Portrait:
                     if ageAnnees >= 20:
                         if ageAnnees <= 40:# entre 20 et 40
                             portraits.append("images/portraits/F13-20.jpg")
+                        if ageAnnees >= 30:
+                            if ageAnnees <= 50:
+                                portraits.append("images/portraits/femme30_50.jpg")
+                    # age >= 14
                     if ageAnnees <= 40:
                         if ageAnnees <= 20:# entre 14 et 20
                             portraits.append("images/portraits/F13-20.jpg")
