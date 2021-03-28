@@ -51,7 +51,7 @@ class Transhumanistes(coterie.Coterie):
         1.0 = normal
         0.1 = 10 fois moins que la moyenne
         """
-        return 1.0
+        return 1.1
 
     def GetTraitsIncompatibles(self):
         """

@@ -5,7 +5,6 @@ from extremis.coteries.templiers import templiers
 from extremis.religions import religion
 from extremis.humanite.sante import pbsante
 from extremis.constitution import temps
-from extremis.humanite import identite
 from extremis.geographie import quartier
 from extremis.humanite import portrait
 from extremis.socio_eco.crime import crime
@@ -359,9 +358,9 @@ class Situation:
         return cot.nom_
 
     def AffichagePatronyme(self):
-        if ( identite.Identite.C_PRENOM not in self.caracs_):
+        if ( pnj.Pnj.C_PRENOM not in self.caracs_):
             return "!!! Pas de nom !!!!"
-        return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
+        return u"{} {}".format(self.caracs_[pnj.Pnj.C_PRENOM], self.caracs_[pnj.Pnj.C_NOM])
 
     # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------
     def AffichageDate(self):

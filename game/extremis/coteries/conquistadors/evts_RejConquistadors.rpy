@@ -5,7 +5,6 @@ init -5 python:
     import random
     from extremis.coteries.conquistadors import conquistadors
     from extremis.socio_eco.metiers import metier
-    from extremis.humanite import identite
     from extremis.religions import religion
     from extremis.geographie import quartier
 

@@ -24,7 +24,17 @@ class CollectionCoteries:
 
     def getCoterieAleatoire(self, selonDemographie):
         if selonDemographie:
-            return random.choice(list(self.lCoteries_.values())) # A FAIRE MATHIEU
+            poidsDemoTotal = 0
+            for idCoterie in self.lCoteries_:
+                poidsDemoTotal = poidsDemoTotal + self.lCoteries_[idCoterie].GetPoidsDemo()
+
+            alPoidsDemo = random.uniform(0, poidsDemoTotal)
+
+            for idCoterie in self.lCoteries_:
+                alPoidsDemo = alPoidsDemo - self.lCoteries_[idCoterie].GetPoidsDemo()
+                if alPoidsDemo <= 0:
+                    return self.lCoteries_[idCoterie]
+
         else:
             return random.choice(list(self.lCoteries_.values()))
 

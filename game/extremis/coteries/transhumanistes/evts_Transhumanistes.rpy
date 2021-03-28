@@ -2,7 +2,6 @@ init -5 python:
     import random
     from extremis.coteries.transhumanistes import transhumanistes
     from extremis.socio_eco.metiers import metier
-    from extremis.humanite import identite
     from extremis.humanite.sante import pbsante
     from extremis.religions import religion
 

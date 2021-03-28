@@ -1,5 +1,4 @@
 import random
-from extremis.humanite import identite
 from extremis.geographie import quartier
 
 class Coterie:
@@ -154,10 +153,6 @@ class Coterie:
 
     def RejoindreCoterie(self, situation):
         """
-        QString musique = GetMusique();
-        if ( musique != "") {
-            eff->m_Son = musique;
-        }
         // déménagement dans le quartier de la coterie ?
         if ( hum->EstLibre()) {
             double proba = Aleatoire::GetAl()->Entre0Et1();
