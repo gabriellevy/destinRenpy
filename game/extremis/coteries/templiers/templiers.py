@@ -106,7 +106,9 @@ class Templiers(coterie.Coterie):
                     portraits.append("images/coteries/templiers/portraits/20-40.jpg")
         else:
             if age >= 15:
-                if age <= 30:
+                if age >= 70:
+                    portraits.append("images/coteries/templiers/portraits/femme70+.jpg")
+                if age <= 30: # >=15
                     portraits.append("images/coteries/templiers/portraits/femme15_30.jpg")
                 if age >= 20:
                     if age <= 40:

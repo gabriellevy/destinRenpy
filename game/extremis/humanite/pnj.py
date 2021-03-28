@@ -1,19 +1,20 @@
 import random
 from extremis.humanite import portrait
 from extremis.constitution import temps
+from extremis.humanite import identite
 
 class Pnj:
 
     C_PERE = u"Père"
     C_MERE = u"Mère"
 
-    def __init__(self):
-        self.nom_ = u"nom de pnj non défini"
-        self.prenom_ = u"prénom de pnj non défini"
+    def __init__(self, sexeMasculin, situation):
+        self.sexeMasculin_ = sexeMasculin
+        self.CreerNomNeutre(situation)
+        self.CreerPrenomNeutre(situation)
         self.nbJours_ = -1
         self.coterie_ = ""
         self.metier_ = ""
-        self.sexeMasculin_ = True
         self.traits_ = {} # dico contenant une liste de traits comme clés et leur valeur comme valeur
         self.portraitStr_ = ""
 
@@ -60,16 +61,37 @@ class Pnj:
             metObj = situation.collectionMetiers[self.metier_]
         self.portraitStr_ = portr.DeterminerPortraits(situation, ageNbAnnees, cotObj, metObj, self.traits_, self.sexeMasculin_)
 
+    def CreerNomNeutre(self, situation):
+        """
+        à utiliser quand le personnage n'a pas de coterie ou une coterie qui n'a aps de nom spécifique :
+        on crée un patronyme aléatoire à partir des noms de toutes els coteries
+        """
+        self.nom_ = ""
+        while self.nom_ == "" or self.nom_ == None:
+            cotObj = situation.collectionCoteries.getCoterieAleatoire(False)
+            self.nom_ = cotObj.CreerNom(self.sexeMasculin_)
+
+    def CreerPrenomNeutre(self, situation):
+        self.prenom_ = ""
+        while self.prenom_ == "" or self.prenom_ == None:
+            cotObj = situation.collectionCoteries.getCoterieAleatoire(False)
+            self.prenom_ = cotObj.CreerPrenom(self.sexeMasculin_)
+
 def GenererPNJ(sexeMasculin, situation, ageJours):
     """
     Génère un PNJ aléatoire avec un ensemble de caracs
     Il pourra ensuite être stocké dans la situation
     """
     ageAnnees = ageJours/360
-    pnj = Pnj()
+    pnj = Pnj(sexeMasculin, situation)
     cotObj = situation.collectionCoteries.getCoterieAleatoire(True)
-    pnj.nom_ = cotObj.CreerNom(sexeMasculin)
-    pnj.prenom_ = cotObj.CreerPrenom(sexeMasculin)
+    nomStr = cotObj.CreerNom(sexeMasculin)
+    if nomStr != None:
+        pnj.nom_ = nomStr
+    prenomStr = cotObj.CreerPrenom(sexeMasculin)
+    if prenomStr != None:
+        pnj.prenom_ = prenomStr
+
     pnj.nbJours_ = ageJours
     pnj.coterie_ = cotObj.id_
     # métier :
