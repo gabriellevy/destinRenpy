@@ -1,61 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 67, in script
-    with Dissolve(.5)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1558, in execute
-    $ patronyme = situation_.AffichagePatronyme()
-  File "game/screens.rpy", line 1558, in <module>
-    $ patronyme = situation_.AffichagePatronyme()
-NameError: global name 'identite' is not defined
+  File "game/script.rpy", line 60, in script
+    $ situation_.TourSuivant()
+  File "game/script.rpy", line 60, in <module>
+    $ situation_.TourSuivant()
+AttributeError: 'dict' object has no attribute 'Values'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 67, in script
-    with Dissolve(.5)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1389, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1558, in execute
-    $ patronyme = situation_.AffichagePatronyme()
-  File "game/screens.rpy", line 1558, in <module>
-    $ patronyme = situation_.AffichagePatronyme()
-  File "despin/gen_vie/situation.py", line 361, in AffichagePatronyme
-NameError: global name 'identite' is not defined
+  File "game/script.rpy", line 60, in script
+    $ situation_.TourSuivant()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/script.rpy", line 60, in <module>
+    $ situation_.TourSuivant()
+  File "despin/gen_vie/situation.py", line 400, in TourSuivant
+  File "despin/gen_vie/situation.py", line 376, in AvanceDeXJours
+AttributeError: 'dict' object has no attribute 'Values'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Mar 28 18:37:10 2021
+Sun Mar 28 18:55:12 2021

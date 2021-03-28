@@ -114,6 +114,10 @@ def GenererPNJ(sexeMasculin, situation, ageJours):
             nbTraits = nbTraits - 1
 
     pnj.MajPortrait(situation)
+
+    # ajouter ce nouveau pnj à la liste des pnjs de l'histoire
+    situation.collectionPnjs[pnj.prenom_] = pnj
+
     return pnj
 
 def GenererPNJPapa(situation):

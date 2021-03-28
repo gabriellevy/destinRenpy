@@ -301,10 +301,10 @@ class Guerrier(Metier):
             poids = poids + 0.3
         return poids
 
-class Conducteur(Metier):
-    NOM = u"Conducteur"
+class Chauffeur(Metier):
+    NOM = u"Chauffeur"
     def __init__(self):
-        self.nom_ = Conducteur.NOM
+        self.nom_ = Chauffeur.NOM
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.5
@@ -554,8 +554,8 @@ class CollectionMetiers:
         guerrier = Guerrier()
         self.SetMetier(Guerrier.NOM, guerrier)
 
-        conducteur = Conducteur()
-        self.SetMetier(Conducteur.NOM, conducteur)
+        chauffeur = Chauffeur()
+        self.SetMetier(Chauffeur.NOM, chauffeur)
 
         pilote = Pilote()
         self.SetMetier(Pilote.NOM, pilote)

@@ -36,6 +36,7 @@ class Situation:
         self.collectionMaladies = None
         self.collectionQuartiers = None
         self.collectionCrimes = None
+        self.collectionPnjs = {}
 
     def DeterminerPortrait(self):
         """
@@ -370,6 +371,16 @@ class Situation:
         nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
         self.caracs_[temps.Date.DATE] = nouvelleDate
         self.caracs_[temps.Date.AGE_ANNEES] = self.AgeEnAnnees()
+
+        # application des jours passés aux pnjs :
+        for pnjObj in self.collectionPnjs.values():
+            nbAnneesAvant = pnjObj.nbJours_/360
+            pnjObj.nbJours_ = pnjObj.nbJours_ + nbJoursPasses
+            nbAnneesApres = pnjObj.nbJours_/360
+            # si le perso a pris une année et que la nouvelle année est un multiple de 5 on lui change de portrait
+            if nbAnneesApres > nbAnneesAvant:
+                if nbAnneesAvant%5 == 0:
+                    pnjObj.MajPortrait(self)
 
         # avancée des caracs de jours qui passent :
         # jours de convalescence :

@@ -186,9 +186,9 @@ init -5 python:
         decRejGuerrier.AjouterCondition(univFinie)
         selecteur_.ajouterDeclencheur(decRejGuerrier)
 
-        # Conducteur
+        # Chauffeur
         prob = proba.Proba(0.001, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Conducteur.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Chauffeur.NOM)
         decRejConducteur = declencheur.Declencheur(prob, "decRejConducteur")
         decRejConducteur.AjouterCondition(aPasDeMetier)
         decRejConducteur.AjouterCondition(univFinie)
@@ -375,7 +375,7 @@ label decRejPilote:
 
 label decRejConducteur:
     # devient Conducteur
-    "Vous êtes maintenant un Conducteur."
+    "Vous êtes maintenant un Chauffeur."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Conducteur.NOM)
     jump fin_cycle
 
