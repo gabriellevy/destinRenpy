@@ -1,21 +1,21 @@
-Sun Mar 28 19:05:58 2021
+Sat Apr 03 22:28:25 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.07s
+Bootstrap to the start of init.init took 0.08s
 Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
+Loader init took 0.01s
+Loading error handling took 0.02s
 Loading script took 0.12s
-Loading save slot metadata. took 0.02s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
+Running init code took 0.17s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.11s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -23,13 +23,13 @@ DPI scale factor: 1.000000
 Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
-Build styles took 0.01s
-Load screen analysis took 0.02s
+Build styles took 0.00s
+Load screen analysis took 0.06s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -413,21 +413,46 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.09100008011s
+Total time until interface ready: 1.33500003815s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.011000 seconds.
-- Frame drawn at 0.026000 seconds.
-- Frame drawn at 0.043000 seconds.
-- Frame drawn at 0.060000 seconds.
-- 0.060000 seconds to render 5 frames.
-Coterie Transhumanistes affinité 16
-Coterie Conquistadors affinité -26
-Coterie Ordre du Temple affinité 6
-Coterie Elfes affinité -6
-retire conquistadors
-retire elfes
-coterieChoisie transhumanistes
-graviteCrime : 3
-graviteCrime : 2
-graviteCrime : 3
+- Frame drawn at 0.015000 seconds.
+- Frame drawn at 0.030000 seconds.
+- Frame drawn at 0.047000 seconds.
+- Frame drawn at 0.064000 seconds.
+- 0.064000 seconds to render 5 frames.
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Rosemonde Abeloos
+16 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Rosemonde Abeloos
+16 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Chlothsinda Legros
+15 ans, 5 mois
+templiers' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Chlothsinda Legros
+15 ans, 5 mois
+templiers' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Tehcca 
+17 ans, 8 mois
+elfes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Tehcca 
+17 ans, 8 mois
+elfes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Cillas March
+15 ans, 12 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Cillas March
+15 ans, 12 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lixrin 
+22 ans, 1 mois
+elfes
+Forgeron' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lixrin 
+22 ans, 1 mois
+elfes
+Forgeron' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Rosemonde Abeloos
+16 ans, 10 mois
+transhumanistes' !

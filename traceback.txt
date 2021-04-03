@@ -1,28 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 60, in script
-    $ situation_.TourSuivant()
-  File "game/script.rpy", line 60, in <module>
-    $ situation_.TourSuivant()
-AttributeError: 'dict' object has no attribute 'Values'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 36, in script
+    "Vous avez rencontré [amoureuse.prenom_]"
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1567, in execute
+    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
+  File "game/screens.rpy", line 1567, in <module>
+    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
+AttributeError: AffichagePortrait instance has no attribute 'prenom_'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 60, in script
-    $ situation_.TourSuivant()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/script.rpy", line 60, in <module>
-    $ situation_.TourSuivant()
-  File "despin/gen_vie/situation.py", line 400, in TourSuivant
-  File "despin/gen_vie/situation.py", line 376, in AvanceDeXJours
-AttributeError: 'dict' object has no attribute 'Values'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 36, in script
+    "Vous avez rencontré [amoureuse.prenom_]"
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
+    d.visit_all(callback, seen)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
+    callback(self)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
+    self.update()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1567, in execute
+    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
+  File "game/screens.rpy", line 1567, in <module>
+    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
+  File "despin/gen_vie/situation.py", line 302, in AffichageAmoureuses
+  File "affichage/affichagePortrait.py", line 10, in __init__
+AttributeError: AffichagePortrait instance has no attribute 'prenom_'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Mar 28 18:55:12 2021
+Sat Apr 03 22:08:44 2021

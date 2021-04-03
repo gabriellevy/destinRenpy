@@ -26,8 +26,8 @@ init -2 python:
     situation_.collectionQuartiers = quartiers_
     crimes_ = crime.CollectionCrimes()
     situation_.collectionCrimes = crimes_
-    interfaceMode_ = 9
-    nbInterfaceMode_ = 10
+    interfaceMode_ = 10
+    nbInterfaceMode_ = 11
 
     # text fade system
     time_ = 2.0 # seconds of fade

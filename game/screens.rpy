@@ -1564,6 +1564,7 @@ screen valeurs_traits():
     $ strAffichagePere = situation_.AffichagePere()
     $ strAffichagePortraitMere = situation_.AffichagePortraitMere()
     $ strAffichageMere = situation_.AffichageMere()
+    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
     frame:
         xpos 5 ypos 5
         vbox:
@@ -1601,3 +1602,10 @@ screen valeurs_traits():
                 hbox:
                     add "[strAffichagePortraitMere]" size(147, 164)
                     text _(u"[strAffichageMere]") yalign 0.5
+            elif interfaceMode_ == 10: # les amoureuses
+                for amoureuse in tableauAffichageAmoureuses:
+                    hbox:
+                        add "[amoureuse.adresseImgPortrait]" size(147, 164)
+                        vbox yalign 0.5:
+                            text _(u"{b}[amoureuse.nom_]{/b}")
+                            text _(u"[amoureuse.description_]")

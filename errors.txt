@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/evts_generaux/naissance.rpy", line 76: invalid syntax
-        pnj.Pnj pere()
-                    ^
-    
+File "game/screens.rpy", line 1605: reached end of line when expecting ':'.
+    elif interfaceMode_ == 10! 
+                               ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue Mar 23 20:11:04 2021
+Sat Apr 03 21:14:57 2021

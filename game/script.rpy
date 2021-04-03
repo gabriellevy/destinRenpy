@@ -36,6 +36,9 @@ init -1 python:
 
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
+    # amour
+    AjouterEvtsRencontresAmoureuses()
+    # santé
     AjouterEvtsMaladies()
     # religion
     AjouterEvtsChretiens()

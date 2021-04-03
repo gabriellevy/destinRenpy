@@ -11,6 +11,8 @@ from extremis.socio_eco.crime import crime
 from extremis.socio_eco.crime import justice
 from extremis.humanite import pnj
 from extremis.humanite import trait
+from affichage import affichagePortrait
+from extremis.humanite.amour import relationAmoureuse
 import random
 
 class Situation:
@@ -133,7 +135,10 @@ class Situation:
 
     def GetValCarac(self, idCarac):
         if ( idCarac not in self.caracs_):
-            self.caracs_[idCarac] = ""
+            if idCarac == relationAmoureuse.RelationAmoureuse.C_AMOUREUSES:
+                self.caracs_[idCarac] = []
+            else:
+                self.caracs_[idCarac] = ""
         return self.caracs_[idCarac]
 
     def GetValCaracInt(self, idCarac):
@@ -283,6 +288,20 @@ class Situation:
         if isinstance(mere, pnj.Pnj) :
             return mere.portraitStr_
         return ""
+
+    def AffichageAmoureuses(self):
+        """
+        génère un tableau qui contient les éléments affichables du pnj
+        """
+        amoureuses = self.GetValCarac(relationAmoureuse.RelationAmoureuse.C_AMOUREUSES)
+        affichageAmoureuses = []
+        if isinstance(amoureuses, list) :
+            if len(amoureuses) > 0:
+                if isinstance(amoureuses[0], pnj.Pnj) :
+                    for amoureuse in amoureuses:
+                        affichage = affichagePortrait.AffichagePortrait(amoureuse)
+                        affichageAmoureuses.append(affichage)
+        return affichageAmoureuses
 
     def AffichagePere(self):
         # père

@@ -1,6 +1,7 @@
 import random
 from extremis.humanite import portrait
 from extremis.constitution import temps
+from extremis.humanite.amour import relationAmoureuse
 
 class Pnj:
 
@@ -11,13 +12,14 @@ class Pnj:
 
     def __init__(self, sexeMasculin, situation):
         self.sexeMasculin_ = sexeMasculin
-        self.CreerNomNeutre(situation)
-        self.CreerPrenomNeutre(situation)
+        self.CreerNomNeutre(situation) # self.nom_
+        self.CreerPrenomNeutre(situation) # self.prenom_
         self.nbJours_ = -1
         self.coterie_ = ""
         self.metier_ = ""
         self.traits_ = {} # dico contenant une liste de traits comme clés et leur valeur comme valeur
         self.portraitStr_ = ""
+        self.relationAmoureuse_ = None
 
     def __format__(self, format):
         # if(format == 'age'):
@@ -128,9 +130,15 @@ def GenererPNJPapa(situation):
 def GenererPNJMaman(situation):
     nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
     ageJours = (30 + random.randint(0, 25)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
-    return GenererPNJ(False, situation, ageJours)
+    pnj = GenererPNJ(False, situation, ageJours)
+    return pnj
 
 def GenererRelationAmoureuse(situation):
     nbJoursVecusPerso = temps.Date(situation.caracs_[temps.Date.DATE]).nbJours_ - temps.Date(situation.caracs_[temps.Date.DATE_NAISSANCE]).nbJours_
-    ageJours = nbJoursVecusPerso + (random.randint(0, 15) - random.randint(0, 15)) * 12 *30 # âge 29 minimum (14 + 15 de l'âge du perso joué)
-    return GenererPNJ(False, situation, ageJours)
+    ageAnnees = nbJoursVecusPerso/360 + (random.randint(0, 13) - random.randint(0, 15))
+    if ageAnnees < 15:
+        ageAnnees = 15
+    ageJours = ageAnnees * 12 *30
+    pnj = GenererPNJ(False, situation, ageJours)
+    pnj.relationAmoureuse_ = relationAmoureuse.RelationAmoureuse(1, 1)
+    return pnj
