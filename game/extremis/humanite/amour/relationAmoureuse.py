@@ -11,6 +11,7 @@ class RelationAmoureuse:
     SEPARE = u"Séparé"
     VEUF = u"Veuf"
     SEDUCTION = u"Séduction" # se tournent autour
+    FAIT_LA_COUR = u"Fait la cour" # quand les deux connaissent les intentions de l'autre amis qu'ils se jaugent encore avant engagement
     OCCASIONNEL = u"Occasionnel" # relations sexuelles occasionnelles
     COHABITATION = u"Cohabitation"
     MARIAGE = u"Mariage"
@@ -19,6 +20,27 @@ class RelationAmoureuse:
         self.interetPnjEnversJoueur_ = interetPnjEnversJoueur # de 1 à 10 selon que le pnj aime le perso du joueur
         self.interetJoueurEnversPnj_ = interetJoueurEnversPnj # de 1 à 10 selon que le joueur aime le pnj
         self.typeRelation_ = RelationAmoureuse.SEDUCTION # toutes les relations commencent dans la pahse "séduction"
+
+    def DescriptionInteretPnjEnversJoueur(self):
+        if self.interetPnjEnversJoueur_ <= 2:
+            return u"Vous a à peine remarqué"
+        elif self.interetPnjEnversJoueur_ <= 5:
+            return u"Intéressée"
+        elif self.interetPnjEnversJoueur_ <= 7:
+            return u"Très intéressée"
+        else:
+            return u"Folle amoureuse"
+
+    def DescriptionInteretJoueurEnversPnj(self):
+        if self.interetPnjEnversJoueur_ <= 2:
+            return u"Vous la trouvez mignonne"
+        elif self.interetPnjEnversJoueur_ <= 5:
+            return u"Vous la trouvez intéressante et attirante"
+        elif self.interetPnjEnversJoueur_ <= 7:
+            return u"Vous pensez à elle tout le temps"
+        else:
+            return u"Amour fou"
+
 
 def CalculerAmabiliteHommePremierContact(dicoTraitsPersoH):
     """

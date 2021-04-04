@@ -1,4 +1,4 @@
-Sun Apr 04 13:50:49 2021
+Sun Apr 04 20:06:18 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -6,30 +6,31 @@ Ren'Py 7.3.5.606
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.11s
+Loading error handling took 0.03s
+Loading script took 0.40s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.17s
-Loading analysis data took 0.02s
+Running init code took 0.16s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.11s
+Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
+Dump and make backups. took 0.12s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.05s
+Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.07s
 Prepare screens took 0.06s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save pyanalysis. took 0.11s
+Save bytecode. took 0.08s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -37,7 +38,7 @@ Interface start took 0.03s
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
 Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1276, 718) drawable=(1276, 718)
+Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
 Vendor: 'NVIDIA Corporation'
 Renderer: 'GeForce GTX 760 (192-bit)/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 457.30'
@@ -414,11 +415,191 @@ Texture testing:
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.13100004196s
+Total time until interface ready: 1.71000003815s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.005000 seconds.
-- Frame drawn at 0.015000 seconds.
-- Frame drawn at 0.032000 seconds.
-- Frame drawn at 0.049000 seconds.
-- 0.049000 seconds to render 5 frames.
+- Frame drawn at 0.006000 seconds.
+- Frame drawn at 0.021000 seconds.
+- Frame drawn at 0.037000 seconds.
+- Frame drawn at 0.054000 seconds.
+- 0.054000 seconds to render 5 frames.
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
+Root FBO is: 0
+FBO Maximum Texture Size: 2048
+The window was minimized.
+Coterie Transhumanistes affinité 33
+Coterie Conquistadors affinité -14
+Coterie Ordre du Temple affinité -12
+Coterie Elfes affinité -9
+retire conquistadors
+retire templiers
+retire elfes
+coterieChoisie transhumanistes
+The window was restored.
+
+primary display bounds: (0, 0, 1680, 1050)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
+Root FBO is: 0
+FBO Maximum Texture Size: 2048
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Julia Mendoza
+20 ans, 10 mois
+conquistadors' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Julia Mendoza
+20 ans, 10 mois
+conquistadors' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
+23 ans, 1 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 9 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 9 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 3 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 3 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 9 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
+23 ans, 4 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
+23 ans, 4 mois
+conquistadors
+Musicien' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
+14 ans, 10 mois
+transhumanistes' !

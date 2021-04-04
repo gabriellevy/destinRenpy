@@ -1608,4 +1608,4 @@ screen valeurs_traits():
                         add "[amoureuse.adresseImgPortrait]" size(147, 164)
                         vbox yalign 0.5:
                             text _(u"{b}[amoureuse.nom_]{/b}")
-                            text _(u"[amoureuse.description_]")
+                            text _(u"{size=-5}[amoureuse.description_]{/size}")

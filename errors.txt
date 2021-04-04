@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1605: reached end of line when expecting ':'.
-    elif interfaceMode_ == 10! 
-                               ^
+File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 48: invalid syntax
+    dec MajApres
+                ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Apr 03 21:14:57 2021
+Sun Apr 04 17:15:24 2021

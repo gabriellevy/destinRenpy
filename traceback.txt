@@ -1,28 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in script
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
-NameError: global name 'dicoTraitsPersoH' is not defined
+  File "game/evts_generaux/naissance.rpy", line 3, in script
+    init -5 python:
+  File "game/evts_generaux/naissance.rpy", line 10, in <module>
+    from extremis.humanite import pnj
+SyntaxError: invalid syntax (extremis/humanite/amour/relationAmoureuse.py, line 30)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in script
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+  File "game/evts_generaux/naissance.rpy", line 3, in script
+    init -5 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
-  File "extremis/humanite/pnj.py", line 145, in GenererRelationAmoureuse
-  File "extremis/humanite/amour/relationAmoureuse.py", line 174, in CalculerAmabiliteFemmePremierContact
-NameError: global name 'dicoTraitsPersoH' is not defined
+  File "game/evts_generaux/naissance.rpy", line 10, in <module>
+    from extremis.humanite import pnj
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 754, in load_module
+    exec code in mod.__dict__
+  File "extremis/humanite/pnj.py", line 4, in <module>
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 748, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: invalid syntax (extremis/humanite/amour/relationAmoureuse.py, line 30)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Sun Apr 04 13:49:45 2021
+ 
+Sun Apr 04 15:08:19 2021

@@ -23,8 +23,9 @@ class AffichagePortrait:
 
 
         if pnj.relationAmoureuse_ != None:
-            self.description_ = u"{}\nIntérêt envers le joueur :{}".format(self.description_, pnj.relationAmoureuse_.interetPnjEnversJoueur_)
-            self.description_ = u"{}\nIntérêt du joueur :{}".format(self.description_, pnj.relationAmoureuse_.interetJoueurEnversPnj_)
+            # éventuellement affichage d'un statut de relation
+            self.description_ = u"{}\n{}".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretPnjEnversJoueur())
+            self.description_ = u"{}\n{}".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretJoueurEnversPnj())
         else:
             # je n'affiche aps ça pour les amoureux mais c'est discutable. De toute façon le mieux ce serait de l'afficher par infobulle
             if pnj.coterie_ != "":
