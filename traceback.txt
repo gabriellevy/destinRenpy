@@ -5,7 +5,7 @@ While running game code:
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
   File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
-NameError: global name 'Trait' is not defined
+NameError: global name 'dicoTraitsPersoH' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -18,11 +18,11 @@ Full traceback:
     exec bytecode in globals, locals
   File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
-  File "extremis/humanite/pnj.py", line 144, in GenererRelationAmoureuse
-  File "extremis/humanite/amour/relationAmoureuse.py", line 81, in CalculerAmabiliteHommePremierContact
-NameError: global name 'Trait' is not defined
+  File "extremis/humanite/pnj.py", line 145, in GenererRelationAmoureuse
+  File "extremis/humanite/amour/relationAmoureuse.py", line 174, in CalculerAmabiliteFemmePremierContact
+NameError: global name 'dicoTraitsPersoH' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sun Apr 04 13:19:51 2021
+Sun Apr 04 13:49:45 2021
