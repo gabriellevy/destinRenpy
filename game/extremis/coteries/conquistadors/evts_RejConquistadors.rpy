@@ -17,8 +17,8 @@ label conquistadorsRejoindre:
     ordo "Lisez le serment de l'Ordre."
     $ coterieConquistadors = coteries_[conquistadors.Conquistadors.ID]
     $ coterieConquistadors.RejoindreCoterie(situation_)
-    $ prenom = situation_[identite.Identite.C_PRENOM]
-    $ nom = situation_[identite.Identite.C_NOM]
+    $ prenom = situation_[pnj.Pnj.C_PRENOM]
+    $ nom = situation_[pnj.Pnj.C_NOM]
     ordo "Dorénavant vous vous appellerez [prenom] [nom]."
 
     "Vous vous installez dans le quartier du Temple à Saint Denis"

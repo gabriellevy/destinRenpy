@@ -93,7 +93,7 @@ label univConquistadors_evt5:
 
 label univConquistadors_evt6:
     # effet Marchand
-    "Par leur maîtrise des mers et de nombreuses contrées étrangères les conquistadors contrôlent une énorme partie du commerce mondiale. De plus par leurs pillages ils doivent savoir estimer rapidement la valeur des objets pour ne pas faire d'erreur. "
+    "Par leur maîtrise des mers et leur occupation de nombreuses contrées étrangères, les conquistadors contrôlent une énorme partie du commerce mondial. De plus par leurs pillages ils doivent savoir estimer rapidement la valeur des objets pour ne pas faire d'erreur. "
     "Jamais une expédition ne part sans au moins un marchand. Votre tuteur décide donc de vous y former pour estimer vos talents en la matière."
     $ AjouterACarac(metier.Marchand.NOM, 1)
     jump fin_cycle

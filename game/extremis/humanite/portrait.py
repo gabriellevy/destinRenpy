@@ -25,10 +25,10 @@ class Portrait:
         portraits = []
         portraitCourant = situation.GetValCarac(Portrait.C_PORTRAIT)
 
-        if cotObj != None:
+        if cotObj is not None:
             portraits = cotObj.GenererPortraits(ageAnnees, masculin, metObj, portraits, valeursTraits)
 
-        if metObj != None:
+        if metObj is not None:
             portraits = metObj.GenererPortraits(ageAnnees, masculin, portraits, valeursTraits)
 
         if len(portraits) == 0:

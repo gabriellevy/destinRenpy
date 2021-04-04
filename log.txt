@@ -1,18 +1,18 @@
-Sun Apr 04 20:06:18 2021
+Mon Apr 05 01:32:02 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.03s
-Loading script took 0.40s
-Loading save slot metadata. took 0.02s
+Loader init took 0.02s
+Loading error handling took 0.02s
+Loading script took 0.16s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.16s
-Loading analysis data took 0.03s
+Running init code took 0.17s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
@@ -21,16 +21,16 @@ Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.06s
+Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
+Analyze screens took 0.02s
 Save screen analysis took 0.07s
 Prepare screens took 0.06s
-Save pyanalysis. took 0.11s
-Save bytecode. took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -415,191 +415,881 @@ Texture testing:
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
 controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
-Total time until interface ready: 1.71000003815s
+Total time until interface ready: 1.34100008011s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.006000 seconds.
-- Frame drawn at 0.021000 seconds.
-- Frame drawn at 0.037000 seconds.
-- Frame drawn at 0.054000 seconds.
-- 0.054000 seconds to render 5 frames.
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-The window was minimized.
-Coterie Transhumanistes affinité 33
-Coterie Conquistadors affinité -14
-Coterie Ordre du Temple affinité -12
+- Frame drawn at 0.017000 seconds.
+- Frame drawn at 0.033000 seconds.
+- Frame drawn at 0.049000 seconds.
+- Frame drawn at 0.065000 seconds.
+- 0.065000 seconds to render 5 frames.
+Coterie Transhumanistes affinité 16
+Coterie Conquistadors affinité -22
+Coterie Ordre du Temple affinité 0
 Coterie Elfes affinité -9
 retire conquistadors
 retire templiers
 retire elfes
 coterieChoisie transhumanistes
-The window was restored.
-
-primary display bounds: (0, 0, 1680, 1050)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Julia Mendoza
-20 ans, 10 mois
-conquistadors' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Julia Mendoza
-20 ans, 10 mois
-conquistadors' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Erenia Rodas
-23 ans, 1 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 9 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 9 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 3 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 3 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 9 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Erenia Rodas
-23 ans, 4 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Erenia Rodas
-23 ans, 4 mois
-conquistadors
-Musicien' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 6 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 7 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Iorilue de Sombretour
-14 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
 transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 8 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+25 ans, 7 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+25 ans, 7 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 10 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lola de Mondragon
+25 ans, 7 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+25 ans, 8 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+21 ans, 11 mois
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 7 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Teresita Roux
+22 ans
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Teresita Roux
+22 ans
+transhumanistes' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 9 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+25 ans, 11 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 1 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 2 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Regenelda Langlois
+21 ans, 8 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lola de Mondragon
+26 ans, 4 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lola de Mondragon
+26 ans, 4 mois
+transhumanistes
+Poète' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Regenelda Langlois
+21 ans, 9 mois
+templiers
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Amll Alcaraz
+26 ans, 3 mois
+transhumanistes
+Paysan' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 7 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 8 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 9 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Lymmna 
+30 ans, 10 mois
+elfes
+Ouvrier' !

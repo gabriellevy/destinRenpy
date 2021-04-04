@@ -13,9 +13,9 @@ init -5 python:
     from extremis.humanite.amour import relationAmoureuse
 
     def AjouterCetteAmoureuse(situation, amoureuse):
-        amoureuses = situation.GetValCarac(relationAmoureuse.RelationAmoureuse.C_AMOUREUSES)
+        amoureuses = situation.GetValCarac(relationAmoureuse.RelA.C_AMOUREUSES)
         amoureuses.append(amoureuse)
-        situation.SetValCarac(relationAmoureuse.RelationAmoureuse.C_AMOUREUSES, amoureuses)
+        situation.SetValCarac(relationAmoureuse.RelA.C_AMOUREUSES, amoureuses)
 
     estAbstinentAscete = condition.Condition(trait.Ascetisme.NOM, trait.Trait.SEUIL_A, condition.Condition.SUPERIEUR_EGAL)
     estJouisseur = condition.Condition(trait.Ascetisme.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
@@ -33,6 +33,11 @@ init -5 python:
     estTresCharmant = condition.Condition(trait.Charme.NOM, trait.Trait.SEUIL_A_EXTREME, condition.Condition.SUPERIEUR_EGAL)
     estDeplaisant = condition.Condition(trait.Charme.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
     estTresDeplaisant = condition.Condition(trait.Charme.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.INFERIEUR_EGAL)
+
+    # état affectif et sexuel :
+    aAuMoinsUnePnjEnSeduction = condition.Condition(relationAmoureuse.RelA.C_NB_PNJ_EN_SEDUCTION, 1, condition.Condition.SUPERIEUR_EGAL)
+    aAuMoinsUnePnjQuiLuiPlait = condition.Condition(relationAmoureuse.RelA.C_NB_PNJ_EN_SEDUCTION_SUP_5, 1, condition.Condition.SUPERIEUR_EGAL)
+    aRelationsSexuellesRegulieres = condition.Condition(relationAmoureuse.RelA.C_RELATIONS_SEXUELLES_REGULIERES, 1, condition.Condition.SUPERIEUR_EGAL)
 
     def AppliquerModifProbaSiSeduisible(proba):
         """
@@ -80,21 +85,61 @@ init -5 python:
         decPnjTombeAmoureuse = declencheur.Declencheur(probaPnjTombeAmoureuse, "decPnjTombeAmoureuse")
         selecteur_.ajouterDeclencheur(decPnjTombeAmoureuse)
 
+        # -------------> passage de phase séduction à lui faire la cour
+        probaFaireLaCour = proba.Proba(0.1)
+        # à faire : aumenter cette proba si victorien
+        decFaireLaCour = declencheur.Declencheur(probaFaireLaCour, "decFaireLaCour")
+        decFaireLaCour.AjouterCondition(aAuMoinsUnePnjQuiLuiPlait)
+        selecteur_.ajouterDeclencheur(decFaireLaCour)
+
+    def MAJCaracsRelationsAmoureuses(situation):
+        """
+        met à jour les caracs de relation amoureuses qui servent de conditions aux événements
+        (essentiellement déduites de la liste des relations amoureuses)
+        """
+        nbPnjEnSeduction = 0
+        nbPnjEnSeductionQuiLuiPlait = 0
+        aDesRelationsSexuellesRegulieres = 0
+        amoureuses = situation.GetValCarac(relationAmoureuse.RelA.C_AMOUREUSES)
+        for amoureuse in amoureuses:
+            typeRelation = amoureuse.relationAmoureuse_.typeRelation_
+            if typeRelation == relationAmoureuse.RelA.SEDUCTION:
+                nbPnjEnSeduction = nbPnjEnSeduction + 1
+                if amoureuse.relationAmoureuse_.interetJoueurEnversPnj_ >= 2 : # tmp : devrait être 5 mais c'est pour tester tmp !!!
+                    nbPnjEnSeductionQuiLuiPlait = nbPnjEnSeductionQuiLuiPlait + 1
+            if typeRelation == relationAmoureuse.RelA.OCCASIONNEL \
+            or typeRelation == relationAmoureuse.RelA.MARIAGE \
+            or typeRelation == relationAmoureuse.RelA.COHABITATION: \
+                aDesRelationsSexuellesRegulieres = 1
+
+        situation.SetValCarac(relationAmoureuse.RelA.C_NB_PNJ_EN_SEDUCTION , nbPnjEnSeduction)
+        situation.SetValCarac(relationAmoureuse.RelA.C_NB_PNJ_EN_SEDUCTION_SUP_5 , nbPnjEnSeductionQuiLuiPlait)
+        situation.SetValCarac(relationAmoureuse.RelA.C_RELATIONS_SEXUELLES_REGULIERES , aDesRelationsSexuellesRegulieres)
+
+label decFaireLaCour:
+    $ amoureuse = relationAmoureuse.GetUneAmoureuseEnSeduction(situation_) # A FAIRE : ne récupérez qu'une amoureuse d'un certain niveau ?
+    if amoureuse is not None:
+        "[amoureuse.prenom_] vous plaît tellement que vous tentez de la séduire par tous les moyens."
+        $ relationAmoureuse.FaitLaCour(situation_, amoureuse)
+    $ MAJCaracsRelationsAmoureuses(situation_)
+
 label decRencontre:
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "Vous avez rencontré [amoureuse.prenom_]."
-
+    $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle
 
 label decJoueurTombeAmoureux:
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "[amoureuse.prenom_] vous fait complètement craquer."
+    $ MAJCaracsRelationsAmoureuses(situation_)
+    jump fin_cycle
 
 label decPnjTombeAmoureuse:
     $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "Cette [amoureuse.prenom_] semble avoir un faible pour vous."
-
+    $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle

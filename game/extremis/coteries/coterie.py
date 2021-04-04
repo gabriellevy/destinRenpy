@@ -169,11 +169,11 @@ class Coterie:
         """
         situation[Coterie.C_COTERIE] = self.id_
         prenom = self.CreerPrenom(True)
-        if prenom != None:
-            situation[identite.Identite.C_PRENOM] = prenom
+        if prenom is not None:
+            situation[pnj.Pnj.C_PRENOM] = prenom
         nom = self.CreerNom(True)
-        if nom != None:
-            situation[identite.Identite.C_NOM] = nom
+        if nom is not None:
+            situation[pnj.Pnj.C_NOM] = nom
         situation.SetValCarac(quartier.Quartier.C_QUARTIER, self.quartier_)
 
         return True

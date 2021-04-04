@@ -1605,7 +1605,7 @@ screen valeurs_traits():
             elif interfaceMode_ == 10: # les amoureuses
                 for amoureuse in tableauAffichageAmoureuses:
                     hbox:
-                        add "[amoureuse.adresseImgPortrait]" size(147, 164)
+                        add "[amoureuse.adresseImgPortrait]" size(99, 110)
                         vbox yalign 0.5:
-                            text _(u"{b}[amoureuse.nom_]{/b}")
-                            text _(u"{size=-5}[amoureuse.description_]{/size}")
+                            text _(u"{size=-4}{b}[amoureuse.nom_]{/b}{/size}")
+                            text _(u"{size=-8}[amoureuse.description_]{/size}")

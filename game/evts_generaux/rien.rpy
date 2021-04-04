@@ -41,7 +41,7 @@ init -5 python:
         # fond selon quartier
         if sceneParDefaut == "":
             quartierCourant = situation.GetQuartier()
-            if quartierCourant != None:
+            if quartierCourant is not None:
                 sceneParDefaut = quartierCourant.imageDeFond_
 
         if sceneParDefaut == "":

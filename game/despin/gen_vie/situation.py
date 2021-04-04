@@ -135,7 +135,7 @@ class Situation:
 
     def GetValCarac(self, idCarac):
         if ( idCarac not in self.caracs_):
-            if idCarac == relationAmoureuse.RelationAmoureuse.C_AMOUREUSES:
+            if idCarac == relationAmoureuse.RelA.C_AMOUREUSES:
                 self.caracs_[idCarac] = []
             else:
                 self.caracs_[idCarac] = ""
@@ -293,7 +293,7 @@ class Situation:
         """
         génère un tableau qui contient les éléments affichables du pnj
         """
-        amoureuses = self.GetValCarac(relationAmoureuse.RelationAmoureuse.C_AMOUREUSES)
+        amoureuses = self.GetValCarac(relationAmoureuse.RelA.C_AMOUREUSES)
         affichageAmoureuses = []
         if isinstance(amoureuses, list) :
             if len(amoureuses) > 0:

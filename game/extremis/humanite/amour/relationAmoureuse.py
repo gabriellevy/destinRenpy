@@ -3,9 +3,15 @@ from extremis.humanite import portrait
 from extremis.constitution import temps
 from extremis.humanite import trait
 
-class RelationAmoureuse:
+class RelA:
+    """
+    relation amoureuse
+    """
 
     C_AMOUREUSES = u"Amoureuses" # id d'une carac qui contient un tableau de pnjs (qui sont tous des relations amoureuses du perso joueur)
+    C_NB_PNJ_EN_SEDUCTION = u"Nombre de Pnj en séduction"
+    C_NB_PNJ_EN_SEDUCTION_SUP_5 = u"Nombre de Pnj en séduction qui lui plaisent beaucoup"
+    C_RELATIONS_SEXUELLES_REGULIERES = u"A des relations sexuelles régulières"
 
     # valeurs possible de la carac "typeRelation_"
     SEPARE = u"Séparé"
@@ -19,7 +25,7 @@ class RelationAmoureuse:
     def __init__(self, interetPnjEnversJoueur, interetJoueurEnversPnj):
         self.interetPnjEnversJoueur_ = interetPnjEnversJoueur # de 1 à 10 selon que le pnj aime le perso du joueur
         self.interetJoueurEnversPnj_ = interetJoueurEnversPnj # de 1 à 10 selon que le joueur aime le pnj
-        self.typeRelation_ = RelationAmoureuse.SEDUCTION # toutes les relations commencent dans la pahse "séduction"
+        self.typeRelation_ = RelA.SEDUCTION # toutes les relations commencent dans la pahse "séduction"
 
     def DescriptionInteretPnjEnversJoueur(self):
         if self.interetPnjEnversJoueur_ <= 2:
@@ -207,3 +213,19 @@ def CalculerAmabiliteFemmePremierContact(dicoTraitsPnjF):
         niveauAmabilite = 10
 
     return niveauAmabilite
+
+def GetUneAmoureuseEnSeduction(situation):
+    amoureuses = situation.GetValCarac(RelA.C_AMOUREUSES)
+    for amoureuse in amoureuses:
+        if amoureuse.relationAmoureuse_.typeRelation_ == RelA.SEDUCTION:
+            return amoureuse
+
+    return None
+
+def FaitLaCour(situation, pnjAmoureuse):
+    amoureuses = situation.GetValCarac(RelA.C_AMOUREUSES)
+    for amoureuse in amoureuses:
+        if amoureuse is pnjAmoureuse:
+            amoureuse.relationAmoureuse_.typeRelation_ = RelA.FAIT_LA_COUR
+            return
+    print("Pas d'amoureuse trouvée dans FaitLaCour !!!!")

@@ -89,10 +89,10 @@ def GenererPNJ(sexeMasculin, situation, ageJours):
     pnj = Pnj(sexeMasculin, situation)
     cotObj = situation.collectionCoteries.getCoterieAleatoire(True)
     nomStr = cotObj.CreerNom(sexeMasculin)
-    if nomStr != None:
+    if nomStr is not None:
         pnj.nom_ = nomStr
     prenomStr = cotObj.CreerPrenom(sexeMasculin)
-    if prenomStr != None:
+    if prenomStr is not None:
         pnj.prenom_ = prenomStr
 
     pnj.nbJours_ = ageJours
@@ -143,5 +143,5 @@ def GenererRelationAmoureuse(situation):
     # calculer les niveaux d'intérêt des persos l'un envers l'autre
     interetPnjEnversJoueur = relationAmoureuse.CalculerAmabiliteHommePremierContact(situation.GetDicoTraits())
     interetJoueurEnversPnj = relationAmoureuse.CalculerAmabiliteFemmePremierContact(pnj.traits_)
-    pnj.relationAmoureuse_ = relationAmoureuse.RelationAmoureuse(interetPnjEnversJoueur, interetJoueurEnversPnj)
+    pnj.relationAmoureuse_ = relationAmoureuse.RelA(interetPnjEnversJoueur, interetJoueurEnversPnj)
     return pnj

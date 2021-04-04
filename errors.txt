@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 48: invalid syntax
-    dec MajApres
-                ^
+File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 110: invalid syntax
+            if typeRelation == relationAmoureuse.RelationAmoureuse.OCCASIONNEL
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Apr 04 17:15:24 2021
+Sun Apr 04 21:20:53 2021

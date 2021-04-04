@@ -1,4 +1,5 @@
 from extremis.humanite import pnj
+from extremis.humanite.amour import relationAmoureuse
 
 class AffichagePortrait:
     """
@@ -22,10 +23,14 @@ class AffichagePortrait:
                 self.description_ = u"{} ans".format(nbAnnees)
 
 
-        if pnj.relationAmoureuse_ != None:
+        if pnj.relationAmoureuse_ is not None:
             # éventuellement affichage d'un statut de relation
-            self.description_ = u"{}\n{}".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretPnjEnversJoueur())
-            self.description_ = u"{}\n{}".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretJoueurEnversPnj())
+            if pnj.relationAmoureuse_.typeRelation_ == relationAmoureuse.RelA.FAIT_LA_COUR:
+                self.description_ = u"{}\nVous lui faites la cour.".format(self.description_)
+            else:
+                self.description_ = u"{}\nTmp test type relation : {}.".format(self.description_, pnj.relationAmoureuse_.typeRelation_)
+            self.description_ = u"{}\n{}({})".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretPnjEnversJoueur(), pnj.relationAmoureuse_.interetPnjEnversJoueur_)
+            self.description_ = u"{}\n{}({})".format(self.description_, pnj.relationAmoureuse_.DescriptionInteretJoueurEnversPnj(), pnj.relationAmoureuse_.interetJoueurEnversPnj_)
         else:
             # je n'affiche aps ça pour les amoureux mais c'est discutable. De toute façon le mieux ce serait de l'afficher par infobulle
             if pnj.coterie_ != "":

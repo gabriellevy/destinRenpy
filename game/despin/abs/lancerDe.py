@@ -40,7 +40,7 @@ class LancerDe:
         :param effetActuel:
         :return: True si l'exécution est terminée, False si il faut lancer les dés une nouvelle fois en restant dans son effet actuel
         """
-        if ( self.m_Callback != None):
+        if ( self.m_Callback is not None):
             listeRes = self.GetListeResDes()
             print("Résultat des dés : {}".format(listeRes))
             self.m_Callback(listeRes)

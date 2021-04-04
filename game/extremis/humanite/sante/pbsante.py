@@ -243,7 +243,7 @@ class CollectionBlessures:
 
     def InfligerBlessureAleatoire(self, situation, minGravite = 0, maxGravite = 10):
         blessure = self.getBlessureAleatoire(minGravite, maxGravite)
-        if blessure != None:
+        if blessure is not None:
             nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
             situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + blessure.GetNbJoursConvalescence()
             situation[blessure.nom_] = 1
@@ -261,7 +261,8 @@ class CollectionBlessures:
                 situation.SetValCarac(blessureK, "")
                 return u"Vous n'êtes plus {}.".format(blessure.nom_)
 
-        return ""
+        print("rien à soigner")
+        return u""
 
     def __getitem__(self, idBlessure):
         if not idBlessure in self.lBlessures_:
@@ -337,7 +338,7 @@ class CollectionMaladies:
 
     def TomberMaladeAleatoirement(self, situation, minGravite = 0, maxGravite = 10):
         maladie = self.getMaladieAleatoire(minGravite, maxGravite)
-        if maladie != None:
+        if maladie is not None:
             nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
             situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + maladie.GetNbJoursConvalescence()
             situation[maladie.nom_] = 1

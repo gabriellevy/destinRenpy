@@ -37,6 +37,6 @@ label transhumanistesHopital:
     $ texte = maladies_.SoignerMaladieAleatoire(situation_)
     if texte == "":
         $ texte = blessures_.SoignerBlessureAleatoire(situation_)
-    if texte != "":
+    if len(texte) > 0:
         "[texte]"
     jump fin_cycle
