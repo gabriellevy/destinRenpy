@@ -19,7 +19,7 @@ init -5 python:
 
     def AjouterEvtsRencontresAmoureuses():
         global selecteur_
-        probaRencontre = proba.Proba(0.01)
+        probaRencontre = proba.Proba(10.01)
         # conditioChetif = condition.Condition(trait.Constitution.NOM, -2, condition.Condition.INFERIEUR_EGAL)
         # probaMaladie.ajouterModifProbaViaVals(0.02, conditioChetif)
         # conditionResistant = condition.Condition(trait.Constitution.NOM, 3, condition.Condition.SUPERIEUR_EGAL)

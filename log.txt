@@ -1,38 +1,38 @@
-Sat Apr 03 22:28:25 2021
+Sun Apr 04 13:33:17 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.08s
+Bootstrap to the start of init.init took 0.09s
 Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.12s
-Loading save slot metadata. took 0.01s
+Loader init took 0.04s
+Loading error handling took 0.04s
+Loading script took 0.15s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.17s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
+Running init code took 0.29s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
 Index archives took 0.00s
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.10s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.05s
+Creating interface object took 0.15s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.06s
+Load screen analysis took 0.03s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.06s
+Prepare screens took 0.09s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.08s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.03s
+Interface start took 0.07s
 
 primary display bounds: (0, 0, 1680, 1050)
 swap interval: 1 frames
@@ -413,46 +413,23 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.33500003815s
+controller: '78696e70757401000000000000000000' 'XInput Controller' 1L
+Total time until interface ready: 1.57699990273s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.015000 seconds.
-- Frame drawn at 0.030000 seconds.
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.031000 seconds.
 - Frame drawn at 0.047000 seconds.
 - Frame drawn at 0.064000 seconds.
 - 0.064000 seconds to render 5 frames.
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Rosemonde Abeloos
-16 ans, 10 mois
+0
+0
+Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Birila Abisseror
+14 ans, 9 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Rosemonde Abeloos
-16 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Birila Abisseror
+14 ans, 9 mois
 transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Chlothsinda Legros
-15 ans, 5 mois
-templiers' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Chlothsinda Legros
-15 ans, 5 mois
-templiers' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Tehcca 
-17 ans, 8 mois
-elfes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Tehcca 
-17 ans, 8 mois
-elfes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Cillas March
-15 ans, 12 mois
-transhumanistes' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Cillas March
-15 ans, 12 mois
-transhumanistes' !
-Alerte ! Il n'y a pas d'attribut '__iter__' dans l'objet 'Lixrin 
-22 ans, 1 mois
-elfes
-Forgeron' !
-Alerte ! Il n'y a pas d'attribut 'itervalues' dans l'objet 'Lixrin 
-22 ans, 1 mois
-elfes
-Forgeron' !
-Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Rosemonde Abeloos
-16 ans, 10 mois
+Alerte ! Il n'y a pas d'attribut '__getinitargs__' dans l'objet 'Birila Abisseror
+14 ans, 9 mois
 transhumanistes' !

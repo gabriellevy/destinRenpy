@@ -140,5 +140,7 @@ def GenererRelationAmoureuse(situation):
         ageAnnees = 15
     ageJours = ageAnnees * 12 *30
     pnj = GenererPNJ(False, situation, ageJours)
-    pnj.relationAmoureuse_ = relationAmoureuse.RelationAmoureuse(1, 1)
+    # calculer les niveaux d'intérêt des persos l'un envers l'autre
+    interetPnjEnversJoueur = relationAmoureuse.CalculerAmabiliteHommePremierContact(situation.GetDicoTraits())
+    pnj.relationAmoureuse_ = relationAmoureuse.RelationAmoureuse(interetPnjEnversJoueur, 1)
     return pnj

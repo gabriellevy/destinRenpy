@@ -1,66 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 36, in script
-    "Vous avez rencontré [amoureuse.prenom_]"
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1567, in execute
-    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
-  File "game/screens.rpy", line 1567, in <module>
-    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
-AttributeError: AffichagePortrait instance has no attribute 'prenom_'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in script
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+NameError: global name 'Trait' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 36, in script
-    "Vous avez rencontré [amoureuse.prenom_]"
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
-    who(what, *args, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
-    **display_args)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 541, in visit_all
-    d.visit_all(callback, seen)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 430, in visit_all
-    callback(self)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3094, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 440, in per_interact
-    self.update()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\screen.py", line 625, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1567, in execute
-    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
-  File "game/screens.rpy", line 1567, in <module>
-    $ tableauAffichageAmoureuses = situation_.AffichageAmoureuses()
-  File "despin/gen_vie/situation.py", line 302, in AffichageAmoureuses
-  File "affichage/affichagePortrait.py", line 10, in __init__
-AttributeError: AffichagePortrait instance has no attribute 'prenom_'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in script
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 34, in <module>
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+  File "extremis/humanite/pnj.py", line 144, in GenererRelationAmoureuse
+  File "extremis/humanite/amour/relationAmoureuse.py", line 81, in CalculerAmabiliteHommePremierContact
+NameError: global name 'Trait' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 DestinExtremis 1.0
-Sat Apr 03 22:08:44 2021
+Sun Apr 04 13:19:51 2021

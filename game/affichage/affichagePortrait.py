@@ -9,7 +9,7 @@ class AffichagePortrait:
     def __init__(self, pnj):
         self.nom_ = u"{} {}".format(pnj.prenom_, pnj.nom_)
 
-        # description
+        # ------------ description
         self.description_ = u""
         nbJoursVecus = pnj.nbJours_
         if isinstance(nbJoursVecus, int):
@@ -21,9 +21,17 @@ class AffichagePortrait:
             else:
                 self.description_ = u"{} ans".format(nbAnnees)
 
-        if pnj.coterie_ != "":
-            self.description_ = u"{}\n{}".format(self.description_, pnj.coterie_)
-        if pnj.metier_ != "":
-            self.description_ = u"{}\n{}".format(self.description_, pnj.metier_)
+
+        if pnj.relationAmoureuse_ != None:
+            self.description_ = u"{}\nIntérêt envers le joueur :{}".format(self.description_, pnj.relationAmoureuse_.interetPnjEnversJoueur_)
+            self.description_ = u"{}\nIntérêt du joueur :{}".format(self.description_, pnj.relationAmoureuse_.interetJoueurEnversPnj_)
+        else:
+            # je n'affiche aps ça pour les amoureux mais c'est discutable. De toute façon le mieux ce serait de l'afficher par infobulle
+            if pnj.coterie_ != "":
+                self.description_ = u"{}\n{}".format(self.description_, pnj.coterie_)
+            if pnj.metier_ != "":
+                self.description_ = u"{}\n{}".format(self.description_, pnj.metier_)
+
+
 
         self.adresseImgPortrait = pnj.portraitStr_
