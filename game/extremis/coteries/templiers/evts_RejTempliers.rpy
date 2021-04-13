@@ -14,7 +14,7 @@ init -5 python:
     from extremis.geographie import quartier
 
 label templiersPostule:
-    "Vous souhaitez rejoindre l'Ordre du Temple."
+    "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
     scene bg catacombes
     $ religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
     if religionActuelle != religion.Christianisme.NOM:
