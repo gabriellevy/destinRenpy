@@ -99,11 +99,19 @@ label univConquistadors_evt6:
     jump fin_cycle
 
 label univConquistadors_evt7:
-    "univConquistadors_evt7 PAS FAIT"
+    # effet survie en milieu hostile
+    "La partie la plus périeuse des activités des conquistadors est l'exploration de contrées inconnues et dangereuses. Un conquistador doit pour voir survivre seul dans n'import quel environnement."
+    scene bg jungle
+    "Cette partie cruciale est traitée avec le proagmatisme droit au but typique des instructeurs conquistadors. Vous êtes envoyé dans un stage d'u mois en pleine forêt tropicale pour apprendre les bases de la survie en milieu hostile et de la chasse."
+    # ajouter des risques de maladies ??
+    $ AjouterACarac(metier.Aventurier.NOM, 1)
+    $ AjouterACarac(metier.Chasseur.NOM, 1)
     jump fin_cycle
 
 label univConquistadors_evt8:
-    "univConquistadors_evt8 PAS FAIT"
+    "Les conquistadors sont les plus grands marins du monde. Depuis leur base de Saint Malo ils envoient leurs vaisseaux et leurs aventuriers vers tous les continents. Quelle que soit votre métier futur, si vous êtes conquistador vous naviguerez."
+    "Vous faites plusieurs croisières pendant votre année d'université et êtes fortement encouragé à participer et à apprendre les bases de l'art de naviguer."
+    $ AjouterACarac(metier.Marin.NOM, 1)
     jump fin_cycle
 
 label univConquistadors_evt9:

@@ -9,6 +9,7 @@ init -5 python:
     from extremis.socio_eco.metiers import metier
     from extremis.religions import religion
     from extremis.geographie import quartier
+    from extremis.humanite import pnj
 
 label conquistadorsPostule:
     "Vous avez demandé à rejoindre la coterie des conquistadors."
@@ -27,6 +28,13 @@ label conquistadorsPostule:
     inst "Je viendrai vous chercher dans une semaine si il y a quelque chose à venir chercher."
     hide officierConquistador
     with moveoutright
+    jump fin_cycle# tmp
+
+label conquistadorsPostule_reussi:
+    show officierConquistador at right
+    with moveinright
+    "texte postulation conquistadors PAS FAIT"
+    jump TempliersRejoindre
 
 label conquistadorsRejoindre:
     "REJOINDRE CONQUISTADORS PAS FAIT."
@@ -38,6 +46,6 @@ label conquistadorsRejoindre:
     $ nom = situation_[pnj.Pnj.C_NOM]
     ordo "Dorénavant vous vous appellerez [prenom] [nom]."
 
-    "Vous vous installez dans le quartier du Temple à Saint Denis"
+    "Vous allez vous installer dans le grand port de Saint Malo, la abse principale de votre nouvelle coterie."
     $ situation_.SetValCarac(quartier.Quartier.C_QUARTIER, coterieConquistadors.quartier_)
     jump fin_cycle

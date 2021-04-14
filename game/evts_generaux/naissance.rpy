@@ -71,6 +71,29 @@ init -5 python:
         # effetNarrationVide->AjouterChangeurDeCarac(ClasseSociale::C_CLASSE_SOCIALE, clas);
         return
 
+    def genererAventurier(situation, tousLesTraits):
+        """
+        création d'un perso qui a de très fortes chances de devenir aventurier, conquistador,
+        bandit peut-être
+        """
+        situation[trait.Ambition.NOM] = 11
+        situation[trait.Opportunisme.NOM] = 11
+        situation[trait.Cupidite.NOM] = 11
+        situation[trait.Constitution.NOM] = 11
+        situation[trait.Pragmatisme.NOM] = 11
+        situation[trait.Violence.NOM] = 11
+        situation[trait.Prudence.NOM] = -13
+        situation[trait.Altruisme.NOM] = -13
+        situation[trait.Industrie.NOM] = -13
+        situation[trait.Sexualite.NOM] = -13
+        situation[trait.Poids.NOM] = -13
+        situation[trait.Richesse.NOM] = -13
+
+        quartierDeDepart = situation.collectionQuartiers.getQuartierAleatoire(True)
+        situation.SetCarac(quartier.Quartier.C_QUARTIER, quartierDeDepart.nom_)
+
+        return
+
     def genererParents(situation):
         pere = pnj.GenererPNJPapa(situation)
         situation.SetValCarac(pnj.Pnj.C_PERE, pere)
@@ -79,8 +102,9 @@ init -5 python:
 
 label naissance:
     $ genererDateNaissance(situation_)
-    $ genererTraits(situation_, traits_)
+    # $ genererTraits(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
+    $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
     # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle

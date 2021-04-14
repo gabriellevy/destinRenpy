@@ -12,13 +12,25 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.socio_eco.metiers import metier
 
+    aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
+    univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)
+
+    def CreerDeclencheurDebutDeMetier(probaF, strMetier):
+        """
+        proba : probabilité d'avoir ce travail même en n'ayant aucune compétence sérieuse à ce sujet
+        """
+        prob = proba.Proba(probaF, True)
+        AjouterModifDeProbaProressifPourMetier(prob, strMetier)
+        dec = declencheur.Declencheur(prob, "decRej{}".format(strMetier))
+        dec.AjouterCondition(aPasDeMetier)
+        dec.AjouterCondition(univFinie)
+        return dec
+
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
     def AjouterEvtsRejMetier():
         global selecteur_
-        aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
-        univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)
         # a telle carac
         aArtiste = condition.Condition(trait.Artiste.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         aBeaute = condition.Condition(trait.Beaute.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
@@ -267,12 +279,20 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decRejBanquier)
 
         # GardeDuCorps
-        prob = proba.Proba(0.002, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.GardeDuCorps.NOM)
-        decRejGardeDuCorps = declencheur.Declencheur(prob, "decRejGardeDuCorps")
-        decRejGardeDuCorps.AjouterCondition(aPasDeMetier)
-        decRejGardeDuCorps.AjouterCondition(univFinie)
+        decRejGardeDuCorps = CreerDeclencheurDebutDeMetier(0.002, metier.GardeDuCorps.NOM)
         selecteur_.ajouterDeclencheur(decRejGardeDuCorps)
+
+        # Aventurier
+        decRejAventurier = CreerDeclencheurDebutDeMetier( 0.002, metier.Aventurier.NOM)
+        selecteur_.ajouterDeclencheur(decRejAventurier)
+
+        # Chasseur
+        decRejChasseur = CreerDeclencheurDebutDeMetier(0.002,  metier.Chasseur.NOM)
+        selecteur_.ajouterDeclencheur(decRejChasseur)
+
+        # Marin
+        decRejMarin = CreerDeclencheurDebutDeMetier(0.04, metier.Marin.NOM)
+        selecteur_.ajouterDeclencheur(decRejMarin)
 
     def AjouterModifDeProbaProressifPourMetier(prob, nomMetier):
         condNiv1 = condition.Condition(nomMetier, 1, condition.Condition.SUPERIEUR_EGAL)
@@ -312,6 +332,24 @@ init -5 python:
                 professionMaitrisee = metierK
 
         return professionMaitrisee
+
+label decRejChasseur:
+    # devient Chasseur
+    "Vous êtes maintenant un Chasseur."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chasseur.NOM)
+    jump fin_cycle
+
+label decRejAventurier:
+    # devient Aventurier
+    "Vous êtes maintenant un Aventurier."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Aventurier.NOM)
+    jump fin_cycle
+
+label decRejMarin:
+    # devient Marin
+    "Vous êtes maintenant un marin."
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Marin.NOM)
+    jump fin_cycle
 
 label decRejGardeDuCorps:
     # devient GardeDuCorps

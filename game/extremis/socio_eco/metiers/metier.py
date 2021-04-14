@@ -465,6 +465,39 @@ class Electronique(Metier):
             poids = poids + 0.3
         return poids
 
+class Chasseur(Metier):
+    NOM = u"Chasseur"
+    def __init__(self):
+        self.nom_ = Chasseur.NOM
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.02
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.4
+        return poids
+
+class Marin(Metier):
+    NOM = u"Marin"
+    def __init__(self):
+        self.nom_ = Marin.NOM
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.1
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.4
+        return poids
+
+class Aventurier(Metier):
+    NOM = u"Aventurier"
+    def __init__(self):
+        self.nom_ = Aventurier.NOM
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.001
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.4
+        return poids
+
 class Journaliste(Metier):
     NOM = u"Journaliste"
     def __init__(self):
@@ -586,6 +619,15 @@ class CollectionMetiers:
 
         gardeDuCorps = GardeDuCorps()
         self.SetMetier(GardeDuCorps.NOM, gardeDuCorps)
+
+        aventurier = Aventurier()
+        self.SetMetier(Aventurier.NOM, aventurier)
+
+        chasseur = Chasseur()
+        self.SetMetier(Chasseur.NOM, chasseur)
+
+        marin = Marin()
+        self.SetMetier(Marin.NOM, marin)
 
     def getMetierAleatoire(self, selonDemographie, masculin, cotObj):
         """

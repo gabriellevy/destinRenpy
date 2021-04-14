@@ -12,6 +12,7 @@ init -5 python:
     from extremis.socio_eco.metiers import metier
     from extremis.religions import religion
     from extremis.geographie import quartier
+    from extremis.humanite import pnj
 
 label templiersPostule:
     "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."

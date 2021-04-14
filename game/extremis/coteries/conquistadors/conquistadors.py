@@ -39,6 +39,9 @@ class Conquistadors(coterie.Coterie):
             metier.Marchand.NOM, \
             metier.Forgeron.NOM, \
             metier.TueurDeMonstres.NOM, \
+            metier.Aventurier.NOM, \
+            metier.Marin.NOM, \
+            metier.Chasseur.NOM, \
             metier.Guerrier.NOM
             ]
 
