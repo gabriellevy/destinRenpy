@@ -1,27 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in script
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in <module>
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-NameError: global name 'pnj' is not defined
+  File "game/script.rpy", line 16, in script
+    init -1 python:
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsRejMetier()
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 46, in AjouterEvtsRejMetier
+    decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM)
+TypeError: CreerDeclencheurDebutDeMetier() takes exactly 3 arguments (2 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in script
-    $ coterieConquistadors.RejoindreCoterie(situation_)
+  File "game/script.rpy", line 16, in script
+    init -1 python:
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in <module>
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "extremis/coteries/coterie.py", line 173, in RejoindreCoterie
-NameError: global name 'pnj' is not defined
+  File "game/script.rpy", line 22, in <module>
+    AjouterEvtsRejMetier()
+  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 46, in AjouterEvtsRejMetier
+    decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM)
+TypeError: CreerDeclencheurDebutDeMetier() takes exactly 3 arguments (2 given)
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
-DestinExtremis 1.0
-Wed Apr 14 20:54:12 2021
+ 
+Thu Apr 15 22:58:10 2021

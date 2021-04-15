@@ -32,7 +32,7 @@ init -5 python:
         renpy.jump( prochainEvt)
 
 label univConquistadors:
-    # scene bg univ_elfes
+    scene bg univ_conquistadors
 
     $ situation_.SetCarac(coterie.Coterie.Carac_UNIV_COURANTE, conquistadors.Conquistadors.NOM)
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)

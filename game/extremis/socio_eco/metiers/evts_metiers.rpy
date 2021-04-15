@@ -15,12 +15,12 @@ init -5 python:
     aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
     univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)
 
-    def CreerDeclencheurDebutDeMetier(probaF, strMetier):
+    def CreerDeclencheurDebutDeMetier(probaF, strMetier, facteurPourProba):
         """
         proba : probabilité d'avoir ce travail même en n'ayant aucune compétence sérieuse à ce sujet
         """
         prob = proba.Proba(probaF, True)
-        AjouterModifDeProbaProressifPourMetier(prob, strMetier)
+        AjouterModifDeProbaProressifPourMetier(prob, strMetier, facteurPourProba)
         dec = declencheur.Declencheur(prob, "decRej{}".format(strMetier))
         dec.AjouterCondition(aPasDeMetier)
         dec.AjouterCondition(univFinie)
@@ -43,12 +43,12 @@ init -5 python:
         estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
 
         # paysan
-        decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM)
+        decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM, 0.04)
         selecteur_.ajouterDeclencheur(decRejPaysan)
 
         # musicien
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Musicien.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Musicien.NOM, 0.05)
         prob.ajouterModifProbaViaVals(0.1, aArtiste)
         prob.ajouterModifProbaViaVals(0.05, estConquistaror)
         prob.ajouterModifProbaViaVals(0.03, estElfe)
@@ -59,7 +59,7 @@ init -5 python:
 
         # dessinateur
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Dessinateur.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Dessinateur.NOM, 0.05)
         prob.ajouterModifProbaViaVals(0.05, aArtiste)
         decRejDessinateur = declencheur.Declencheur(prob, "decRejDessinateur")
         decRejDessinateur.AjouterCondition(aPasDeMetier)
@@ -68,7 +68,7 @@ init -5 python:
 
         # poète
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Poete.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Poete.NOM, 0.03)
         prob.ajouterModifProbaViaVals(0.1, aArtiste)
         prob.ajouterModifProbaViaVals(0.03, estElfe)
         decRejPoete = declencheur.Declencheur(prob, "decRejPoete")
@@ -78,7 +78,7 @@ init -5 python:
 
         # Bibliothecaire
         prob = proba.Proba(0.001, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Bibliothecaire.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Bibliothecaire.NOM, 0.05)
         prob.ajouterModifProbaViaVals(0.03, estTemplier)
         decRejBibliothecaire = declencheur.Declencheur(prob, "decRejBibliothecaire")
         decRejBibliothecaire.AjouterCondition(aPasDeMetier)
@@ -86,52 +86,52 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decRejBibliothecaire)
 
         # Cartographe
-        decRejCartographe = CreerDeclencheurDebutDeMetier(0.001, metier.Cartographe.NOM)
+        decRejCartographe = CreerDeclencheurDebutDeMetier(0.001, metier.Cartographe.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejCartographe)
 
         # Marchand
-        decRejMarchand = CreerDeclencheurDebutDeMetier(0.01, metier.Marchand.NOM)
+        decRejMarchand = CreerDeclencheurDebutDeMetier(0.01, metier.Marchand.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejMarchand)
 
         # Mineur
-        decRejMineur = CreerDeclencheurDebutDeMetier(0.01, metier.Mineur.NOM)
+        decRejMineur = CreerDeclencheurDebutDeMetier(0.01, metier.Mineur.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejMineur)
 
         # Pretre
-        decRejPretre = CreerDeclencheurDebutDeMetier(0.002, metier.Pretre.NOM)
+        decRejPretre = CreerDeclencheurDebutDeMetier(0.002, metier.Pretre.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejPretre)
 
         # Ouvrier
-        decRejOuvrier = CreerDeclencheurDebutDeMetier(0.1, metier.Ouvrier.NOM)
+        decRejOuvrier = CreerDeclencheurDebutDeMetier(0.2, metier.Ouvrier.NOM, 0.04)
         selecteur_.ajouterDeclencheur(decRejOuvrier)
 
         # Politique
-        decRejPolitique = CreerDeclencheurDebutDeMetier(0.002, metier.Politique.NOM)
+        decRejPolitique = CreerDeclencheurDebutDeMetier(0.002, metier.Politique.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejPolitique)
 
         # Forgeron
-        decRejForgeron = CreerDeclencheurDebutDeMetier(0.002, metier.Forgeron.NOM)
+        decRejForgeron = CreerDeclencheurDebutDeMetier(0.002, metier.Forgeron.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejForgeron)
 
         # Alchimiste
-        decRejAlchimiste = CreerDeclencheurDebutDeMetier(0.0001, metier.Alchimiste.NOM)
+        decRejAlchimiste = CreerDeclencheurDebutDeMetier(0.0001, metier.Alchimiste.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejAlchimiste)
 
         # Medecin
-        decRejMedecin = CreerDeclencheurDebutDeMetier(0.01, metier.Medecin.NOM)
+        decRejMedecin = CreerDeclencheurDebutDeMetier(0.0, metier.Medecin.NOM, 0.07)
         selecteur_.ajouterDeclencheur(decRejMedecin)
 
         # TueurDeMonstres
-        decRejTueurDeMonstres = CreerDeclencheurDebutDeMetier(0.0, metier.TueurDeMonstres.NOM)
+        decRejTueurDeMonstres = CreerDeclencheurDebutDeMetier(0.0, metier.TueurDeMonstres.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejTueurDeMonstres)
 
         # Architecte
-        decRejArchitecte = CreerDeclencheurDebutDeMetier(0.003, metier.Architecte.NOM)
+        decRejArchitecte = CreerDeclencheurDebutDeMetier(0.003, metier.Architecte.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejArchitecte)
 
         # Parasite
         prob = proba.Proba(0.003, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Parasite.NOM)
+        AjouterModifDeProbaProressifPourMetier(prob, metier.Parasite.NOM, 0.02)
         prob.ajouterModifProbaViaVals(0.01, estParesseux)
         prob.ajouterModifProbaViaVals(0.03, estSournois)
         prob.ajouterModifProbaViaVals(0.01, aBeaute)
@@ -142,86 +142,91 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decRejParasite)
 
         # Guerrier
-        decRejGuerrier = CreerDeclencheurDebutDeMetier(0.002, metier.Guerrier.NOM)
+        decRejGuerrier = CreerDeclencheurDebutDeMetier(0.002, metier.Guerrier.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejGuerrier)
 
         # Chauffeur
-        decRejConducteur = CreerDeclencheurDebutDeMetier(0.02, metier.Chauffeur.NOM)
+        decRejConducteur = CreerDeclencheurDebutDeMetier(0.02, metier.Chauffeur.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejConducteur)
 
         # Pilote
-        decRejPilote = CreerDeclencheurDebutDeMetier(0.0, metier.Pilote.NOM)
+        decRejPilote = CreerDeclencheurDebutDeMetier(0.0, metier.Pilote.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejPilote)
 
         # Chevalier
-        decRejChevalier = CreerDeclencheurDebutDeMetier(0.0, metier.Chevalier.NOM)
+        decRejChevalier = CreerDeclencheurDebutDeMetier(0.0, metier.Chevalier.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejChevalier)
 
         # Informaticien
-        decRejInformaticien = CreerDeclencheurDebutDeMetier(0.0, metier.Informaticien.NOM)
+        decRejInformaticien = CreerDeclencheurDebutDeMetier(0.0, metier.Informaticien.NOM, 0.06)
         selecteur_.ajouterDeclencheur(decRejInformaticien)
 
         # Cyberneticien
-        decRejCyberneticien = CreerDeclencheurDebutDeMetier(0.0, metier.Cyberneticien.NOM)
+        decRejCyberneticien = CreerDeclencheurDebutDeMetier(0.0, metier.Cyberneticien.NOM, 0.06)
         selecteur_.ajouterDeclencheur(decRejCyberneticien)
 
         # Geneticien
-        decRejGeneticien = CreerDeclencheurDebutDeMetier(0.0, metier.Geneticien.NOM)
+        decRejGeneticien = CreerDeclencheurDebutDeMetier(0.0, metier.Geneticien.NOM, 0.06)
         selecteur_.ajouterDeclencheur(decRejGeneticien)
 
         # Commercial
-        decRejCommercial = CreerDeclencheurDebutDeMetier(0.03, metier.Commercial.NOM)
+        decRejCommercial = CreerDeclencheurDebutDeMetier(0.03, metier.Commercial.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejCommercial)
 
         # Policier
-        decRejPolicier = CreerDeclencheurDebutDeMetier(0.03, metier.Policier.NOM)
+        decRejPolicier = CreerDeclencheurDebutDeMetier(0.1, metier.Policier.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejPolicier)
 
         # Vigile
-        decRejVigile = CreerDeclencheurDebutDeMetier(0.01, metier.Vigile.NOM)
+        decRejVigile = CreerDeclencheurDebutDeMetier(0.01, metier.Vigile.NOM, 0.04)
         selecteur_.ajouterDeclencheur(decRejVigile)
 
         # Banquier
-        decRejBanquier = CreerDeclencheurDebutDeMetier(0.01, metier.Banquier.NOM)
+        decRejBanquier = CreerDeclencheurDebutDeMetier(0.01, metier.Banquier.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejBanquier)
 
         # GardeDuCorps
-        decRejGardeDuCorps = CreerDeclencheurDebutDeMetier(0.002, metier.GardeDuCorps.NOM)
+        decRejGardeDuCorps = CreerDeclencheurDebutDeMetier(0.002, metier.GardeDuCorps.NOM, 0.04)
         selecteur_.ajouterDeclencheur(decRejGardeDuCorps)
 
         # Aventurier
-        decRejAventurier = CreerDeclencheurDebutDeMetier( 0.002, metier.Aventurier.NOM)
+        decRejAventurier = CreerDeclencheurDebutDeMetier( 0.002, metier.Aventurier.NOM, 0.04)
         selecteur_.ajouterDeclencheur(decRejAventurier)
 
         # Chasseur
-        decRejChasseur = CreerDeclencheurDebutDeMetier(0.002,  metier.Chasseur.NOM)
+        decRejChasseur = CreerDeclencheurDebutDeMetier(0.002,  metier.Chasseur.NOM, 0.01)
         selecteur_.ajouterDeclencheur(decRejChasseur)
 
         # Marin
-        decRejMarin = CreerDeclencheurDebutDeMetier(0.04, metier.Marin.NOM)
+        decRejMarin = CreerDeclencheurDebutDeMetier(0.04, metier.Marin.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejMarin)
 
-    def AjouterModifDeProbaProressifPourMetier(prob, nomMetier):
+    def AjouterModifDeProbaProressifPourMetier(prob, nomMetier, facteur):
+        """
+        Modifie la proba selon le niveau du personnage dans le métier "nomMetier" en ajoutant "facteur" proba pour chaque niveau possédé pas le joueur
+         - les niveaux vont de 1 (notions) à 10 (maître légendaire)
+         - le facteur classique est 0.05. Plus le métier est spécialisé et demande de la formation plus ce facteur devrait monter, surtout si le métier est courant
+        """
         condNiv1 = condition.Condition(nomMetier, 1, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv1)
+        prob.ajouterModifProbaViaVals(facteur, condNiv1)
         condNiv2 = condition.Condition(nomMetier, 2, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv2)
+        prob.ajouterModifProbaViaVals(facteur, condNiv2)
         condNiv3 = condition.Condition(nomMetier, 3, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv3)
+        prob.ajouterModifProbaViaVals(facteur, condNiv3)
         condNiv4 = condition.Condition(nomMetier, 4, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv4)
+        prob.ajouterModifProbaViaVals(facteur, condNiv4)
         condNiv5 = condition.Condition(nomMetier, 5, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv5)
+        prob.ajouterModifProbaViaVals(facteur, condNiv5)
         condNiv6 = condition.Condition(nomMetier, 6, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv6)
+        prob.ajouterModifProbaViaVals(facteur, condNiv6)
         condNiv7 = condition.Condition(nomMetier, 7, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv7)
+        prob.ajouterModifProbaViaVals(facteur, condNiv7)
         condNiv8 = condition.Condition(nomMetier, 8, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv8)
+        prob.ajouterModifProbaViaVals(facteur, condNiv8)
         condNiv9 = condition.Condition(nomMetier, 9, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv9)
+        prob.ajouterModifProbaViaVals(facteur, condNiv9)
         condNiv10 = condition.Condition(nomMetier, 10, condition.Condition.SUPERIEUR_EGAL)
-        prob.ajouterModifProbaViaVals(0.05, condNiv10)
+        prob.ajouterModifProbaViaVals(facteur, condNiv10)
 
     def DeterminerProfessionLaPlusMaitrisee():
         """

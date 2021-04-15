@@ -56,11 +56,13 @@ label decUnivCoterie:
     $ numUnivCoteries = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_UNIV)
     if numUnivCoteries < 1:
         "Ça y est vous avez l'âge de rejoindre les universités des coteries."
+        $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Etudiant.NOM)
     else:
         if numUnivCoteries >= coterie.Coterie.NB_UNIV_TOTAL:
             "Vous avez accompli vos années d'université légales. Il est temps de se lancer dans la vie active."
             "Choix éventuel PAS FAIT"
             $ situation_.SetValCarac(coterie.Coterie.Carac_UNIV_COURANTE, "fini")
+            $ situation_.SetValCarac(metier.Metier.C_METIER, "")
             jump choixUniv
         else:
             "Cette année d'université se termine, place à la suivante."

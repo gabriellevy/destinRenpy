@@ -487,6 +487,15 @@ class Marin(Metier):
             poids = poids + 0.4
         return poids
 
+class Etudiant(Metier):
+    NOM = u"Étudiant"
+    def __init__(self):
+        self.nom_ = Etudiant.NOM
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.2
+        return poids
+
 class Aventurier(Metier):
     NOM = u"Aventurier"
     def __init__(self):
@@ -523,6 +532,9 @@ class CollectionMetiers:
 
     def __init__(self):
         self.lMetiers_ = dict()
+
+        etudiant = Etudiant()
+        self.SetMetier(Etudiant.NOM, etudiant)
 
         journaliste = Journaliste()
         self.SetMetier(Journaliste.NOM, journaliste)
