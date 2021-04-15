@@ -13,8 +13,8 @@ init -5 python:
 
 label conquistadorsPostule:
     "Vous avez demandé à rejoindre la coterie des conquistadors."
-    "Bien que les conquistadors soient toujours fiers et heureux d'être choisis, il est clair que leur coterie est très dangereuse et pas recommandée pour tout le monde."
-    "Ils vont donc vous faire subir des épreuves pour éviter de recruter quelqu'un qui risquerait de vite mourir en mssion."
+    "Bien que les conquistadors soient toujours fiers d'être choisis, leur coterie est très dangereuse et pas recommandée pourle premier postulant fragile qui se présente."
+    "Ils font donc subir des épreuves pour éviter de recruter quelqu'un qui risquerait de vite mourir en mission."
     scene bg marais
     menu:
         "conquistadorsPostule"
@@ -46,6 +46,6 @@ label conquistadorsRejoindre:
     $ nom = situation_[pnj.Pnj.C_NOM]
     ordo "Dorénavant vous vous appellerez [prenom] [nom]."
 
-    "Vous allez vous installer dans le grand port de Saint Malo, la abse principale de votre nouvelle coterie."
+    "Vous allez vous installer dans le grand port de Saint Malo, la base principale de votre nouvelle coterie."
     $ situation_.SetValCarac(quartier.Quartier.C_QUARTIER, coterieConquistadors.quartier_)
     jump fin_cycle

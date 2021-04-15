@@ -1,36 +1,36 @@
-Wed Apr 14 20:45:56 2021
+Thu Apr 15 22:37:20 2021
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
 
 Bootstrap to the start of init.init took 0.07s
-Early init took 0.01s
+Early init took 0.00s
 Loader init took 0.02s
 Loading error handling took 0.03s
-Loading script took 0.42s
+Loading script took 0.20s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.17s
+Running init code took 0.18s
 Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\destinRenpy':
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.17s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.02s
 DPI scale factor: 1.000000
-Creating interface object took 0.08s
+Creating interface object took 0.06s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.08s
+Analyze screens took 0.01s
+Save screen analysis took 0.07s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.08s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.03s
@@ -414,50 +414,11 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.65100002289s
+Total time until interface ready: 1.50899982452s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.006000 seconds.
-- Frame drawn at 0.022000 seconds.
-- Frame drawn at 0.038000 seconds.
-- Frame drawn at 0.055000 seconds.
-- 0.055000 seconds to render 5 frames.
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1578, 888) drawable=(1578, 888)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
-Coterie Transhumanistes affinité 4
-Coterie Conquistadors affinité 86
-Coterie Ordre du Temple affinité -123
-Coterie Elfes affinité 14
-retire templiers
-coterieChoisie conquistadors
-
-Full traceback:
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in script
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/extremis/coteries/conquistadors/evts_RejConquistadors.rpy", line 36, in <module>
-    $ coterieConquistadors.RejoindreCoterie(situation_)
-  File "extremis/coteries/coterie.py", line 173, in RejoindreCoterie
-NameError: global name 'pnj' is not defined
-
-While running game code:
-  File "game/extremis/coteries/
+- Frame drawn at 0.013000 seconds.
+- Frame drawn at 0.029000 seconds.
+- Frame drawn at 0.045000 seconds.
+- Frame drawn at 0.062000 seconds.
+-
