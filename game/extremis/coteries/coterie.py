@@ -9,7 +9,7 @@ class Coterie:
     C_COTERIE = "Coterie"
 
     # UNIVERSITE
-    Carac_NB_UNIV = "Nombre d'universités terminées" # nombre d'universités de coteries terminées
+    Carac_NB_UNIV = u"Nombre d'universités commencées" # nombre d'universités de coteries terminées
     NB_UNIV_TOTAL = 3 #nombre total d'université que doit suivre un personnage
 
     Carac_NB_MOIS_UNIV_A_FAIRE = "Nombre de mois à faire dans l'université actuelle"

@@ -148,12 +148,17 @@ class Conquistadors(coterie.Coterie):
         else:
             return random.choice(Conquistadors.PRENOMS_F)
 
-    PRENOMS_M = [ "Rodigo", "Adis",	"Albertino", "Alcidès",
-    "Ãšrbez","AgostÃ­n","Aimadeio","Aimadeo","Aimau","Aimor","Albaro","Aleixandro","Aleixo","Alexandro","Alexo","Alfons","Alfred","Alifonso","Alixandre",
-    "Alodio","Alois","AltabÃ¡s","Alvaro","Alziz","Amancio","Amanzio","Amat","Anchel","Andreu","Anizeto","AntÃ³n","Antoni","Aparizio","Arbert","Archentino",
-    "Archimiro","Armenchol","Arnau","Artal","Ato","Augusto","AusiÃ¡s","Balanda­n","BalantÃ­n","BaldobÃ­n","BaldovÃ­n","Baleriano","Balero","Bartomeu","BascuÃ©s",
-    "BastiÃ¡n","Bauzis","Belasco","Belian","Benanzio","BenchamÃ­n","Benet","Benino","Bentura","Beremundo","Berenguer","Berenice","Bernal","Bernat",
-    "BertolomÃ©","BertrÃ¡n","Bertran","BeturiÃ¡n","Beturio","BibiÃ¡n","Bisorio","Bital","Bitelio","Bitor","BizÃ©n","Blasco","Boecio","Boezio","Borrell",
+    PRENOMS_M = [ u"Rodigo", u"Adis",	u"Albertino", u"Alcidès",
+    u"Ãšrbez",u"AgostÃ­n",u"Aimadeio",u"Aimadeo",u"Aimau",u"Aimor",u"Albaro",u"Aleixandro",
+    u"Aleixo",u"Alexandro",u"Alexo",u"Alfons",u"Alfred",u"Alifonso",u"Alixandre",
+    u"Alodio",u"Alois",u"AltabÃ¡s",u"Alvaro",u"Alziz",u"Amancio",u"Amanzio",u"Amat",
+    u"Anchel",u"Andreu",u"Anizeto",u"Antan",u"Antoni",u"Aparizio",u"Arbert",u"Archentino",
+    u"Archimiro",u"Armenchol",u"Arnau",u"Artal",u"Ato",u"Augusto",u"Ausiais",u"Balanda­n",
+    u"BalantÃ­n",u"BaldobÃ­n",u"BaldovÃ­n",u"Baleriano",u"Balero",u"Bartomeu",u"Bascuas",
+    u"Bastian",u"Bauzis",u"Belasco",u"Belian",u"Benanzio",u"BenchamÃ­n",u"Benet",u"Benino",
+    u"Bentura",u"Beremundo",u"Berenguer",u"Berenice",u"Bernal",u"Bernat",
+    u"Bertolomeo",u"Bertran",u"Beturian",u"Beturio",u"BibiÃ¡n",u"Bisorio",u"Bital",
+    u"Bitelio",u"Bitor",u"BizÃ©n",u"Blasco",u"Boecio",u"Boezio",u"Borrell",
     "Borxa","Bras","Bruis","Buil","Burnau","Calisto","Calixto","Calvet","Cancio","Canzio","Carapas","Carles","CeferÃ­n","Celdoni","Celesta­n","Celidonio",
     "Celipe","Cerilo","Cesar","Chabier","Chacinto","Chacobo","Chaime","Chavier","Chazinto","Chenaro","ChentÃ­l","Cherardo","Cherbasio","CheremÃ­as","CheriÃ³n",
     "Cherman","Cheromo","Cheronimo","Chervasio","ChesÃºs","Chil","ChimÃ©n","ChinÃ©s","Chodofrodo","Choel","Chonas","ChonatÃ¡n","Chorche","Chuan","ChuaquÃ­n",

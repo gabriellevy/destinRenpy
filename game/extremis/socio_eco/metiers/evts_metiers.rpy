@@ -21,7 +21,11 @@ init -5 python:
         """
         prob = proba.Proba(probaF, True)
         AjouterModifDeProbaProressifPourMetier(prob, strMetier, facteurPourProba)
-        dec = declencheur.Declencheur(prob, "decRej{}".format(strMetier))
+        decRejStr = "decRej{}".format(strMetier)
+        decRejStr = decRejStr.replace('é', 'e')
+        decRejStr = decRejStr.replace('ê', 'e')
+        decRejStr = decRejStr.replace('è', 'e')
+        dec = declencheur.Declencheur(prob, decRejStr)
         dec.AjouterCondition(aPasDeMetier)
         dec.AjouterCondition(univFinie)
         return dec
