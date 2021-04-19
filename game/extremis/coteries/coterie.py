@@ -1,5 +1,6 @@
 import random
 from extremis.geographie import quartier
+from extremis.humanite import identite
 
 class Coterie:
     """
@@ -170,10 +171,10 @@ class Coterie:
         situation[Coterie.C_COTERIE] = self.id_
         prenom = self.CreerPrenom(True)
         if prenom is not None:
-            situation[pnj.Pnj.C_PRENOM] = prenom
+            situation[identite.Identite.C_PRENOM] = prenom
         nom = self.CreerNom(True)
         if nom is not None:
-            situation[pnj.Pnj.C_NOM] = nom
+            situation[identite.Identite.C_NOM] = nom
         situation.SetValCarac(quartier.Quartier.C_QUARTIER, self.quartier_)
 
         return True

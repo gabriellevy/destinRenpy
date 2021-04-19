@@ -11,6 +11,7 @@ from extremis.socio_eco.crime import crime
 from extremis.socio_eco.crime import justice
 from extremis.humanite import pnj
 from extremis.humanite import trait
+from extremis.humanite import identite
 from affichage import affichagePortrait
 from extremis.humanite.amour import relationAmoureuse
 import random
@@ -378,9 +379,9 @@ class Situation:
         return cot.nom_
 
     def AffichagePatronyme(self):
-        if ( pnj.Pnj.C_PRENOM not in self.caracs_):
+        if ( identite.Identite.C_PRENOM not in self.caracs_):
             return "!!! Pas de nom !!!!"
-        return u"{} {}".format(self.caracs_[pnj.Pnj.C_PRENOM], self.caracs_[pnj.Pnj.C_NOM])
+        return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
 
     # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------
     def AffichageDate(self):

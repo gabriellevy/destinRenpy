@@ -9,8 +9,6 @@ init -5 python:
     from extremis.humanite import trait
     from extremis.humanite import pnj
     from extremis.constitution import temps
-    from extremis.coteries.templiers import templiers
-    from extremis.coteries import coterie
     from extremis.geographie import quartier
 
     def genererDateNaissance(situation):
@@ -102,9 +100,9 @@ init -5 python:
 
 label naissance:
     $ genererDateNaissance(situation_)
-    # $ genererTraits(situation_, traits_)
+    $ genererTraits(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
-    $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
+    # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
     # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle

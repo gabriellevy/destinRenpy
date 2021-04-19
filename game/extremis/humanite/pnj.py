@@ -2,13 +2,12 @@ import random
 from extremis.humanite import portrait
 from extremis.constitution import temps
 from extremis.humanite.amour import relationAmoureuse
+from extremis.humanite import identite
 
 class Pnj:
 
     C_PERE = u"Père"
     C_MERE = u"Mère"
-    C_NOM = u"Nom"
-    C_PRENOM = u"Prénom"
 
     def __init__(self, sexeMasculin, situation):
         self.sexeMasculin_ = sexeMasculin

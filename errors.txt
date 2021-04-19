@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/evts_generaux/naissance.rpy", line 49: is not terminated with a newline. (Check strings and parenthesis.)
-            while(nb-->0) {
+File "game/extremis/humanite/identite.rpy", line 1: expected statement.
+    class Identite:
+                  ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Apr 17 21:23:27 2021
+Mon Apr 19 23:17:26 2021

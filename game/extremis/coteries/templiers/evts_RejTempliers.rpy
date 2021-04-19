@@ -12,7 +12,7 @@ init -5 python:
     from extremis.socio_eco.metiers import metier
     from extremis.religions import religion
     from extremis.geographie import quartier
-    from extremis.humanite import pnj
+    from extremis.humanite import identite
 
 label templiersPostule:
     "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
@@ -143,8 +143,8 @@ label TempliersRejoindre:
     "et qu'avec ton aide il soit la terreur et l'épouvante de tous ceux qui rejettent la sainte foi."
     $ coterieTempliers = coteries_[templiers.Templiers.ID]
     $ coterieTempliers.RejoindreCoterie(situation_)
-    $ prenom = situation_[pnj.Pnj.C_PRENOM]
-    $ nom = situation_[pnj.Pnj.C_NOM]
+    $ prenom = situation_[identite.Identite.C_PRENOM]
+    $ nom = situation_[identite.Identite.C_NOM]
     ordo "Dorénavant vous vous appellerez [prenom] [nom]."
     ordo "Lisez maintenant les voeux."
     "Moi [prenom], je fais profession et je jure chasteté, renoncement à la propriété et obéissance à Dieu, à la bienheureuse Marie et à toi, frère Aldebert, maître de l'Ordre du Temple et à tes successeurs, selon la règle et les institutions de l'ordre du Temple,"

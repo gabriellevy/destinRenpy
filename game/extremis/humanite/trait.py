@@ -653,6 +653,32 @@ class Ascetisme(TraitGraduel):
         else:
             return ""
 
+class Courage(TraitGraduel):
+
+    NOM = u"Courage"
+
+    def __init__(self):
+        self.eTrait_ = Courage.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+                return u"Poltron"
+            return u"Lâche"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Héroïque"
+            return u"Courageux"
+        else:
+            return ""
+
 class Rancune(TraitGraduel):
 
     NOM = u"Rancune"
@@ -1025,6 +1051,8 @@ class CollectionTraits:
         self.SetTrait(Sensibilite.NOM, sensi)
         ascetisme = Ascetisme()
         self.SetTrait(Ascetisme.NOM, ascetisme)
+        courage = Courage()
+        self.SetTrait(Courage.NOM, courage)
         ambition = Ambition()
         self.SetTrait(Ambition.NOM, ambition)
         prud = Prudence()
