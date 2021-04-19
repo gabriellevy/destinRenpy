@@ -1,41 +1,41 @@
-Sun Apr 18 17:17:25 2021
+Mon Apr 19 21:14:20 2021
 Linux-5.4.0-72-generic-x86_64-with-Ubuntu-20.04-focal
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.14s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.20s
-Loading script took 2.97s
-Loading save slot metadata. took 0.02s
+Bootstrap to the start of init.init took 0.17s
+Early init took 0.02s
+Loader init took 0.04s
+Loading error handling took 0.26s
+Loading script took 3.43s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.43s
-Loading analysis data took 0.04s
+Running init code took 0.52s
+Loading analysis data took 0.05s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to '/home/mdeharbe/.renpy/backups/destinRenpy':
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.14s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.06s
+Initial gc. took 0.07s
 DPI scale factor: 1.000000
-Creating interface object took 0.47s
+Creating interface object took 1.26s
 Cleaning stores took 0.00s
-Init translation took 0.08s
+Init translation took 0.09s
 Build styles took 0.02s
-Load screen analysis took 0.04s
+Load screen analysis took 0.05s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.13s
+Prepare screens took 0.18s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.11s
-Running _start took 0.05s
+Save bytecode. took 0.13s
+Running _start took 0.06s
 Performance test:
-Interface start took 0.06s
+Interface start took 0.08s
 
-primary display bounds: (0, 0, 1440, 900)
+primary display bounds: (0, 278, 1600, 900)
 swap interval: 1 frames
 Windowed mode.
 Screen sizes: virtual=(1280, 720) physical=(1218, 685) drawable=(1218, 685)
@@ -356,411 +356,18 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 5.73001909256s
+Total time until interface ready: 8.34927201271s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.013545 seconds.
-- Frame drawn at 0.022030 seconds.
-- Frame drawn at 0.027804 seconds.
-- Frame drawn at 0.037562 seconds.
-- 0.037562 seconds to render 5 frames.
+- Frame drawn at 0.016083 seconds.
+- Frame drawn at 0.034265 seconds.
+- Frame drawn at 0.050164 seconds.
+- Frame drawn at 0.066369 seconds.
+- 0.066369 seconds to render 5 frames.
 despin.gen_vie.situation:138: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 5
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 6
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 7
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 8
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 9
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
 despin.gen_vie.situation:94: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-10
-Edelmiro
-Canuto
-Edenestri
-
-0
-Edelmiro
-Canuto
-Edenestri
-
-1
-Edelmiro
-Canuto
-Edenestri
-
-2
-Edelmiro
-Canuto
-Edenestri
-
-3
-Edelmiro
-Canuto
-Edenestri
-
-4
-Edelmiro
-Canuto
-Edenestri
-
-5
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-6
-Edelmiro
-Canuto
-Edenestri
-
-7
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
-Edelmiro
-Canuto
-Edenestri
-
