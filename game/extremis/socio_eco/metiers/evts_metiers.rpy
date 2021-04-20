@@ -150,8 +150,8 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decRejGuerrier)
 
         # Chauffeur
-        decRejConducteur = CreerDeclencheurDebutDeMetier(0.02, metier.Chauffeur.NOM, 0.05)
-        selecteur_.ajouterDeclencheur(decRejConducteur)
+        decRejChauffeur = CreerDeclencheurDebutDeMetier(0.02, metier.Chauffeur.NOM, 0.05)
+        selecteur_.ajouterDeclencheur(decRejChauffeur)
 
         # Pilote
         decRejPilote = CreerDeclencheurDebutDeMetier(0.0, metier.Pilote.NOM, 0.05)
@@ -327,10 +327,10 @@ label decRejPilote:
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Pilote.NOM)
     jump fin_cycle
 
-label decRejConducteur:
-    # devient Conducteur
+label decRejChauffeur:
+    # devient Chauffeur
     "Vous êtes maintenant un Chauffeur."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Conducteur.NOM)
+    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chauffeur.NOM)
     jump fin_cycle
 
 label decRejGuerrier:

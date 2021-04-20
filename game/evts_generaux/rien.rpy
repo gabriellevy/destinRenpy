@@ -37,6 +37,13 @@ init -5 python:
             evtsVides_.append("evtRien_Templiers_3")
             evtsVides_.append("evtRien_Templiers_4")
             evtsVides_.append("evtRien_Templiers_5")
+            evtsVides_.append("evtRien_Templiers_6")
+            evtsVides_.append("evtRien_Templiers_7")
+            evtsVides_.append("evtRien_Templiers_8")
+            evtsVides_.append("evtRien_Templiers_9")
+            evtsVides_.append("evtRien_Templiers_10")
+            evtsVides_.append("evtRien_Templiers_11")
+            evtsVides_.append("evtRien_Templiers_12")
 
         # fond selon quartier
         if sceneParDefaut == "":

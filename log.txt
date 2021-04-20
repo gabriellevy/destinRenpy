@@ -1,39 +1,39 @@
-Mon Apr 19 23:41:54 2021
+Tue Apr 20 21:55:37 2021
 Linux-5.4.0-72-generic-x86_64-with-Ubuntu-20.04-focal
 Ren'Py 7.3.5.606
  
 
-Bootstrap to the start of init.init took 0.17s
+Bootstrap to the start of init.init took 0.16s
 Early init took 0.00s
 Loader init took 0.03s
 Loading error handling took 0.23s
-Loading script took 3.45s
+Loading script took 3.46s
 Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.50s
-Loading analysis data took 0.05s
+Loading analysis data took 0.04s
 Analyze and compile ATL took 0.01s
 Index archives took 0.00s
 Backing up script files to '/home/mdeharbe/.renpy/backups/destinRenpy':
-Dump and make backups. took 0.13s
+Dump and make backups. took 0.14s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.07s
+Initial gc. took 0.08s
 DPI scale factor: 1.000000
-Creating interface object took 0.51s
+Creating interface object took 0.20s
 Cleaning stores took 0.00s
-Init translation took 0.09s
+Init translation took 0.08s
 Build styles took 0.02s
 Load screen analysis took 0.00s
 Analyze screens took 0.04s
 Save screen analysis took 0.15s
-Prepare screens took 0.15s
+Prepare screens took 0.16s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.12s
 Running _start took 0.06s
 Performance test:
-Interface start took 0.08s
+Interface start took 0.07s
 
 primary display bounds: (0, 278, 1600, 900)
 swap interval: 1 frames
@@ -356,154 +356,12 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 6.84338712692s
+Total time until interface ready: 6.6004948616s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017185 seconds.
-- Frame drawn at 0.030094 seconds.
-- Frame drawn at 0.038739 seconds.
-- Frame drawn at 0.045478 seconds.
-- 0.045478 seconds to render 5 frames.
+- Frame drawn at 0.017745 seconds.
+- Frame drawn at 0.038441 seconds.
+- Frame drawn at 0.048176 seconds.
+- Frame drawn at 0.057369 seconds.
+- 0.057369 seconds to render 5 frames.
 despin.gen_vie.situation:139: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
-despin.gen_vie.situation:95: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
-Coterie Transhumanistes affinité 21
-Coterie Conquistadors affinité 70
-Coterie Ordre du Temple affinité -123
-Coterie Elfes affinité 8
-retire templiers
-coterieChoisie conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-5
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-6
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-7
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-8
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-9
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-10
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-0
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors
-GetCoterie valCoterieStr : conquistadors
-GetCoterie coterie : Conquistadors

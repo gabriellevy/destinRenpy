@@ -58,7 +58,7 @@ label debut_cycle:
 
 label fin_cycle:
     # "Fin d'un cycle."
-    # jump univTranshumanistes_evt1 # tmp test
+    #jump evtRien_Templiers_12 # tmp test
 
     $ situation_.TourSuivant()
 
