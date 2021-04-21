@@ -36,16 +36,15 @@ label templiersPostule:
     "Vous croyez entendre une musique."
     "Vous voyez de la lumière au loin."
     "Ce n'était pas un rêve. Une salle luxueuse se trouve à votre droite au bout d'un court tunnel. De bonnez odeurs de nourriture en viennent ainsi que des rires."
-    $ diffTests = 3
-    $ affDiff = situation_.AffichagePourcentageReussite(trait.Ascetisme.NOM, diffTests)
+    $ test = testDeCarac.TestDeCarac(trait.Ascetisme.NOM, 3, situation_)
     menu:
         "Si vous vous penchez pour voir un peu.":
             jump TempliersPostule_t1_phase2
-        "Si vous continuez. [affDiff]":
+        "Si vous continuez. [test.affichage_]":
             jump TempliersPostule_t1
 
     label TempliersPostule_t1:
-    $ reussi = situation_.TesterDifficulte(trait.Ascetisme.NOM, diffTests)
+    $ reussi = test.TesterDifficulte(situation_)
     if reussi:
         jump TempliersPostule_t2
     else:
@@ -60,11 +59,11 @@ label templiersPostule:
     menu:
         "Si vous acceptez l'invitation.":
             jump TempliersPostule_t1_rate
-        "Si vous continuez. [affDiff]":
+        "Si vous continuez. [test.affichage_]":
             jump TempliersPostule_t1_phase3
 
     label TempliersPostule_t1_phase3:
-    $ reussi = situation_.TesterDifficulte(trait.Ascetisme.NOM, diffTests)
+    $ reussi = test.TesterDifficulte(situation_)
     if reussi:
         jump TempliersPostule_t2
     else:
@@ -91,7 +90,8 @@ label templiersPostule:
                 jump TempliersPostule_t2_marche
 
     label TempliersPostule_t2_saute:
-        $ reussi = situation_.TesterDifficulte(trait.Force.NOM, 6)
+        $ testForce = testDeCarac.TestDeCarac(trait.Force.NOM, 6, situation_)
+        $ reussi = testForce.TesterDifficulte(situation_)
         if reussi:
             "C'est à peine croyable mais vous parvenez à bondir de l'autre côté du gouffre sans même vous blesser à l'arrivée."
             jump TempliersPostule_t3
@@ -100,7 +100,8 @@ label templiersPostule:
             jump TempliersPostule_t2_tombe
 
     label TempliersPostule_t2_marche:
-        $ reussi = situation_.TesterDifficulte(religion.Religion.C_MIRACLE, 2)
+        $ testMiracle = testDeCarac.TestDeCarac(religion.Religion.C_MIRACLE, 2, situation_)
+        $ reussi = testMiracle.TesterDifficulte(situation_)
         if reussi:
             "C'est un miracle ! Vos pieds restent suspendus en l'air et vous parvenez de l'autre côté du gouffre en marchant doucement sans ressentir aucune peur."
             jump TempliersPostule_t3

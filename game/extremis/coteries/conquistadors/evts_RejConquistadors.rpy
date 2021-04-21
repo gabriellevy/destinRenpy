@@ -10,6 +10,7 @@ init -5 python:
     from extremis.religions import religion
     from extremis.geographie import quartier
     from extremis.humanite import identite
+    from despin.gen_vie import testDeCarac
 
 label conquistadorsPostule:
     $note = 0 # points marqués durant l'épreuve (peut passer en négatif)
@@ -25,15 +26,14 @@ label conquistadorsPostule:
     inst "Je viendrai vous chercher dans une semaine. Si il y a quelque chose à venir chercher."
     hide officierConquistador
     with moveoutright
-    $ diffTests = 3
-    $ affDiff = situation_.AffichagePourcentageReussite([trait.Constitution.NOM, metier.Aventurier.NOM], diffTests)
+    $ testAventurier = testDeCarac.TestDeCarac([trait.Constitution.NOM, metier.Aventurier.NOM], 3, situation_)
     "Hum difficile de croire qu'ils vous abandonneraient réellement mais enfin, de toute façon, la perspective de se débrouiller seul dans ce marais froid et fétide n'est pas réjouissante."
     menu:
-        "Inspectez votre sac à dos. [affDiff]":
+        "Inspectez votre sac à dos. [testAventurier.affichage_]":
             jump conquistadorsPostule_phase2
 
     label conquistadorsPostule_phase2:
-        $ reussi = situation_.TesterDifficulte([trait.Constitution.NOM, metier.Aventurier.NOM], diffTests)
+        $ reussi = testAventurier.TesterDifficulte(situation_)
         if reussi:
             "Vous parvenez vite à dresser un feu de camps avec le matériel qu'on vous a confié. Vous constatez que votre sac contient le nécessaire pour survivre ici, mais en quantité faible."
             "Il va falloir se rationner."
@@ -48,18 +48,16 @@ label conquistadorsPostule:
 label conquistadorsPostule_phase3:
     "Il vous faut maintenant trouver de quoi manger. Si vous entamez déjà les provisions qu'ils vous ont confié les conquistadors vous mépriseront, vous devez vous nourrir par vous même."
 
-    $ diffTestChasseur = 3
-    $ diffTestAventurier = 4
-    $ affDiffChasseur = situation_.AffichagePourcentageReussite([metier.Chasseur.NOM], diffTestChasseur)
-    $ affDiffAventurier = situation_.AffichagePourcentageReussite([metier.Aventurier.NOM], diffTestAventurier)
+    $ testChasseur = testDeCarac.TestDeCarac([metier.Chasseur.NOM], 3, situation_)
+    $ testAventurier = testDeCarac.TestDeCarac([metier.Aventurier.NOM], 4, situation_)
     menu:
-        "Si vous chassez. [affDiffChasseur]":
+        "Si vous chassez. [testChasseur.affichage_]":
             jump conquistadorsPostule_phase3_chasse
-        "Si vous cherchez des végétaux. [affDiffAventurier]":
+        "Si vous cherchez des végétaux. [testAventurier.affichage_]":
             jump conquistadorsPostule_phase3_cueille
 
     label conquistadorsPostule_phase3_chasse:
-        $ reussi = situation_.TesterDifficulte([metier.Chasseur.NOM], diffTestChasseur)
+        $ reussi = testChasseur.TesterDifficulte(situation_)
         if reussi:
             "Grâce à un fusil de chasse de mauvaise qualité qu'on vous a donné, mais surtout grâce à vos compétences de chasseur, vous parvenez à abattre un canard, puis à le préparer et le faire cuire sur votre feu."
             $ note = note + 1
@@ -71,7 +69,7 @@ label conquistadorsPostule_phase3:
             jump conquistadorsPostule_phase4
 
     label conquistadorsPostule_phase3_cueille:
-        $ reussi = situation_.TesterDifficulte([metier.Chasseur.NOM], diffTestChasseur)
+        $ reussi = testAventurier.TesterDifficulte(situation_)
         if reussi:
             "Vous parvenez à trouver des champignons et des racines comestibles. C'est loin d'être le festin de vos rêves mais comparé à l'ignoble pain sec qu'on vous a confié c'est le luxe."
             "Et surtout vous êtes persuadé que c'est ainsi que vous serez respecté et accepté dans la coterie."
@@ -88,14 +86,13 @@ label conquistadorsPostule_phase4:
     "Mais le confort est catastrophique. Vous êtes mouillé en permanence et d'autant plus gelé par le vent. Vous n'avez même pas une vraie tente mais juste une toile tendue pour couvrir le haut de votre corps."
     "De plus vous êtes surpris de la difficulté que vous avez à rester absolument seul dans le noir dans ce marais plein de bruits étrangers et effrayants."
 
-    $ diffTestNuit = 5
-    $ affDiffNuit = situation_.AffichagePourcentageReussite([trait.Ascetisme.NOM, trait.Courage.NOM], diffTestNuit)
+    $ testNuit = testDeCarac.TestDeCarac([trait.Ascetisme.NOM, trait.Courage.NOM], 5, situation_)
     menu:
-        "Il va falloir faire preuvre de courage et de ténacité. [affDiffNuit]":
+        "Il va falloir faire preuvre de courage et de ténacité. [testNuit.affichage_]":
             jump conquistadorsPostule_phase4_b
 
     label conquistadorsPostule_phase4_b:
-        $ reussi = situation_.TesterDifficulte([trait.Ascetisme.NOM, trait.Courage.NOM], diffTestNuit)
+        $ reussi = testNuit.TesterDifficulte(situation_)
         if reussi:
             "Vous surmontez vos doutes et parvenez à vous débrouillez sans aucune assistance extérieure et sans fléchir jusqu'au retour de l'instructeur."
             $ note = note + 1

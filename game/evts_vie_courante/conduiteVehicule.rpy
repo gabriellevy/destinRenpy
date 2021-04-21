@@ -90,14 +90,13 @@ label decPermisHistoire:
         with moveinright
         monit "Quarante questions, une minute par question. C'est parti on se revoit pour la correction."
         "Les questions sont bien plus difficiles et ambiguës que vous ne l'auriez cru."
-        $ diffCode = 4
-        $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Intelligence.NOM, diffCode)
+        $ testCode = testDeCarac.TestDeCarac(trait.Intelligence.NOM, 4, situation_)
         menu:
-            "Voyons le résultat. [affdiffCode]":
+            "Voyons le résultat. [testCode.affichage_]":
                 jump decPermis_PremierCode
 
         label decPermis_PremierCode:
-            $ reussi = situation_.TesterDifficulte(trait.Intelligence.NOM, diffCode)
+            $ reussi = testCode.TesterDifficulte(situation_)
             if reussi:
                 "11/20"
                 monit "Ça n'a pas l'air impressionnant mais c'est un bon résultat pour un premier essai."
@@ -113,13 +112,13 @@ label decPermisHistoire:
             "Deux jours plus tard vous suivez votre première leçon de conduite."
             monit "Je m'occupe des pédales et du changement de vitesse, qu'il se contente du volant et de bien observer."
             monit "On va rester dans une zone sans passant ni voitures le temps de faire quelques tours."
-            $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Observation.NOM, diffCode)
+            $ testConduite = testDeCarac.TestDeCarac(trait.Observation.NOM, 4, situation_)
             menu:
-                "Vous roulez le long d'une file de voitures garées. [affdiffCode]":
+                "Vous roulez le long d'une file de voitures garées. [testConduite.affichage_]":
                     jump decPermis_PremiereConduite_1
 
             label decPermis_PremiereConduite_1:
-                $ reussi = situation_.TesterDifficulte(trait.Observation.NOM, diffCode)
+                $ reussi = testConduite.TesterDifficulte(situation_)
                 if reussi:
                     monit "Bravo tu as une bonne tenue de route, tu vas pouvoir commencer à essayer de passer des vitesses."
                 else:
@@ -134,13 +133,13 @@ label decPermisHistoire:
                 label decPermis_PremiereManoeuvre:
                     monit "Cette fois il va apprendre des manoeuvres de base."
                     monit "Qu'il essaye de stationner entre les deux voitures là bas. Il a deux fois plus de place que nécessaire."
-                    $ affdiffCode = situation_.AffichagePourcentageReussite(trait.Habilete.NOM, diffCode)
+                    $ testHabilete = testDeCarac.TestDeCarac(trait.Habilete.NOM, 4, situation_)
                     menu:
-                        "Vous approchez de l'emplacement désigné. [affdiffCode]":
+                        "Vous approchez de l'emplacement désigné. [testHabilete.affichage_]":
                             jump decPermis_PremiereManoeuvre_1
 
                     label decPermis_PremiereManoeuvre_1:
-                        $ reussi = situation_.TesterDifficulte(trait.Habilete.NOM, diffCode)
+                        $ reussi = testHabilete.TesterDifficulte(situation_)
                         if reussi:
                             "Vous parvenez à vous glisser entre les voitures et à vous garer presque aligné au trottoir."
                         else:
@@ -151,13 +150,13 @@ label decPermisHistoire:
 
                         label decPermis_PasserPermis:
                             "Les jours se suivent et vous faites de sensibles progrès. Enfin le moniteur vous juge prêt."
-                            $ affdiffCode = situation_.AffichagePourcentageReussite(\
-                                [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+                            $ testPermis = testDeCarac.TestDeCarac(\
+                                [trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], 4, situation_)
                             menu:
-                                "C'est le grand jour. [affdiffCode]":
+                                "C'est le grand jour. [testPermis.affichage_]":
                                     jump decPermis_PasserPermis_1
                             label decPermis_PasserPermis_1:
-                                $ nivReussite = situation_.TesterDegreReussite([trait.Habilete.NOM, trait.Assurance.NOM, trait.Intelligence.NOM, trait.Observation.NOM], diffCode)
+                                $ nivReussite = testPermis.TesterDegreReussite(situation_)
                                 if nivReussite>0:
                                     "Bravo c'est une réussite vous avez maintenant le code et le permis."
                                     $ AjouterACarac(trait.Assurance.NOM, 2)
@@ -174,12 +173,11 @@ label decPermisHistoire:
                                     $ AjouterACarac(trait.Assurance.NOM, 1)
                                     jump decPermis_ReessayerPermis
                                 label decPermis_ReessayerPermis:
-                                    $ diffRepasser = 2
-                                    $ affdiffRepasser = situation_.AffichagePourcentageReussite(trait.Assurance.NOM, diffRepasser)
+                                    $ testRepasser = testDeCarac.TestDeCarac(trait.Assurance.NOM, 2, situation_)
                                     menu:
                                         "Voulez vous tenter de repasser le permis ?"
-                                        "Oui [affdiffRepasser]":
-                                            $ reussi = situation_.TesterDifficulte(trait.Assurance.NOM, diffRepasser)
+                                        "Oui [testRepasser.affichage_]":
+                                            $ reussi = testRepasser.TesterDifficulte(situation_)
                                             if reussi:
                                                 jump decPermis_ReessayerPermis_Payer
                                             else:
@@ -189,10 +187,10 @@ label decPermisHistoire:
                                             jump decPermis_fin
                                 label decPermis_ReessayerPermis_Payer:
                                     $ situation_.TourSuivant() # le temps passe
-                                    $ affdiffRepasser = situation_.AffichagePourcentageReussite(trait.Richesse.NOM, diffRepasser)
+                                    $ testRichesse = testDeCarac.TestDeCarac(trait.Richesse.NOM, 2, situation_)
                                     menu:
-                                        "Il va falloir reprendre plusieurs leçons [affdiffRepasser]":
-                                            $ reussi = situation_.TesterDifficulte(trait.Richesse.NOM, diffRepasser)
+                                        "Il va falloir reprendre plusieurs leçons [testRichesse.affichage_]":
+                                            $ reussi = testRichesse.TesterDifficulte(situation_)
                                             if not reussi:
                                                 "Ça commence à coûter cher."
                                                 $ situation_.RetirerACarac(trait.Richesse.NOM, 2)
@@ -205,21 +203,20 @@ label decPermisHistoire:
 label decAccident:
     $ actionDebutConduiteVehicule()
     "Alors que vous roulez à grande vitesse sur une nationale en banlieue parisienne votre voiture dérape violemment et vous perdez le contrôle."
-    $ diffRepriseControle = 6
-    $ affPilotageExpert = situation_.AffichagePourcentageReussite(trait.Pilotage.NOM, diffRepriseControle)
-    $ diffRouleBoule = 6
-    $ affHabileteExpert = situation_.AffichagePourcentageReussite(trait.Habilete.NOM, diffRouleBoule)
+
+    $ testRepriseControlePilotage = testDeCarac.TestDeCarac(trait.Pilotage.NOM, 6, situation_)
+    $ testRouleBoule = testDeCarac.TestDeCarac(trait.Habilete.NOM, 6, situation_)
     menu:
         "Vous allez heurter un camion à pleine vitesse."
-        "vous tentez de reprendre le contrôle. [affPilotageExpert]":
+        "vous tentez de reprendre le contrôle. [testRepriseControlePilotage.affichage_]":
             jump decAccident_repriseControle
-        "vous sautez en marche. [affHabileteExpert]":
+        "vous sautez en marche. [testRouleBoule.affichage_]":
             jump decAccident_SauteEnMarche
         "Vous vérifiez votre ceinture et vous préparez au choc.":
             jump decAccident_Choc
 
     label decAccident_SauteEnMarche:
-        $ reussi = situation_.TesterDifficulte(trait.Habilete.NOM, diffRouleBoule)
+        $ reussi = testRouleBoule.TesterDifficulte(situation_)
         if reussi:
             "Vous bondissez de la voiture dans un superbe roulé boulé d'expert."
             "Devant vous la voiture continue sa trajectoire à pleine vitesse et percute le camion."
@@ -230,20 +227,22 @@ label decAccident:
         else:
             "Vous bondissez de la voiture mais c'est déjà dangereux à petite vitesse, sur l'autoroute c'est presque du suicide."
             "Vous vous brisez plusieurs os dans votre chute et restez inconscient."
-            $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 7)
+            $ testResisteBlessure = testDeCarac.TestDeCarac(trait.Constitution.NOM, 7, situation_)
+            $ resisteBlessure = testResisteBlessure.TesterDifficulte(situation_)
             if resisteBlessure:
                 jump decAccident_blessureLegere
             else:
                 jump decAccident_blessureGrave
 
     label decAccident_repriseControle:
-        $ reussi = situation_.TesterDifficulte(trait.Pilotage.NOM, diffRepriseControle)
+        $ reussi = testRepriseControlePilotage.TesterDifficulte(situation_)
         if reussi:
             "Vous effectuez un dérapage contrôlé exceptionnel qui vous permet de glisser avec une relative douceur jusqu'au bord de la route."
             jump decAccident_fin
         else:
             "Impossible de reprendre le contrôle, vous arrivez sur le camion à pleine vitesse."
-            $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 7)
+            $ testResisteBlessure = testDeCarac.TestDeCarac(trait.Constitution.NOM, 7, situation_)
+            $ resisteBlessure = testResisteBlessure.TesterDifficulte(situation_)
             if resisteBlessure:
                 jump decAccident_blessureLegere
             else:
@@ -251,7 +250,8 @@ label decAccident:
 
     label decAccident_Choc:
         "Vous avez moins d'une seconde pour constater que votre ceinture était bien attachée puis vous vous couvrez le visage."
-        $ resisteBlessure = situation_.TesterDifficulte(trait.Constitution.NOM, 6)
+        $ testResisteBlessure = testDeCarac.TestDeCarac(trait.Constitution.NOM, 6, situation_)
+        $ resisteBlessure = testResisteBlessure.TesterDifficulte(situation_)
         if resisteBlessure:
             jump decAccident_blessureLegere
         else:
@@ -276,11 +276,10 @@ label decAccident:
 
     label decAccident_assuranceVoiture:
         # pour tester si les frais l'appauvrissent on fait un test de richesse (substitut pour l'assurance)
-        $ diffAssurance = 4
-        $ affdiffAssurance = situation_.AffichagePourcentageReussite(trait.Richesse.NOM, diffAssurance)
+        $ testAssurance  = testDeCarac.TestDeCarac(trait.Richesse.NOM, 4, situation_)
         menu:
-            "La voiture est dans un état catastrophique. [affdiffAssurance]":
-                $ reussi = situation_.TesterDifficulte(trait.Richesse.NOM, diffAssurance)
+            "La voiture est dans un état catastrophique. [testAssurance.affichage_]":
+                $ reussi = testAssurance.TesterDifficulte(situation_)
                 if not reussi:
                     "L'assurance couvre très mal les frais de réparation, la réparation vous revient cher."
                     $ situation_.RetirerACarac(trait.Richesse.NOM, 2)

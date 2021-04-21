@@ -58,7 +58,7 @@ label debut_cycle:
 
 label fin_cycle:
     # "Fin d'un cycle."
-    #jump evtRien_Templiers_12 # tmp test
+    # jump conquistadorsPostule # tmp test
 
     $ situation_.TourSuivant()
 
