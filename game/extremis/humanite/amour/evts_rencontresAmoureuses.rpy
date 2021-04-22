@@ -24,6 +24,9 @@ init -5 python:
     estPeuSexuel = condition.Condition(trait.Sexualite.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
     estAbstinentSexuel = condition.Condition(trait.Sexualite.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.INFERIEUR_EGAL)
 
+    estCelebre = condition.Condition(trait.Celebrite.NOM, trait.Trait.SEUIL_A, condition.Condition.SUPERIEUR_EGAL)
+    estGlorieux = condition.Condition(trait.Celebrite.NOM, trait.Trait.SEUIL_A_EXTREME, condition.Condition.SUPERIEUR_EGAL)
+
     estBeau = condition.Condition(trait.Beaute.NOM, trait.Trait.SEUIL_A, condition.Condition.SUPERIEUR_EGAL)
     estApollon = condition.Condition(trait.Beaute.NOM, trait.Trait.SEUIL_A_EXTREME, condition.Condition.SUPERIEUR_EGAL)
     estLaid = condition.Condition(trait.Beaute.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
@@ -63,6 +66,8 @@ init -5 python:
         proba.ajouterModifProbaViaVals(0.01, estTresCharmant)
         proba.ajouterModifProbaViaVals(-0.005, estDeplaisant)
         proba.ajouterModifProbaViaVals(-0.005, estTresDeplaisant)
+        proba.ajouterModifProbaViaVals(0.01, estCelebre)
+        proba.ajouterModifProbaViaVals(0.01, estGlorieux)
 
     def AjouterEvtsRencontresAmoureuses():
         global selecteur_

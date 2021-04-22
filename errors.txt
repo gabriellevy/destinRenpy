@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/extremis/humanite/identite.rpy", line 1: expected statement.
-    class Identite:
-                  ^
+File "game/extremis/coteries/transhumanistes/evts_Transhumanistes.rpy", line 41: expected statement.
+    print("texteSoin : {}".format(texteSoin))
+                                             ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Apr 19 23:17:26 2021
+Thu Apr 22 22:22:01 2021

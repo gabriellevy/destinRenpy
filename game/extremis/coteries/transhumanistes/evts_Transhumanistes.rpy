@@ -34,9 +34,10 @@ label transhumanistesHopital:
     # hôpital transhumaniste
     "L'hopital transhumaniste où vous vous trouvez est hors de prix mais d'une qualité exceptionnelle."
     $ situation_.RetirerACarac(trait.Richesse.NOM, 2)
-    $ texte = maladies_.SoignerMaladieAleatoire(situation_)
-    if texte == "":
-        $ texte = blessures_.SoignerBlessureAleatoire(situation_)
-    if len(texte) > 0:
-        "[texte]"
+    $ texteSoin = maladies_.SoignerMaladieAleatoire(situation_)
+    if texteSoin == "":
+        $ texteSoin = blessures_.SoignerBlessureAleatoire(situation_)
+    if texteSoin != "" and len(texteSoin) > 0:
+        $ print("texteSoin : {}".format(texteSoin))
+        "[texteSoin]"
     jump fin_cycle
