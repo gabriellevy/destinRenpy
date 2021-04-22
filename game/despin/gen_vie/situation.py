@@ -267,7 +267,12 @@ class Situation:
         for metierK in self.collectionMetiers.lMetiers_.keys():
             valMetier = self.GetValCaracInt(metierK)
             if valMetier != "" and valMetier != 0:
-                strComp = u"{}\n - {} ({})".format(strComp, metierK, valMetier)
+                txtDiscipline = self.collectionMetiers.lMetiers_[metierK].GetDiscipline()
+                if txtDiscipline == "":
+                    txtDiscipline = metierK
+
+                txtCompetence = self.collectionMetiers.lMetiers_[metierK].GetTexteCompetence(valMetier)
+                strComp = u"{}\n - {} ({})".format(strComp, txtDiscipline, txtCompetence)
 
         if strComp != "":
             strMetier = u"{}\n\nCompétences : {}".format(strMetier, strComp)

@@ -69,10 +69,36 @@ class Metier:
             poids = poids + 0.3
         return poids
 
+    def GetDiscipline(self):
+        """
+        renvoie le nom de la discipline principale liée à ce métier
+        à surclasser
+        """
+        return u""
+
+    def GetTexteCompetence(self, niveauComp):
+        """
+        renvoie le niveau de compétence dans ce métier du perso rapport à la valeur en paramètre
+        éventuellement surclassable pour être plus précis
+        """
+        txtCompetence = u"Notions"
+        if niveauComp > 1:
+            txtCompetence = u"Apprenti"
+            if niveauComp > 3:
+                txtCompetence = u"Expérimenté"
+                if niveauComp > 5:
+                    txtCompetence = u"Élite"
+                    if niveauComp > 8:
+                        txtCompetence = u"Maître"
+        return txtCompetence
+
 class Paysan(Metier):
     NOM = u"Paysan"
     def __init__(self):
         self.nom_ = Paysan.NOM
+
+    def GetDiscipline(self):
+        return u"Agriculture"
 
     def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
@@ -98,9 +124,12 @@ class Paysan(Metier):
         return portraits
 
 class Robotique(Metier):
-    NOM = u"Robotique"
+    NOM = u"Roboticien"
     def __init__(self):
         self.nom_ = Robotique.NOM
+
+    def GetDiscipline(self):
+        return u"Robotique"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.01
@@ -113,6 +142,9 @@ class Musicien(Metier):
     def __init__(self):
         self.nom_ = Musicien.NOM
 
+    def GetDiscipline(self):
+        return u"Musique"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -123,6 +155,9 @@ class Dessinateur(Metier):
     NOM = u"Dessinateur"
     def __init__(self):
         self.nom_ = Dessinateur.NOM
+
+    def GetDiscipline(self):
+        return u"Dessin"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
@@ -135,6 +170,9 @@ class Bibliothecaire(Metier):
     def __init__(self):
         self.nom_ = Bibliothecaire.NOM
 
+    def GetDiscipline(self):
+        return u"Litérature"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.3
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -145,6 +183,9 @@ class Poete(Metier):
     NOM = u"Poète"
     def __init__(self):
         self.nom_ = Poete.NOM
+
+    def GetDiscipline(self):
+        return u"Poésie"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.01
@@ -157,6 +198,9 @@ class Cartographe(Metier):
     def __init__(self):
         self.nom_ = Cartographe.NOM
 
+    def GetDiscipline(self):
+        return u"Cathographie"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.01
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -167,6 +211,9 @@ class Marchand(Metier):
     NOM = u"Marchand"
     def __init__(self):
         self.nom_ = Marchand.NOM
+
+    def GetDiscipline(self):
+        return u"Commerce"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.3
@@ -191,6 +238,9 @@ class Mineur(Metier):
     def __init__(self):
         self.nom_ = Mineur.NOM
 
+    def GetDiscipline(self):
+        return u"Minage"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.3
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -201,6 +251,9 @@ class Pretre(Metier):
     NOM = u"Prêtre"
     def __init__(self):
         self.nom_ = Pretre.NOM
+
+    def GetDiscipline(self):
+        return u"Prêtrise"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.02
@@ -213,10 +266,16 @@ class Ouvrier(Metier):
     def __init__(self):
         self.nom_ = Ouvrier.NOM
 
+    def GetDiscipline(self):
+        return u"Manutention"
+
 class Politique(Metier):
-    NOM = u"Politique"
+    NOM = u"Homme politique"
     def __init__(self):
         self.nom_ = Politique.NOM
+
+    def GetDiscipline(self):
+        return u"Politique"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.02
@@ -229,6 +288,9 @@ class Forgeron(Metier):
     def __init__(self):
         self.nom_ = Forgeron.NOM
 
+    def GetDiscipline(self):
+        return u"Forge"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -239,6 +301,9 @@ class Alchimiste(Metier):
     NOM = u"Alchimiste"
     def __init__(self):
         self.nom_ = Alchimiste.NOM
+
+    def GetDiscipline(self):
+        return u"Alchimie"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.0
@@ -251,6 +316,9 @@ class Medecin(Metier):
     def __init__(self):
         self.nom_ = Medecin.NOM
 
+    def GetDiscipline(self):
+        return u"Médecine"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.2
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -261,6 +329,9 @@ class TueurDeMonstres(Metier):
     NOM = u"Tueur de monstres"
     def __init__(self):
         self.nom_ = TueurDeMonstres.NOM
+
+    def GetDiscipline(self):
+        return u"Traque de monstre"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0
@@ -273,6 +344,9 @@ class Architecte(Metier):
     def __init__(self):
         self.nom_ = Architecte.NOM
 
+    def GetDiscipline(self):
+        return u"Architecture"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.2
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -283,6 +357,9 @@ class Parasite(Metier):
     NOM = u"Parasite"
     def __init__(self):
         self.nom_ = Parasite.NOM
+
+    def GetDiscipline(self):
+        return u"Parasitage"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
@@ -295,6 +372,9 @@ class Guerrier(Metier):
     def __init__(self):
         self.nom_ = Guerrier.NOM
 
+    def GetDiscipline(self):
+        return u"Combat"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -305,6 +385,9 @@ class Chauffeur(Metier):
     NOM = u"Chauffeur"
     def __init__(self):
         self.nom_ = Chauffeur.NOM
+
+    def GetDiscipline(self):
+        return u"Conduite"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.5
@@ -317,6 +400,9 @@ class Pilote(Metier):
     def __init__(self):
         self.nom_ = Pilote.NOM
 
+    def GetDiscipline(self):
+        return u"Pilotage"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.01
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -328,6 +414,9 @@ class Chevalier(Metier):
     def __init__(self):
         self.nom_ = Chevalier.NOM
 
+    def GetDiscipline(self):
+        return u"Chevalerie"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -338,6 +427,9 @@ class Informaticien(Metier):
     NOM = u"Informaticien"
     def __init__(self):
         self.nom_ = Informaticien.NOM
+
+    def GetDiscipline(self):
+        return u"Informatique"
 
     def estDeBureau(self, strMetier):
         return True
@@ -352,6 +444,9 @@ class Cyberneticien(Metier):
     NOM = u"Cybernéticien"
     def __init__(self):
         self.nom_ = Cyberneticien.NOM
+
+    def GetDiscipline(self):
+        return u"Cybernétique"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0
@@ -373,6 +468,9 @@ class Geneticien(Metier):
     def __init__(self):
         self.nom_ = Geneticien.NOM
 
+    def GetDiscipline(self):
+        return u"Génétique"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -390,6 +488,9 @@ class Commercial(Metier):
     def __init__(self):
         self.nom_ = Commercial.NOM
 
+    def GetDiscipline(self):
+        return u"Vente"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.4
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -400,6 +501,9 @@ class Policier(Metier):
     NOM = u"Policier"
     def __init__(self):
         self.nom_ = Policier.NOM
+
+    def GetDiscipline(self):
+        return u"Police"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.3
@@ -423,6 +527,9 @@ class Vigile(Metier):
     def __init__(self):
         self.nom_ = Vigile.NOM
 
+    def GetDiscipline(self):
+        return u"Surveillance"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.4
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -433,6 +540,9 @@ class Banquier(Metier):
     NOM = u"Banquier"
     def __init__(self):
         self.nom_ = Banquier.NOM
+
+    def GetDiscipline(self):
+        return u"Banque"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.3
@@ -455,9 +565,12 @@ class GardeDuCorps(Metier):
         return poids
 
 class Electronique(Metier):
-    NOM = u"Electronique"
+    NOM = u"Électronicien"
     def __init__(self):
         self.nom_ = Electronique.NOM
+
+    def GetDiscipline(self):
+        return u"Électronique"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
@@ -470,6 +583,9 @@ class Chasseur(Metier):
     def __init__(self):
         self.nom_ = Chasseur.NOM
 
+    def GetDiscipline(self):
+        return u"Chasse"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.02
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -480,6 +596,9 @@ class Marin(Metier):
     NOM = u"Marin"
     def __init__(self):
         self.nom_ = Marin.NOM
+
+    def GetDiscipline(self):
+        return u"Navigation"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.1
@@ -492,6 +611,9 @@ class Etudiant(Metier):
     def __init__(self):
         self.nom_ = Etudiant.NOM
 
+    def GetDiscipline(self):
+        return u"Études"
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.2
         return poids
@@ -500,6 +622,9 @@ class Aventurier(Metier):
     NOM = u"Aventurier"
     def __init__(self):
         self.nom_ = Aventurier.NOM
+
+    def GetDiscipline(self):
+        return u"Aventure"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.001
@@ -511,6 +636,9 @@ class Journaliste(Metier):
     NOM = u"Journaliste"
     def __init__(self):
         self.nom_ = Journaliste.NOM
+
+    def GetDiscipline(self):
+        return u"Journalisme"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.5
