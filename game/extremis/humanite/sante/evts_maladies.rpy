@@ -11,16 +11,19 @@ init -5 python:
     from extremis.coteries import coterie
     from extremis.humanite.sante import pbsante
 
+    estChetif = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.INFERIEUR_EGAL)
+    estFragile = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
+    estResistant = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A, condition.Condition.SUPERIEUR_EGAL)
+    estIndestructible = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_EXTREME, condition.Condition.SUPERIEUR_EGAL)
     def AjouterEvtsMaladies():
         global selecteur_
         # conditionAgeCoterie = condition.Condition(temps.Date.AGE_ANNEES, 16, condition.Condition.SUPERIEUR_EGAL)
         probaMaladie = proba.Proba(0.01)
-        conditioChetif = condition.Condition(trait.Constitution.NOM, -2, condition.Condition.INFERIEUR_EGAL)
-        probaMaladie.ajouterModifProbaViaVals(0.02, conditioChetif)
-        conditionResistant = condition.Condition(trait.Constitution.NOM, 3, condition.Condition.SUPERIEUR_EGAL)
-        probaMaladie.ajouterModifProbaViaVals(-0.005, conditionResistant)
+        probaMaladie.ajouterModifProbaViaVals(0.01, estFragile)
+        probaMaladie.ajouterModifProbaViaVals(0.01, estChetif)
+        probaMaladie.ajouterModifProbaViaVals(-0.005, estResistant)
+        probaMaladie.ajouterModifProbaViaVals(-0.005, estIndestructible)
 
-        # à 16 ans on est OBLIGÉ de s'enrôler dans une université de coterie (au hasard)
         decTombeMalade = declencheur.Declencheur(probaMaladie, "decTombeMalade")
         selecteur_.ajouterDeclencheur(decTombeMalade)
 

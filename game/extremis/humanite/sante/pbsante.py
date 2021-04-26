@@ -10,15 +10,15 @@ class PbSante:
     C_JOURS_DHOPITAL = u"Jours d'hopital"
 
     def __init__(self):
-        self.nom_ = "pas de nom de problème de santé, doit être overridé"
+        self.nom_ = u"pas de nom de problème de santé, doit être overridé"
 
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
-        return "Pb de santé : {}".format(self.nom_)
+        return u"Pb de santé : {}".format(self.nom_)
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
-        return "{}".format(self.nom_)
+        return u"{}".format(self.nom_)
 
     def GetGravite(self):
         """
@@ -52,19 +52,19 @@ class PbSante:
         """
         texte affiché quand le perspnnage attrape ce problème de santé
         """
-        return "GetDescriptionRecu pas faite pour {}".format(self.nom_)
+        return u"GetDescriptionRecu pas faite pour {}".format(self.nom_)
 
 class Blessure(PbSante):
 
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
-        return "Blessure : {}".format(self.nom_)
+        return u"Blessure : {}".format(self.nom_)
 
 class Maladie(PbSante):
 
     def __repr__(self):
         """Affichage quand on entre cet objet dans l'interpréteur"""
-        return "Maladie : {}".format(self.nom_)
+        return u"Maladie : {}".format(self.nom_)
 
 class OeilCreve(Blessure):
 
@@ -80,7 +80,7 @@ class OeilCreve(Blessure):
         return 30
 
     def GetDescriptionRecu(self):
-        return "Un de vos yeux est crevé."
+        return u"Un de vos yeux est crevé."
 
 class DoigtArrache(Blessure):
 
@@ -135,7 +135,7 @@ class JambeAmputee(Blessure):
         return 40
 
     def GetDescriptionRecu(self):
-        return "Votre jambe est si gravement endommagée qu'on doit vous l'amputer."
+        return u"Votre jambe est si gravement endommagée qu'on doit vous l'amputer."
 
 class BrasAmpute(Blessure):
 
@@ -164,7 +164,7 @@ class TraumatismeCranien(Blessure):
         return 30
 
     def GetDescriptionRecu(self):
-        return "Vous vous heurtez la tête violemment au point de perdre connaissance."
+        return u"Vous vous heurtez la tête violemment au point de perdre connaissance."
 
 class HemoragieInterne(Blessure):
 
@@ -180,7 +180,7 @@ class HemoragieInterne(Blessure):
         return 40
 
     def GetDescriptionRecu(self):
-        return "Vous pensiez vous en tirer à plutôt bon compte avec des blessures légères quand vous crachez du sang dans une douleur épouvantable. Vous avez une hémorragie interne."
+        return u"Vous pensiez vous en tirer à plutôt bon compte avec des blessures légères quand vous crachez du sang dans une douleur épouvantable. Vous avez une hémorragie interne."
 
 class OreilleCoupee(Blessure):
 
@@ -237,7 +237,7 @@ class CollectionBlessures:
                 tabBlessuresOk.append(blessure)
 
         if len(tabBlessuresOk) == 0:
-            return "aucune blessure entre gravité {} et {}".format(minGravite, maxGravite)
+            return u"aucune blessure entre gravité {} et {}".format(minGravite, maxGravite)
 
         return random.choice(tabBlessuresOk)
 
@@ -261,7 +261,6 @@ class CollectionBlessures:
                 situation.SetValCarac(blessureK, "")
                 return u"Vous n'êtes plus {}.".format(blessure.nom_)
 
-        print("rien à soigner")
         return u""
 
     def __getitem__(self, idBlessure):
@@ -354,9 +353,9 @@ class CollectionMaladies:
             maladie = self[maladieK]
             if situation.GetValCarac(maladieK) != "":
                 situation.SetValCarac(maladieK, "")
-                return "Vous avez été soigné de {}.".format(maladie.nom_)
+                return u"Vous avez été soigné de {}.".format(maladie.nom_)
 
-        return ""
+        return u""
 
     def __getitem__(self, idMaladie):
         if not idMaladie in self.lMaladies_:
@@ -378,5 +377,5 @@ class CollectionMaladies:
             return "Aucun Maladie."
         str = u"Liste de toutes les maladies : "
         for maladie in self.lMaladies_:
-            str = str + maladie + ","
+            str = u"{} {},".format(str, maladie)
         return str

@@ -32,5 +32,5 @@ class Declencheur:
     def executer(self):
         return self.labelGoTo_
 
-    def AjouterCondition(self, conditionAdministratif):
-        self.conditions_.append(conditionAdministratif)
+    def AjouterCondition(self, condition):
+        self.conditions_.append(condition)

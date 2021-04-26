@@ -11,11 +11,11 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.geographie import quartier
 
-    def genererDateNaissance(situation):
+    def genererDateNaissance(situation, ageActuel=16):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
         # avant sa majorité idéologique de 20 ans
         # donc la date de naissance est l'actuelle moins 16 ans pile :
-        nbJoursDateNaissance = situation[temps.Date.DATE] - 365*16
+        nbJoursDateNaissance = situation[temps.Date.DATE] - 365*ageActuel
         situation[temps.Date.DATE_NAISSANCE] = nbJoursDateNaissance
 
     def genererTraits(situation, tousLesTraits):
@@ -99,7 +99,7 @@ init -5 python:
         situation.SetValCarac(pnj.Pnj.C_MERE, mere)
 
 label naissance:
-    $ genererDateNaissance(situation_)
+    $ genererDateNaissance(situation_, 31)
     $ genererTraits(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif

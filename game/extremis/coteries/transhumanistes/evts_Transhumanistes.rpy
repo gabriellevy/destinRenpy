@@ -38,6 +38,6 @@ label transhumanistesHopital:
     if texteSoin == "":
         $ texteSoin = blessures_.SoignerBlessureAleatoire(situation_)
     if texteSoin != "" and len(texteSoin) > 0:
-        $ print("texteSoin : {}".format(texteSoin))
+        $ print(u"texteSoin : {}".format(texteSoin))
         "[texteSoin]"
     jump fin_cycle

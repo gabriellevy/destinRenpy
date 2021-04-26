@@ -26,7 +26,7 @@ init -5 python:
         if situation_.GetValCaracInt(metier.Metier.ADMINISTRATIF) > 0:
             evtsVides_.append("evtRien_Administratif1")
 
-        if situation_.GetValCaracInt(trait.Pilotage.NOM) > 0:
+        if situation_.GetValCaracInt(metier.Pilote.NOM) > 0:
             evtsVides_.append("evtRien_Conduite")
 
         nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)

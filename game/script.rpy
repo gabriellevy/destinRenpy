@@ -40,6 +40,7 @@ init -1 python:
     AjouterEvtsRencontresAmoureuses()
     # santé
     AjouterEvtsMaladies()
+    AjouterEvtsVieillesse()
     # religion
     AjouterEvtsChretiens()
 
@@ -58,7 +59,7 @@ label debut_cycle:
 
 label fin_cycle:
     # "Fin d'un cycle."
-    # jump conquistadorsPostule # tmp test
+    # jump decVieillir # tmp test
 
     $ situation_.TourSuivant()
 
