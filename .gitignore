@@ -15,3 +15,5 @@ game/.idea/vcs.xml
 log\.txt
 
 errors\.txt
+
+game/saves/navigation\.json

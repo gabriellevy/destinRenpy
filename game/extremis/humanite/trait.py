@@ -821,12 +821,12 @@ class Poids(TraitGraduel):
 
         if val <= Trait.SEUIL_A_PAS:
             if val <= Trait.SEUIL_A_PAS_EXTREME:
-                return u"Obèse"
-            return u"Gros"
-        elif val >= Trait.SEUIL_A:
-            if val >= Trait.SEUIL_A_EXTREME:
                 return u"Famélique"
             return u"Maigre"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Obèse"
+            return u"Gros"
         else:
             return ""
 

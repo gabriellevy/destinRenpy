@@ -12,13 +12,16 @@ init -5 python:
 
     def AjouterEvtsCoteries():
         global selecteur_
-        conditionAgeCoterie = condition.Condition(temps.Date.AGE_ANNEES, 16, condition.Condition.SUPERIEUR_EGAL)
+        conditionAgeCoterieDeb = condition.Condition(temps.Date.AGE_ANNEES, 16, condition.Condition.SUPERIEUR_EGAL)
+        conditionAgeCoterieFin = condition.Condition(temps.Date.AGE_ANNEES, 25, condition.Condition.INFERIEUR_EGAL)
         conditionPasUniv = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "", condition.Condition.EGAL)
         conditionUnivPasTerminee = condition.Condition(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.NB_UNIV_TOTAL, condition.Condition.INFERIEUR_EGAL)
 
-        # à 16 ans on est OBLIGÉ de s'enrôler dans une université de coterie (au hasard)
-        decUnivCoterie = declencheur.Declencheur(proba.Proba(1.0, False), "decUnivCoterie")
-        decUnivCoterie.AjouterCondition(conditionAgeCoterie)
+        # entre 16 et 25 ans on est OBLIGÉ de s'enrôler dans une université de coterie (au hasard)
+        # la proba est donc non relative et hautement probable
+        decUnivCoterie = declencheur.Declencheur(proba.Proba(0.8, False), "decUnivCoterie")
+        decUnivCoterie.AjouterCondition(conditionAgeCoterieDeb)
+        decUnivCoterie.AjouterCondition(conditionAgeCoterieFin)
         decUnivCoterie.AjouterCondition(conditionPasUniv)
         decUnivCoterie.AjouterCondition(conditionUnivPasTerminee)
         selecteur_.ajouterDeclencheur(decUnivCoterie)

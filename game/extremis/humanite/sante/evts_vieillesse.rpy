@@ -29,15 +29,15 @@ init -5 python:
     def AjouterEvtsVieillesse():
         global selecteur_
         # pas d'événement vieillesse avant 30 ans
-        probaVieillesse = proba.Proba(0.004, False)
+        probaVieillesse = proba.Proba(0.01, False)
         # ageBonus
         probaVieillesse.ajouterModifProbaViaVals(0.01, ageSup40)
         probaVieillesse.ajouterModifProbaViaVals(0.01, ageSup50)
-        probaVieillesse.ajouterModifProbaViaVals(0.01, ageSup60)
+        probaVieillesse.ajouterModifProbaViaVals(0.02, ageSup60)
         probaVieillesse.ajouterModifProbaViaVals(0.02, ageSup70)
-        probaVieillesse.ajouterModifProbaViaVals(0.02, ageSup80)
-        probaVieillesse.ajouterModifProbaViaVals(0.03, ageSup90)
-        probaVieillesse.ajouterModifProbaViaVals(0.05, ageSup100)
+        probaVieillesse.ajouterModifProbaViaVals(0.04, ageSup80)
+        probaVieillesse.ajouterModifProbaViaVals(0.05, ageSup90)
+        probaVieillesse.ajouterModifProbaViaVals(0.08, ageSup100)
         # constitution
         probaVieillesse.ajouterModifProbaViaVals(0.01, estChetif)
         probaVieillesse.ajouterModifProbaViaVals(0.005, estFragile)
@@ -63,7 +63,7 @@ label decVieillir:
     $ nbEffets = random.randint(1, 4)
     label effetVieillir:
         while nbEffets > 0:
-            $ res100 = random.randint(0, 100)
+            $ res100 = random.randint(0, 85)
             $ ageBonus = situation_.AgeEnAnnees()
             "age : [ageBonus] - effetVieillesse : [res100]"
             # plus on est vieux plus le score est augmenté :
@@ -81,6 +81,7 @@ label decVieillir:
                 elif res100 < 16:
                     "Vous prenez de plus en plus d'intérêt à vos possessions et gérez votre épargne plus efficacement."
                     $ AjouterACarac(trait.Cupidite.NOM, 1)
+                    $ AjouterACarac(trait.Richesse.NOM, 1)
                     $ nbEffets = nbEffets - 1
                     jump effetVieillir
                 elif res100 < 23:
@@ -94,38 +95,38 @@ label decVieillir:
                     $ nbEffets = nbEffets - 1
                     jump effetVieillir
 
-            elif effetVieillesse< 40:
+            elif effetVieillesse< 45:
                 "Votre peau est de moins en moins belle."
                 $ RetirerACarac(trait.Beaute.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 50:
+            elif effetVieillesse< 55:
                 "Vous êtes de moins en moins intéressé par les femmes."
                 $ RetirerACarac(trait.Sexualite.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 60:
+            elif effetVieillesse< 65:
                 "Vos mains sont moins sûres qu'autrefois."
                 $ RetirerACarac(trait.Habilete.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 70:
+            elif effetVieillesse< 75:
                 "Vos muscles vous font souffrir aujourd'hui."
                 $ RetirerACarac(trait.Force.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 80:
+            elif effetVieillesse< 86:
                 "Vous vous sentez très fatigué."
                 $ RetirerACarac(trait.Constitution.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 90:
+            elif effetVieillesse< 98:
                 "Votre esprit est de moins en moins vif."
                 $ RetirerACarac(trait.Intelligence.NOM, 1)
                 $ nbEffets = nbEffets - 1
                 jump effetVieillir
-            elif effetVieillesse< 100:
-                $ valCelebrite = situation_GetValCaracInt(trait.Celebrite.NOM)
+            elif effetVieillesse< 105:
+                $ valCelebrite = situation_.GetValCaracInt(trait.Celebrite.NOM)
                 if valCelebrite <= 0:
                     jump effetVieillir
                 "Le temps passe, vous êtes de moins en moins connu."
