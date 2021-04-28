@@ -98,6 +98,10 @@ label decVisiteInvestisseurs:
         ch "Bonne soirée [situation_[Prénom]]. À demain."
         jump decVisiteInvestisseurs_fin
 
+    label decVisiteInvestisseurs_frime:
+        "youpi frime PAS FAIT"
+        jump decVisiteInvestisseurs_fin
+
     label decVisiteInvestisseurs_flatterie:
         "youpi flatterie PAS FAIT"
         jump decVisiteInvestisseurs_fin

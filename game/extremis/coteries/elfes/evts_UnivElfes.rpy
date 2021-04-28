@@ -114,17 +114,35 @@ label univElfes_evt6:
     jump fin_cycle
 
 label univElfes_evt7:
-    "univElfes_evt7 PAS FAIT"
+    # effet devient Cuisinier
+    "L'art de vivre elfique est légendaire. Il touche tous les aspects de la vie, de l'achitecture des plus grands édifices à la cuisine de tous les jours."
+    "Vos maîres vous font travailler la préparation des mets de base de la cuisine elfique. Que vous deveniez cuisiner ou pas il est hors de question de vivre sans ces compétences."
+    $ AjouterACarac(metier.Cuisinier.NOM, 1)
     jump fin_cycle
+
 label univElfes_evt8:
-    "univElfes_evt8 PAS FAIT"
+    # effet devient Cuisinier
+    "La vie des elfes est une représentation permanente. Même quand ils ne font pas théâtre amateur pendant leurs loisirs ils deviennent inévitablement un peu comédien ne serait-ce que par l'application des innombrables usages de leur société."
+    "Vous faites tout votre possible pour vous intégrer dans cet étrange système."
+    $ AjouterACarac(metier.Acteur.NOM, 2)
+    $ RetirerACarac(trait.Sincerite.NOM, 1)
     jump fin_cycle
+
 label univElfes_evt9:
-    "univElfes_evt9 PAS FAIT"
+    # Méditation
+    "Les elfes vivent une vie calme et douce, loin du stress des humains. Vous appreznez à leur contact à méditer dans la paix et la sérénité."
+    $ AjouterACarac(trait.Serenite.NOM, 2)
+    $ RetirerACarac(trait.Cupidite.NOM, 1)
+    $ RetirerACarac(trait.Opportunisme.NOM, 1)
     jump fin_cycle
+
 label univElfes_evt10:
-    "univElfes_evt10 PAS FAIT"
+    # Sensibilité
+    "Au contact des elfes et au fur et à mesure que vous ouvrez votre esprit vous commencez à percevoir des beautés que vous ne soupçonniez pas autour de vous."
+    "L'art elfique qui paraît souvent prétentieux et sans intérêt aux humains grossiers, vous apparaît dans toute sa splendeur."
+    $ AjouterACarac(trait.Sensibilite.NOM, 2)
     jump fin_cycle
+
 label univElfes_evt11:
     "univElfes_evt11 PAS FAIT"
     jump fin_cycle

@@ -99,7 +99,7 @@ init -5 python:
         situation.SetValCarac(pnj.Pnj.C_MERE, mere)
 
 label naissance:
-    $ genererDateNaissance(situation_, 31)
+    $ genererDateNaissance(situation_, 16)
     $ genererTraits(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif

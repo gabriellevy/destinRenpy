@@ -151,6 +151,34 @@ class Musicien(Metier):
             poids = poids + 0.3
         return poids
 
+class Cuisinier(Metier):
+    NOM = u"Cuisinier"
+    def __init__(self):
+        self.nom_ = Cuisinier.NOM
+
+    def GetDiscipline(self):
+        return u"Cuisine"
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 1.0
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.3
+        return poids
+
+class Acteur(Metier):
+    NOM = u"Acteur"
+    def __init__(self):
+        self.nom_ = Acteur.NOM
+
+    def GetDiscipline(self):
+        return u"Comédie"
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.1
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.2
+        return poids
+
 class Dessinateur(Metier):
     NOM = u"Dessinateur"
     def __init__(self):
@@ -660,6 +688,12 @@ class CollectionMetiers:
 
     def __init__(self):
         self.lMetiers_ = dict()
+
+        acteur = Acteur()
+        self.SetMetier(Acteur.NOM, acteur)
+
+        cuisinier = Cuisinier()
+        self.SetMetier(Cuisinier.NOM, cuisinier)
 
         etudiant = Etudiant()
         self.SetMetier(Etudiant.NOM, etudiant)
