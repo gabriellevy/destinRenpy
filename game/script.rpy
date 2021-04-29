@@ -59,7 +59,7 @@ label debut_cycle:
 
 label fin_cycle:
     # "Fin d'un cycle."
-    # jump decVieillir # tmp test
+    jump elfesPostule # tmp test
 
     $ situation_.TourSuivant()
 

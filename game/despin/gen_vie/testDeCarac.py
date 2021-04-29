@@ -48,7 +48,7 @@ class TestDeCarac:
                 valCarac = valCarac + val
             valCarac = valCarac / len(carac)
         else:
-            valCarac = self.GetValCaracInt(self.caracs_)
+            valCarac = situation.GetValCaracInt(self.caracs_)
 
         diff = [
         [ 80,  40,   0,   0,   0,   0,   0,  0,  0,  0], # -20 très handicapé

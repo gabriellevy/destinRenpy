@@ -55,20 +55,13 @@ init -5 python:
         selecteur_.ajouterDeclencheur(decVieillir)
 
 label decVieillir:
-    menu:
-        "viellesse attention"
-        "Même pas peur !":
-            pass
-    # A FAIRE : ajouter 1D3 effets
-    $ nbEffets = random.randint(1, 4)
+    $ nbEffets = random.randint(1, 3)
     label effetVieillir:
         while nbEffets > 0:
             $ res100 = random.randint(0, 85)
             $ ageBonus = situation_.AgeEnAnnees()
-            "age : [ageBonus] - effetVieillesse : [res100]"
             # plus on est vieux plus le score est augmenté :
             $ effetVieillesse = res100 + ageBonus - 30
-            "score : [effetVieillesse]"
 
             if effetVieillesse<30:
                 # événements qui ont tendance à arriver au début de la vieillesse
@@ -138,5 +131,4 @@ label decVieillir:
                 "Vous êtes mort de vieillesse."
                 jump mort
 
-    "tmp FIN DES EFFETS VIEILLISSEMENT"
     jump fin_cycle

@@ -144,12 +144,12 @@ label univElfes_evt10:
     jump fin_cycle
 
 label univElfes_evt11:
-    "univElfes_evt11 PAS FAIT"
-    jump fin_cycle
-label univElfes_evt12:
-    "univElfes_evt12 PAS FAIT"
+    # Danse
+    "Pour les elfes la danse n'est pas une simple distraction. C'est un moyen d'expression très profond durant lequel les histoires et les sentiments sont exprimés de la manière la plus subtile."
+    "Sans avoir la prétention de vous faire atteindre ce niveau, l'université implique des cours de danse et une participation aux bals."
+    $ AjouterACarac(metier.Danseur.NOM, 2)
     jump fin_cycle
 
-label elfesPostule:
-    "Postulation aux Elfes : pas fait !"
+label univElfes_evt12:
+    "univElfes_evt12 PAS FAIT"
     jump fin_cycle
