@@ -33,6 +33,9 @@ class Elfes(coterie.Coterie):
         si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués
         """
         return [ \
+            metier.Acteur.NOM, \
+            metier.Danseur.NOM, \
+            metier.Dessinateur.NOM, \
             metier.Musicien.NOM, \
             metier.Poete.NOM, \
             metier.Alchimiste.NOM \

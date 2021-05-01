@@ -25,6 +25,7 @@ init -5 python:
         decRejStr = decRejStr.replace('é', 'e')
         decRejStr = decRejStr.replace('ê', 'e')
         decRejStr = decRejStr.replace('è', 'e')
+        decRejStr = decRejStr.replace(' ', '_')
         dec = declencheur.Declencheur(prob, decRejStr)
         dec.AjouterCondition(aPasDeMetier)
         dec.AjouterCondition(univFinie)
@@ -267,7 +268,7 @@ label decRejMarin:
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Marin.NOM)
     jump fin_cycle
 
-label decRejGardeDuCorps:
+label decRejGarde_du_corps:
     # devient GardeDuCorps
     "Vous êtes maintenant un garde du corps."
     $ situation_.SetValCarac(metier.Metier.C_METIER, metier.GardeDuCorps.NOM)
