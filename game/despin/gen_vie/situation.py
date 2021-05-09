@@ -390,7 +390,14 @@ class Situation:
 
     # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------
     def AffichageDate(self):
-        return temps.Date(self.caracs_[temps.Date.DATE])
+        nbJours = self.caracs_[temps.Date.DATE]
+        dateDuJour = temps.Date(nbJours)
+        dateStr = "{}\n{}".format(dateDuJour.formatConstitution(), dateDuJour.formatGregorien())
+        return dateStr
+
+    def GetDateDuJour(self):
+        nbJours = self.caracs_[temps.Date.DATE]
+        return temps.Date(nbJours)
 
     def AvanceDeXJours(self, nbJoursPasses):
         nouvelleDate = self.caracs_[temps.Date.DATE] + nbJoursPasses
@@ -430,6 +437,7 @@ class Situation:
         nbJoursPasses = 20 + random.randint(0, 20)
         self.AvanceDeXJours(nbJoursPasses)
 
+    # FONCTIONS GENERIQUES
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""
         if len(self.caracs_) == 0:

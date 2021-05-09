@@ -96,6 +96,7 @@ class Elfes(coterie.Coterie):
                     if age <= 30:
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30_b.jpg")
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30_c.jpg")
+                        portraits.append("images/coteries/elfes/portraits/portrait_15-30_d.jpg")
 
         return portraits
 

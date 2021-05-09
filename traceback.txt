@@ -1,30 +1,73 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 46, in AjouterEvtsRejMetier
-    decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM)
-TypeError: CreerDeclencheurDebutDeMetier() takes exactly 3 arguments (2 given)
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 38, in script
+    scene bg univ_transhumanistes
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1553, in execute
+    $ affDate = situation_.AffichageDate()
+  File "game/screens.rpy", line 1553, in <module>
+    $ affDate = situation_.AffichageDate()
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 46, in AjouterEvtsRejMetier
-    decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM)
-TypeError: CreerDeclencheurDebutDeMetier() takes exactly 3 arguments (2 given)
+  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 38, in script
+    scene bg univ_transhumanistes
+  File "renpy/ast.py", line 1277, in execute
+    statement_name("scene")
+  File "renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+  File "renpy/exports.py", line 1646, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2610, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1553, in execute
+    $ affDate = situation_.AffichageDate()
+  File "game/screens.rpy", line 1553, in <module>
+    $ affDate = situation_.AffichageDate()
+  File "despin/gen_vie/situation.py", line 395, in AffichageDate
+  File "extremis/constitution/temps.py", line 103, in formatGregorien
+  File "extremis/constitution/temps.py", line 96, in GetStrMoisGregorien
+IndexError: list index out of range
 
-Windows-8-6.2.9200
-Ren'Py 7.3.5.606
- 
-Thu Apr 15 22:58:10 2021
+Windows-10-10.0.19041
+Ren'Py 7.4.4.1439
+DestinExtremis 1.0
+Sun May  9 16:20:06 2021

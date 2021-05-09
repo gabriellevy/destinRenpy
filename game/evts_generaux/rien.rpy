@@ -21,7 +21,7 @@ init -5 python:
     def LancerEvtVide(situation):
         sceneParDefaut = ""
         # régénère les événements compatibles avec la situation
-        evtsVides_ = ["evtRien1", "evtRien2", "evtRien3" ]
+        evtsVides_ = ["evtRien1", "evtRien2", "evtRien3" ] # note : peut-être n'utiliser ces événements bidons que si on n'en a aps de plus intéressants ?
 
         if situation_.GetValCaracInt(metier.Metier.ADMINISTRATIF) > 0:
             evtsVides_.append("evtRien_Administratif1")
@@ -44,6 +44,9 @@ init -5 python:
             evtsVides_.append("evtRien_Templiers_10")
             evtsVides_.append("evtRien_Templiers_11")
             evtsVides_.append("evtRien_Templiers_12")
+
+        # A FAIRE : tester si chrétien
+        evtsVides_.append("evtRien_saints")
 
         # fond selon quartier
         if sceneParDefaut == "":

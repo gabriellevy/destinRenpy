@@ -9,11 +9,17 @@ class Date:
     DATE_NAISSANCE = u"Date de naissance" # date de naissance du perso depuis le début du calendrier (en jours)
     AGE_ANNEES = u"Age" # age du perso (en années)
 
+    NB_JOURS_PAR_MOIS_GREG = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    NOMS_MOIS_GREG = [u"janvier", u"février", u"mars", u"avril", u"mai", u"juin", u"juillet", u"août", u"septembre", u"octobre", u"novembre", u"décembre"]
+
     def __init__(self, nbJours = None):
         if nbJours is None:
             self.nbJours_ = 40000 + random.randint(0, 40000) # nombre de jours semi aléatoire pour destin extermis
         else:
             self.nbJours_ = nbJours # nombre de jours depuis
+        self.numJourGregorien = -1
+        self.numMoisGregorien = -1
+        self.CalculerJourEtMoisGregorien()
 
     def NbJours(self):
         return self.nbJours_
@@ -71,6 +77,30 @@ class Date:
             13: u"Jours intercalaires"
         }
         return u"{}".format(switcheurMois.get(numMois, u"Mois introuvable : {} !".format(numMois)))
+
+    def GetNbJoursDepuisDebutAnnee(self):
+        return self.nbJours_ % 365
+
+    def CalculerJourEtMoisGregorien(self):
+        numJour = self.GetNbJoursDepuisDebutAnnee()
+        index = 0
+        while index < 12:
+            if numJour <= Date.NB_JOURS_PAR_MOIS_GREG[index]:
+                self.numJourGregorien = numJour
+                self.numMoisGregorien = index + 1
+                return
+            numJour = numJour - Date.NB_JOURS_PAR_MOIS_GREG[index]
+            index = index + 1
+
+    def GetStrMoisGregorien(self):
+        return Date.NOMS_MOIS_GREG[self.numMoisGregorien - 1]
+
+    def formatConstitution(self):
+        return u"{} {} {} {}".format(self.GetStrJourSemaine(), self.GetNbJourDuMois(), self.GetStrMois(), self.GetNbAnnees())
+
+    def formatGregorien(self):
+        self.CalculerJourEtMoisGregorien()
+        return u"{} {} {}".format(self.numJourGregorien, self.GetStrMoisGregorien(), self.GetNbAnnees())
 
     def __str__(self):
         """Affichage quand on affiche l'objet (print)"""

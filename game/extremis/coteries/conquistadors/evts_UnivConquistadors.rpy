@@ -102,7 +102,7 @@ label univConquistadors_evt7:
     # effet survie en milieu hostile
     "La partie la plus périeuse des activités des conquistadors est l'exploration de contrées inconnues et dangereuses. Un conquistador doit pour voir survivre seul dans n'import quel environnement."
     scene bg jungle
-    "Cette partie cruciale est traitée avec le proagmatisme droit au but typique des instructeurs conquistadors. Vous êtes envoyé dans un stage d'u mois en pleine forêt tropicale pour apprendre les bases de la survie en milieu hostile et de la chasse."
+    "Cette partie cruciale est traitée avec le pragmatisme typique des instructeurs conquistadors. Vous êtes envoyé dans un stage d'un mois en pleine forêt tropicale pour apprendre les bases de la survie en milieu hostile et de la chasse."
     # ajouter des risques de maladies ??
     $ AjouterACarac(metier.Aventurier.NOM, 1)
     $ AjouterACarac(metier.Chasseur.NOM, 1)

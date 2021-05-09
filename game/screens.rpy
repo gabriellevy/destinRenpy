@@ -1580,7 +1580,7 @@ screen valeurs_traits():
                 text _(u"[descriptionBlessures]")
             elif interfaceMode_ == 2: # traits
                 text _(u"[descriptionTrait]")
-            elif interfaceMode_ == 3: # général non personnel
+            elif interfaceMode_ == 3: # général non personnel (date...)
                 text _(u"[affDate]\n")
             elif interfaceMode_ == 4: # économie
                 text _(u"[strRichesse]")
