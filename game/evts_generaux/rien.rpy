@@ -29,6 +29,7 @@ init -5 python:
         if situation_.GetValCaracInt(metier.Pilote.NOM) > 0:
             evtsVides_.append("evtRien_Conduite")
 
+        # selon coterie
         nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
         nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
         if nomCoterie ==  templiers.Templiers.ID or nomCoterieUniv == templiers.Templiers.ID:
@@ -45,8 +46,10 @@ init -5 python:
             evtsVides_.append("evtRien_Templiers_11")
             evtsVides_.append("evtRien_Templiers_12")
 
-        # A FAIRE : tester si chrétien
-        evtsVides_.append("evtRien_saints")
+        # selon religion
+        religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
+        if religionActuelle == religion.Christianisme.NOM:
+            evtsVides_.append("evtRien_saints")
 
         # fond selon quartier
         if sceneParDefaut == "":
