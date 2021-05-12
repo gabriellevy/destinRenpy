@@ -66,7 +66,15 @@ class Elfes(coterie.Coterie):
                         if age >= 50:
                             portraits.append("images/coteries/elfes/portraits/portrait_50+.jpg")
                             portraits.append("images/coteries/elfes/portraits/portrait50+.png")
-
+                        # age >= 30
+                        if age <= 70:
+                            portraits.append("images/coteries/elfes/portraits/portrait_30_70.jpg")
+                            if age <= 60:
+                                portraits.append("images/coteries/elfes/portraits/portrait_30_60.jpg")
+                                if age <= 50:
+                                    portraits.append("images/coteries/elfes/portraits/portrait_30_50.jpg")
+                                    portraits.append("images/coteries/elfes/portraits/portrait_30_50_b.jpg")
+                    # >= 20
                     if age <= 50:
                         if trait.Franchise.NOM in valeursTraits and valeursTraits[trait.Franchise.NOM] <= trait.Trait.SEUIL_A_PAS: # A FAIRE : pas testé
                             portraits.append("images/coteries/elfes/portraits/sournois20_50.jpg")
@@ -78,6 +86,7 @@ class Elfes(coterie.Coterie):
                     if age <= 30:
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30.jpg")
         else:
+            # femmes elfes
             if age >= 15:
                 if age >= 20:
                     if age >= 30:
@@ -85,18 +94,28 @@ class Elfes(coterie.Coterie):
                         # > 30 ans
                         if age <= 60:
                             portraits.append("images/coteries/elfes/portraits/portrait_30_60.jpg")
+                            portraits.append("images/coteries/elfes/portraits/portrait_30_60_b.jpg")
+                            if age <= 50:
+                                portraits.append("images/coteries/elfes/portraits/femme30_50.jpg")
                     # >= 20 ans
-                    if age <= 40:
-                        portraits.append("images/coteries/elfes/portraits/Fportrait20-40.png")
-                        portraits.append("images/coteries/elfes/portraits/Fportrait20-40_2.png")
+                    if age <= 50:
+                        portraits.append("images/coteries/elfes/portraits/Fportrait20-50.png")
+                        if age <= 40:
+                            portraits.append("images/coteries/elfes/portraits/Fportrait20-40.png")
+                            portraits.append("images/coteries/elfes/portraits/Fportrait20-40_2.png")
+                            portraits.append("images/coteries/elfes/portraits/Fportrait20-40_3.png")
+                            portraits.append("images/coteries/elfes/portraits/Fportrait20-40_4.png")
+                            portraits.append("images/coteries/elfes/portraits/Fportrait20-40_5.png")
 
                 # age >= 15
                 if age <= 40:
                     portraits.append("images/coteries/elfes/portraits/femme15_40.jpg")
+                    portraits.append("images/coteries/elfes/portraits/femme15_40_b.jpg")
+                    portraits.append("images/coteries/elfes/portraits/femme15_40_c.jpg")
                     if age <= 30:
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30_b.jpg")
                         portraits.append("images/coteries/elfes/portraits/portrait_15-30_c.jpg")
-                        portraits.append("images/coteries/elfes/portraits/portrait_15-30_d.jpg")
+                        portraits.append("images/coteries/elfes/portraits/f15-30_d.jpg.jpg")
 
         return portraits
 

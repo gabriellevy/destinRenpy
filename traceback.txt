@@ -1,73 +1,66 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 38, in script
-    scene bg univ_transhumanistes
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1553, in execute
-    $ affDate = situation_.AffichageDate()
-  File "game/screens.rpy", line 1553, in <module>
-    $ affDate = situation_.AffichageDate()
-IndexError: list index out of range
+While loading <'Image' u'12882216.webp'>:
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 20, in script
+    "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
+Exception: Could not load image u'12882216.webp': error('Failed to decode WEBP',)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/transhumanistes/evts_UnivTranshumanistes.rpy", line 38, in script
-    scene bg univ_transhumanistes
-  File "renpy/ast.py", line 1277, in execute
-    statement_name("scene")
-  File "renpy/ast.py", line 46, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-  File "renpy/exports.py", line 1646, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "renpy/display/core.py", line 2610, in do_with
-    clear=clear)
+  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 20, in script
+    "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
+  File "renpy/ast.py", line 715, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1393, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1205, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 871, in do_display
+    **display_args)
+  File "renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3101, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3512, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 432, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3512, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 443, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 631, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1553, in execute
-    $ affDate = situation_.AffichageDate()
-  File "game/screens.rpy", line 1553, in <module>
-    $ affDate = situation_.AffichageDate()
-  File "despin/gen_vie/situation.py", line 395, in AffichageDate
-  File "extremis/constitution/temps.py", line 103, in formatGregorien
-  File "extremis/constitution/temps.py", line 96, in GetStrMoisGregorien
-IndexError: list index out of range
+  File "renpy/display/core.py", line 3611, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "renpy/display/core.py", line 2441, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 777, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 777, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 777, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/transform.py", line 933, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/image.py", line 501, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "renpy/display/image.py", line 307, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/im.py", line 607, in render
+    return cache.get(self, render=True)
+  File "renpy/display/im.py", line 271, in get
+    surf = image.load()
+  File "renpy/display/im.py", line 688, in load
+    raise e
+Exception: Could not load image u'12882216.webp': error('Failed to decode WEBP',)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Sun May  9 16:20:06 2021
+Wed May 12 20:13:31 2021

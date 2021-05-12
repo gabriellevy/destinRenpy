@@ -1,9 +1,5 @@
 label evtRien_saints:
     # A FAIRE : ce pourrait être amusant d'ajouter des effets à certains jours des saints selon leur rôle (mais bon en même temps ils arrivent si rarement...)
-    menu:
-        "hop"
-        "youpi":
-            pass
     $ dateDuJour = situation_.GetDateDuJour()
     $ jour = dateDuJour.numJourGregorien
     $ mois = dateDuJour.numMoisGregorien
@@ -136,6 +132,6 @@ label evtRien_saints:
             "Grâce à sa profonde connaissance des écritures il mit en lumière comment les juifs résistaient à l'esprit saint et refusaient de reconnaître le messie. Il fut alors lapidé."
             jump fin_cycle
 
-
     "fête du saint de ce jour : [jour] [mois] PAS FAIT"
+
     jump fin_cycle
