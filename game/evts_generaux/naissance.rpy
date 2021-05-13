@@ -69,6 +69,19 @@ init -5 python:
         # effetNarrationVide->AjouterChangeurDeCarac(ClasseSociale::C_CLASSE_SOCIALE, clas);
         return
 
+    def genererElfePotentiel(situation, tousLesTraits):
+        """
+        création d'un perso qui a de très fortes chances de devenir elfe
+        """
+        situation[trait.Nature.NOM] = 11
+        situation[trait.Artiste.NOM] = 11
+        situation[trait.Serenite.NOM] = 11
+        situation[trait.Sensibilite.NOM] = 11
+        situation[trait.Violence.NOM] = -13
+        situation[trait.Cupidite.NOM] = -13
+        situation[trait.Ambition.NOM] = -13
+        return
+
     def genererAventurier(situation, tousLesTraits):
         """
         création d'un perso qui a de très fortes chances de devenir aventurier, conquistador,
@@ -100,7 +113,8 @@ init -5 python:
 
 label naissance:
     $ genererDateNaissance(situation_, 16)
-    $ genererTraits(situation_, traits_)
+    # $ genererTraits(situation_, traits_)
+    $ genererElfePotentiel(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)

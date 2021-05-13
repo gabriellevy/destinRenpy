@@ -1,76 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/rien.rpy", line 80, in script
-    with Dissolve(.5)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1568, in execute
-    frame:
-  File "game/screens.rpy", line 1570, in execute
-    vbox:
-  File "game/screens.rpy", line 1573, in execute
-    if interfaceMode_ == 0: # résumé, portrait, nom...
-  File "game/screens.rpy", line 1606, in execute
-    for amoureuse in tableauAffichageAmoureuses:
-  File "game/screens.rpy", line 1607, in execute
-    hbox:
-Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/portrait_30_60_b.jpg')
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
+    init -5 python:
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
+    init -5 python:
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 11, in <module>
+    from extremis.coteries.elfes import elfes
+SyntaxError: invalid syntax (elfes.py, line 147)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/rien.rpy", line 80, in script
-    with Dissolve(.5)
-  File "renpy/ast.py", line 1397, in execute
-    renpy.exports.with_statement(trans, paired)
-  File "renpy/exports.py", line 1646, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "renpy/display/core.py", line 2610, in do_with
-    clear=clear)
-  File "renpy/display/core.py", line 3101, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3512, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 567, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 432, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3512, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 443, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 631, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1548, in execute
-    screen valeurs_traits():
-  File "game/screens.rpy", line 1568, in execute
-    frame:
-  File "game/screens.rpy", line 1570, in execute
-    vbox:
-  File "game/screens.rpy", line 1573, in execute
-    if interfaceMode_ == 0: # résumé, portrait, nom...
-  File "game/screens.rpy", line 1606, in execute
-    for amoureuse in tableauAffichageAmoureuses:
-  File "game/screens.rpy", line 1607, in execute
-    hbox:
-  File "renpy/display/image.py", line 577, in _scope
-    return self.find_target(scope, update)
-  File "renpy/display/image.py", line 652, in find_target
-    raise Exception(error)
-Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/portrait_30_60_b.jpg')
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
+    init -5 python:
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
+    init -5 python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 11, in <module>
+    from extremis.coteries.elfes import elfes
+  File "renpy/loader.py", line 979, in load_module
+    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
+SyntaxError: invalid syntax (elfes.py, line 147)
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Thu May 13 02:16:26 2021
+Thu May 13 13:00:16 2021

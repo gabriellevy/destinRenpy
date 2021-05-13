@@ -8,6 +8,11 @@ class Elfes(coterie.Coterie):
 
     NOM = u"Elfes"
     ID = u"elfes"
+    # Ascension reprsente à quel point le personnage est devnu un elfe et a acquis les traits qui y sont associés :
+    # 1 : admis dans la coterie
+    # 10 : elfe à part entière, admis parmi les anciens
+    # cf AffichageSituationDansCoterie pour libellé
+    ASCENSION = u"Ascension elfique"
 
     def __init__(self):
         self.nom_ = Elfes.NOM
@@ -47,7 +52,8 @@ class Elfes(coterie.Coterie):
         """
         return [ \
             trait.Violence.NOM, \
-            trait.Franchise.NOM, \
+            trait.Poids.NOM, \
+            trait.Cupidite.NOM, \
             trait.Ambition.NOM \
             # les blessures en particuliers être défiguré
             ]
@@ -119,11 +125,39 @@ class Elfes(coterie.Coterie):
 
         return portraits
 
-    # pour intégrer la coterie tests sur : beauté (dur) taille, habileté, poids
+    def AffichageSituationDansCoterie(self, situation):
+        """
+        affiche le gentilé de la coterie mais aussi d'éventuelles informations supplémentaires liées à la coterie
+        """
+        ascension = situation.GetValCarac(Elfes.ASCENSION)
+        if ascension == 1:
+            return "Apprenti elfe"
+        elif ascension == 2:
+            return "Apprenti elfe (2)"
+        elif ascension == 3:
+            return "Apprenti elfe (3)"
+        elif ascension == 4:
+            return "Apprenti elfe (4)"
+        elif ascension == 5:
+            return "Demi elfe"
+        elif ascension == 6:
+            return "Demi elfe (6)"
+        elif ascension == 7:
+            return "Demi elfe (7)"
+        elif ascension == 8:
+            return "Demi elfe (8)"
+        elif ascension == 9:
+            return "Demi elfe (9)"
+        elif ascension == 10:
+            return "Elfe"
+        return "elfe de niveau inconnu..."
+
+    def GetGentile(self, masculin):
+        return "Elfe"
 
     def CreerNom(self, masculin):
         """
-        génère un patronyme correspondant à la coterie en question
+        pas de nom de famille chez les elfes
         """
         return ""
 
@@ -135,6 +169,12 @@ class Elfes(coterie.Coterie):
             return u"{}{}{}".format(random.choice(Elfes.NOMS_M1), random.choice(Elfes.NOMS_M2), random.choice(Elfes.NOMS_M3))
         else:
             return u"{}{}".format(random.choice(Elfes.NOMS_F1), random.choice(Elfes.NOMS_F2))
+
+    def RejoindreCoterie(self, situation):
+        print("RejoindreCoterie Elfes")
+        retour = Coterie.RejoindreCoterie(self, situation)
+        AjouterACarac(Elfes.ASCENSION, 1)
+        return retour
 
     NOMS_M1 = [
     u"Aba",u"Ada",u"Adan",u"Ado",u"Adr",u"Aeg",u"Ael",u"Aer",u"Aes",u"Afa",u"Aga",u"Agi",u"Aia",u"Aid",u"Aie",u"Ail",u"Aim",u"Air",u"Ait",u"Aiw",u"Akk",u"Ala",u"Alb",

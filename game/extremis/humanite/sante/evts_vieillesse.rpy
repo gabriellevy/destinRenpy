@@ -56,79 +56,85 @@ init -5 python:
 
 label decVieillir:
     $ nbEffets = random.randint(1, 3)
-    label effetVieillir:
-        while nbEffets > 0:
-            $ res100 = random.randint(0, 85)
-            $ ageBonus = situation_.AgeEnAnnees()
-            # plus on est vieux plus le score est augmenté :
-            $ effetVieillesse = res100 + ageBonus - 30
+    # si elfe possibilité d'éviter la vieillesse :
+    $ coterieStr = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
+    if coterieStr == elfes.Elfes.ID:
+        jump testElfitude
+    else:
+        jump effetVieillir
+label effetVieillir:
+    while nbEffets > 0:
+        $ res100 = random.randint(0, 85)
+        $ ageBonus = situation_.AgeEnAnnees()
+        # plus on est vieux plus le score est augmenté :
+        $ effetVieillesse = res100 + ageBonus - 30
 
-            if effetVieillesse<30:
-                # événements qui ont tendance à arriver au début de la vieillesse
-                # res100 est entre 0 et 30 (mais vu le système de bonus je répartis selon le résultat original)
-                if res100 < 10:
-                    "Vous prenez du poids."
-                    $ AjouterACarac(trait.Poids.NOM, 1)
-                    $ nbEffets = nbEffets - 1
-                    jump effetVieillir
-                elif res100 < 16:
-                    "Vous prenez de plus en plus d'intérêt à vos possessions et gérez votre épargne plus efficacement."
-                    $ AjouterACarac(trait.Cupidite.NOM, 1)
-                    $ AjouterACarac(trait.Richesse.NOM, 1)
-                    $ nbEffets = nbEffets - 1
-                    jump effetVieillir
-                elif res100 < 23:
-                    "Vous vous sentez plus calme, votre agressivité diminue."
-                    $ RetirerACarac(trait.Violence.NOM, 1)
-                    $ nbEffets = nbEffets - 1
-                    jump effetVieillir
-                elif res100 < 30:
-                    "Vous êtes de plus en plus raisonnable, moins impulsif."
-                    $ AjouterACarac(trait.Prudence.NOM, 1)
-                    $ nbEffets = nbEffets - 1
-                    jump effetVieillir
+        if effetVieillesse<30:
+            # événements qui ont tendance à arriver au début de la vieillesse
+            # res100 est entre 0 et 30 (mais vu le système de bonus je répartis selon le résultat original)
+            if res100 < 10:
+                "Vous prenez du poids."
+                $ AjouterACarac(trait.Poids.NOM, 1)
+                $ nbEffets = nbEffets - 1
+                jump effetVieillir
+            elif res100 < 16:
+                "Vous prenez de plus en plus d'intérêt à vos possessions et gérez votre épargne plus efficacement."
+                $ AjouterACarac(trait.Cupidite.NOM, 1)
+                $ AjouterACarac(trait.Richesse.NOM, 1)
+                $ nbEffets = nbEffets - 1
+                jump effetVieillir
+            elif res100 < 23:
+                "Vous vous sentez plus calme, votre agressivité diminue."
+                $ RetirerACarac(trait.Violence.NOM, 1)
+                $ nbEffets = nbEffets - 1
+                jump effetVieillir
+            elif res100 < 30:
+                "Vous êtes de plus en plus raisonnable, moins impulsif."
+                $ AjouterACarac(trait.Prudence.NOM, 1)
+                $ nbEffets = nbEffets - 1
+                jump effetVieillir
 
-            elif effetVieillesse< 45:
-                "Votre peau est de moins en moins belle."
-                $ RetirerACarac(trait.Beaute.NOM, 1)
-                $ nbEffets = nbEffets - 1
+        elif effetVieillesse< 45:
+            "Votre peau est de moins en moins belle."
+            $ RetirerACarac(trait.Beaute.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 55:
+            "Vous êtes de moins en moins intéressé par les femmes."
+            $ RetirerACarac(trait.Sexualite.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 65:
+            "Vos mains sont moins sûres qu'autrefois."
+            $ RetirerACarac(trait.Habilete.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 75:
+            "Vos muscles vous font souffrir aujourd'hui."
+            $ RetirerACarac(trait.Force.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 86:
+            "Vous vous sentez très fatigué."
+            $ RetirerACarac(trait.Constitution.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 98:
+            "Votre esprit est de moins en moins vif."
+            $ RetirerACarac(trait.Intelligence.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        elif effetVieillesse< 105:
+            $ valCelebrite = situation_.GetValCaracInt(trait.Celebrite.NOM)
+            if valCelebrite <= 0:
                 jump effetVieillir
-            elif effetVieillesse< 55:
-                "Vous êtes de moins en moins intéressé par les femmes."
-                $ RetirerACarac(trait.Sexualite.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            elif effetVieillesse< 65:
-                "Vos mains sont moins sûres qu'autrefois."
-                $ RetirerACarac(trait.Habilete.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            elif effetVieillesse< 75:
-                "Vos muscles vous font souffrir aujourd'hui."
-                $ RetirerACarac(trait.Force.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            elif effetVieillesse< 86:
-                "Vous vous sentez très fatigué."
-                $ RetirerACarac(trait.Constitution.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            elif effetVieillesse< 98:
-                "Votre esprit est de moins en moins vif."
-                $ RetirerACarac(trait.Intelligence.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            elif effetVieillesse< 105:
-                $ valCelebrite = situation_.GetValCaracInt(trait.Celebrite.NOM)
-                if valCelebrite <= 0:
-                    jump effetVieillir
-                "Le temps passe, vous êtes de moins en moins connu."
-                $ RetirerACarac(trait.Celebrite.NOM, 1)
-                $ nbEffets = nbEffets - 1
-                jump effetVieillir
-            else:
-                # >= 100 : mort
-                "Vous êtes mort de vieillesse."
-                jump mort
+            "Le temps passe, vous êtes de moins en moins connu."
+            $ RetirerACarac(trait.Celebrite.NOM, 1)
+            $ nbEffets = nbEffets - 1
+            jump effetVieillir
+        else:
+            # >= 100 : mort
+            "Vous êtes mort de vieillesse."
+            jump mort
 
     jump fin_cycle

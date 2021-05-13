@@ -38,6 +38,13 @@ class Coterie:
         # return m_Quartier
         return ""
 
+    def AffichageSituationDansCoterie(self, situation):
+        """
+        affiche le gentilé de la coterie mais aussi d'éventuelles informations supplémentaires liées à la coterie
+        """
+        str = self.GetGentile(True)
+        return str
+
     def GetGentile(self, masculin):
         if masculin:
             return "pas de gentilé masculin, à overrider !"
@@ -69,7 +76,6 @@ class Coterie:
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """
         return "doit être overridée"
-
 
     def CalculerAffinite(self, situation, aleatoire = False):
         affinite = 0.5
@@ -122,14 +128,13 @@ class Coterie:
         # bonus pour les métiers liés
         metiersCompatibles = self.GetMetiersCompatibles()
         for idMetier in metiersCompatibles:
-            if situation[idMetier] != "":
-                val = situation.GetValCaracInt(idCarac)
-                affinite = affinite + val
+            compMetier = situation.GetValCaracInt(idMetier)
+            if compMetier > 0:
+                affinite = affinite + compMetier
 
         # petit malus de rééquilibrage au cas où il y abeaucoup de métiers liés :
-        valEquilibre = len(metiersCompatibles)%3
-        affinite = affinite - valEquilibre
-
+        valEquilibre = len(metiersCompatibles) / 3
+        affinite = int(affinite) - int(valEquilibre)
 
         # baisse de compatibilité si déjà dans une coterie :
         #if ( hum->GetValeurCarac(Coterie::C_COTERIE) != "")

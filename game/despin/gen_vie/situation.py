@@ -381,7 +381,7 @@ class Situation:
         cot = self.GetCoterie()
         if cot is None:
             return ""
-        return cot.nom_
+        return cot.AffichageSituationDansCoterie(self)
 
     def AffichagePatronyme(self):
         if ( identite.Identite.C_PRENOM not in self.caracs_):

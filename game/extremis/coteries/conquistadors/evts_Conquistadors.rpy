@@ -54,3 +54,5 @@ label recrutementDesPauvresParConquistadors:
         "Quoique son discours vous ait beaucoup affecté, ses arguments ne vous convainquent pas de rejoindre les conquisstadors."
     else:
         "Ca ne suffit néanmoins pas à vous convaincre de devenir un conquistador."
+
+    jump fin_cycle
