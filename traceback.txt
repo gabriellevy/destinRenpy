@@ -1,36 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 11, in <module>
-    from extremis.coteries.elfes import elfes
-SyntaxError: invalid syntax (elfes.py, line 147)
+  File "game/evts_generaux/naissance.rpy", line 124, in script
+    $ genererElfe(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 124, in <module>
+    $ genererElfe(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 90, in genererElfe
+    return situation.genererTraits(tousLesTraits)
+TypeError: 'NoneType' object is not callable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 515, in main
-    renpy.game.context().run(node)
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 9, in script
-    init -5 python:
+  File "game/evts_generaux/naissance.rpy", line 124, in script
+    $ genererElfe(situation_, traits_)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/extremis/coteries/elfes/evts_RejElfes.rpy", line 11, in <module>
-    from extremis.coteries.elfes import elfes
-  File "renpy/loader.py", line 979, in load_module
-    code = compile(source, filename, 'exec', renpy.python.old_compile_flags, 1)
-SyntaxError: invalid syntax (elfes.py, line 147)
+  File "game/evts_generaux/naissance.rpy", line 124, in <module>
+    $ genererElfe(situation_, traits_)
+  File "game/evts_generaux/naissance.rpy", line 90, in genererElfe
+    return situation.genererTraits(tousLesTraits)
+TypeError: 'NoneType' object is not callable
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Thu May 13 13:00:16 2021
+Thu May 13 15:45:19 2021

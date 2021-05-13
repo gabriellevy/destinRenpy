@@ -172,8 +172,8 @@ class Elfes(coterie.Coterie):
 
     def RejoindreCoterie(self, situation):
         print("RejoindreCoterie Elfes")
-        retour = Coterie.RejoindreCoterie(self, situation)
-        AjouterACarac(Elfes.ASCENSION, 1)
+        retour = coterie.Coterie.RejoindreCoterie(self, situation)
+        situation.AjouterACarac(Elfes.ASCENSION, 1)
         return retour
 
     NOMS_M1 = [

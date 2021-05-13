@@ -10,6 +10,8 @@ init -5 python:
     from extremis.humanite import pnj
     from extremis.constitution import temps
     from extremis.geographie import quartier
+    from extremis.coteries.elfes import elfes
+    from extremis.coteries import coterie
 
     def genererDateNaissance(situation, ageActuel=16):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
@@ -33,9 +35,7 @@ init -5 python:
         # A FAIRE Mathieu : génération de la famille
         # Famille::GenererParents(effetNarrationVide);
 
-        # TODO : générer ces données aléatoirement quand la bdd de noms sera ajoutée
-        situation[u"Nom"] = "Deharbe"
-        situation[u"Prenom"] = "Mathieu"
+        # TODO : générer nom et prénom
 
         # A FAIRE : génération classe sociale :
         # QString clas = ClasseSociale::GetClasseSocialeAleatoire();
@@ -82,6 +82,12 @@ init -5 python:
         situation[trait.Ambition.NOM] = -13
         return
 
+    def genererElfe(situation, tousLesTraits):
+        elfesCot = situation.collectionCoteries[elfes.Elfes.ID]
+        elfesCot.RejoindreCoterie(situation)
+        situation.SetValCarac(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.Carac_NB_UNIV)
+        return genererTraits(situation, tousLesTraits)
+
     def genererAventurier(situation, tousLesTraits):
         """
         création d'un perso qui a de très fortes chances de devenir aventurier, conquistador,
@@ -112,11 +118,10 @@ init -5 python:
         situation.SetValCarac(pnj.Pnj.C_MERE, mere)
 
 label naissance:
-    $ genererDateNaissance(situation_, 16)
+    $ genererDateNaissance(situation_, 25)
     # $ genererTraits(situation_, traits_)
-    $ genererElfePotentiel(situation_, traits_)
+    $ genererElfe(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
-    # $ situation_[coterie.Coterie.C_COTERIE] = templiers.Templiers.ID # templier
     jump debut_cycle
