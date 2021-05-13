@@ -96,7 +96,7 @@ label templiersPostule:
             "C'est à peine croyable mais vous parvenez à bondir de l'autre côté du gouffre sans même vous blesser à l'arrivée."
             jump TempliersPostule_t3
         else:
-            "Vous prenez courageusement votre élan mais au moment de suter c'est la catastrophe, vous doutez, perdez pied et tombez dans le gouffre."
+            "Vous prenez courageusement votre élan mais au moment de sauter c'est la catastrophe, vous doutez, perdez pied et tombez dans le gouffre."
             jump TempliersPostule_t2_tombe
 
     label TempliersPostule_t2_marche:

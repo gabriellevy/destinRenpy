@@ -1,66 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'12882216.webp'>:
-  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 20, in script
-    "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
-Exception: Could not load image u'12882216.webp': error('Failed to decode WEBP',)
+While running game code:
+  File "game/evts_generaux/rien.rpy", line 80, in script
+    with Dissolve(.5)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1568, in execute
+    frame:
+  File "game/screens.rpy", line 1570, in execute
+    vbox:
+  File "game/screens.rpy", line 1573, in execute
+    if interfaceMode_ == 0: # résumé, portrait, nom...
+  File "game/screens.rpy", line 1606, in execute
+    for amoureuse in tableauAffichageAmoureuses:
+  File "game/screens.rpy", line 1607, in execute
+    hbox:
+Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/portrait_30_60_b.jpg')
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/templiers/evts_RejTempliers.rpy", line 20, in script
-    "Vous avez demandé à rejoindre l'Ordre du Temple. C'est une des coteries les plus sélectives. Préparez vous à subir une série d'épreuves qui détermineront si vous êtes dignes de l'Ordre."
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1393, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1205, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 871, in do_display
-    **display_args)
-  File "renpy/character.py", line 621, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "game/evts_generaux/rien.rpy", line 80, in script
+    with Dissolve(.5)
+  File "renpy/ast.py", line 1397, in execute
+    renpy.exports.with_statement(trans, paired)
+  File "renpy/exports.py", line 1646, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2610, in do_with
+    clear=clear)
   File "renpy/display/core.py", line 3101, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3611, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2441, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 777, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transform.py", line 933, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/image.py", line 501, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "renpy/display/image.py", line 307, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 688, in load
-    raise e
-Exception: Could not load image u'12882216.webp': error('Failed to decode WEBP',)
+  File "renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1568, in execute
+    frame:
+  File "game/screens.rpy", line 1570, in execute
+    vbox:
+  File "game/screens.rpy", line 1573, in execute
+    if interfaceMode_ == 0: # résumé, portrait, nom...
+  File "game/screens.rpy", line 1606, in execute
+    for amoureuse in tableauAffichageAmoureuses:
+  File "game/screens.rpy", line 1607, in execute
+    hbox:
+  File "renpy/display/image.py", line 577, in _scope
+    return self.find_target(scope, update)
+  File "renpy/display/image.py", line 652, in find_target
+    raise Exception(error)
+Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/portrait_30_60_b.jpg')
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Wed May 12 20:13:31 2021
+Thu May 13 02:16:26 2021
