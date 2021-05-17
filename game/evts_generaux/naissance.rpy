@@ -32,10 +32,8 @@ init -5 python:
 
         quartierDeDepart = situation.collectionQuartiers.getQuartierAleatoire(True)
         situation.SetCarac(quartier.Quartier.C_QUARTIER, quartierDeDepart.nom_)
-        # A FAIRE Mathieu : génération de la famille
-        # Famille::GenererParents(effetNarrationVide);
 
-        # TODO : générer nom et prénom
+        # A FAIRE : générer nom et prénom
 
         # A FAIRE : génération classe sociale :
         # QString clas = ClasseSociale::GetClasseSocialeAleatoire();

@@ -11,13 +11,14 @@ init -5 python:
     from extremis.socio_eco.crime import crime
     from extremis.socio_eco.crime import justice
 
+    estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
+    estCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.DIFFERENT)
+
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
     def AjouterEvtsJustice():
         global selecteur_
-        estPauvre = condition.Condition(trait.Richesse.NOM, -5, condition.Condition.INFERIEUR_EGAL)
-        estCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.DIFFERENT)
         # statut criminel
         estPasCriminel = condition.Condition(crime.Crime.C_CRIMINEL, "", condition.Condition.EGAL)
         estPasVioleur = condition.Condition(crime.Violeur.NOM, "", condition.Condition.EGAL)

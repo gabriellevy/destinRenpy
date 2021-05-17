@@ -2,14 +2,51 @@ init -5 python:
     import random
     from extremis.coteries.elfes import elfes
 
+    def CalcElfitude(situation):
+        """
+        retourne une note du niveau d'elfitude du personnage
+        de 1 à 10 avec un fort aléatoire
+        """
+        testElfitude = random.randint(1,10)
+        print(u"testElfitude rand : {}".format(testElfitude))
+
+        estCriminel = GetValCarac(crime.Crime.C_CRIMINEL)
+        if estCriminel != "":
+            testElfitude = testElfitude - 1
+        amoureuses = situation.GetValCarac(relationAmoureuse.RelA.C_AMOUREUSES)
+        if len(amoureuses) > 1:
+            # plein de maîtresses n'est pas elfique
+            testElfitude = testElfitude - 1 # pb : compte les simple amoureuses mais non amantes
+        elif len(amoureuses) == 1:
+            # si c'est une épouse :
+            if amoureuses[0].typeRelation_ == relationAmoureuse.RelA.MARIAGE:
+                testElfitude = testElfitude + 1
+
+        valMetierStr = situation.GetValCarac(metier.Metier.C_METIER)
+        coterieElfe = situation.collectionCoteries[elfes.Elfes.ID]
+        if valMetierStr in coterieElfe.GetMetiersCompatibles():
+            # a un métier d'elfe
+            testElfitude = testElfitude + 1
+
+        # maîtrise à haut niveau les disciplines elfes ?
+        metiersCompatibles = coterieElfe.GetMetiersCompatibles()
+        for idMetier in metiersCompatibles:
+            compMetier = situation.GetValCaracInt(idMetier)
+            if compMetier > 4:
+                testElfitude = testElfitude + 1
+
+        print(u"testElfitude final : {}".format(testElfitude))
+        return testElfitude
+
+
 label testElfitude:
     menu:
         "TestElfitude"
         "youpi":
             pass
-    $ testElfitude = random.randint(1,10)
+    $ elfitude = CalcElfitude(situation_)
 
-    if testElfitude >=7:
+    if elfitude >=7:
         jump ascensionElfique
     else:
         "Le temps passe et vous n'êtes toujours pas accepté comme un elfe à part entière."
@@ -22,6 +59,8 @@ label ascensionElfique:
             pass
     "Vos oreilles poussent lentement. Mais surtout : "
     $ nbEffets = random.randint(1, 3)
+    # +1 en niveau elfique puis des bonus divers :
+    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
     label effetAscensionElfique:
         while nbEffets > 0:
             $ indexEffet = random.randint(0, 13)

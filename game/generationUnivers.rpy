@@ -44,6 +44,20 @@ init -2 python:
         renpy.hide_screen("fading_text")
         situation_.AjouterACarac(caracId, num)
 
+    def GetValCarac(caracId):
+        """
+        simple racourci
+        """
+        global situation_
+        return situation_.GetValCarac(caracId)
+
+    def GetValCaracInt(caracId):
+        """
+        simple racourci
+        """
+        global situation_
+        return situation_.GetValCaracInt(caracId)
+
     def RetirerACarac(caracId, num):
         global situation_
         textChangtCarac = u"{} - {}".format(caracId, num)

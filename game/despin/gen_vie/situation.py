@@ -166,9 +166,7 @@ class Situation:
         valCoterieStr = self.GetValCarac(coterie.Coterie.C_COTERIE)
         if valCoterieStr == "":
             return None
-        print("GetCoterie valCoterieStr : {}".format(valCoterieStr))
         cot = self.collectionCoteries[valCoterieStr]
-        print("GetCoterie coterie : {}".format(cot))
         return cot
 
     def GetTraits(self):

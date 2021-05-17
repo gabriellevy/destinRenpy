@@ -129,7 +129,7 @@ class Elfes(coterie.Coterie):
         """
         affiche le gentilé de la coterie mais aussi d'éventuelles informations supplémentaires liées à la coterie
         """
-        ascension = situation.GetValCarac(Elfes.ASCENSION)
+        ascension = situation.GetValCaracInt(Elfes.ASCENSION)
         if ascension == 1:
             return "Apprenti elfe"
         elif ascension == 2:
@@ -171,9 +171,12 @@ class Elfes(coterie.Coterie):
             return u"{}{}".format(random.choice(Elfes.NOMS_F1), random.choice(Elfes.NOMS_F2))
 
     def RejoindreCoterie(self, situation):
-        print("RejoindreCoterie Elfes")
+        ascension = situation.GetValCaracInt(Elfes.ASCENSION)
+        print("RejoindreCoterie Elfes ascension : {}".format(ascension))
         retour = coterie.Coterie.RejoindreCoterie(self, situation)
         situation.AjouterACarac(Elfes.ASCENSION, 1)
+        ascension = situation.GetValCaracInt(Elfes.ASCENSION)
+        print("Elfes ascension POST : {}".format(ascension))
         return retour
 
     NOMS_M1 = [

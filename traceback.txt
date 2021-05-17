@@ -1,30 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/evts_generaux/naissance.rpy", line 124, in script
-    $ genererElfe(situation_, traits_)
-  File "game/evts_generaux/naissance.rpy", line 124, in <module>
-    $ genererElfe(situation_, traits_)
-  File "game/evts_generaux/naissance.rpy", line 90, in genererElfe
-    return situation.genererTraits(tousLesTraits)
-TypeError: 'NoneType' object is not callable
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in script
+    $ elfitude = CalcElfitude(situation_)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in <module>
+    $ elfitude = CalcElfitude(situation_)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 25, in CalcElfitude
+    valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
+NameError: global name 'self' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/evts_generaux/naissance.rpy", line 124, in script
-    $ genererElfe(situation_, traits_)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in script
+    $ elfitude = CalcElfitude(situation_)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/evts_generaux/naissance.rpy", line 124, in <module>
-    $ genererElfe(situation_, traits_)
-  File "game/evts_generaux/naissance.rpy", line 90, in genererElfe
-    return situation.genererTraits(tousLesTraits)
-TypeError: 'NoneType' object is not callable
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in <module>
+    $ elfitude = CalcElfitude(situation_)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 25, in CalcElfitude
+    valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
+NameError: global name 'self' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Thu May 13 15:45:19 2021
+Mon May 17 22:29:32 2021
