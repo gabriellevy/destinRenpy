@@ -40,10 +40,6 @@ init -5 python:
 
 
 label testElfitude:
-    menu:
-        "TestElfitude"
-        "youpi":
-            pass
     $ elfitude = CalcElfitude(situation_)
 
     if elfitude >=7:
@@ -53,14 +49,10 @@ label testElfitude:
         jump effetVieillir
 
 label ascensionElfique:
-    menu:
-        "ascensionElfique"
-        "youpi":
-            pass
-    "Vos oreilles poussent lentement. Mais surtout : "
+    "Vous vous sentez de plus en plus elfe. Vos oreilles poussent lentement. Mais surtout : "
     $ nbEffets = random.randint(1, 3)
     # +1 en niveau elfique puis des bonus divers :
-    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
+    $ AjouterACarac(elfes.Elfes.ASCENSION, 1)
     label effetAscensionElfique:
         while nbEffets > 0:
             $ indexEffet = random.randint(0, 13)

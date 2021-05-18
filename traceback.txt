@@ -1,30 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in script
-    $ elfitude = CalcElfitude(situation_)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in <module>
-    $ elfitude = CalcElfitude(situation_)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 25, in CalcElfitude
-    valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
-NameError: global name 'self' is not defined
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in script
+    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in <module>
+    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
+AttributeError: class Elfes has no attribute 'Elfes'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in script
-    $ elfitude = CalcElfitude(situation_)
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in script
+    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 47, in <module>
-    $ elfitude = CalcElfitude(situation_)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 25, in CalcElfitude
-    valMetierStr = self.GetValCarac(metier.Metier.C_METIER)
-NameError: global name 'self' is not defined
+  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in <module>
+    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
+AttributeError: class Elfes has no attribute 'Elfes'
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Mon May 17 22:29:32 2021
+Tue May 18 08:27:29 2021
