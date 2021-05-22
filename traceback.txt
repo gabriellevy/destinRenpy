@@ -1,26 +1,88 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in script
-    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in <module>
-    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
-AttributeError: class Elfes has no attribute 'Elfes'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 141, in script
+    "[amoureuse.prenom_] vous fait complètement craquer."
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1568, in execute
+    frame:
+  File "game/screens.rpy", line 1570, in execute
+    vbox:
+  File "game/screens.rpy", line 1573, in execute
+    if interfaceMode_ == 0: # résumé, portrait, nom...
+  File "game/screens.rpy", line 1606, in execute
+    for amoureuse in tableauAffichageAmoureuses:
+  File "game/screens.rpy", line 1607, in execute
+    hbox:
+  File "game/screens.rpy", line 1608, in execute
+    add "[amoureuse.adresseImgPortrait]" size(99, 110)
+Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/Fportrait20-40_5.png')
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in script
-    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 63, in <module>
-    $ AjouterACarac(elfes.Elfes.Elfes.ASCENSION, 1)
-AttributeError: class Elfes has no attribute 'Elfes'
+  File "game/extremis/humanite/amour/evts_rencontresAmoureuses.rpy", line 141, in script
+    "[amoureuse.prenom_] vous fait complètement craquer."
+  File "renpy/ast.py", line 715, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "renpy/exports.py", line 1393, in say
+    who(what, *args, **kwargs)
+  File "renpy/character.py", line 1205, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/character.py", line 871, in do_display
+    **display_args)
+  File "renpy/character.py", line 621, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3101, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3512, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 567, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3512, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1548, in execute
+    screen valeurs_traits():
+  File "game/screens.rpy", line 1568, in execute
+    frame:
+  File "game/screens.rpy", line 1570, in execute
+    vbox:
+  File "game/screens.rpy", line 1573, in execute
+    if interfaceMode_ == 0: # résumé, portrait, nom...
+  File "game/screens.rpy", line 1606, in execute
+    for amoureuse in tableauAffichageAmoureuses:
+  File "game/screens.rpy", line 1607, in execute
+    hbox:
+  File "game/screens.rpy", line 1608, in execute
+    add "[amoureuse.adresseImgPortrait]" size(99, 110)
+  File "renpy/sl2/sldisplayables.py", line 430, in sl2add
+    d = renpy.easy.displayable(d, scope=scope)
+  File "renpy/easy.py", line 113, in displayable
+    return renpy.display.image.DynamicImage(d, scope=scope)
+  File "renpy/display/image.py", line 571, in __init__
+    self.find_target(scope)
+  File "renpy/display/image.py", line 652, in find_target
+    raise Exception(error)
+Exception: DynamicImage u'[amoureuse.adresseImgPortrait]': could not find image. ('images/coteries/elfes/portraits/Fportrait20-40_5.png')
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Tue May 18 08:27:29 2021
+Wed May 19 22:24:06 2021
