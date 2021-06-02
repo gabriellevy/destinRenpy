@@ -1,5 +1,6 @@
 from extremis.coteries.templiers import templiers
 from extremis.coteries.elfes import elfes
+from extremis.coteries.orks import orks
 from extremis.coteries.conquistadors import conquistadors
 from extremis.coteries.transhumanistes import transhumanistes
 from extremis.geographie import quartier
@@ -18,6 +19,9 @@ class CollectionCoteries:
 
         elfe = elfes.Elfes()
         self.SetCoterie(elfes.Elfes.ID, elfe)
+
+        ork = orks.Orks()
+        self.SetCoterie(orks.Orks.ID, ork)
 
         conqu = conquistadors.Conquistadors()
         self.SetCoterie(conquistadors.Conquistadors.ID, conqu)

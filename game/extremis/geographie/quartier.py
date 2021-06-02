@@ -59,6 +59,18 @@ class LaDefense(Quartier):
         self.imageDeFond_ = u"bg la_defense"
         self.poidsDemographique_ = 1
 
+class Poissy(Quartier):
+    """
+    quartier des orks
+    """
+
+    NOM = u"Poissy"
+
+    def __init__(self):
+        self.nom_ = Poissy.NOM
+        self.imageDeFond_ = u"bg poissy"
+        self.poidsDemographique_ = 1
+
 class SaintMalo(Quartier):
     """
     quartier des conquistadors
@@ -87,6 +99,9 @@ class CollectionQuartiers:
 
         saintMalo = SaintMalo()
         self.SetQuartier(SaintMalo.NOM, saintMalo)
+
+        poissy = Poissy()
+        self.SetQuartier(Poissy.NOM, poissy)
 
     def getQuartierAleatoire(self, selonPoidsDemo):
         if selonPoidsDemo:

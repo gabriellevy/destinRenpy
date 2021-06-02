@@ -11,6 +11,7 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.geographie import quartier
     from extremis.coteries.elfes import elfes
+    from extremis.coteries.orks import orks
     from extremis.coteries import coterie
 
     def genererDateNaissance(situation, ageActuel=16):
@@ -86,6 +87,12 @@ init -5 python:
         situation.SetValCarac(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.Carac_NB_UNIV)
         return genererTraits(situation, tousLesTraits)
 
+    def genererOrk(situation, tousLesTraits):
+        orksCot = situation.collectionCoteries[orks.Orks.ID]
+        orksCot.RejoindreCoterie(situation)
+        situation.SetValCarac(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.Carac_NB_UNIV)
+        return genererTraits(situation, tousLesTraits)
+
     def genererAventurier(situation, tousLesTraits):
         """
         création d'un perso qui a de très fortes chances de devenir aventurier, conquistador,
@@ -118,7 +125,7 @@ init -5 python:
 label naissance:
     $ genererDateNaissance(situation_, 25)
     # $ genererTraits(situation_, traits_)
-    $ genererElfe(situation_, traits_)
+    $ genererOrk(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)

@@ -172,8 +172,8 @@ class Franchise(TraitTernaire):
         else:
             return u""
 
-# simple, // pas forcément idiot mais a peu tendace à utiliser son intelligence de manière abstraite : plutôt terre à terre
 # intellectuel, // intelligent à priori mais a surtout tendance à intellectualiser tout, à conceptualiser, à aimer l'abstrait et la discussion
+# à l'inverse les pragmatiques ne voient que le concret et l'action. Peut être intelligent mais tendace à utiliser son intelligence de manière concrère et direct : plutôt terre à terre
 class Intellectualisme(TraitTernaire):
 
     NOM = u"Intellectualisme"
@@ -190,7 +190,7 @@ class Intellectualisme(TraitTernaire):
             assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
         if val <= Trait.SEUIL_A_PAS:
-            return u"Simple"
+            return u"Pragmatique"
         elif val >= Trait.SEUIL_A:
             return u"Intellectuel" # ATTENTION ACCENTS : mettre 'u' devant les string à accents pour utiliser le mode unicode
         else:

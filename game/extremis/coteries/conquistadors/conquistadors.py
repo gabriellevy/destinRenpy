@@ -59,7 +59,7 @@ class Conquistadors(coterie.Coterie):
             ]
 
     def GetGentile(self, masculin):
-        return "conquistadors"
+        return "Conquistador"
 
     def GetPoidsDemo(self):
         """
@@ -69,7 +69,7 @@ class Conquistadors(coterie.Coterie):
         """
         return 0.7
 
-    def GenererPortraits(self, age, masculin, metierStr, portraits, traits):
+    def GenererPortraits(self, age, masculin, metObj, portraits, traits):
         """
         ajoute des portraits correspondants aux caracs en paramètre (et à la coterie courante)
         traits : liste de tous les traits du perso sous forme d'objets 'Trait'
@@ -97,7 +97,7 @@ class Conquistadors(coterie.Coterie):
                         portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_d.jpg")
                         portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_e.jpg")
                         portraits.append("images/coteries/conquistadors/portraits/portrait_20-50_f.jpg")
-                        if metierStr == metier.Pretre.NOM:
+                        if metObj is not None and metObj.nom_ == metier.Pretre.NOM:
                             portraits.append("images/coteries/conquistadors/portraits/pretre_20-50.jpg")
                         if age < 40:
                             portraits.append("images/coteries/conquistadors/portraits/portrait_20-40.jpg")

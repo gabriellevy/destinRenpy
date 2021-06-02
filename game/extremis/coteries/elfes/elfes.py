@@ -58,12 +58,11 @@ class Elfes(coterie.Coterie):
             # les blessures en particuliers être défiguré
             ]
 
-    def GenererPortraits(self, age, masculin, metier, portraits, valeursTraits):
+    def GenererPortraits(self, age, masculin, metObj, portraits, valeursTraits):
         """
         ajoute des portraits correspondants aux caracs en paramtre (et à la coterie courante)
         valeursTraits : dico contenant en clé le nom des traits possédés par le personnage et en valeur leur niveau
         """
-        global situation_
         if masculin:
             if age >= 15:
                 if age >= 20:

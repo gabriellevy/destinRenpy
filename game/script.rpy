@@ -67,7 +67,10 @@ label fin_cycle:
         jump debut_cycle
 
 label mort:
-    "Fin de vie."
+    menu:
+        "Fin de vie."
+        "ok":
+            pass
     return
 
 label labelGoTo_pasFait:

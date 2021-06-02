@@ -31,6 +31,12 @@ init -5 python:
         dec.AjouterCondition(univFinie)
         return dec
 
+    # est de telle coterie
+    estElfe = condition.Condition(coterie.Coterie.C_COTERIE, elfes.Elfes.ID, condition.Condition.EGAL)
+    estConquistaror = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
+    estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
+    estOrk = condition.Condition(coterie.Coterie.C_COTERIE, orks.Orks.ID, condition.Condition.EGAL)
+
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)
     # métier courant mais faible à l'échelle de la population proba 0.01 (boutiquier, médecin
     # les très rares ont une proba de 0.0001 (tueur de monstre,
@@ -42,10 +48,6 @@ init -5 python:
         aCharme = condition.Condition(trait.Charme.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
         estSournois = condition.Condition(trait.Franchise.NOM, -3, condition.Condition.INFERIEUR_EGAL)
         estParesseux = condition.Condition(trait.Industrie.NOM, -3, condition.Condition.INFERIEUR_EGAL)
-        # est de telle coterie
-        estElfe = condition.Condition(coterie.Coterie.C_COTERIE, elfes.Elfes.ID, condition.Condition.EGAL)
-        estConquistaror = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
-        estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
 
         # paysan
         decRejPaysan = CreerDeclencheurDebutDeMetier(0.1, metier.Paysan.NOM, 0.04)
