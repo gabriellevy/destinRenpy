@@ -1,6 +1,10 @@
 # musiques
 define audio.principale_orks = "musique/orks/principale.mp3"
 
+# persos
+image instructeur_ork = "coteries/orks/persos/instructeur_ork.png"
+define instructeur_ork = Character('Instructeur', color="#001a00")
+
 init -5 python:
     import random
     from extremis.coteries.orks import orks
@@ -56,7 +60,16 @@ label univOrks:
     jump fin_cycle
 
 label univOrks_evt1:
-    "univOrks_evt1 PAS FAIT"
+    # blessure dans la fosse
+    scene bg fosse
+    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 9)
+    $ texteBlessure = blessure.GetDescriptionRecu()
+    "Au cours d'un entrainement au combat dans les fosses vous recevez une blessure : [texteBlessure]"
+    "Les orks en rigolent un bon coup et vous tappent dans le dos joyeusement."
+    show instructeur_ork at right
+    with moveinright
+    instructeur_ork "Tu verras quand tu s'ras un vrai ork ça r'poussera"
+    $ AjouterACarac(metier.Guerrier.NOM, 1)
     jump fin_cycle
 
 label univOrks_evt2:
