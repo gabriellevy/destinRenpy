@@ -1,3 +1,6 @@
+# musiques
+define audio.principale_orks = "musique/orks/principale.mp3"
+
 init -5 python:
     import random
     from extremis.coteries.orks import orks
@@ -39,7 +42,8 @@ label univOrks:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
-        "intro univ orks PAS FAITE. "
+        play music principale_orks
+        "Les orks sont des mutants qui embrassent avant tout une vie simple et brutale sans prise de tête."
 
     if numMoisRestants < 1:
         # fin d'université

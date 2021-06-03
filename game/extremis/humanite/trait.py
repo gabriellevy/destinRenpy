@@ -847,7 +847,7 @@ class Taille(TraitGraduel):
 
         if val <= Trait.SEUIL_A_PAS:
             if val <= Trait.SEUIL_A_PAS_EXTREME:
-                return u"Nain"
+                return u"Nain" # gretchin, gnome...
             return u"Petit"
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:

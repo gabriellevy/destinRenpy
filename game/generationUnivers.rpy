@@ -36,10 +36,18 @@ init -2 python:
     x_fin = 650
     y_fin = 10
 
+    def SetValCarac(caracId, num):
+        global situation_
+        valCourant = situation_.GetValCaracInt(caracId)
+        if num > valCourant:
+            AjouterACarac(caracId, num - valCourant)
+        elif num < valCourant:
+            RetirerACarac(caracId,num - valCourant)
+
     def AjouterACarac(caracId, num):
         global situation_
         textChangtCarac = u"{} + {}".format(caracId, num)
-        renpy.show_screen("fading_text", textChangtCarac, time_, x_debut, y_debut, x_fin, y_fin, color="#fff", size=24, alpha=1.0)
+        renpy.show_screen("fading_text", textChangtCarac, time_, x_debut, y_debut, x_fin, y_fin, color="#4f4", size=24, alpha=1.0)
         renpy.pause(time_)
         renpy.hide_screen("fading_text")
         situation_.AjouterACarac(caracId, num)

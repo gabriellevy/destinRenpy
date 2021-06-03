@@ -263,6 +263,18 @@ class CollectionBlessures:
 
         return u""
 
+    def SoignerBlessure(self, blessureStr, situation):
+        """
+        retourne le texte de soin de la blessure soignée
+        (ou rien si le perso n'était pas blessé)
+        """
+        # soin de blessure
+        if situation.GetValCarac(blessureStr) != "":
+            situation.SetValCarac(blessureStr, "")
+            return u"Vous n'êtes plus {}.".format(self[blessureK].nom_)
+
+        return u""
+
     def __getitem__(self, idBlessure):
         if not idBlessure in self.lBlessures_:
             self.CreerBlessure(idBlessure)

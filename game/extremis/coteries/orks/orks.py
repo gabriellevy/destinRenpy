@@ -32,17 +32,17 @@ class Orks(coterie.Coterie):
         si le perso a ces caracs il a plus de chances de ne pas vouloir rejoindre cette coterie
         """
         return [ \
-            metier.Intellectualisme.NOM, \
-            metier.Industrie.NOM, \
-            metier.Ambition.NOM, \
-            metier.Sensibilite.NOM, \
-            metier.Altruisme.NOM, \
-            metier.Charme.NOM, \
-            metier.Spiritualite.NOM, \
-            metier.Artiste.NOM, \
-            metier.Ascetisme.NOM, \
-            metier.Sexualite.NOM, \
-            metier.Prudence.NOM, \
+            trait.Intellectualisme.NOM, \
+            trait.Industrie.NOM, \
+            trait.Ambition.NOM, \
+            trait.Sensibilite.NOM, \
+            trait.Altruisme.NOM, \
+            trait.Charme.NOM, \
+            trait.Spiritualite.NOM, \
+            trait.Artiste.NOM, \
+            trait.Ascetisme.NOM, \
+            trait.Sexualite.NOM, \
+            trait.Prudence.NOM, \
             ]
 
     def GetMetiersCompatibles(self):

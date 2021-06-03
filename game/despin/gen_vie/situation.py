@@ -112,6 +112,19 @@ class Situation:
 
         self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
 
+    def SetValCaracSiSuperieur(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
+        """
+        ne modifie la valeur de carac que si elle était précédemment inférieur à la valeur qu'on veut lui donner
+        """
+        if not idCarac in self.caracs_:
+            self.SetValCarac(idCarac, valCarac, valeurMin, valeurMax)
+        else:
+            valCourante = self.GetValCaracInt(idCarac)
+            if valCourante < valCarac:
+                return
+
+        self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
+
     def SetValCarac(self, idCarac, valCarac, valeurMin = "", valeurMax = ""):
         self.SetCarac(idCarac, valCarac, valeurMin, valeurMax)
 
