@@ -91,6 +91,7 @@ init -5 python:
         orksCot = situation.collectionCoteries[orks.Orks.ID]
         orksCot.RejoindreCoterie(situation)
         situation.SetValCarac(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.Carac_NB_UNIV)
+        situation[trait.Constitution.NOM] = 3
         return genererTraits(situation, tousLesTraits)
 
     def genererAventurier(situation, tousLesTraits):
@@ -123,9 +124,9 @@ init -5 python:
         situation.SetValCarac(pnj.Pnj.C_MERE, mere)
 
 label naissance:
-    $ genererDateNaissance(situation_, 25)
-    # $ genererTraits(situation_, traits_)
-    $ genererOrk(situation_, traits_)
+    $ genererDateNaissance(situation_, 15)
+    $ genererTraits(situation_, traits_)
+    # $ genererOrk(situation_, traits_)
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
