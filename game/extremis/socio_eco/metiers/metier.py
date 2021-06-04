@@ -424,7 +424,10 @@ class Guerrier(Metier):
         return poids
 
 class Chauffeur(Metier):
-    NOM = u"Chauffeur"
+    """
+    Savoir conduire les voiture (et dans une moindre mesure les motos)
+    """
+    NOM = u"Conducteur de véhicules moteurs"
     def __init__(self):
         self.nom_ = Chauffeur.NOM
 
@@ -438,7 +441,10 @@ class Chauffeur(Metier):
         return poids
 
 class Pilote(Metier):
-    NOM = u"Pilote"
+    """
+    Savoir conduire les aéronefs
+    """
+    NOM = u"Pilote d'aéronef"
     def __init__(self):
         self.nom_ = Pilote.NOM
 

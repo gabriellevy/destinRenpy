@@ -330,6 +330,22 @@ class Rhume(Maladie):
     def GetDescriptionRecu(self):
         return u"Vous avez attrapé un vilain rhume."
 
+class Alcoolisme(Maladie):
+
+    NOM = u"Alcoolisme"
+
+    def __init__(self):
+        self.nom_ = Alcoolisme.NOM
+
+    def GetGravite(self):
+        return 1
+
+    def GetNbJoursConvalescence(self):
+        return 0
+
+    def GetDescriptionRecu(self):
+        return u"Affaibli par vos excès vous êtes devenu alcoolique."
+
 class CollectionMaladies:
 
     def __init__(self):
@@ -341,19 +357,29 @@ class CollectionMaladies:
         rhume = Rhume()
         self.SetMaladie(Rhume.NOM, rhume)
 
+        alcoolisme = Alcoolisme()
+        self.SetMaladie(Alcoolisme.NOM, alcoolisme)
+
     def getMaladieAleatoire(self, minGravite = 0, maxGravite = 10):
         if minGravite == 0 and maxGravite == 10:
             return random.choice(list(self.lMaladies_.values()))
         # tmp
         return random.choice(list(self.lMaladies_.values()))
 
+    def TomberMaladeStr(self, situation_, maladieStr):
+        return self.TomberMalade(situation_, self[maladieStr])
+
+    def TomberMalade(self, situation, maladieObj):
+        nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
+        situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + maladieObj.GetNbJoursConvalescence()
+        situation[maladieObj.nom_] = 1
+        return maladieObj
+
     def TomberMaladeAleatoirement(self, situation, minGravite = 0, maxGravite = 10):
-        maladie = self.getMaladieAleatoire(minGravite, maxGravite)
+        maladieObj = self.getMaladieAleatoire(minGravite, maxGravite)
         if maladie is not None:
-            nbConvalescence = situation.GetValCaracInt(PbSante.C_JOURS_DHOPITAL)
-            situation[PbSante.C_JOURS_DHOPITAL] = nbConvalescence + maladie.GetNbJoursConvalescence()
-            situation[maladie.nom_] = 1
-        return maladie
+            return self.TomberMalade(situation, maladieObj)
+        return maladieObj
 
     def SoignerMaladieAleatoire(self, situation):
         """

@@ -10,6 +10,7 @@ init -5 python:
     from extremis.coteries.orks import orks
     from extremis.socio_eco.metiers import metier
     from extremis.religions import religion
+    from extremis.humanite.sante import pbsante
 
     conditionDansUnivOrks = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, orks.Orks.ID, condition.Condition.EGAL)
 
@@ -62,7 +63,7 @@ label univOrks:
 label univOrks_evt1:
     # blessure dans la fosse
     scene bg fosse
-    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 9)
+    $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 7)
     $ texteBlessure = blessure.GetDescriptionRecu()
     "Au cours d'un entrainement au combat dans les fosses vous recevez une blessure : [texteBlessure]"
     "Les orks en rigolent un bon coup et vous tappent dans le dos joyeusement."
@@ -73,15 +74,66 @@ label univOrks_evt1:
     jump fin_cycle
 
 label univOrks_evt2:
-    "univOrks_evt2 PAS FAIT"
+    # fou de la vitesse
+    scene bg buggy
+    "Tout ork se doit de savoir piloter les bolides et aimer la vitesse. Vos instructeurs font en sorte que vous fassiez un bon paquet de tours de pistes sans faire vot' mauviet'."
+    $ test = testDeCarac.TestDeCarac(metier.Chauffeur.NOM, 4, situation_)
+    menu:
+        "Attention au virage [test.affichage_]":
+            pass
+    $ reussi = test.TesterDifficulte(situation_)
+    if reussi:
+        "Votre maîtrise impressionne votre instructeur."
+    else:
+        $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 7)
+        $ texteBlessure = blessure.GetDescriptionRecu()
+        "Malheureusement vous faites quelques chutes violentes sous les moqueries de votre instructeur. Vous avez mainteannt la blessure : [texteBlessure]"
+
+    $ AjouterACarac(metier.Chauffeur.NOM, 2)
     jump fin_cycle
 
 label univOrks_evt3:
-    "univOrks_evt3 PAS FAIT"
+    # pilote d'avion
+    scene bg avion_ork
+    "Les autres coteries se moquent de l'aspect rudimentaire de la technologie ork et pourtant ils sont une des rares à être capable de produire et faire tourner des avions grâces à leurs techniques très économiques en énergie."
+    "Votre instructeur vous offre l'insigne honneur de voler avec lui et vous montre les bases du pilotage."
+    $ AjouterACarac(metier.Pilotage.NOM, 2)
     jump fin_cycle
 
 label univOrks_evt4:
-    "univOrks_evt4 PAS FAIT"
+    # soulé à la bière
+    "Personne ne respecte un ork qui ne tient pas la bière aux champignons. Votre instructeur fait en sorte que vous goûtiez de tous les alcools ork. Et en grande quantité."
+    "Aucun humain ayant subi une telle épreuve n'en ressort indemne."
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.3:
+        "Votre organisme est durement affecté."
+        $ RetirerACarac(trait.Constitution.NOM, 1)
+    elif resProba > 0.7:
+        "Après des gueules de bois violentes vous êtes surpris de constater que vous vous êtes habitué même à leurs pires bières frelatées."
+        $ AjouterACarac(trait.Constitution.NOM, 1)
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.4:
+        "Toutes vos angoisses profondes fondent définitivement."
+        $ AjouterACarac(trait.Serenite.NOM, 1)
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.5:
+        "Durablement affecté par la boisson empoisonnée mais violemment addictive, vous devenez alcoolique."
+        $ maladie = maladies_.TomberMaladeStr(situation_, pbsante.Alcoolisme.NOM)
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.2:
+        "L'alcool vous a salement endommagé le cerveau."
+        $ RetirerACarac(trait.Intelligence.NOM, 1)
+        $ RetirerACarac(trait.Intellectualisme.NOM, 1)
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.2:
+        "L'alcool est tellement persistant qu'il vous fait sauter vos inhibitions et votre prudence sur le coup mais aussi à long terme."
+        $ AjouterACarac(trait.Assurance.NOM, 1)
+        $ AjouterACarac(trait.Franchise.NOM, 1)
     jump fin_cycle
 
 label univOrks_evt5:
