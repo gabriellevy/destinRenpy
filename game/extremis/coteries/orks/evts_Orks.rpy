@@ -54,7 +54,7 @@ label recrutementOrkAHopital:
     $ orksCot = coteries_[orks.Orks.ID]
     $ affinite = orksCot.CalculerAffinite(situation_)
     if affinite > 0:
-        "Dans votre état postuler à une coterie aussi violente que les orks est dangereux mais la tentation est trop grande. Vous acceptez l'offre du médiko qui vous emmènent à Poissy sur le champs."
+        "Dans votre état postuler à une coterie aussi violente que les orks est dangereux mais la tentation est trop grande. Vous acceptez l'offre du médiko qui vous emmène à Poissy sur le champs."
         jump orksPostule
     else:
         "Ca ne suffit néanmoins pas à vous convaincre de devenir un ork."

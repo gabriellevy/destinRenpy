@@ -80,7 +80,7 @@ label orksRejoindre:
             if situation_.GetValCarac(blessureK) != u"":
                 scoreGuerison = random.uniform(0, 1.0)
                 if scoreGuerison >= 0.3:
-                    texteSoin = maladies_.SoignerBlessure(blessureK, situation_)
+                    texteSoin = blessures_.SoignerBlessure(blessureK, situation_)
                     renpy.say("", "L'incroyable pouvoir de régénération du sérum ork régénère votre corps.")
                     renpy.say("", texteSoin)
 
