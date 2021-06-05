@@ -50,7 +50,6 @@ class Situation:
         portr = portrait.Portrait()
         portraitStr = portr.DeterminerPortraitPersoPrincipal(self, True)
         self.SetCarac(portrait.Portrait.C_PORTRAIT, portraitStr)
-        print("portrait str : {}".format(self.GetValCarac(portrait.Portrait.C_PORTRAIT)))
         return self.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
     def __getitem__(self, key):

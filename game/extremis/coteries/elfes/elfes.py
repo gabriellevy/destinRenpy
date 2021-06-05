@@ -140,7 +140,7 @@ class Elfes(coterie.Coterie):
                             portraits.append("images/coteries/elfes/portraits/femme20-40_2.png")
                             portraits.append("images/coteries/elfes/portraits/femme20-40_3.png")
                             portraits.append("images/coteries/elfes/portraits/femme20-40_4.png")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_5.png")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_5.jpg")
                             portraits.append("images/coteries/elfes/portraits/femme20-40_6.jpg")
 
                 # age >= 15

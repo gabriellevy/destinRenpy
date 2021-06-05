@@ -34,6 +34,9 @@ init -1 python:
     AjouterEvtsUnivTempliers()
     AjouterEvtsTempliers()
 
+    AjouterEvtsUnivOrks()
+    AjouterEvtsOrks()
+
     AjouterEvtsUnivElfes()
     AjouterEvtsUnivConquistadors()
     # amour

@@ -8,24 +8,25 @@ init -5 python:
     from extremis.coteries.templiers import templiers
     from extremis.socio_eco.metiers import metier
     from extremis.religions import religion
+    from extremis.socio_eco.crime import justice
+
+    estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
+    aPasEpeeSacree = condition.Condition(templiers.Templiers.C_EPEE_SACREE, "", condition.Condition.EGAL)
+    estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
+    estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
+    estDansQuartierTemplier = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintDenis.NOM, condition.Condition.EGAL)
+    # guerrier
+    estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
+    estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
+    estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
+    estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
+    estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
 
     def AjouterEvtsTempliers():
         """
         événements génériques qui concernent les templiers
         """
         global selecteur_
-        estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
-        aPasEpeeSacree = condition.Condition(templiers.Templiers.C_EPEE_SACREE, "", condition.Condition.EGAL)
-        estPasTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.DIFFERENT)
-        estEnPrison = condition.Condition(justice.Justice.C_LIBERTE, justice.Justice.PRISON, condition.Condition.EGAL) # vraie prison, déjà condamné pas préventif
-        estDansQuartierTemplier = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintDenis.NOM, condition.Condition.EGAL)
-        # guerrier
-        estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
-        estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
-        estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
-        estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
-        estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
-
 
         # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
         recrutementTemplierEnPrison = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementTemplierEnPrison")

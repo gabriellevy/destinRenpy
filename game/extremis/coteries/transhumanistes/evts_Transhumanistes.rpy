@@ -5,6 +5,9 @@ init -5 python:
     from extremis.humanite.sante import pbsante
     from extremis.religions import religion
 
+    # santé
+    estAHopital = condition.Condition(pbsante.PbSante.C_JOURS_DHOPITAL, 0, condition.Condition.SUPERIEUR)
+    
     def AjouterEvtsTranshumanistes():
         """
         événements génriques qui concernent les transhumanistes
@@ -20,8 +23,6 @@ init -5 python:
         estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
         estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
         estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
-        # santé
-        estAHopital = condition.Condition(pbsante.PbSante.C_JOURS_DHOPITAL, 0, condition.Condition.SUPERIEUR)
 
         # hôpital transhumaniste
         prob = proba.Proba(0.9, True)

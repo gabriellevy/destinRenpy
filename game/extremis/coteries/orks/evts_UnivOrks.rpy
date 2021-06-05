@@ -97,7 +97,7 @@ label univOrks_evt3:
     scene bg avion_ork
     "Les autres coteries se moquent de l'aspect rudimentaire de la technologie ork et pourtant ils sont une des rares à être capable de produire et faire tourner des avions grâces à leurs techniques très économiques en énergie."
     "Votre instructeur vous offre l'insigne honneur de voler avec lui et vous montre les bases du pilotage."
-    $ AjouterACarac(metier.Pilotage.NOM, 2)
+    $ AjouterACarac(metier.Pilote.NOM, 2)
     jump fin_cycle
 
 label univOrks_evt4:
@@ -146,6 +146,8 @@ label univOrks_evt5:
 
 label univOrks_evt6:
     # formation médiko
+    show mediko at right
+    with moveinright
     "Un médiko a remarqué vos capacités et vous a formé aux bases de la rudimentaire médecine ork."
     "Leur vrai point fort est leur obsession des améliorations bioniques combinée à la capacité des patients orques à accepter à peu près toutes les greffes. "
     $ AjouterACarac(metier.Medecin.NOM, 1)
