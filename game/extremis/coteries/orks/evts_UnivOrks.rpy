@@ -87,7 +87,7 @@ label univOrks_evt2:
     else:
         $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 7)
         $ texteBlessure = blessure.GetDescriptionRecu()
-        "Malheureusement vous faites quelques chutes violentes sous les moqueries de votre instructeur. Vous avez mainteannt la blessure : [texteBlessure]"
+        "Malheureusement vous faites quelques chutes violentes sous les moqueries de votre instructeur. Vous avez maintenant la blessure : [texteBlessure]"
 
     $ AjouterACarac(metier.Chauffeur.NOM, 2)
     jump fin_cycle
@@ -137,11 +137,29 @@ label univOrks_evt4:
     jump fin_cycle
 
 label univOrks_evt5:
-    "univOrks_evt5 PAS FAIT"
+    # formation mékano
+    scene bg mekano
+    "Un mékano a remarqué vos capacités et vous a formé aux bases de la réparation de moteurs. Bien que sa technique semble rudimentaire à première vue il est véritablement doué et très entousiaste comme enseignant."
+    "Il vous promet que quand vous serez un vrai ork il vous apprendra à fabriquer des armes, ce qui est encore plus rigolo."
+    $ AjouterACarac(metier.Mecanicien.NOM, 1)
     jump fin_cycle
 
 label univOrks_evt6:
-    "univOrks_evt6 PAS FAIT"
+    # formation médiko
+    "Un médiko a remarqué vos capacités et vous a formé aux bases de la rudimentaire médecine ork."
+    "Leur vrai point fort est leur obsession des améliorations bioniques combinée à la capacité des patients orques à accepter à peu près toutes les greffes. "
+    $ AjouterACarac(metier.Medecin.NOM, 1)
+    $ AjouterACarac(metier.Cyberneticien.NOM, 1)
+
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.8:
+        "Malheureusement il en profite pour faire des expériences amusantes sur vous après vous avoir assomé avec un maillet."
+        $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 4)
+        $ texteBlessure = blessure.GetDescriptionRecu()
+        "Vous avez maintenant la blessure : [texteBlessure]"
+
+        # QString bionique = Bionique::AppliquerBionique(humain);
+        # "\nEt vous avez le bionique : " + bionique
     jump fin_cycle
 
 label univOrks_evt7:

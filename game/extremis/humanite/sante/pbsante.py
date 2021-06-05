@@ -377,7 +377,7 @@ class CollectionMaladies:
 
     def TomberMaladeAleatoirement(self, situation, minGravite = 0, maxGravite = 10):
         maladieObj = self.getMaladieAleatoire(minGravite, maxGravite)
-        if maladie is not None:
+        if maladieObj is not None:
             return self.TomberMalade(situation, maladieObj)
         return maladieObj
 
