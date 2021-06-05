@@ -36,6 +36,7 @@ class Situation:
         self.collectionTraits = None
         self.collectionCoteries = None
         self.collectionBlessures = None
+        self.collectionBioniques = None
         self.collectionMaladies = None
         self.collectionQuartiers = None
         self.collectionCrimes = None
@@ -248,6 +249,19 @@ class Situation:
 
         if str == "":
             str = "Sain"
+        return str
+
+    def DescriptionBioniques(self, bioniques):
+        """
+        Description des bioniques du personnage
+        """
+        str = u""
+        # affichage des bioniques
+        for bioniqueK in bioniques.lBioniques_.keys():
+            bioniqueObj = bioniques[bioniqueK]
+            if self.GetValCarac(bioniqueK) != u"":
+                str = u"{}\n{}".format(str, bioniqueObj.nom_)
+
         return str
 
     def AffichageAge(self):

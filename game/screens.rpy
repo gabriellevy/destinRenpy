@@ -1549,6 +1549,7 @@ screen valeurs_traits():
     tag interface_personnage
     $ descriptionTrait = situation_.DescriptionTraits(traits_)
     $ descriptionBlessures = situation_.DescriptionBlessuresEtMaladies(blessures_, maladies_)
+    $ descriptionBioniques = situation_.DescriptionBioniques(bioniques_)
     $ affAge = situation_.AffichageAge()
     $ affDate = situation_.AffichageDate()
     $ strMetier = situation_.AffichageMetier()
@@ -1575,8 +1576,9 @@ screen valeurs_traits():
                 text _(u"[patronyme]")
                 text _(u"[strCoterie]")
                 text _(u"[affAge]")
-            elif interfaceMode_ == 1: # age, blessures, maladies
+            elif interfaceMode_ == 1: # age, blessures, maladies, bioniques
                 text _(u"[affAge]")
+                text _(u"[descriptionBioniques]")
                 text _(u"[descriptionBlessures]")
             elif interfaceMode_ == 2: # traits
                 text _(u"[descriptionTrait]")

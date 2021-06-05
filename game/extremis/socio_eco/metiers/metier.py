@@ -503,6 +503,9 @@ class Informaticien(Metier):
         return poids
 
 class Cyberneticien(Metier):
+    """
+    améliorations cybernétiques sur le corps, bionique compris
+    """
     NOM = u"Cybernéticien"
     def __init__(self):
         self.nom_ = Cyberneticien.NOM

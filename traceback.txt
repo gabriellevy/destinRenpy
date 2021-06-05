@@ -1,27 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/humanite/sante/evts_maladies.rpy", line 31, in script
-    $ maladie = maladies_.TomberMaladeAleatoirement(situation_)
-  File "game/extremis/humanite/sante/evts_maladies.rpy", line 31, in <module>
-    $ maladie = maladies_.TomberMaladeAleatoirement(situation_)
-NameError: global name 'maladie' is not defined
+  File "game/extremis/coteries/orks/evts_UnivOrks.rpy", line 159, in script
+    $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
+  File "game/extremis/coteries/orks/evts_UnivOrks.rpy", line 159, in <module>
+    $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
+NameError: global name 'PbSante' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/humanite/sante/evts_maladies.rpy", line 31, in script
-    $ maladie = maladies_.TomberMaladeAleatoirement(situation_)
+  File "game/extremis/coteries/orks/evts_UnivOrks.rpy", line 159, in script
+    $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/extremis/humanite/sante/evts_maladies.rpy", line 31, in <module>
-    $ maladie = maladies_.TomberMaladeAleatoirement(situation_)
-  File "extremis/humanite/sante/pbsante.py", line 380, in TomberMaladeAleatoirement
-NameError: global name 'maladie' is not defined
+  File "game/extremis/coteries/orks/evts_UnivOrks.rpy", line 159, in <module>
+    $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
+  File "extremis/techno/bionique.py", line 106, in PoserBioniqueAleatoire
+NameError: global name 'PbSante' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Sat Jun  5 11:03:26 2021
+Sat Jun  5 13:25:43 2021

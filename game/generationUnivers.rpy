@@ -7,7 +7,8 @@ init -2 python:
     from extremis.coteries import collection_coteries
     from extremis.socio_eco.metiers import metier
     from extremis.humanite.sante import pbsante
-    from extremis.socio_eco.crime import crime
+    from extremis.humanite.sante import pbsante
+    from extremis.techno import bionique
     import random
 
     situation_ = situation.Situation() # dictionnaire contenant toutes les caracs courantes de la partie
@@ -20,6 +21,8 @@ init -2 python:
     situation_.collectionMetiers = metiers_
     blessures_ = pbsante.CollectionBlessures()
     situation_.collectionBlessures = blessures_
+    bioniques_ = bionique.CollectionBioniques()
+    situation_.collectionBioniques = bioniques_
     maladies_ = pbsante.CollectionMaladies()
     situation_.collectionMaladies = maladies_
     quartiers_ = quartier.CollectionQuartiers()

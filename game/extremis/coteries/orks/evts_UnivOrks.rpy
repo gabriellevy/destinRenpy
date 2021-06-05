@@ -156,10 +156,9 @@ label univOrks_evt6:
         "Malheureusement il en profite pour faire des expériences amusantes sur vous après vous avoir assomé avec un maillet."
         $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 4)
         $ texteBlessure = blessure.GetDescriptionRecu()
-        "Vous avez maintenant la blessure : [texteBlessure]"
-
-        # QString bionique = Bionique::AppliquerBionique(humain);
-        # "\nEt vous avez le bionique : " + bionique
+        $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
+        $ texteBionique = bionique.GetDescriptionRecu()
+        "[texteBlessure] \n [texteBionique]"
     jump fin_cycle
 
 label univOrks_evt7:
