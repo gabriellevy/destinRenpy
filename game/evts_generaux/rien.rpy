@@ -23,33 +23,81 @@ init -5 python:
         # régénère les événements compatibles avec la situation
         evtsVides_ = ["evtRien1", "evtRien2", "evtRien3" ] # note : peut-être n'utiliser ces événements bidons que si on n'en a aps de plus intéressants ?
 
-        if situation_.GetValCaracInt(metier.Metier.ADMINISTRATIF) > 0:
-            evtsVides_.append("evtRien_Administratif1")
+        # ------------------ EN PRISON -------------
+        if situation_.GetValCarac(justice.Justice.C_LIBERTE) == justice.Justice.PRISON:
+            evtsVides_.append("evtRien_Prison_1")
+            evtsVides_.append("evtRien_Prison_2")
+            evtsVides_.append("evtRien_Prison_3")
+            evtsVides_.append("evtRien_Prison_4")
+        else:
+            # --------LIBRE
+            if situation_.GetValCaracInt(metier.Metier.ADMINISTRATIF) > 0:
+                evtsVides_.append("evtRien_Administratif1")
 
-        if situation_.GetValCaracInt(metier.Pilote.NOM) > 0:
-            evtsVides_.append("evtRien_Conduite")
+            # ------------- METIER ------------------
+            # --- capacités
+            if situation_.GetValCaracInt(metier.Chauffeur.NOM) > 0:
+                evtsVides_.append("evtRien_Conduite")
+            # --- métier principal du perso
+            if situation_.GetValCarac(metier.Metier.C_METIER) == metier.Parasite.NOM:
+                evtsVides_.append("evtRien_Parasite_1")
+                evtsVides_.append("evtRien_Parasite_2")
+            elif situation_.GetValCarac(metier.Metier.C_METIER) == metier.Paysan.NOM:
+                evtsVides_.append("evtRien_Paysan_1")
+                evtsVides_.append("evtRien_Paysan_2")
+                evtsVides_.append("evtRien_Paysan_3")
+                evtsVides_.append("evtRien_Paysan_4")
+                evtsVides_.append("evtRien_Paysan_5")
+                evtsVides_.append("evtRien_Paysan_6")
+                evtsVides_.append("evtRien_Paysan_7")
+                evtsVides_.append("evtRien_Paysan_8")
+                evtsVides_.append("evtRien_Paysan_9")
+                evtsVides_.append("evtRien_Paysan_10")
+                evtsVides_.append("evtRien_Paysan_11")
+                evtsVides_.append("evtRien_Paysan_12")
 
-        # selon coterie
-        nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
-        nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
-        if nomCoterie ==  templiers.Templiers.ID or nomCoterieUniv == templiers.Templiers.ID:
-            evtsVides_.append("evtRien_Templiers_1")
-            evtsVides_.append("evtRien_Templiers_2")
-            evtsVides_.append("evtRien_Templiers_3")
-            evtsVides_.append("evtRien_Templiers_4")
-            evtsVides_.append("evtRien_Templiers_5")
-            evtsVides_.append("evtRien_Templiers_6")
-            evtsVides_.append("evtRien_Templiers_7")
-            evtsVides_.append("evtRien_Templiers_8")
-            evtsVides_.append("evtRien_Templiers_9")
-            evtsVides_.append("evtRien_Templiers_10")
-            evtsVides_.append("evtRien_Templiers_11")
-            evtsVides_.append("evtRien_Templiers_12")
+            # selon coterie
+            nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
+            nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
+            if nomCoterie ==  templiers.Templiers.ID or nomCoterieUniv == templiers.Templiers.ID:
+                evtsVides_.append("evtRien_Templiers_1")
+                evtsVides_.append("evtRien_Templiers_2")
+                evtsVides_.append("evtRien_Templiers_3")
+                evtsVides_.append("evtRien_Templiers_4")
+                evtsVides_.append("evtRien_Templiers_5")
+                evtsVides_.append("evtRien_Templiers_6")
+                evtsVides_.append("evtRien_Templiers_7")
+                evtsVides_.append("evtRien_Templiers_8")
+                evtsVides_.append("evtRien_Templiers_9")
+                evtsVides_.append("evtRien_Templiers_10")
+                evtsVides_.append("evtRien_Templiers_11")
+                evtsVides_.append("evtRien_Templiers_12")
+
+            # selon richesse
+            valRichesse = situation_.GetValCaracInt(trait.Richesse.NOM)
+            if valRichesse <= trait.Trait.SEUIL_A_PAS_EXTREME:
+                # misérable
+                evtsVides_.append("evtRien_Miserable_1")
+                evtsVides_.append("evtRien_Miserable_2")
+            elif valRichesse <= trait.Trait.SEUIL_A_PAS:
+                # pauvre
+                evtsVides_.append("evtRien_Pauvre_1")
+                evtsVides_.append("evtRien_Pauvre_2")
+            elif valRichesse < trait.Trait.SEUIL_A:
+                # normal
+                evtsVides_.append("evtRien_RichesseNormale_1")
+            # elif valRichesse >= trait.Trait.SEUIL_A_EXTREME:
+                # ultra riche
+                # evtsVides_.append("evtRien_Richissime_1")
+            # else:
+                # riche
+                # evtsVides_.append("evtRien_Riche_1")
 
         # selon religion
         religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
         if religionActuelle == religion.Christianisme.NOM:
             evtsVides_.append("evtRien_saints")
+            evtsVides_.append("evtRien_Christianisme_1")
 
         # fond selon quartier
         if sceneParDefaut == "":
