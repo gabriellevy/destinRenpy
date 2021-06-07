@@ -1,4 +1,5 @@
 import random
+from extremis.humanite import trait
 
 class Metier:
     """
@@ -49,6 +50,33 @@ class Metier:
             situation[Metier.ADMINISTRATIF] = 1
         else:
             situation[Metier.ADMINISTRATIF] = ""
+
+    def GetNiveauRichesse(self):
+        """
+        niveau de richesse associé à ce métier, 0 étant la classe moyenne
+        Va de
+        -5 : fouilleur de poubelles
+        à
+        +5 : PDG de multinationale
+        à overrider quand émtier non moyen
+        """
+        return 0
+
+    def Rejoindre(self, situation):
+        """
+        effet quand le joueur fait de ce métier son métier principal (suclassable si nécessaire)
+        """
+        # changement de la richesse selon métier d'avant et le nouveau
+        ancienMetier = situation.GetMetier()
+        if ancienMetier is not None:
+            situation.RetirerACarac(trait.Richesse.NOM, ancienMetier.GetNiveauRichesse())
+
+        situation.SetValCarac(Metier.C_METIER, self.nom_)
+        nouveauMetier = situation.GetMetier()
+        situation.AjouterACarac(trait.Richesse.NOM, nouveauMetier.GetNiveauRichesse())
+
+        self.regenererCaracsMetier(situation)
+
 
     def GenererPortraits(self, age, masculin, portraits, valeursTraits):
         """
@@ -128,6 +156,9 @@ class Robotique(Metier):
     def __init__(self):
         self.nom_ = Robotique.NOM
 
+    def GetNiveauRichesse(self):
+        return 4
+
     def GetDiscipline(self):
         return u"Robotique"
 
@@ -145,6 +176,9 @@ class Danseur(Metier):
     def GetDiscipline(self):
         return u"Danse"
 
+    def GetNiveauRichesse(self):
+        return -2
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.002
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -155,6 +189,9 @@ class Musicien(Metier):
     NOM = u"Musicien"
     def __init__(self):
         self.nom_ = Musicien.NOM
+
+    def GetNiveauRichesse(self):
+        return -2
 
     def GetDiscipline(self):
         return u"Musique"
@@ -184,6 +221,9 @@ class Acteur(Metier):
     def __init__(self):
         self.nom_ = Acteur.NOM
 
+    def GetNiveauRichesse(self):
+        return -2
+
     def GetDiscipline(self):
         return u"Comédie"
 
@@ -197,6 +237,9 @@ class Dessinateur(Metier):
     NOM = u"Dessinateur"
     def __init__(self):
         self.nom_ = Dessinateur.NOM
+
+    def GetNiveauRichesse(self):
+        return -2
 
     def GetDiscipline(self):
         return u"Dessin"
@@ -226,6 +269,9 @@ class Poete(Metier):
     def __init__(self):
         self.nom_ = Poete.NOM
 
+    def GetNiveauRichesse(self):
+        return -4
+
     def GetDiscipline(self):
         return u"Poésie"
 
@@ -243,6 +289,9 @@ class Cartographe(Metier):
     def GetDiscipline(self):
         return u"Cathographie"
 
+    def GetNiveauRichesse(self):
+        return 2
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.01
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -253,6 +302,9 @@ class Marchand(Metier):
     NOM = u"Marchand"
     def __init__(self):
         self.nom_ = Marchand.NOM
+
+    def GetNiveauRichesse(self):
+        return 3
 
     def GetDiscipline(self):
         return u"Commerce"
@@ -279,6 +331,9 @@ class Mineur(Metier):
     NOM = u"Mineur"
     def __init__(self):
         self.nom_ = Mineur.NOM
+
+    def GetNiveauRichesse(self):
+        return -4
 
     def GetDiscipline(self):
         return u"Minage"
@@ -308,6 +363,9 @@ class Ouvrier(Metier):
     def __init__(self):
         self.nom_ = Ouvrier.NOM
 
+    def GetNiveauRichesse(self):
+        return -4
+
     def GetDiscipline(self):
         return u"Manutention"
 
@@ -315,6 +373,9 @@ class Politique(Metier):
     NOM = u"Homme politique"
     def __init__(self):
         self.nom_ = Politique.NOM
+
+    def GetNiveauRichesse(self):
+        return 2
 
     def GetDiscipline(self):
         return u"Politique"
@@ -330,6 +391,9 @@ class Forgeron(Metier):
     def __init__(self):
         self.nom_ = Forgeron.NOM
 
+    def GetNiveauRichesse(self):
+        return 2
+
     def GetDiscipline(self):
         return u"Forge"
 
@@ -343,6 +407,9 @@ class Alchimiste(Metier):
     NOM = u"Alchimiste"
     def __init__(self):
         self.nom_ = Alchimiste.NOM
+
+    def GetNiveauRichesse(self):
+        return 3
 
     def GetDiscipline(self):
         return u"Alchimie"
@@ -358,6 +425,9 @@ class Medecin(Metier):
     def __init__(self):
         self.nom_ = Medecin.NOM
 
+    def GetNiveauRichesse(self):
+        return 4
+
     def GetDiscipline(self):
         return u"Médecine"
 
@@ -372,6 +442,9 @@ class TueurDeMonstres(Metier):
     def __init__(self):
         self.nom_ = TueurDeMonstres.NOM
 
+    def GetNiveauRichesse(self):
+        return -2
+
     def GetDiscipline(self):
         return u"Traque de monstre"
 
@@ -385,6 +458,9 @@ class Architecte(Metier):
     NOM = u"Architecte"
     def __init__(self):
         self.nom_ = Architecte.NOM
+
+    def GetNiveauRichesse(self):
+        return 4
 
     def GetDiscipline(self):
         return u"Architecture"
@@ -413,6 +489,9 @@ class Guerrier(Metier):
     NOM = u"Guerrier"
     def __init__(self):
         self.nom_ = Guerrier.NOM
+
+    def GetNiveauRichesse(self):
+        return -1
 
     def GetDiscipline(self):
         return u"Combat"
@@ -448,6 +527,9 @@ class Pilote(Metier):
     def __init__(self):
         self.nom_ = Pilote.NOM
 
+    def GetNiveauRichesse(self):
+        return 3
+
     def GetDiscipline(self):
         return u"Pilotage"
 
@@ -461,6 +543,9 @@ class Mecanicien(Metier):
     NOM = u"Mécanicien"
     def __init__(self):
         self.nom_ = Mecanicien.NOM
+
+    def GetNiveauRichesse(self):
+        return 3
 
     def GetDiscipline(self):
         return u"Mécanique"
@@ -490,6 +575,9 @@ class Informaticien(Metier):
     def __init__(self):
         self.nom_ = Informaticien.NOM
 
+    def GetNiveauRichesse(self):
+        return 3
+
     def GetDiscipline(self):
         return u"Informatique"
 
@@ -509,6 +597,9 @@ class Cyberneticien(Metier):
     NOM = u"Cybernéticien"
     def __init__(self):
         self.nom_ = Cyberneticien.NOM
+
+    def GetNiveauRichesse(self):
+        return 5
 
     def GetDiscipline(self):
         return u"Cybernétique"
@@ -533,6 +624,9 @@ class Geneticien(Metier):
     def __init__(self):
         self.nom_ = Geneticien.NOM
 
+    def GetNiveauRichesse(self):
+        return 5
+
     def GetDiscipline(self):
         return u"Génétique"
 
@@ -552,6 +646,9 @@ class Commercial(Metier):
     NOM = u"Commercial"
     def __init__(self):
         self.nom_ = Commercial.NOM
+
+    def GetNiveauRichesse(self):
+        return 2
 
     def GetDiscipline(self):
         return u"Vente"
@@ -606,6 +703,9 @@ class Banquier(Metier):
     def __init__(self):
         self.nom_ = Banquier.NOM
 
+    def GetNiveauRichesse(self):
+        return 4
+
     def GetDiscipline(self):
         return u"Banque"
 
@@ -623,6 +723,9 @@ class GardeDuCorps(Metier):
     def __init__(self):
         self.nom_ = GardeDuCorps.NOM
 
+    def GetNiveauRichesse(self):
+        return 1
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.04
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -633,6 +736,9 @@ class Electronique(Metier):
     NOM = u"Électronicien"
     def __init__(self):
         self.nom_ = Electronique.NOM
+
+    def GetNiveauRichesse(self):
+        return 3
 
     def GetDiscipline(self):
         return u"Électronique"
@@ -651,6 +757,9 @@ class Chasseur(Metier):
     def GetDiscipline(self):
         return u"Chasse"
 
+    def GetNiveauRichesse(self):
+        return -2
+
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.02
         if self.nom_ in coterieObj.GetMetiersCompatibles():
@@ -661,6 +770,9 @@ class Marin(Metier):
     NOM = u"Marin"
     def __init__(self):
         self.nom_ = Marin.NOM
+
+    def GetNiveauRichesse(self):
+        return -1
 
     def GetDiscipline(self):
         return u"Navigation"
@@ -676,6 +788,9 @@ class Etudiant(Metier):
     def __init__(self):
         self.nom_ = Etudiant.NOM
 
+    def GetNiveauRichesse(self):
+        return -5
+
     def GetDiscipline(self):
         return u"Études"
 
@@ -687,6 +802,9 @@ class Aventurier(Metier):
     NOM = u"Aventurier"
     def __init__(self):
         self.nom_ = Aventurier.NOM
+
+    def GetNiveauRichesse(self):
+        return -4
 
     def GetDiscipline(self):
         return u"Aventure"
@@ -701,6 +819,9 @@ class Journaliste(Metier):
     NOM = u"Journaliste"
     def __init__(self):
         self.nom_ = Journaliste.NOM
+
+    def GetNiveauRichesse(self):
+        return -1
 
     def GetDiscipline(self):
         return u"Journalisme"
@@ -887,7 +1008,6 @@ class CollectionMetiers:
         for metier in self.lMetiers_:
             str = str + metier + ","
         return str
-
 
 def aUnMetier(situation):
     return situation[Metier.C_METIER] != ""

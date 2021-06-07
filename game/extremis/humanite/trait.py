@@ -970,6 +970,7 @@ class Richesse(TraitGraduel):
     def PeutEtrePrisALaNaissance(self):
         return True
 
+    # tmp : numéro affiché pour raison de débug
     def GetDescription(self, situation):
         val = situation[self.eTrait_]
         if val == "":
@@ -980,14 +981,14 @@ class Richesse(TraitGraduel):
 
         if val <= Trait.SEUIL_A_PAS:
             if val <= Trait.SEUIL_A_PAS_EXTREME:
-                return u"Misérable"
-            return u"Pauvre"
+                return u"Misérable {}".format(val)
+            return u"Pauvre {}".format(val)
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Richissime"
-            return u"Aisé"
+                return u"Richissime {}".format(val)
+            return u"Aisé {}".format(val)
         else:
-            return ""
+            return u"Classe moyenne {}".format(val)
 
 class CollectionTraits:
 

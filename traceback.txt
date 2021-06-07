@@ -1,27 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/orks/evts_RejOrks.rpy", line 77, in script
-    python:
-  File "game/extremis/coteries/orks/evts_RejOrks.rpy", line 83, in <module>
-    texteSoin = blessures_.SoignerBlessure(blessureK, situation_)
-NameError: global name 'blessureK' is not defined
+  File "game/script.rpy", line 61, in script
+    $ renpy.jump(prochainEvt)
+ScriptError: could not find label 'decRejPilote_d'aeronef'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/extremis/coteries/orks/evts_RejOrks.rpy", line 77, in script
-    python:
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/extremis/coteries/orks/evts_RejOrks.rpy", line 83, in <module>
-    texteSoin = blessures_.SoignerBlessure(blessureK, situation_)
-  File "extremis/humanite/sante/pbsante.py", line 274, in SoignerBlessure
-NameError: global name 'blessureK' is not defined
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 617, in main
+    run(restart)
+  File "renpy/main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "renpy/execution.py", line 922, in run_context
+    context.run()
+  File "game/script.rpy", line 61, in script
+    $ renpy.jump(prochainEvt)
+  File "renpy/script.py", line 910, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'decRejPilote_d'aeronef'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Sun Jun  6 00:18:58 2021
+Mon Jun  7 18:10:04 2021

@@ -26,6 +26,7 @@ init -5 python:
         decRejStr = decRejStr.replace('ê', 'e')
         decRejStr = decRejStr.replace('è', 'e')
         decRejStr = decRejStr.replace(' ', '_')
+        decRejStr = decRejStr.replace('\'', '_')
         dec = declencheur.Declencheur(prob, decRejStr)
         dec.AjouterCondition(aPasDeMetier)
         dec.AjouterCondition(univFinie)
@@ -255,183 +256,215 @@ init -5 python:
 label decRejChasseur:
     # devient Chasseur
     "Vous êtes maintenant un Chasseur."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chasseur.NOM)
+    $ metierObj = metiers_[metier.Chasseur.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejAventurier:
     # devient Aventurier
     "Vous êtes maintenant un Aventurier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Aventurier.NOM)
+    $ metierObj = metiers_[metier.Aventurier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejMarin:
     # devient Marin
     "Vous êtes maintenant un marin."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Marin.NOM)
+    $ metierObj = metiers_[metier.Marin.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejGarde_du_corps:
     # devient GardeDuCorps
     "Vous êtes maintenant un garde du corps."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.GardeDuCorps.NOM)
+    $ metierObj = metiers_[metier.GardeDuCorps.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejBanquier:
     # devient Banquier
     "Vous êtes maintenant un Banquier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Banquier.NOM)
+    $ metierObj = metiers_[metier.Banquier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejVigile:
     # devient Vigile
     "Vous êtes maintenant un Vigile."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Vigile.NOM)
+    $ metierObj = metiers_[metier.Vigile.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPolicier:
     # devient Policier
     "Vous êtes maintenant un Policier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Policier.NOM)
+    $ metierObj = metiers_[metier.Policier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejCommercial:
     # devient Commercial
     "Vous êtes maintenant un Commercial."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Commercial.NOM)
+    $ metierObj = metiers_[metier.Commercial.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejGeneticien:
     # devient Geneticien
     "Vous êtes maintenant un Geneticien."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Geneticien.NOM)
+    $ metierObj = metiers_[metier.Geneticien.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejCyberneticien:
     # devient Cyberneticien
     "Vous êtes maintenant un Cyberneticien."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Cyberneticien.NOM)
+    $ metierObj = metiers_[metier.Cyberneticien.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejInformaticien:
     # devient Informaticien
     "Vous êtes maintenant un Informaticien."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Informaticien.NOM)
+    $ metierObj = metiers_[metier.Informaticien.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejChevalier:
     # devient Chevalier
     "Vous êtes maintenant un Chevalier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chevalier.NOM)
+    $ metierObj = metiers_[metier.Chevalier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPilote:
     # devient Pilote
     "Vous êtes maintenant un Pilote."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Pilote.NOM)
+    $ metierObj = metiers_[metier.Pilote.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejChauffeur:
     # devient Chauffeur
     "Vous êtes maintenant un Chauffeur."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Chauffeur.NOM)
+    $ metierObj = metiers_[metier.Chauffeur.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejGuerrier:
     # devient Guerrier
     "Vous êtes maintenant un Guerrier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Guerrier.NOM)
+    $ metierObj = metiers_[metier.Guerrier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejParasite:
     # devient Parasite
     "Vous êtes maintenant un Parasite."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Parasite.NOM)
+    $ metierObj = metiers_[metier.Parasite.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejArchitecte:
     # devient Architecte
     "Vous êtes maintenant un Architecte."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Architecte.NOM)
+    $ metierObj = metiers_[metier.Architecte.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejTueurDeMonstres:
     # devient TueurDeMonstres
     "Vous êtes maintenant un tueur de monstre."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.TueurDeMonstres.NOM)
+    $ metierObj = metiers_[metier.TueurDeMonstres.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejMedecin:
     # devient Medecin
     "Vous êtes maintenant un Medecin."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Medecin.NOM)
+    $ metierObj = metiers_[metier.Medecin.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejForgeron:
     # devient Forgeron
     "Vous êtes maintenant un Forgeron."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Forgeron.NOM)
+    $ metierObj = metiers_[metier.Forgeron.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejAlchimiste:
     # devient Alchimiste
     "Vous êtes maintenant un Alchimiste."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Alchimiste.NOM)
+    $ metierObj = metiers_[metier.Alchimiste.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPaysan:
     # devient paysan
     "Vous êtes maintenant un paysan."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Paysan.NOM)
+    $ metierObj = metiers_[metier.Paysan.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPolitique:
     # devient Politique
-    "Vous êtes maintenant un Politique."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Politique.NOM)
+    "Vous êtes maintenant un homme politique."
+    $ metierObj = metiers_[metier.Politique.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejOuvrier:
     # devient Ouvrier
     "Vous êtes maintenant un Ouvrier."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Ouvrier.NOM)
+    $ metierObj = metiers_[metier.Ouvrier.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejMusicien:
     "Vous êtes maintenant un Musicien."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Musicien.NOM)
+    $ metierObj = metiers_[metier.Musicien.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejDessinateur:
     "Vous êtes maintenant un Dessinateur."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Dessinateur.NOM)
+    $ metierObj = metiers_[metier.Dessinateur.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPoete:
     "Vous êtes maintenant un Poète."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Poete.NOM)
+    $ metierObj = metiers_[metier.Poete.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejBibliothecaire:
     "Vous êtes maintenant un bibliothécaire."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Bibliothecaire.NOM)
+    $ metierObj = metiers_[metier.Bibliothecaire.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejCartographe:
     "Vous êtes maintenant un cartographe."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Cartographe.NOM)
+    $ metierObj = metiers_[metier.Cartographe.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejMarchand:
     "Vous êtes maintenant un marchand."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Marchand.NOM)
+    $ metierObj = metiers_[metier.Marchand.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejMineur:
     "Vous êtes maintenant un Mineur."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Mineur.NOM)
+    $ metierObj = metiers_[metier.Mineur.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
 label decRejPretre:
     "Vous êtes maintenant un Prêtre."
-    $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Pretre.NOM)
+    $ metierObj = metiers_[metier.Pretre.NOM]
+    $ metierObj.Rejoindre(situation_)
     jump fin_cycle

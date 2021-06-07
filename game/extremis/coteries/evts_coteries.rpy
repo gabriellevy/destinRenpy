@@ -51,7 +51,7 @@ init -5 python:
                 plusHautRes = indexCoteries[cle]
                 coterieChoisie = cle
 
-        print("coterieChoisie {}".format(coterieChoisie))
+        # print("coterieChoisie {}".format(coterieChoisie))
         return coterieChoisie
 
 
@@ -59,7 +59,8 @@ label decUnivCoterie:
     $ numUnivCoteries = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_UNIV)
     if numUnivCoteries < 1:
         "Ça y est vous avez l'âge de rejoindre les universités des coteries."
-        $ situation_.SetValCarac(metier.Metier.C_METIER, metier.Etudiant.NOM)
+        $ metierObj = metiers_[metier.Etudiant.NOM]
+        $ metierObj.Rejoindre(situation_)
     else:
         if numUnivCoteries >= coterie.Coterie.NB_UNIV_TOTAL:
             "Vous avez accompli vos années d'université légales. Il est temps de se lancer dans la vie active."
