@@ -1,38 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 143, in AjouterEvtsRejMetier
-    AjouterModifDeProbaProressifPourMetier(prob, metier.Parasite.NOM, 0.02)
-NameError: global name 'AjouterModifDeProbaProressifPourMetier' is not defined
+  File "game/evts_generaux/naissance.rpy", line 151, in script
+    $ genererParents(situation_)
+  File "game/evts_generaux/naissance.rpy", line 151, in <module>
+    $ genererParents(situation_)
+  File "game/evts_generaux/naissance.rpy", line 139, in genererParents
+    coterieObj = coteries_[mereObj.coterie_]
+NameError: global name 'mereObj' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 515, in main
-    renpy.game.context().run(node)
-  File "game/script.rpy", line 16, in script
-    init -1 python:
-  File "game/script.rpy", line 16, in script
-    init -1 python:
+  File "game/evts_generaux/naissance.rpy", line 151, in script
+    $ genererParents(situation_)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 22, in <module>
-    AjouterEvtsRejMetier()
-  File "game/extremis/socio_eco/metiers/evts_metiers.rpy", line 143, in AjouterEvtsRejMetier
-    AjouterModifDeProbaProressifPourMetier(prob, metier.Parasite.NOM, 0.02)
-NameError: global name 'AjouterModifDeProbaProressifPourMetier' is not defined
+  File "game/evts_generaux/naissance.rpy", line 151, in <module>
+    $ genererParents(situation_)
+  File "game/evts_generaux/naissance.rpy", line 139, in genererParents
+    coterieObj = coteries_[mereObj.coterie_]
+NameError: global name 'mereObj' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Mon Jun  7 19:46:43 2021
+Mon Jun  7 21:29:13 2021

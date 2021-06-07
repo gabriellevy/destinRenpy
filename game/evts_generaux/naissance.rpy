@@ -13,6 +13,7 @@ init -5 python:
     from extremis.coteries.elfes import elfes
     from extremis.coteries.orks import orks
     from extremis.coteries import coterie
+    from extremis.humanite import identite
 
     def genererDateNaissance(situation, ageActuel=16):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
@@ -118,10 +119,28 @@ init -5 python:
         return
 
     def genererParents(situation):
+        global coteries_
         pere = pnj.GenererPNJPapa(situation)
         situation.SetValCarac(pnj.Pnj.C_PERE, pere)
         mere = pnj.GenererPNJMaman(situation)
         situation.SetValCarac(pnj.Pnj.C_MERE, mere)
+
+        # genererGenererNomDeDepart du perso principal
+        # nom de son père
+        nomStr = pere.nom_
+
+        # si pas de nom, nom de sa mère
+        if nomStr == "":
+            nomStr = mere.nom_
+
+        # prénom de la coterie de sa mère
+        prenomStr = "rien"
+        if mere.coterie_ != "":
+            coterieObj = coteries_[mere.coterie_]
+            prenomStr = coterieObj.CreerPrenom(True)
+
+        situation.SetValCarac(identite.Identite.C_PRENOM, prenomStr)
+        situation.SetValCarac(identite.Identite.C_NOM, nomStr)
 
 label naissance:
     $ genererDateNaissance(situation_, 15)
