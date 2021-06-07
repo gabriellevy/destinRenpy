@@ -15,12 +15,13 @@ init -5 python:
     aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
     univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)
 
-    def CreerDeclencheurDebutDeMetier(probaF, strMetier, facteurPourProba):
+    def CreerDeclencheurDebutDeMetier(probaF, strMetier, facteurProbaSelonMaitrise):
         """
         proba : probabilité d'avoir ce travail même en n'ayant aucune compétence sérieuse à ce sujet
         """
         prob = proba.Proba(probaF, True)
-        AjouterModifDeProbaProressifPourMetier(prob, strMetier, facteurPourProba)
+        AjouterModifDeProbaSelonCoterie(prob, strMetier)
+        AjouterModifDeProbaProgressifPourMetier(prob, strMetier, facteurProbaSelonMaitrise)
         decRejStr = "decRej{}".format(strMetier)
         decRejStr = decRejStr.replace('é', 'e')
         decRejStr = decRejStr.replace('ê', 'e')
@@ -56,10 +57,9 @@ init -5 python:
 
         # musicien
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Musicien.NOM, 0.05)
+        AjouterModifDeProbaSelonCoterie(prob, metier.Musicien.NOM)
+        AjouterModifDeProbaProgressifPourMetier(prob, metier.Musicien.NOM, 0.05)
         prob.ajouterModifProbaViaVals(0.1, aArtiste)
-        prob.ajouterModifProbaViaVals(0.05, estConquistaror)
-        prob.ajouterModifProbaViaVals(0.03, estElfe)
         decRejMusicien = declencheur.Declencheur(prob, "decRejMusicien")
         decRejMusicien.AjouterCondition(aPasDeMetier)
         decRejMusicien.AjouterCondition(univFinie)
@@ -67,7 +67,8 @@ init -5 python:
 
         # dessinateur
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Dessinateur.NOM, 0.05)
+        AjouterModifDeProbaSelonCoterie(prob, metier.Dessinateur.NOM)
+        AjouterModifDeProbaProgressifPourMetier(prob, metier.Dessinateur.NOM, 0.05)
         prob.ajouterModifProbaViaVals(0.05, aArtiste)
         decRejDessinateur = declencheur.Declencheur(prob, "decRejDessinateur")
         decRejDessinateur.AjouterCondition(aPasDeMetier)
@@ -76,9 +77,9 @@ init -5 python:
 
         # poète
         prob = proba.Proba(0.0005, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Poete.NOM, 0.03)
+        AjouterModifDeProbaSelonCoterie(prob, metier.Poete.NOM)
+        AjouterModifDeProbaProgressifPourMetier(prob, metier.Poete.NOM, 0.03)
         prob.ajouterModifProbaViaVals(0.1, aArtiste)
-        prob.ajouterModifProbaViaVals(0.03, estElfe)
         decRejPoete = declencheur.Declencheur(prob, "decRejPoete")
         decRejPoete.AjouterCondition(aPasDeMetier)
         decRejPoete.AjouterCondition(univFinie)
@@ -86,8 +87,8 @@ init -5 python:
 
         # Bibliothecaire
         prob = proba.Proba(0.001, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Bibliothecaire.NOM, 0.05)
-        prob.ajouterModifProbaViaVals(0.03, estTemplier)
+        AjouterModifDeProbaSelonCoterie(prob, metier.Bibliothecaire.NOM)
+        AjouterModifDeProbaProgressifPourMetier(prob, metier.Bibliothecaire.NOM, 0.05)
         decRejBibliothecaire = declencheur.Declencheur(prob, "decRejBibliothecaire")
         decRejBibliothecaire.AjouterCondition(aPasDeMetier)
         decRejBibliothecaire.AjouterCondition(univFinie)
@@ -139,7 +140,8 @@ init -5 python:
 
         # Parasite
         prob = proba.Proba(0.003, True)
-        AjouterModifDeProbaProressifPourMetier(prob, metier.Parasite.NOM, 0.02)
+        AjouterModifDeProbaSelonCoterie(prob, metier.Parasite.NOM)
+        AjouterModifDeProbaProgressifPourMetier(prob, metier.Parasite.NOM, 0.02)
         prob.ajouterModifProbaViaVals(0.01, estParesseux)
         prob.ajouterModifProbaViaVals(0.03, estSournois)
         prob.ajouterModifProbaViaVals(0.01, aBeaute)
@@ -209,7 +211,22 @@ init -5 python:
         decRejMarin = CreerDeclencheurDebutDeMetier(0.04, metier.Marin.NOM, 0.05)
         selecteur_.ajouterDeclencheur(decRejMarin)
 
-    def AjouterModifDeProbaProressifPourMetier(prob, nomMetier, facteur):
+    def AjouterModifDeProbaSelonCoterie(prob, nomMetier):
+        """
+        ajoute des modificateurs de proba selon le fait que ces métiers soient liés à la coterie du perso
+        """
+        global situation_
+
+        # parcourir chaque coterie
+        for idCoterie in situation_.collectionCoteries.lCoteries_:
+            cotObj = situation_.collectionCoteries[idCoterie]
+            # parcourir chacun de ses métiers associés
+            for metierStr in cotObj.GetMetiersCompatibles():
+                if nomMetier == metierStr:
+                    estDeCetteCoterie = condition.Condition(coterie.Coterie.C_COTERIE, idCoterie, condition.Condition.EGAL)
+                    prob.ajouterModifProbaViaVals(0.1, estDeCetteCoterie)
+
+    def AjouterModifDeProbaProgressifPourMetier(prob, nomMetier, facteur):
         """
         Modifie la proba selon le niveau du personnage dans le métier "nomMetier" en ajoutant "facteur" proba pour chaque niveau possédé pas le joueur
          - les niveaux vont de 1 (notions) à 10 (maître légendaire)
