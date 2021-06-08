@@ -354,7 +354,7 @@ label decRejChevalier:
     $ metierObj.Rejoindre(situation_)
     jump fin_cycle
 
-label decRejPilote:
+label decRejPilote_d_aeronef:
     # devient Pilote
     "Vous êtes maintenant un Pilote."
     $ metierObj = metiers_[metier.Pilote.NOM]
