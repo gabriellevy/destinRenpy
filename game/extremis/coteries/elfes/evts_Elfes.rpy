@@ -1,6 +1,11 @@
 init -5 python:
     import random
     from extremis.coteries.elfes import elfes
+    from despin.abs import condition
+
+    # condition de niveau d'elfitude :
+    demiElfe = condition.Condition(elfes.Elfes.ASCENSION, 5, condition.Condition.SUPERIEUR_EGAL)
+    elfeParfait = condition.Condition(elfes.Elfes.ASCENSION, 10, condition.Condition.SUPERIEUR_EGAL)
 
     def CalcElfitude(situation):
         """
@@ -8,7 +13,6 @@ init -5 python:
         de 1 à 10 avec un fort aléatoire
         """
         testElfitude = random.randint(1,10)
-        print(u"testElfitude rand : {}".format(testElfitude))
 
         estCriminel = GetValCarac(crime.Crime.C_CRIMINEL)
         if estCriminel != "":
@@ -35,7 +39,6 @@ init -5 python:
             if compMetier > 4:
                 testElfitude = testElfitude + 1
 
-        print(u"testElfitude final : {}".format(testElfitude))
         return testElfitude
 
 

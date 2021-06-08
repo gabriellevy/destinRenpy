@@ -158,8 +158,8 @@ label univOrks_evt6:
         "Malheureusement il en profite pour faire des expériences amusantes sur vous après vous avoir assomé avec un maillet."
         $ blessure = blessures_.InfligerBlessureAleatoire(situation_, 0, 4)
         $ texteBlessure = blessure.GetDescriptionRecu()
-        $ bionique = bioniques_.PoserBioniqueAleatoire(situation_)
-        $ texteBionique = bionique.GetDescriptionRecu()
+        $ bioniqueObj = bioniques_.PoserBioniqueAleatoire(situation_)
+        $ texteBionique = bioniqueObj.GetDescriptionRecu()
         "[texteBlessure] \n [texteBionique]"
     jump fin_cycle
 

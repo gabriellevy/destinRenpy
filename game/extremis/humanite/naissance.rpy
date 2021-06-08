@@ -150,5 +150,5 @@ label naissance:
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
-    $ situation_[bionique.BioniqueLongevite.NOM] = 10
+    $ situation_[bionique.BioniqueLongevite.NOM] = 10 # gross amélioration de longévité
     jump debut_cycle

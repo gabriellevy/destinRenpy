@@ -103,12 +103,12 @@ class CollectionBioniques:
         """
         inclue les jours de convalescence et le message
         """
-        bionique = self.getBioniqueAleatoire()
-        if bionique is not None:
+        bioniqueObj = self.getBioniqueAleatoire()
+        if bioniqueObj is not None:
             nbConvalescence = situation.GetValCaracInt(pbsante.PbSante.C_JOURS_DHOPITAL)
-            situation[pbsante.PbSante.C_JOURS_DHOPITAL] = nbConvalescence + bionique.GetNbJoursConvalescence()
-            situation[bionique.nom_] = 1
-        return bionique
+            situation[pbsante.PbSante.C_JOURS_DHOPITAL] = nbConvalescence + bioniqueObj.GetNbJoursConvalescence()
+            situation[bioniqueObj.nom_] = 1
+        return bioniqueObj
 
     def __getitem__(self, idBionique):
         if not idBionique in self.lBioniques_:

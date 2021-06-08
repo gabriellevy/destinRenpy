@@ -73,6 +73,9 @@ init -5 python:
         probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong8)
         probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong9)
         probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong10)
+        # elfitude = vit très vieux
+        probaVieillesse.ajouterModifProbaViaVals(-0.05, demiElfe)
+        probaVieillesse.ajouterModifProbaViaVals(-0.1, demiElfe)
 
         decVieillir = declencheur.Declencheur(probaVieillesse, "decVieillir")
         decVieillir.AjouterCondition(ageSup30)
