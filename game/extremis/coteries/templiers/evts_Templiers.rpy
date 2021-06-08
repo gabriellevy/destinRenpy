@@ -75,7 +75,7 @@ label templiersDonEpeeSacree:
     # Don d'une épée sacrée
     play music saladinbesiegejerusalem
     "Pour votre dévotion chrétienne fervente et en signe que vos compétences au combat sont reconnues suffisantes, l'ordre vous affecte une épée sacrée bénie par un évèque. Nul doute qu'elle facilitera grandement vos miracles."
-    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+    $ situation_.SetValCarac(templiers.Templiers.C_EPEE_SACREE, 1)
     $ AjouterACarac(religion.Religion.C_MIRACLE, 1)
     jump fin_cycle
 

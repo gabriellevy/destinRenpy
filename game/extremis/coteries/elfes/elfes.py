@@ -42,6 +42,7 @@ class Elfes(coterie.Coterie):
             metier.Danseur.NOM, \
             metier.Dessinateur.NOM, \
             metier.Musicien.NOM, \
+            metier.Cuisinier.NOM, \
             metier.Poete.NOM, \
             metier.Alchimiste.NOM \
             ]
@@ -79,6 +80,7 @@ class Elfes(coterie.Coterie):
                             if age <= 60:
                                 portraits.append("images/coteries/elfes/portraits/portrait_40_60.jpg")
                                 portraits.append("images/coteries/elfes/portraits/portrait_30_60_b.jpg")
+                                portraits.append("images/coteries/elfes/portraits/portrait_30_60_c.jpg")
                         # age >= 30
                         if age <= 70:
                             portraits.append("images/coteries/elfes/portraits/portrait_30_70.jpg")
@@ -107,6 +109,7 @@ class Elfes(coterie.Coterie):
                             portraits.append("images/coteries/elfes/portraits/portrait_20-40_f.jpg")
                             portraits.append("images/coteries/elfes/portraits/portrait_20-40_g.jpg")
                             portraits.append("images/coteries/elfes/portraits/portrait_20-40_h.jpg")
+                            portraits.append("images/coteries/elfes/portraits/portrait_20-40_i.jpg")
                 # >= 15
                 if age <= 40:
                     portraits.append("images/coteries/elfes/portraits/portrait_15-40_c.jpg")
@@ -123,7 +126,10 @@ class Elfes(coterie.Coterie):
             if age >= 15:
                 if age >= 20:
                     if age >= 30:
-                        portraits.append("images/coteries/elfes/portraits/femme30+.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme30+_a.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme30+_b.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme30+_c.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme30+_d.jpg")
                         if age >= 50:
                             portraits.append("images/coteries/elfes/portraits/femme50+.jpg")
                         # > 30 ans
@@ -134,14 +140,16 @@ class Elfes(coterie.Coterie):
                                 portraits.append("images/coteries/elfes/portraits/femme30_50.jpg")
                     # >= 20 ans
                     if age <= 50:
-                        portraits.append("images/coteries/elfes/portraits/Fportrait20-50.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme20-50_a.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme20-50_b.jpg")
+                        portraits.append("images/coteries/elfes/portraits/femme20-50_c.jpg")
                         if age <= 40:
-                            portraits.append("images/coteries/elfes/portraits/femme20-40.png")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_2.png")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_3.png")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_4.png")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_5.jpg")
-                            portraits.append("images/coteries/elfes/portraits/femme20-40_6.jpg")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_a.png")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_b.png")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_c.png")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_d.png")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_e.jpg")
+                            portraits.append("images/coteries/elfes/portraits/femme20-40_f.jpg")
 
                 # age >= 15
                 if age <= 40:

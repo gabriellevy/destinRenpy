@@ -1,34 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 1, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 1, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 6, in <module>
-    demiElfe = condition.Condition(elfes.Elfes.ASCENSION, 5, condition.Condition.SUPERIEUR_EGAL)
-NameError: name 'condition' is not defined
+  File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 78, in script
+    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+  File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 78, in <module>
+    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+  File "game/generationUnivers.rpy", line 56, in AjouterACarac
+    situation_.AjouterACarac(caracId, num)
+TypeError: cannot concatenate 'str' and 'int' objects
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 515, in main
-    renpy.game.context().run(node)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 1, in script
-    init -5 python:
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 1, in script
-    init -5 python:
+  File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 78, in script
+    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
   File "renpy/ast.py", line 922, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "renpy/python.py", line 2218, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/extremis/coteries/elfes/evts_Elfes.rpy", line 6, in <module>
-    demiElfe = condition.Condition(elfes.Elfes.ASCENSION, 5, condition.Condition.SUPERIEUR_EGAL)
-NameError: name 'condition' is not defined
+  File "game/extremis/coteries/templiers/evts_Templiers.rpy", line 78, in <module>
+    $ AjouterACarac(templiers.Templiers.C_EPEE_SACREE, 1)
+  File "game/generationUnivers.rpy", line 56, in AjouterACarac
+    situation_.AjouterACarac(caracId, num)
+  File "despin/gen_vie/situation.py", line 136, in AjouterACarac
+TypeError: cannot concatenate 'str' and 'int' objects
 
 Windows-10-10.0.19041
 Ren'Py 7.4.4.1439
 DestinExtremis 1.0
-Tue Jun  8 16:39:01 2021
+Tue Jun  8 19:07:22 2021

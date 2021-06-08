@@ -3,8 +3,7 @@
 # define ordo = Character('Ordonnateur', color="#e30909")
 
 # musiques
-# define audio.principale_temple = "musique/templiers/principale.mp3"
-# define audio.rejoindre_temple = "musique/templiers/rejoindre_doux_spirituel.mp3"
+define audio.principale_elfes = "musique/elfes/principale.mp3"
 
 init -5 python:
     import random

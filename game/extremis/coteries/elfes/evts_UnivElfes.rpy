@@ -120,7 +120,7 @@ label univElfes_evt7:
     jump fin_cycle
 
 label univElfes_evt8:
-    # effet devient Cuisinier
+    # effet devient acteur
     "La vie des elfes est une représentation permanente. Même quand ils ne font pas théâtre amateur pendant leurs loisirs ils deviennent inévitablement un peu comédien ne serait-ce que par l'application des innombrables usages de leur société."
     "Vous faites tout votre possible pour vous intégrer dans cet étrange système."
     $ AjouterACarac(metier.Acteur.NOM, 2)

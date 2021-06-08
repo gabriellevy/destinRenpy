@@ -63,16 +63,16 @@ init -5 python:
         probaVieillesse.ajouterModifProbaViaVals(-0.005, estAise)
         probaVieillesse.ajouterModifProbaViaVals(-0.01, estRichissime)
         # impliants longévité
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong1)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong2)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong3)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong4)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong5)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong6)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong7)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong8)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong9)
-        probaVieillesse.ajouterModifProbaViaVals(-0.01, bioniqueLong10)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong1)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong2)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong3)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong4)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong5)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong6)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong7)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong8)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong9)
+        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong10)
         # elfitude = vit très vieux
         probaVieillesse.ajouterModifProbaViaVals(-0.05, demiElfe)
         probaVieillesse.ajouterModifProbaViaVals(-0.1, demiElfe)
@@ -95,7 +95,7 @@ label effetVieillir:
         $ ageBonus = situation_.AgeEnAnnees()
         $ nivBioniqueLongevite = situation_.GetValCaracInt(bionique.BioniqueLongevite.NOM)
         # plus on est vieux plus le score est augmenté :
-        $ effetVieillesse = res100 + ageBonus - 30 - nivBioniqueLongevite*2
+        $ effetVieillesse = res100 + ageBonus - 30 - nivBioniqueLongevite*3
 
         if effetVieillesse<30:
             # événements qui ont tendance à arriver au début de la vieillesse
