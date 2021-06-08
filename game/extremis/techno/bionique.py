@@ -44,6 +44,7 @@ class Bionique:
 class BioniqueLongevite(Bionique):
     """
     augmente l'espérance de vie
+    niveau va de 1 à 10
     """
 
     NOM = u"Bionique de longévité"

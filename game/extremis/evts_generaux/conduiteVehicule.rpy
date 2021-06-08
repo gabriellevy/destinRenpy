@@ -17,8 +17,8 @@ init -5 python:
 
     def AjouterEvtsPilotage():
         global selecteur_
-        conditionSaitConduire = condition.Condition(metier.Pilote.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
-        conditionSaitPasConduire = condition.Condition(metier.Pilote.NOM, 0, condition.Condition.INFERIEUR_EGAL)
+        conditionSaitConduire = condition.Condition(metier.Chauffeur.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
+        conditionSaitPasConduire = condition.Condition(metier.Chauffeur.NOM, 0, condition.Condition.INFERIEUR_EGAL)
         conditionAgePermis = condition.Condition(temps.Date.AGE_ANNEES, 18, condition.Condition.SUPERIEUR_EGAL)
         pas_decPermisJamais = condition.Condition("decPermisJamais", 1, condition.Condition.DIFFERENT)
         pasTropPauvre = condition.Condition(trait.Richesse.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.SUPERIEUR) # substitut pour ' a les moyens d'avoir une voiture'
@@ -160,7 +160,7 @@ label decPermisHistoire:
                                 if nivReussite>0:
                                     "Bravo c'est une réussite vous avez maintenant le code et le permis."
                                     $ AjouterACarac(trait.Assurance.NOM, 2)
-                                    $ SetCarac(metier.Pilote.NOM, 1)
+                                    $ SetCarac(metier.Chauffeur.NOM, 1)
                                     jump decPermis_fin
                                 elif nivReussite <-1:
                                     "C'est un échec catastrophique. Vous êtes tellement angoissé que vous démarrez avec le frein à main enclenché. Vous avez même failli causer un accident."
@@ -204,7 +204,7 @@ label decAccident:
     $ actionDebutConduiteVehicule()
     "Alors que vous roulez à grande vitesse sur une nationale en banlieue parisienne votre voiture dérape violemment et vous perdez le contrôle."
 
-    $ testRepriseControlePilotage = testDeCarac.TestDeCarac(metier.Pilote.NOM, 6, situation_)
+    $ testRepriseControlePilotage = testDeCarac.TestDeCarac(metier.Chauffeur.NOM, 6, situation_)
     $ testRouleBoule = testDeCarac.TestDeCarac(trait.Habilete.NOM, 6, situation_)
     menu:
         "Vous allez heurter un camion à pleine vitesse."

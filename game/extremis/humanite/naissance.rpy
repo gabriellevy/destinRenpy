@@ -14,6 +14,7 @@ init -5 python:
     from extremis.coteries.orks import orks
     from extremis.coteries import coterie
     from extremis.humanite import identite
+    from extremis.techno import bionique
 
     def genererDateNaissance(situation, ageActuel=16):
         # le jeu commence quand le personnage a 16 and et donc éligible pour ses quatre années d'univesrsité coteries
@@ -149,4 +150,5 @@ label naissance:
     # $ genererTruand(situation_, traits_) # génération de traits pour un perso typé truand agressif
     # $ genererAventurier(situation_, traits_) # génération de traits pour un perso typé truand agressif
     $ genererParents(situation_)
+    $ situation_[bionique.BioniqueLongevite.NOM] = 10
     jump debut_cycle
