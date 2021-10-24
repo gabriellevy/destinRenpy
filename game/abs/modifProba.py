@@ -1,4 +1,4 @@
-from despin.abs import condition
+from abs import condition
 
 class ModifProba:
     """

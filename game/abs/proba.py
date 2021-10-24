@@ -1,4 +1,4 @@
-from despin.gen_vie import modifProba
+from abs import modifProba
 
 class Proba:
     """

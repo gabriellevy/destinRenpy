@@ -2,12 +2,12 @@ init -5 python:
     import random
     from extremis.coteries.transhumanistes import transhumanistes
     from extremis.socio_eco.metiers import metier
-    from extremis.humanite.sante import pbsante
-    from extremis.religions import religion
+    from abs.humanite.sante import pbsante
+    from abs.religions import religion
 
     # santé
     estAHopital = condition.Condition(pbsante.PbSante.C_JOURS_DHOPITAL, 0, condition.Condition.SUPERIEUR)
-    
+
     def AjouterEvtsTranshumanistes():
         """
         événements génriques qui concernent les transhumanistes

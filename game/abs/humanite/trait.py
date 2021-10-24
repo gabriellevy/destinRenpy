@@ -985,10 +985,11 @@ class Richesse(TraitGraduel):
             return u"Pauvre {}".format(val)
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Richissime {}".format(val)
-            return u"Aisé {}".format(val)
+                return u"Incroyablement riche {}".format(val)
+            return u"Très riche {}".format(val)
         else:
-            return u"Classe moyenne {}".format(val)
+            return u""
+            # return u"Classe moyenne {}".format(val)
 
 class CollectionTraits:
 

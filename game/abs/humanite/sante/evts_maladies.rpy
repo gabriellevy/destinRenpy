@@ -1,15 +1,13 @@
 init -5 python:
     import random
-    from despin.gen_vie import declencheur
-    from despin.gen_vie import selecteur
-    from despin.gen_vie import proba
-    from despin.abs import condition
-    from extremis.socio_eco.metiers import metier
-    from despin.reglages import filtres_action
-    from extremis.humanite import trait
-    from extremis.constitution import temps
-    from extremis.coteries import coterie
-    from extremis.humanite.sante import pbsante
+    from abs import declencheur
+    from abs import selecteur
+    from abs import proba
+    from abs import condition
+    from abs.reglages import filtres_action
+    from abs.humanite import trait
+    from abs.univers import temps
+    from abs.humanite.sante import pbsante
 
     estChetif = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_PAS_EXTREME, condition.Condition.INFERIEUR_EGAL)
     estFragile = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_PAS, condition.Condition.INFERIEUR_EGAL)
@@ -17,7 +15,6 @@ init -5 python:
     estIndestructible = condition.Condition(trait.Constitution.NOM, trait.Trait.SEUIL_A_EXTREME, condition.Condition.SUPERIEUR_EGAL)
     def AjouterEvtsMaladies():
         global selecteur_
-        # conditionAgeCoterie = condition.Condition(temps.Date.AGE_ANNEES, 16, condition.Condition.SUPERIEUR_EGAL)
         probaMaladie = proba.Proba(0.01)
         probaMaladie.ajouterModifProbaViaVals(0.01, estFragile)
         probaMaladie.ajouterModifProbaViaVals(0.01, estChetif)

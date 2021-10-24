@@ -1,10 +1,9 @@
 import random
 from extremis.socio_eco.metiers import metier
 from extremis.coteries import coterie
+from abs.humanite import portrait
 
-class Portrait:
-
-    C_PORTRAIT = u"Portrait"
+class PortraitDestin(portrait.Portrait):
 
     def DeterminerPortraitPersoPrincipal(self, situation, masculin):
         """
@@ -23,7 +22,7 @@ class Portrait:
         valeursTraits : dico contenant en clé le nom des traits possédés par le personnage et en valeur leur niveau
         """
         portraits = []
-        portraitCourant = situation.GetValCarac(Portrait.C_PORTRAIT)
+        portraitCourant = situation.GetValCarac(portrait.Portrait.C_PORTRAIT)
 
         if cotObj is not None:
             portraits = cotObj.GenererPortraits(ageAnnees, masculin, metObj, portraits, valeursTraits)

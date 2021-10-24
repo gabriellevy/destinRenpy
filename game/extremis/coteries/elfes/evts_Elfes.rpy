@@ -1,7 +1,7 @@
 init -5 python:
     import random
     from extremis.coteries.elfes import elfes
-    from despin.abs import condition
+    from abs import condition
 
     # condition de niveau d'elfitude :
     demiElfe = condition.Condition(elfes.Elfes.ASCENSION, 5, condition.Condition.SUPERIEUR_EGAL)

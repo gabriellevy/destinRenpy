@@ -168,6 +168,34 @@ class Robotique(Metier):
             poids = poids + 0.2
         return poids
 
+class Roi(Metier):
+    NOM = u"Roi des francs"
+    def __init__(self):
+        self.nom_ = Roi.NOM
+
+    def GetNiveauRichesse(self):
+        return 9
+
+    def GetDiscipline(self):
+        return u"Royauté"
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        return 0
+
+class Stratege(Metier):
+    NOM = u"Général"
+    def __init__(self):
+        self.nom_ = Stratege.NOM
+
+    def GetNiveauRichesse(self):
+        return 6
+
+    def GetDiscipline(self):
+        return u"Stratégie"
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        return 0
+
 class Danseur(Metier):
     NOM = u"Danseur"
     def __init__(self):
@@ -370,7 +398,7 @@ class Ouvrier(Metier):
         return u"Manutention"
 
 class Politique(Metier):
-    NOM = u"Homme politique"
+    NOM = u"Politicien"
     def __init__(self):
         self.nom_ = Politique.NOM
 
@@ -501,6 +529,24 @@ class Guerrier(Metier):
         if self.nom_ in coterieObj.GetMetiersCompatibles():
             poids = poids + 0.3
         return poids
+
+    def GetTexteCompetence(self, niveauComp):
+        """
+        renvoie le niveau de compétence dans ce métier du perso rapport à la valeur en paramètre
+        éventuellement surclassable pour être plus précis
+        """
+        txtCompetence = u"Apprenti"
+        if niveauComp > 1:
+            txtCompetence = u"Combattant"
+            if niveauComp > 3:
+                txtCompetence = u"Élite"
+                if niveauComp > 5:
+                    txtCompetence = u"Champion"
+                    if niveauComp > 8:
+                        txtCompetence = u"Maître"
+                        if niveauComp > 10:
+                            txtCompetence = u"Maître légendaire"
+        return txtCompetence
 
 class Chauffeur(Metier):
     """
@@ -852,6 +898,12 @@ class CollectionMetiers:
 
         danseur = Danseur()
         self.SetMetier(Danseur.NOM, danseur)
+
+        roi = Roi()
+        self.SetMetier(Roi.NOM, roi)
+
+        stratege = Stratege()
+        self.SetMetier(Stratege.NOM, stratege)
 
         acteur = Acteur()
         self.SetMetier(Acteur.NOM, acteur)

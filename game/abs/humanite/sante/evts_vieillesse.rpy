@@ -1,28 +1,14 @@
 init -5 python:
     import random
-    from despin.gen_vie import declencheur
-    from despin.gen_vie import selecteur
-    from despin.gen_vie import proba
-    from despin.abs import condition
-    from extremis.socio_eco.metiers import metier
-    from despin.reglages import filtres_action
-    from extremis.humanite import trait
-    from extremis.constitution import temps
-    from extremis.coteries import coterie
-    from extremis.humanite.sante import pbsante
-    from extremis.techno import bionique
+    from abs import declencheur
+    from abs import selecteur
+    from abs import proba
+    from abs import condition
+    from abs.reglages import filtres_action
+    from abs.humanite import trait
+    from abs.univers import temps
+    from abs.humanite.sante import pbsante
 
-    # conditions bionique de longévité
-    bioniqueLong1 = condition.Condition(bionique.BioniqueLongevite.NOM, 1, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong2 = condition.Condition(bionique.BioniqueLongevite.NOM, 2, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong3 = condition.Condition(bionique.BioniqueLongevite.NOM, 3, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong4 = condition.Condition(bionique.BioniqueLongevite.NOM, 4, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong5 = condition.Condition(bionique.BioniqueLongevite.NOM, 5, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong6 = condition.Condition(bionique.BioniqueLongevite.NOM, 6, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong7 = condition.Condition(bionique.BioniqueLongevite.NOM, 7, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong8 = condition.Condition(bionique.BioniqueLongevite.NOM, 8, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong9 = condition.Condition(bionique.BioniqueLongevite.NOM, 9, condition.Condition.SUPERIEUR_EGAL)
-    bioniqueLong10 = condition.Condition(bionique.BioniqueLongevite.NOM, 10, condition.Condition.SUPERIEUR_EGAL)
     # condition selon âge
     ageSup30 = condition.Condition(temps.Date.AGE_ANNEES, 30, condition.Condition.SUPERIEUR_EGAL)
     ageSup40 = condition.Condition(temps.Date.AGE_ANNEES, 40, condition.Condition.SUPERIEUR_EGAL)
@@ -62,20 +48,6 @@ init -5 python:
         probaVieillesse.ajouterModifProbaViaVals(0.005, estPauvre)
         probaVieillesse.ajouterModifProbaViaVals(-0.005, estAise)
         probaVieillesse.ajouterModifProbaViaVals(-0.01, estRichissime)
-        # impliants longévité
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong1)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong2)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong3)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong4)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong5)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong6)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong7)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong8)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong9)
-        probaVieillesse.ajouterModifProbaViaVals(-0.012, bioniqueLong10)
-        # elfitude = vit très vieux
-        probaVieillesse.ajouterModifProbaViaVals(-0.05, demiElfe)
-        probaVieillesse.ajouterModifProbaViaVals(-0.1, demiElfe)
 
         decVieillir = declencheur.Declencheur(probaVieillesse, "decVieillir")
         decVieillir.AjouterCondition(ageSup30)
@@ -83,19 +55,14 @@ init -5 python:
 
 label decVieillir:
     $ nbEffets = random.randint(1, 3)
-    # si elfe possibilité d'éviter la vieillesse :
-    $ coterieStr = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
-    if coterieStr == elfes.Elfes.ID:
-        jump testElfitude
-    else:
-        jump effetVieillir
+    jump effetVieillir
+
 label effetVieillir:
     while nbEffets > 0:
         $ res100 = random.randint(0, 80)
         $ ageBonus = situation_.AgeEnAnnees()
-        $ nivBioniqueLongevite = situation_.GetValCaracInt(bionique.BioniqueLongevite.NOM)
         # plus on est vieux plus le score est augmenté :
-        $ effetVieillesse = res100 + ageBonus - 30 - nivBioniqueLongevite*3
+        $ effetVieillesse = res100 + ageBonus - 30
 
         if effetVieillesse<30:
             # événements qui ont tendance à arriver au début de la vieillesse

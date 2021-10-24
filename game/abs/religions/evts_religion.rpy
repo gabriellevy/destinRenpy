@@ -4,9 +4,14 @@ define audio.turexgloriae = "musique/templiers/turexgloriae.mp3"
 
 init -5 python:
     import random
-    from extremis.religions import religion
+    from abs.religions import religion
 
+    estAthee = condition.Condition(religion.Religion.C_RELIGION, religion.Atheisme.NOM, condition.Condition.EGAL)
+    estPasAthee = condition.Condition(religion.Religion.C_RELIGION, religion.Atheisme.NOM, condition.Condition.DIFFERENT)
     estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
+    estPasChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.DIFFERENT)
+    aPasDeReligion = condition.Condition(religion.Religion.C_RELIGION, "", condition.Condition.EGAL)
+    aUneReligion = condition.Condition(religion.Religion.C_RELIGION, "", condition.Condition.DIFFERENT)
     # traits
     estCruel = condition.Condition(trait.Altruisme.NOM, -13, condition.Condition.INFERIEUR_EGAL)
     estEgoiste = condition.Condition(trait.Altruisme.NOM, -3, condition.Condition.INFERIEUR_EGAL)

@@ -7,10 +7,11 @@ init -5 python:
     import random
     from extremis.coteries.conquistadors import conquistadors
     from extremis.socio_eco.metiers import metier
-    from extremis.religions import religion
+    from abs.religions import religion
     from extremis.geographie import quartier
-    from extremis.humanite import identite
-    from despin.gen_vie import testDeCarac
+    from abs.humanite import identite
+    from abs.humanite import trait
+    from abs import testDeCarac
 
 label conquistadorsPostule:
     $note = 0 # points marqués durant l'épreuve (peut passer en négatif)

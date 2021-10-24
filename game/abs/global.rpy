@@ -1,39 +1,15 @@
-init -10 python:
+init -2 python:
     from abs import carac
-    from spe import situation_destin
+    # from spe import situation_fondateur
     from abs.humanite import trait
-    from extremis.geographie import quartier
-    from extremis.constitution import temps
-    from extremis.coteries import collection_coteries
-    from extremis.socio_eco.metiers import metier
+    # from geographie import quartier
+    from abs.humanite import metier
+    from abs.univers import temps
     from abs.humanite.sante import pbsante
-    from abs.reglages import filtres_action
-    from extremis.techno import bionique
-    from extremis.socio_eco.crime import crime
-    from extremis.coteries import coterie
-    from extremis.socio_eco.crime import justice
+    # from spe.peuple import peuple
+    # from spe.region import region
+    # from spe.civilisation import civ
     import random
-
-    situation_ = situation_destin.SituationDestin() # dictionnaire contenant toutes les caracs courantes de la partie
-    filtre_ = filtres_action.FiltreAction() # objet contenant les préférences du joueur pour les actions à afficher ou cacher en priorité
-    traits_ = trait.CollectionTraits()
-    situation_.collectionTraits = traits_
-    coteries_ = collection_coteries.CollectionCoteries()
-    situation_.collectionCoteries = coteries_
-    metiers_ = metier.CollectionMetiers()
-    situation_.collectionMetiers = metiers_
-    blessures_ = pbsante.CollectionBlessures()
-    situation_.collectionBlessures = blessures_
-    bioniques_ = bionique.CollectionBioniques()
-    situation_.collectionBioniques = bioniques_
-    maladies_ = pbsante.CollectionMaladies()
-    situation_.collectionMaladies = maladies_
-    quartiers_ = quartier.CollectionQuartiers()
-    situation_.collectionQuartiers = quartiers_
-    crimes_ = crime.CollectionCrimes()
-    situation_.collectionCrimes = crimes_
-    interfaceMode_ = 0
-    nbInterfaceMode_ = 11
 
     # text fade system
     time_ = 2.0 # seconds of fade
@@ -60,7 +36,7 @@ init -10 python:
 
     def GetValCarac(caracId):
         """
-        simple racourci
+        simple raccourci
         """
         global situation_
         return situation_.GetValCarac(caracId)
@@ -86,10 +62,3 @@ init -10 python:
         if interfaceMode_ >= nbInterfaceMode_:
             interfaceMode_ = 0
         print(interfaceMode_)
-
-    def DeterminerPerso():
-        global situation_
-        renpy.jump("generationUnivers_Perso")
-
-label generationUnivers_Perso:
-    jump naissance

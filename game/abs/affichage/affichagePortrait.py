@@ -1,5 +1,5 @@
-from extremis.humanite import pnj
-from extremis.humanite.amour import relationAmoureuse
+from abs.humanite import pnj
+from abs.humanite.amour import relationAmoureuse
 
 class AffichagePortrait:
     """
@@ -8,7 +8,7 @@ class AffichagePortrait:
     """
 
     def __init__(self, pnj):
-        self.nom_ = u"{} {}".format(pnj.prenom_, pnj.nom_)
+        self.nom_ = u"{}".format(pnj.nom_)
 
         # ------------ description
         self.description_ = u""

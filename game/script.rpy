@@ -5,7 +5,7 @@
 define narrator = Character(color="#fafad8", what_italic=True)
 
 init -10 python:
-    from despin.gen_vie import selecteur
+    from abs import selecteur
     import random
 
     selecteur_ = selecteur.Selecteur()
@@ -14,7 +14,7 @@ init -10 python:
         return selecteur_.determinationEvtCourant(situation)
 
 init -1 python:
-    from despin.gen_vie import selecteur
+    from abs import selecteur
     import random
 
     # métiers

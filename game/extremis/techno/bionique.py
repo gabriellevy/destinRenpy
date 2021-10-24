@@ -1,5 +1,5 @@
 import random
-from extremis.humanite.sante import pbsante
+from abs.humanite.sante import pbsante
 
 class Bionique:
     """

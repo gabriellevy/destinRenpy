@@ -30,13 +30,13 @@ class Condition:
             assert isinstance(valCarac, int), "Test de valeur arithmétique sur une valeur de carac ({}) qui n'est pas arithmétique : '{}'".format(self._m_CaracId, valCarac)
             valCarac = situation.GetValCaracInt(self._m_CaracId)
             if (self._m_Comparateur == Condition.INFERIEUR_EGAL):
-                return valCarac <= self._m_Valeur
+                return valCarac <= float(self._m_Valeur)
             elif (self._m_Comparateur == Condition.INFERIEUR):
-                return valCarac < self._m_Valeur
+                return valCarac < float(self._m_Valeur)
             elif (self._m_Comparateur == Condition.SUPERIEUR):
-                return valCarac > self._m_Valeur
+                return valCarac > float(self._m_Valeur)
             elif (self._m_Comparateur == Condition.SUPERIEUR_EGAL):
-                return valCarac >= self._m_Valeur
+                return valCarac >= float(self._m_Valeur)
         assert False, "Condition intestable (pas de COmparateur) : {}".format(self)
 
 

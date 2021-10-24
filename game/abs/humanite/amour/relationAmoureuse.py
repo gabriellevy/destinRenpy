@@ -1,7 +1,7 @@
 import random
-from extremis.humanite import portrait
-from extremis.constitution import temps
-from extremis.humanite import trait
+from abs.humanite import portrait
+from abs.univers import temps
+from abs.humanite import trait
 
 class RelA:
     """

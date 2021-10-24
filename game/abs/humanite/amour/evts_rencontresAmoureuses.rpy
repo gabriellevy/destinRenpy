@@ -1,16 +1,14 @@
 init -5 python:
     import random
-    from despin.gen_vie import declencheur
-    from despin.gen_vie import selecteur
-    from despin.gen_vie import proba
-    from despin.abs import condition
-    from extremis.socio_eco.metiers import metier
-    from despin.reglages import filtres_action
-    from extremis.humanite import trait
-    from extremis.constitution import temps
-    from extremis.coteries import coterie
-    from extremis.humanite.sante import pbsante
-    from extremis.humanite.amour import relationAmoureuse
+    from abs import declencheur
+    from abs import selecteur
+    from abs import proba
+    from abs import condition
+    from abs.reglages import filtres_action
+    from abs.humanite import trait
+    from abs.univers import temps
+    from abs.humanite.sante import pbsante
+    from abs.humanite.amour import relationAmoureuse
 
     def AjouterCetteAmoureuse(situation, amoureuse):
         amoureuses = situation.GetValCarac(relationAmoureuse.RelA.C_AMOUREUSES)
@@ -124,27 +122,27 @@ init -5 python:
 label decFaireLaCour:
     $ amoureuse = relationAmoureuse.GetUneAmoureuseEnSeduction(situation_) # A FAIRE : ne récupérez qu'une amoureuse d'un certain niveau ?
     if amoureuse is not None:
-        "[amoureuse.prenom_] vous plaît tellement que vous tentez de la séduire par tous les moyens."
+        "[amoureuse.nom_] vous plaît tellement que vous tentez de la séduire par tous les moyens."
         $ relationAmoureuse.FaitLaCour(situation_, amoureuse)
     $ MAJCaracsRelationsAmoureuses(situation_)
 
 label decRencontre:
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
     $ AjouterCetteAmoureuse(situation_, amoureuse)
-    "Vous avez rencontré [amoureuse.prenom_]."
+    "Vous avez rencontré [amoureuse.nom_]."
     $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle
 
 label decJoueurTombeAmoureux:
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
     $ AjouterCetteAmoureuse(situation_, amoureuse)
-    "[amoureuse.prenom_] vous fait complètement craquer."
+    "[amoureuse.nom_] vous fait complètement craquer."
     $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle
 
 label decPnjTombeAmoureuse:
-    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
+    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
     $ AjouterCetteAmoureuse(situation_, amoureuse)
-    "Cette [amoureuse.prenom_] semble avoir un faible pour vous."
+    "Cette [amoureuse.nom_] semble avoir un faible pour vous."
     $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle

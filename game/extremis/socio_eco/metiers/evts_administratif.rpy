@@ -9,12 +9,12 @@ define inve = Character('Mlle. Dowe', color="#22002c")
 
 init -5 python:
     import random
-    from despin.gen_vie import declencheur
-    from despin.gen_vie import selecteur
-    from despin.gen_vie import proba
-    from despin.abs import condition
+    from abs import declencheur
+    from abs import selecteur
+    from abs import proba
+    from abs import condition
     from extremis.socio_eco.metiers import metier
-    from despin.reglages import filtres_action
+    from abs.reglages import filtres_action
 
     def AjouterEvtsAdministratif():
         global selecteur_

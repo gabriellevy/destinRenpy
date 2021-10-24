@@ -9,8 +9,8 @@ init -5 python:
     import random
     from extremis.coteries.orks import orks
     from extremis.socio_eco.metiers import metier
-    from extremis.religions import religion
-    from extremis.humanite.sante import pbsante
+    from abs.religions import religion
+    from abs.humanite.sante import pbsante
 
     conditionDansUnivOrks = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, orks.Orks.ID, condition.Condition.EGAL)
 

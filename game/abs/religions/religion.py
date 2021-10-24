@@ -15,11 +15,32 @@ class Religion:
        self.nom_ = "pas de nom de religion, doit être overridé"
 
 
-class Christianisme(Religion):
+class Paien(Religion):
+
+    NOM = u"Païen"
+
+    def __init__(self):
+       self.nom_ = Paien.NOM
+
+class Polytheiste(Paien):
+
+    NOM = u"Polythéiste"
+
+    def __init__(self):
+       self.nom_ = Polytheiste.NOM
+
+class Monotheiste(Religion):
+
+    NOM = u"Monothéiste"
+
+    def __init__(self):
+       self.nom_ = Monotheiste.NOM
+
+class Christianisme(Monotheiste):
 
     NOM = u"Christianisme"
 
-    # valeurs de metier.Metier.C_TITRE quand le eprso est prêtre
+    # valeurs de metier.Metier.C_TITRE quand le perso est prêtre
     EVEQUE = u"Évèque"
 
     def __init__(self):

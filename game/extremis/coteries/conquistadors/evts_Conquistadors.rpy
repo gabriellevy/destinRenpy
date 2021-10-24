@@ -4,7 +4,7 @@ init -5 python:
     import random
     from extremis.coteries.conquistadors import conquistadors
     from extremis.socio_eco.metiers import metier
-    from extremis.religions import religion
+    from abs.religions import religion
 
     def AjouterEvtsConquistadors():
         """

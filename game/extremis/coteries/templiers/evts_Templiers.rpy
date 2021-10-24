@@ -7,7 +7,7 @@ init -5 python:
     import random
     from extremis.coteries.templiers import templiers
     from extremis.socio_eco.metiers import metier
-    from extremis.religions import religion
+    from abs.religions import religion
     from extremis.socio_eco.crime import justice
 
     estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)

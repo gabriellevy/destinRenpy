@@ -1,6 +1,6 @@
 from extremis.coteries import coterie
 from extremis.socio_eco.metiers import metier
-from extremis.humanite import trait
+from abs.humanite import trait
 from extremis.geographie import quartier
 import random
 
