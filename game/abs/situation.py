@@ -6,7 +6,7 @@ from humanite import portrait
 from humanite import pnj
 from humanite import trait
 from humanite import identite
-from affichage import affichagePortrait
+from abs.affichage import affichagePortrait
 from humanite.amour import relationAmoureuse
 from humanite import metier
 import random

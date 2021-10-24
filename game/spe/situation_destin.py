@@ -15,6 +15,7 @@ from abs.humanite import trait
 from abs.humanite import identite
 from abs.humanite.amour import relationAmoureuse
 from abs import situation
+from abs.affichage import affichagePortrait
 import random
 
 class SituationDestin(situation.Situation):
