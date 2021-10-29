@@ -14,14 +14,7 @@ init -5 python:
         estConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
         estPasConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.DIFFERENT)
         estDansQuartierConquistador = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintMalo.NOM, condition.Condition.EGAL)
-        # guerrier
-        estGuerrierNul = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.INFERIEUR)
-        estPasGrandGuerrier = condition.Condition(metier.Guerrier.NOM, 8, condition.Condition.INFERIEUR)
-        estBonGuerrier = condition.Condition(metier.Guerrier.NOM, 4, condition.Condition.SUPERIEUR)
-        estGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.EGAL)
-        estPasGuerrierSupreme = condition.Condition(metier.Guerrier.NOM, 10, condition.Condition.DIFFERENT)
 
-        # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
         recrutementDesPauvresParConquistadors = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementDesPauvresParConquistadors")
         recrutementDesPauvresParConquistadors.AjouterCondition(estPasConquistador)
         recrutementDesPauvresParConquistadors.AjouterCondition(estPauvre)
