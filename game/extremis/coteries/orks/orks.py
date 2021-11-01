@@ -45,6 +45,16 @@ class Orks(coterie.Coterie):
             trait.Prudence.NOM, \
             ]
 
+
+    def GetPoidsDemo(self):
+        """
+        à quel point cette coterie est nombreuse dans la population
+        2.0 = très grosse coterie
+        1.0 = normal
+        0.1 = 10 fois moins que la moyenne
+        """
+        return 3.0
+
     def GetMetiersCompatibles(self):
         """
         si le perso a des compétences dans ces métiers il a plus de chances de vouloir rejoindre cette coterie où ils sont souvent pratiqués

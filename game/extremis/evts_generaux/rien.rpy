@@ -56,7 +56,7 @@ init -5 python:
                 evtsVides_.append("evtRien_Paysan_11")
                 evtsVides_.append("evtRien_Paysan_12")
 
-            # selon coterie
+            # ----------------------------------------- selon coterie
             nomCoterie = situation_.GetValCarac(coterie.Coterie.C_COTERIE)
             nomCoterieUniv = situation_.GetValCarac(coterie.Coterie.Carac_UNIV_COURANTE)
             if nomCoterie ==  templiers.Templiers.ID or nomCoterieUniv == templiers.Templiers.ID:
@@ -72,6 +72,9 @@ init -5 python:
                 evtsVides_.append("evtRien_Templiers_10")
                 evtsVides_.append("evtRien_Templiers_11")
                 evtsVides_.append("evtRien_Templiers_12")
+
+            if nomCoterie ==  zaporogues.Zaporogues.ID or nomCoterieUniv == zaporogues.Zaporogues.ID:
+                evtsVides_.append("evtRien_Zaporogues_1")
 
             # selon richesse
             valRichesse = situation_.GetValCaracInt(trait.Richesse.NOM)

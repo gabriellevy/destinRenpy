@@ -51,6 +51,7 @@ init -5 python:
         """
         global selecteur_
 
+        # A FAIRE : recrutement par les elfes (en cours de vie)
         # recrutementParElfes = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementParElfes")
         # recrutementParElfes.AjouterCondition(estPasElfes)
         # recrutementParElfes.AjouterCondition(estElfes)

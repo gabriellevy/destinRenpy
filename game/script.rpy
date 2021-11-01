@@ -43,6 +43,9 @@ init -1 python:
 
     AjouterEvtsUnivElfes()
     AjouterEvtsElfes()
+
+    AjouterEvtsUnivZaporogues()
+    AjouterEvtsZaporogues()
     # ---------------------- Amour
     AjouterEvtsRencontresAmoureuses()
     # santé
