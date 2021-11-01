@@ -26,8 +26,12 @@ init -1 python:
     # vie courante
     AjouterEvtsPilotage()
     AjouterEvtsRien()
-    # coteries
+    # ----------------------- coteries
     AjouterEvtsCoteries()
+
+    AjouterEvtsUnivConquistadors()
+    AjouterEvtsConquistadors()
+
     AjouterEvtsUnivTranshumanistes()
     AjouterEvtsTranshumanistes()
 
@@ -38,8 +42,8 @@ init -1 python:
     AjouterEvtsOrks()
 
     AjouterEvtsUnivElfes()
-    AjouterEvtsUnivConquistadors()
-    # amour
+    AjouterEvtsElfes()
+    # ---------------------- Amour
     AjouterEvtsRencontresAmoureuses()
     # santé
     AjouterEvtsMaladies()

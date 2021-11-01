@@ -6,14 +6,14 @@ init -5 python:
     from extremis.socio_eco.metiers import metier
     from abs.religions import religion
 
+    estConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
+    estPasConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.DIFFERENT)
+    estDansQuartierConquistador = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintMalo.NOM, condition.Condition.EGAL)
     def AjouterEvtsConquistadors():
         """
         événements génériques qui concernent les conquistadors
         """
         global selecteur_
-        estConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
-        estPasConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.DIFFERENT)
-        estDansQuartierConquistador = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintMalo.NOM, condition.Condition.EGAL)
 
         recrutementDesPauvresParConquistadors = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementDesPauvresParConquistadors")
         recrutementDesPauvresParConquistadors.AjouterCondition(estPasConquistador)

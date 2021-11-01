@@ -7,6 +7,10 @@ init -5 python:
     demiElfe = condition.Condition(elfes.Elfes.ASCENSION, 5, condition.Condition.SUPERIEUR_EGAL)
     elfeParfait = condition.Condition(elfes.Elfes.ASCENSION, 10, condition.Condition.SUPERIEUR_EGAL)
 
+    estElfe = condition.Condition(coterie.Coterie.C_COTERIE, elfes.Elfes.ID, condition.Condition.EGAL)
+    estPasElfe = condition.Condition(coterie.Coterie.C_COTERIE, elfes.Elfes.ID, condition.Condition.DIFFERENT)
+    estDansQuartierElfe = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintGermainEnLaye.NOM, condition.Condition.EGAL)
+
     def CalcElfitude(situation):
         """
         retourne une note du niveau d'elfitude du personnage
@@ -41,6 +45,16 @@ init -5 python:
 
         return testElfitude
 
+    def AjouterEvtsElfes():
+        """
+        événements génériques qui concernent les elfes
+        """
+        global selecteur_
+
+        # recrutementParElfes = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementParElfes")
+        # recrutementParElfes.AjouterCondition(estPasElfes)
+        # recrutementParElfes.AjouterCondition(estElfes)
+        # selecteur_.ajouterDeclencheur(recrutementParElfes)
 
 label testElfitude:
     $ elfitude = CalcElfitude(situation_)

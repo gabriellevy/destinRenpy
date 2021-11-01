@@ -455,9 +455,9 @@ class Conquistadors(coterie.Coterie):
     u"Zoraïda",	u"Zoila" ]
 
     NOMS = [ u"Acosta", u"Acuña", u"Adalbéron",     u"Abril",
-    u"AbadÃ­a",u"Abarca",u"AbellÃ¡n",u"Abiego",u"Acorella",u"AdriÃ¡n",u"Agea",u"Ager",u"Agramunt",u"AgustÃ­n",u"AlbarracÃ­n",
-    u"AlberÃ³",u"AlcalÃ¡",u"Alcolea",u"Alfaro",u"Alicante",u"Almunia",u"Alos",u"Amalric",u"AragonÃ©s",u"Arcas",u"Aymerich",
-    u"Aznar",u"Balaguer",u"Baldovinos",u"BandrÃ©s",u"Baptista",u"Barrachina",u"Batista",u"Bautista",u"Bermund",u"Boix",
+    u"Abada",u"Abarca",u"Abellain",u"Abiego",u"Acorella",u"Adrian",u"Agea",u"Ager",u"Agramunt",u"Agusta­n",u"Albarraca­n",
+    u"Alberad",u"AlcalÃ¡",u"Alcolea",u"Alfaro",u"Alicante",u"Almunia",u"Alos",u"Amalric",u"Aragonaos",u"Arcas",u"Aymerich",
+    u"Aznar",u"Balaguer",u"Baldovinos",u"Bandraos",u"Baptista",u"Barrachina",u"Batista",u"Bautista",u"Bermund",u"Boix",
     u"Bonfill",u"Borrell",u"Bruguer",u"Burguera",u"Burrell",u"Caballer­a",u"Caballero",u"Cabra",u"Cacho",u"Cajal",u"Calasanz",
     u"Calderaña",u"Canyelles",u"Castellblanc",u"Cebriaña",u"Centelles",u"Cerdaña",u"Ceret",u"Cirera",u"Claver",u"Clemente",
     u"Desclot",u"Donat",u"Egea",u"Ena",u"Entenza",u"Ermengol",u"Escolano",u"EstÃ©banez",u"Estanyol",u"Feliu",u"Ferrer",
