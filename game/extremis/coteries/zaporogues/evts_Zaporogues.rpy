@@ -10,7 +10,7 @@ init -5 python:
 
     estZaporogue = condition.Condition(coterie.Coterie.C_COTERIE, zaporogues.Zaporogues.ID, condition.Condition.EGAL)
     estPasZaporogue = condition.Condition(coterie.Coterie.C_COTERIE, zaporogues.Zaporogues.ID, condition.Condition.DIFFERENT)
-    #  estDansQuartierZaporogue = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.SaintDenis.NOM, condition.Condition.EGAL)
+    estDansQuartierZaporogue = condition.Condition(quartier.Quartier.C_QUARTIER, quartier.Suresnes.NOM, condition.Condition.EGAL)
 
     def AjouterEvtsZaporogues():
         """

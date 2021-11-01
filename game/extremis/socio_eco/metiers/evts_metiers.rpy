@@ -36,7 +36,6 @@ init -5 python:
     # est de telle coterie
     estElfe = condition.Condition(coterie.Coterie.C_COTERIE, elfes.Elfes.ID, condition.Condition.EGAL)
     estConquistaror = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)
-    estTemplier = condition.Condition(coterie.Coterie.C_COTERIE, templiers.Templiers.ID, condition.Condition.EGAL)
     estOrk = condition.Condition(coterie.Coterie.C_COTERIE, orks.Orks.ID, condition.Condition.EGAL)
 
     # notes sur les probas : les métiers très courant ont une proba de base de 0.1 (payson, employé)

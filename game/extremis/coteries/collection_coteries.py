@@ -1,4 +1,5 @@
 from extremis.coteries.templiers import templiers
+from extremis.coteries.zaporogues import zaporogues
 from extremis.coteries.elfes import elfes
 from extremis.coteries.orks import orks
 from extremis.coteries.conquistadors import conquistadors
@@ -25,6 +26,9 @@ class CollectionCoteries:
 
         conqu = conquistadors.Conquistadors()
         self.SetCoterie(conquistadors.Conquistadors.ID, conqu)
+
+        zap = zaporogues.Zaporogues()
+        self.SetCoterie(zaporogues.Zaporogues.ID, zap)
 
     def getCoterieAleatoire(self, selonDemographie):
         if selonDemographie:
