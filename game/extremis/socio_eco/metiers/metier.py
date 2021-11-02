@@ -168,6 +168,23 @@ class Robotique(Metier):
             poids = poids + 0.2
         return poids
 
+class Berger(Metier):
+    NOM = u"Berger"
+    def __init__(self):
+        self.nom_ = Berger.NOM
+
+    def GetNiveauRichesse(self):
+        return -1
+
+    def GetDiscipline(self):
+        return u"Élevage"
+
+    def GetPoidsDemo(self, masculin, coterieObj):
+        poids = 0.01
+        if self.nom_ in coterieObj.GetMetiersCompatibles():
+            poids = poids + 0.4
+        return poids
+
 class Danseur(Metier):
     NOM = u"Danseur"
     def __init__(self):
@@ -864,6 +881,9 @@ class CollectionMetiers:
 
         journaliste = Journaliste()
         self.SetMetier(Journaliste.NOM, journaliste)
+
+        berger = Berger()
+        self.SetMetier(Berger.NOM, berger)
 
         electronique = Electronique()
         self.SetMetier(Electronique.NOM, electronique)

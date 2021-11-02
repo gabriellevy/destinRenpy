@@ -100,11 +100,53 @@ class Zaporogues(coterie.Coterie):
         ajoute des portraits correspondants aux caracs en paramètre (et à la coterie courante)
         """
         if masculin:
+            if age <= 35:
+                if metObj is not None and metObj.nom_ == metier.Chasseur.NOM:
+                    portraits.append("images/coteries/zaporogues/portraits/15-35_chasseur.jpg")
             if age >= 20:
-                pass
+                if age >= 25:
+                    if age >= 30:
+                        if age >= 40:
+                            if age >= 45:
+                                if age >= 50:
+                                    if age >= 65:
+                                        portraits.append("images/coteries/zaporogues/portraits/65+.jpg")
+                                    portraits.append("images/coteries/zaporogues/portraits/50+.jpg")
+                                    portraits.append("images/coteries/zaporogues/portraits/50+_2.jpg")
+                                if age <= 70:
+                                    portraits.append("images/coteries/zaporogues/portraits/45-70.jpg")
+                            if age <= 60:
+                                portraits.append("images/coteries/zaporogues/portraits/40-60.jpg")
+                        if age <= 60:
+                            portraits.append("images/coteries/zaporogues/portraits/30-60.jpg")
+                            portraits.append("images/coteries/zaporogues/portraits/30-60_2.jpg")
+                            if metObj is not None and metObj.nom_ == metier.Musicien.NOM:
+                                portraits.append("images/coteries/zaporogues/portraits/30-60_musicien.jpg")
+                    if age <= 50:
+                        portraits.append("images/coteries/zaporogues/portraits/25-50.jpg")
+                        portraits.append("images/coteries/zaporogues/portraits/25-50_2.jpg")
+                    if metObj is not None and metObj.nom_ == metier.Guerrier.NOM:
+                        portraits.append("images/coteries/zaporogues/portraits/25-50_guerrier.jpg")
+                if age <= 45:
+                    portraits.append("images/coteries/zaporogues/portraits/20-45.jpg")
+                    portraits.append("images/coteries/zaporogues/portraits/20-45_2.jpg")
+                    portraits.append("images/coteries/zaporogues/portraits/20-45_3.jpg")
         else:
             if age >= 15:
-                pass
+                if age >= 20:
+                    if age >= 30:
+                        if age >= 50:
+                            portraits.append("images/coteries/zaporogues/portraits/F50+.jpg")
+                        if age <= 60:
+                            portraits.append("images/coteries/zaporogues/portraits/F30-60.jpg")
+                    if age <= 40:
+                        portraits.append("images/coteries/zaporogues/portraits/F20-40.jpg")
+                        if metObj is not None and metObj.nom_ == metier.Berger.NOM:
+                            portraits.append("images/coteries/zaporogues/portraits/F20-40_bergere.jpg")
+                        if metObj is not None and metObj.nom_ == metier.Paysan.NOM:
+                            portraits.append("images/coteries/zaporogues/portraits/F20-40_paysane.jpg")
+                if age <= 35:
+                    portraits.append("images/coteries/zaporogues/portraits/F15-35.jpg")
 
         return portraits
 
