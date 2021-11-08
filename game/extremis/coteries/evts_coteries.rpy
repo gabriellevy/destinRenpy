@@ -40,7 +40,7 @@ init -5 python:
         for cle in indexCoteries.keys():
             resAffinite = indexCoteries[cle]
             if resAffinite < 1:
-                print("retire {}".format(cle))
+                # print("retire {} (<1)".format(cle))
                 indexCoteries.pop(cle)
 
         # trier les autres par ordre décroissant

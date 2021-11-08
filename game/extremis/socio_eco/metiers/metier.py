@@ -824,7 +824,7 @@ class Aventurier(Metier):
         return -4
 
     def GetDiscipline(self):
-        return u"Aventure"
+        return u"Survie et aventure"
 
     def GetPoidsDemo(self, masculin, coterieObj):
         poids = 0.001

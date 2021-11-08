@@ -56,7 +56,7 @@ label univZaporogues:
     jump fin_cycle
 
 label univZaporogues_evt1:
-    # effet musique
+    # musique et danse
     "La musique, en particulier le chant et le violon, font partie intégrante de la vie des zaporogues. Elle rythme leurs journées, leur joies, leurs peines, et bien sûr leurs veillées au clair de lune."
     "Impossible de leur dire non, vous êtes entrainé jour après jour dans leurs danses endiabliées qui durent parfois jusqu'au lever du soleil."
     "Quelques mois de ce régime et vous avez toutes les bases pour briller au bal ou dans une chorale."
@@ -65,7 +65,10 @@ label univZaporogues_evt1:
     jump fin_cycle
 
 label univZaporogues_evt2:
-    "PAS FAIT univZaporogues_evt2"
+    # chasse et survie dans la steppe
+    "Dans la steppe immense il faut toujours avoir un plan de secours. Votre instructeur vous y entraîne en vous exerçant pendant un bon mois à vous nourrir, vous déplacer et vous vêtir en trouvant tout le nécessaire dans votre environnement."
+    $ AjouterACarac(metier.Chasseur.NOM, 1)
+    $ AjouterACarac(metier.Aventurier.NOM, 2)
     jump fin_cycle
 
 label univZaporogues_evt3:
