@@ -56,7 +56,12 @@ label univZaporogues:
     jump fin_cycle
 
 label univZaporogues_evt1:
-    "PAS FAIT univZaporogues_evt1"
+    # effet musique
+    "La musique, en particulier le chant et le violon, font partie intégrante de la vie des zaporogues. Elle rythme leurs journées, leur joies, leurs peines, et bien sûr leurs veillées au clair de lune."
+    "Impossible de leur dire non, vous êtes entrainé jour après jour dans leurs danses endiabliées qui durent parfois jusqu'au lever du soleil."
+    "Quelques mois de ce régime et vous avez toutes les bases pour briller au bal ou dans une chorale."
+    $ AjouterACarac(metier.Musicien.NOM, 1)
+    $ AjouterACarac(metier.Danseur.NOM, 2)
     jump fin_cycle
 
 label univZaporogues_evt2:
