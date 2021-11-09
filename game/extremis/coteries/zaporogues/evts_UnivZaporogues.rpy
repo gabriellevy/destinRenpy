@@ -72,7 +72,10 @@ label univZaporogues_evt2:
     jump fin_cycle
 
 label univZaporogues_evt3:
-    "PAS FAIT univZaporogues_evt3"
+    # éleveur nomade
+    "L'élevage est la première source de subsistance des zaporogues. Pour la nourriture, le transport, le couvert et le commerce, leurs gigantesques troupeaux sont indispensables pour les tribus."
+    "Vous apprenez les bases du métier de berger parmi les moutons, les chèvres les chevaux et les vaches."
+    $ AjouterACarac(metier.Berger.NOM, 2)
     jump fin_cycle
 
 label univZaporogues_evt4:
