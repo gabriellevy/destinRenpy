@@ -35,14 +35,15 @@ init -5 python:
         renpy.jump( prochainEvt)
 
 label univZaporogues:
-    #scene bg univ_zaporogues
-
+    scene bg univ_zaporogues
     $ situation_.SetCarac(coterie.Coterie.Carac_UNIV_COURANTE, zaporogues.Zaporogues.ID)
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
         # play music principale_temple
-        "PAS FAIT intro univ Zaporogues"
+        "Vous allez passer cette année d'études dans la coterie dez zaporogues, les nomades coriaces et bons vivants des plaines de l'Est."
+        "Les zaporogues n'ont pas à proprement parler d'université car l'apprentissage de leur mdoe de vie se fait nécessairement dans les grandes steppes asiatiques qui sont leur vraie maison."
+        "Vous êtes néanmoins accueilli dans un bâtiment ancien de leur petit quartier de Suresne où vous entamerez votre instruction avant votre départ."
 
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants < 1:

@@ -14,7 +14,10 @@ init -5 python:
     from abs.humanite import identite
 
 label zaporoguesPostule:
-    "PAS FAIT postuler LES Zaporogues."
+    menu:
+        "PAS FAIT postuler LES Zaporogues."
+        "ok":
+            pass
     jump zaporoguesRejoindre
     jump fin_cycle
 

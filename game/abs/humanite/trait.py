@@ -1012,12 +1012,12 @@ class Liberte(TraitGraduel):
 
         if val <= Trait.SEUIL_A_PAS:
             if val <= Trait.SEUIL_A_PAS_EXTREME:
-                return u"Mentalité d'esclave {}".format(val)
-            return u"Aime être soumis {}".format(val)
+                return u"Mentalité d'esclave"
+            return u"Aime être soumis"
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Ne supporte pas l'autorité {}".format(val)
-            return u"Épris de liberté {}".format(val)
+                return u"Ne supporte pas l'autorité"
+            return u"Épris de liberté"
         else:
             return u""
             # return u"Classe moyenne {}".format(val)
