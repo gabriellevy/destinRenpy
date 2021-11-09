@@ -79,7 +79,12 @@ label univZaporogues_evt3:
     jump fin_cycle
 
 label univZaporogues_evt4:
-    "PAS FAIT univZaporogues_evt4"
+    # périple
+    "L'apprentissage de la vie zaporogue se fait inévitablement aux quatre coins du gigantesque territoire eurasiatique dans lequel les zaporogues se déplacent en permanence."
+    "Durant ces voyages variés et souvent difficiles vous apprenez l'essentiel de ce qui fait le mode de vie zaporogue : la liberté et la vie à la dure."
+    $ AjouterACarac(metier.Aventurier.NOM, 1)
+    $ AjouterACarac(trait.Constitution.NOM, 1)
+    $ AjouterACarac(trait.Liberte.NOM, 2)
     jump fin_cycle
 
 label univZaporogues_evt5:
