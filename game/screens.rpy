@@ -1557,6 +1557,7 @@ screen valeurs_traits():
     $ strCoterie = situation_.AffichageCoterie()
     $ strQuartier = situation_.AffichageQuartier()
     $ patronyme = situation_.AffichagePatronyme()
+    $ animal_totem = situation_.AffichageTotem()
     $ strCrime = situation_.AffichageCrime(crimes_)
     $ strRichesse = situation_.AffichageRichesse()
     $ strPossessions = situation_.AffichagePossessions()
@@ -1574,6 +1575,7 @@ screen valeurs_traits():
             if interfaceMode_ == 0: # résumé, portrait, nom...
                 add "[adressePortrait]"
                 text _(u"[patronyme]")
+                text _(u"[animal_totem]")
                 text _(u"[strCoterie]")
                 text _(u"[affAge]")
             elif interfaceMode_ == 1: # age, blessures, maladies, bioniques

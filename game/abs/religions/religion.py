@@ -46,6 +46,18 @@ class Christianisme(Monotheiste):
     def __init__(self):
        self.nom_ = Christianisme.NOM
 
+class Animisme(Paien):
+
+    NOM = u"Animisme"
+
+    # valeurs de metier.Metier.C_TITRE quand le perso est prêtre
+    CHAMANE = u"Chamane"
+
+    NOM_TOTEM = u"Nom totem"# animal + adjectif concaténés
+
+    def __init__(self):
+       self.nom_ = Animiste.NOM
+
 #  différent de pas de religion car l'athée a développé une aversion à la religion, il sera plus dur à reconvertir
 class Atheisme(Religion):
 

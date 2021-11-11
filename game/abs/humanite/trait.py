@@ -123,7 +123,7 @@ class Celebrite(TraitGraduel):
                 return u"Glorieux"
             return u"Célèbre"
         else:
-            return ""
+            return "Inconnu"
 
     def PeutEtrePrisALaNaissance(self):
         return False
@@ -453,8 +453,8 @@ class Intelligence(TraitGraduel):
             return u"Bête"
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Très intelligent"
-            return u"Intelligent"
+                return u"Génial"
+            return u"Malin"
         else:
             return ""
 

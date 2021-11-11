@@ -95,7 +95,19 @@ label univZaporogues_evt4:
 
 label univZaporogues_evt5:
     # Animiste
-    "PAS FAIT univZaporogues_evt5"
+    $ religionActuelle = situation_.GetValCarac(religion.Religion.C_RELIGION)
+    "Votre maître vous initie à sa religion animiste."
+    "Un jour, durant un de vos voyages dans la steppe, il invoque vos ancêtres pour qu'ils vous reconnaissent et déterminent votre animal totem."
+    $ nomAnimalTotem = determinerAnimalTotem()
+    $ situation_.SetValCarac(religion.Animisme.NOM_TOTEM, nomAnimalTotem)
+    "Quand vous sortez de la transe tout est clair dans votre esprit : vous avez trouvé votre animal totem et dans la steppe vous serez appelé ''[nomAnimalTotem]''"
+    if religionActuelle != religion.Animisme.NOM:
+        $ conversion = conversionReligieuse(religion.Animisme.NOM)
+        if conversion:
+            "Profondément marqué par l'expérience, vous vous convertissez à l'animisme Tengri."
+        else:
+            "Même si vous avez été profondément marqué par cette expérience vous ne prenez pas cette étrange religion au sérieux."
+            "Votre maître ne vous en tient pas rigueur. Tolérant comme tous les zaporogues, il estime que la communion vous a rapproché de l'esprit de son peuple et que c'est l'essentiel."
     jump fin_cycle
 
 label univZaporogues_evt6:

@@ -95,6 +95,11 @@ class SituationDestin(situation.Situation):
             return "!!! Pas de nom !!!!"
         return u"{} {}".format(self.caracs_[identite.Identite.C_PRENOM], self.caracs_[identite.Identite.C_NOM])
 
+    def AffichageTotem(self):
+        if ( religion.Animisme.NOM_TOTEM not in self.caracs_):
+            return ""
+        return u"{}".format(self.caracs_[religion.Animisme.NOM_TOTEM])
+
     # DATES ET TEMPS QUI PASSE-----------------------------------------------------------------------------------------------------------
     def AffichageDate(self):
         nbJours = self.caracs_[temps.Date.DATE]

@@ -1,4 +1,3 @@
-
 define audio.sanctus = "musique/templiers/sanctus.mp3"
 define audio.turexgloriae = "musique/templiers/turexgloriae.mp3"
 
@@ -10,6 +9,8 @@ init -5 python:
     estPasAthee = condition.Condition(religion.Religion.C_RELIGION, religion.Atheisme.NOM, condition.Condition.DIFFERENT)
     estChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.EGAL)
     estPasChretien = condition.Condition(religion.Religion.C_RELIGION, religion.Christianisme.NOM, condition.Condition.DIFFERENT)
+    estAnimiste = condition.Condition(religion.Religion.C_RELIGION, religion.Animisme.NOM, condition.Condition.EGAL)
+    estPasAnimiste = condition.Condition(religion.Religion.C_RELIGION, religion.Animisme.NOM, condition.Condition.DIFFERENT)
     aPasDeReligion = condition.Condition(religion.Religion.C_RELIGION, "", condition.Condition.EGAL)
     aUneReligion = condition.Condition(religion.Religion.C_RELIGION, "", condition.Condition.DIFFERENT)
     # traits

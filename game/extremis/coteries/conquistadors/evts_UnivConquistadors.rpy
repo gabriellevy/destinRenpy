@@ -61,7 +61,7 @@ label univConquistadors_evt1:
         if conversion:
             "Vous vous convertissez au christianisme."
         else:
-            "Mais votre propre foi était trop forte, vous restez sourd à celle ci."
+            "Mais votre propre foi est plus forte, vous restez sourd à celle ci."
     jump fin_cycle
 
 label univConquistadors_evt2:
