@@ -18,6 +18,8 @@ init -5 python:
         recrutementDesPauvresParConquistadors = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementDesPauvresParConquistadors")
         recrutementDesPauvresParConquistadors.AjouterCondition(estPasConquistador)
         recrutementDesPauvresParConquistadors.AjouterCondition(estPauvre)
+        recrutementDesPauvresParConquistadors.AjouterCondition(aAgeDeRecrutement)
+        recrutementDesPauvresParConquistadors.AjouterCondition(conditionPasUniv)
         selecteur_.ajouterDeclencheur(recrutementDesPauvresParConquistadors)
 
 label recrutementDesPauvresParConquistadors:

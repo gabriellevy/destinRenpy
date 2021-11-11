@@ -3,7 +3,7 @@
 # define ordo = Character('Ordonnateur', color="#e30909")
 
 # musiques
-# define audio.principale_temple = "musique/templiers/principale.mp3"
+define audio.rejoindre_zapos = "musique/zaporogues/Hymne_National_De_L'URSS.mp3"
 
 init -5 python:
     import random
@@ -26,7 +26,7 @@ label zaporoguesRejoindre:
     # scene bg univ_zaporogues
     # show ordonnateur at right
     # with moveinright
-    # play music rejoindre_temple
+    play music rejoindre_zapos
     $ coterieZaporogues = coteries_[zaporogues.Zaporogues.ID]
     $ coterieZaporogues.RejoindreCoterie(situation_)
     $ prenom = situation_[identite.Identite.C_PRENOM]

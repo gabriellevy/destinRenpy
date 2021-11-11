@@ -10,11 +10,12 @@ init -5 python:
     from extremis.constitution import temps
     from extremis.coteries import coterie
 
+    aAgeDeRecrutement = condition.Condition(temps.Date.AGE_ANNEES, 20, condition.Condition.SUPERIEUR_EGAL) # peut être recruté apr des coterie (univ finie)
+    conditionPasUniv = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "", condition.Condition.EGAL)
     def AjouterEvtsCoteries():
         global selecteur_
         conditionAgeCoterieDeb = condition.Condition(temps.Date.AGE_ANNEES, 16, condition.Condition.SUPERIEUR_EGAL)
         conditionAgeCoterieFin = condition.Condition(temps.Date.AGE_ANNEES, 25, condition.Condition.INFERIEUR_EGAL)
-        conditionPasUniv = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "", condition.Condition.EGAL)
         conditionUnivPasTerminee = condition.Condition(coterie.Coterie.Carac_NB_UNIV, coterie.Coterie.NB_UNIV_TOTAL, condition.Condition.INFERIEUR_EGAL)
 
         # entre 16 et 25 ans on est OBLIGÉ de s'enrôler dans une université de coterie (au hasard)

@@ -1,5 +1,5 @@
 # musiques
-# define audio.principale_temple = "musique/templiers/principale.mp3"
+define audio.principale_zapos = "musique/zaporogues/01-10-Brahms_Hungarian_Dance_No_10_In_F-LLS.mp3"
 
 init -5 python:
     import random
@@ -63,6 +63,11 @@ label univZaporogues_evt1:
     "Quelques mois de ce régime et vous avez toutes les bases pour briller au bal ou dans une chorale."
     $ AjouterACarac(metier.Musicien.NOM, 1)
     $ AjouterACarac(metier.Danseur.NOM, 2)
+    # risque d'alcolisme
+    $ resProba = random.uniform(0, 1.0)
+    if resProba <= 0.3:
+        "Malheureusement les beuveries constantes qui accompagnent ces soirées ne vous laissent pas indemne. Vous devenez très largement dépendant de l'alcool."
+        $ maladie = maladies_.TomberMaladeStr(situation_, pbsante.Alcoolisme.NOM)
     jump fin_cycle
 
 label univZaporogues_evt2:
@@ -89,6 +94,7 @@ label univZaporogues_evt4:
     jump fin_cycle
 
 label univZaporogues_evt5:
+    # Animiste
     "PAS FAIT univZaporogues_evt5"
     jump fin_cycle
 

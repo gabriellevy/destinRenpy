@@ -21,6 +21,8 @@ init -5 python:
         recrutementOrkAHopital = declencheur.Declencheur(prob, "recrutementOrkAHopital")
         recrutementOrkAHopital.AjouterCondition(estAHopital)
         recrutementOrkAHopital.AjouterCondition(estPasOrk)
+        recrutementOrkAHopital.AjouterCondition(aAgeDeRecrutement)
+        recrutementOrkAHopital.AjouterCondition(conditionPasUniv)
         selecteur_.ajouterDeclencheur(recrutementOrkAHopital)
 
         # Opération surprise médiko dans un hopital ork

@@ -28,10 +28,11 @@ init -5 python:
         """
         global selecteur_
 
-        # très forte chance (proba absolue) de suivre des modules tant qu'on n'en a pas fait 6
         recrutementTemplierEnPrison = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementTemplierEnPrison")
         recrutementTemplierEnPrison.AjouterCondition(estPasTemplier)
         recrutementTemplierEnPrison.AjouterCondition(estEnPrison)
+        recrutementTemplierEnPrison.AjouterCondition(aAgeDeRecrutement)
+        recrutementTemplierEnPrison.AjouterCondition(conditionPasUniv)
         selecteur_.ajouterDeclencheur(recrutementTemplierEnPrison)
 
         # Grande cérémonie

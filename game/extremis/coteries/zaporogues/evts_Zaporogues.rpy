@@ -21,4 +21,6 @@ init -5 python:
         # a faire : recutement zaporogue en cours de vie
         # recrutementZaporogues = declencheur.Declencheur(proba.Proba(0.1, True), "recrutementZaporogues")
         # recrutementZaporogues.AjouterCondition(estPasZaporogue)
+        # recrutementZaporogues.AjouterCondition(aAgeDeRecrutement)
+        # recrutementZaporogues.AjouterCondition(conditionPasUniv)
         # selecteur_.ajouterDeclencheur(recrutementZaporogues)

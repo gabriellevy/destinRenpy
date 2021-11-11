@@ -138,7 +138,6 @@ init -5 python:
         # prénom de la coterie de sa mère
         prenomStr = "rien"
         if mere.coterie_ != "":
-            print("coterie mere : {}".format(mere.coterie_))
             coterieObj = coteries_[mere.coterie_]
             prenomStr = coterieObj.CreerPrenom(True)
 
