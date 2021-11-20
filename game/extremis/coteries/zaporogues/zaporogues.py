@@ -77,6 +77,9 @@ class Zaporogues(coterie.Coterie):
         """
         return 2.8
 
+    def nomTribu(self):
+        return "{}".format(random.choice(Zaporogues.TRIBUS))
+
     def CreerNom(self, masculin):
         """
         génère un patronyme correspondant à la coterie en question
@@ -149,6 +152,11 @@ class Zaporogues(coterie.Coterie):
                     portraits.append("images/coteries/zaporogues/portraits/F15-35.jpg")
 
         return portraits
+
+    TRIBUS = [
+        u"Azéris", u"Bachkirs", u"Balkars", u"Gagaouzes", u"Iakoutes", u"Kachkaïs", u"Karakalpaks", u"Karapapaks", u"Karatchaïs",
+        u"Kazakhs", u"Khorasanis", u"Kirghizes", u"Koumyks", u"Nogaïs", u"Ouïgours", u"Ouzbeks", u"Qizilbash", u"Tatars", u"Tchouvaches",
+        u"Touvains", u"Turkmènes", u"Turcs", u"Oghouzes", u"Kipchaks", u"Karlouks", u"Tchouvaches" ]
 
     NOMS_M = [
         u"Afanasievich", u"Aleskeevich", u"Alesnarovich", u"Anatolievich", u"Andreevich", u"Antonovich", u"Artemovich", u"Borisovich", u"Danilovich", u"Denisovich", u"Dmitrievich", u"Filippovich", u"Fyodorovich", u"Gennadiyevich", u"Georgiy", u"Germanovich", u"Grigorievich", u"Igorevich", u"Ilyich", u"Innokentievich", u"Ivanovich", u"Kirillovich", u"Konstantinovich", u"Larionovich", u"Leonidovich", u"Makarovich", u"Maximovich", u"Mikhailovich", u"Nikitovich", u"Nikolayevich", u"Olegovich", u"Pavlovich", u"Petrovich", u"Rodionovich", u"Romanovich", u"Rostislavovich", u"Ruslanovich", u"Savelievich", u"Semyonovich", u"Sergeyevich", u"Stanislavovich", u"Stepanovich", u"Svyatoslavovich", u"Tarasovich", u"Tikhonovich", u"Timofeyevich", u"Timurovich", u"Vadimovich", u"Valentinovich", u"Valerianovich", u"Valeryevich", u"Vasilievich", u"Victorovich", u"Vitalievich", u"Vladimirovich", u"Vladislavovich", u"Vsevolodovich", u"Vyacheslavovich", u"Yakovich", u"Yanovich", u"Yaroslavovich", u"Yegorovich", u"Yemelyanovich", u"Yermolayevich", u"Yevgenievich", u"Yurievich", u"Zakharovich"

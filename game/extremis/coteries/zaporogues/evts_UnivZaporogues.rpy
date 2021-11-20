@@ -111,7 +111,26 @@ label univZaporogues_evt5:
     jump fin_cycle
 
 label univZaporogues_evt6:
-    "PAS FAIT univZaporogues_evt6"
+    # banquet avec animisme :
+    # TODO : pas vraiment un événement d'université, pourrait être extrait
+    $ zapoCot = situation_.collectionCoteries[zaporogues.Zaporogues.ID]
+    $ nomTribu = zapoCot.nomTribu()
+    "Une délégation de la tribu [nomTribu] est venu en visite dans la capitale pour vendre ses fourrures sibériennes."
+    "Ils sont accueillis par un banquet monumental à la manière zaporogue, en plein bois de Boulogne."
+    "Un des [nomTribu] est un chamane qui repère en vous un non initié aux mystères de l'animisme. Ils vous oriente vers des boissons et vapeurs spécifiques pour tenter de vous faire entrer en transe."
+    $ test = testDeCarac.TestDeCarac(trait.Constitution.NOM, 3, situation_)
+    menu:
+        "Ces intoxication mettent votre corps à rude épreuve [test.affichage_]":
+            pass
+
+    $ reussi = test.TesterDifficulte(situation_)
+    if reussi:
+        "Vos perception se troublent et le reste de la nuit devient flou dans votre mémoire. Vous avez l'impression d'avoir vécu des milliers d'années et voyagé des milliers de kilomètres en une nuit."
+        $ AjouterACarac(trait.Spiritualite.NOM, 2)
+    else:
+        "Sous l'effet des fumées toxiques qu'il vous souffle au visage vbous vous mettez à tousser puis à vomir. Le chaman ne s'excuse même pas. Vous n'êtes qu'un faible indigne de son enseignement juge-t'il."
+        "Vous passez le reste de la nuit et la journée du lendemain en bien piètre état mais finissez par vous en remettre."
+
     jump fin_cycle
 
 label univZaporogues_evt7:
