@@ -4,7 +4,7 @@ define audio.principale_zapos = "musique/zaporogues/01-10-Brahms_Hungarian_Dance
 init -5 python:
     import random
     from extremis.coteries.zaporogues import zaporogues
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
 
     def AjouterEvtsUnivZaporogues():
@@ -40,7 +40,7 @@ label univZaporogues:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
-        # play music principale_temple
+        # play music principale_temple noloop
         "Vous allez passer cette année d'études dans la coterie dez zaporogues, les nomades coriaces et bons vivants des plaines de l'Est."
         "Les zaporogues n'ont pas à proprement parler d'université car l'apprentissage de leur mdoe de vie se fait nécessairement dans les grandes steppes asiatiques qui sont leur vraie maison."
         "Vous êtes néanmoins accueilli dans un bâtiment ancien de leur petit quartier de Suresne où vous entamerez votre instruction avant votre départ."

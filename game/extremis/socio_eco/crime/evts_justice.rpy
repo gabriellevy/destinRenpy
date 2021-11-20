@@ -7,7 +7,7 @@ init -5 python:
     from abs.reglages import filtres_action
     from abs.humanite import trait
     from extremis.constitution import temps
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from extremis.socio_eco.crime import crime
     from extremis.socio_eco.crime import justice
 

@@ -1,5 +1,5 @@
 import random
-from extremis.socio_eco.metiers import metier
+from abs.humanite import metier
 from extremis.coteries import coterie
 from abs.humanite import portrait
 

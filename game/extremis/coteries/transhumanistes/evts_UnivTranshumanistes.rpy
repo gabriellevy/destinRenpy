@@ -4,7 +4,7 @@ define audio.principale_transhumaniste = "musique/transhumanistes/Iron Man Menu 
 init -5 python:
     import random
     from extremis.coteries.transhumanistes import transhumanistes
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
 
     def AjouterEvtsUnivTranshumanistes():
@@ -41,7 +41,7 @@ label univTranshumanistes:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
-        play music principale_transhumaniste
+        play music principale_transhumaniste noloop
         "Les transhumanistes sont la coterie qui embrasse le plus la technologie moderne surtout dans tout ce qui s'applique à la transformation de l'humain. "
         "Ils s'obsèdent en particulier pour la cybernétique et les modifications génétiques et ils sont très loin en avance sur toutes les autres coteries à ce sujet."
         "L'université transhumanistes est un magnifique gratte-ciel d'acier et de verre qui contient tout un campus : les salles de cours, les dortoirs, et une quantité incroyable de bars et de distractions hors de prix."

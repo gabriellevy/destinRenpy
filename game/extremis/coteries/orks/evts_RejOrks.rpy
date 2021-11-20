@@ -9,7 +9,7 @@
 init -5 python:
     import random
     from extremis.coteries.orks import orks
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.geographie import quartier
     from abs.humanite import identite

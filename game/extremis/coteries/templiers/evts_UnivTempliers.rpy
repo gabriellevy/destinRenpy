@@ -4,7 +4,7 @@ define audio.principale_temple = "musique/templiers/principale.mp3"
 init -5 python:
     import random
     from extremis.coteries.templiers import templiers
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
 
     def AjouterEvtsUnivTempliers():
@@ -42,7 +42,7 @@ label univTempliers:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
-        play music principale_temple
+        play music principale_temple noloop
         "Le temple est basé sur la foi inébranlable en Dieu et sur l'honneur guerrier de l'aristocratie franque."
         "Les templiers sont avant tout des guerriers saints avec un code de l'honneur très strict. "
         "Ce code de l'honneur méprise la cupidité et l'ostentation mais l'enrichissement n'est pas interdit, surtout lorsqu'il est utilisé pour financer les nombreux hopitaux de l'ordre. "

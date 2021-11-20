@@ -80,14 +80,14 @@ init -5 python:
 
 label donAuxPauvres:
     # Don aux pauvres
-    play music turexgloriae
+    play music turexgloriae noloop
     "Vous donnez une grande partie de votre argent pour soutenir les pauvres."
     $ situation_.RetirerACarac(trait.Richesse.NOM, 1)
     jump fin_cycle
 
 label nominationEveque:
     # Nomination comme évèque";
-    play music sanctus
+    play music sanctus noloop
     "Pour vos fortes compétences et votre ancienneté, et pour votre foi bien sûr, vous êtes nommé évèque."
     $ situation_.SetCarac(metier.Metier.C_TITRE, religion.Religion.EVEQUE)
     jump fin_cycle

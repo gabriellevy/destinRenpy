@@ -5,7 +5,7 @@ init -10 python:
     from extremis.geographie import quartier
     from extremis.constitution import temps
     from extremis.coteries import collection_coteries
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.humanite.sante import pbsante
     from abs.reglages import filtres_action
     from extremis.techno import bionique

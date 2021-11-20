@@ -9,7 +9,7 @@ define audio.rejoindre_temple = "musique/templiers/rejoindre_doux_spirituel.mp3"
 init -5 python:
     import random
     from extremis.coteries.templiers import templiers
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.geographie import quartier
     from abs.humanite import identite
@@ -137,7 +137,7 @@ label TempliersRejoindre:
     scene bg univ_templiers
     show ordonnateur at right
     with moveinright
-    play music rejoindre_temple
+    play music rejoindre_temple noloop
     ordo "Lisez le serment de l'Ordre."
     "Exauce, nous t'en prions, Seigneur, nos prières, de sorte que tu daignes bénir ton serviteur qui ce jour avec ton assentiment a ceint le glaive,"
     "qu'il soit le défenseur contre la cruauté de païens et de tous les méchants, et le protecteur des églises, des veuves, des orphelins, de tous tes serviteurs,"

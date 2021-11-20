@@ -1,12 +1,12 @@
 image officierConquistador = "coteries/conquistadors/officier.png"
 define inst = Character('Instructeur', color="#e30909")
 
-define audio.principale_conquistadors = "musique/conquistadors/01-06-Lemminkainen_Suite_Op_22_IV_Lemminkainen-LLS.mp3"
+define audio.principale_conquistadors = "musique/conquistadors/01-01-Cantovano_and_His_Orchestra-E_Viva_Espan-LLS.mp3"
 
 init -5 python:
     import random
     from extremis.coteries.conquistadors import conquistadors
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.geographie import quartier
     from abs.humanite import identite
@@ -121,7 +121,7 @@ label conquistadorsPostule_phase5:
         jump conquistadorsRejoindre
 
 label conquistadorsRejoindre:
-    play music principale_conquistadors
+    play music principale_conquistadors noloop
     inst "Vous êtes maintenant un conquistador."
     $ coterieConquistadors = coteries_[conquistadors.Conquistadors.ID]
     $ coterieConquistadors.RejoindreCoterie(situation_)

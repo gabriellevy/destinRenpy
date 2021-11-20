@@ -8,7 +8,7 @@ define instructeur_ork = Character('Instructeur', color="#001a00")
 init -5 python:
     import random
     from extremis.coteries.orks import orks
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from abs.humanite.sante import pbsante
 
@@ -47,7 +47,7 @@ label univOrks:
     $ numMoisRestants = situation_.GetValCaracInt(coterie.Coterie.Carac_NB_MOIS_UNIV_A_FAIRE)
     if numMoisRestants == coterie.Coterie.NB_MOIS_UNIV_TOTAL_A_FAIRE:
         # intro :
-        play music principale_orks
+        play music principale_orks noloop
         "Les orks sont des mutants qui embrassent avant tout une vie simple et brutale sans prise de tête."
 
     if numMoisRestants < 1:

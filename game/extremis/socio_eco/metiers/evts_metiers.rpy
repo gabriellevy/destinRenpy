@@ -10,7 +10,7 @@ init -5 python:
     from abs.reglages import filtres_action
     from abs.humanite import trait
     from extremis.constitution import temps
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
 
     aPasDeMetier = condition.Condition(metier.Metier.C_METIER, "", condition.Condition.EGAL)
     univFinie = condition.Condition(coterie.Coterie.Carac_UNIV_COURANTE, "fini", condition.Condition.EGAL)

@@ -8,7 +8,7 @@ define audio.principale_elfes = "musique/elfes/principale.mp3"
 init -5 python:
     import random
     from extremis.coteries.elfes import elfes
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.geographie import quartier
     from abs.humanite import identite

@@ -1,9 +1,15 @@
-
+define audio.paso_doble = "musique/conquistadors/01-02-Cantovano_and_His_Orchestra-El_Gato_Mont-LLS.mp3"
+define audio.paso_doble_doux = "musique/conquistadors/01-05-Cantovano_and_His_Orchestra-Fiesta_Moren-LLS.mp3"
+define audio.paso_doble_guitare = "musique/conquistadors/01-07-Cantovano_and_His_Orchestra-El_Picador-LLS.mp3"
+define audio.diablo_rojo = "musique/conquistadors/02-Diablo rojo.mp3"
+define audio.tamacun = "musique/conquistadors/01-Tamacun.mp3"
+define audio.stairway_gabriella = "musique/conquistadors/06-Stairway to heaven.mp3"
+define audio.orion_gabriella = "musique/conquistadors/07-Orion.mp3"
 
 init -5 python:
     import random
     from extremis.coteries.conquistadors import conquistadors
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
 
     estConquistador = condition.Condition(coterie.Coterie.C_COTERIE, conquistadors.Conquistadors.ID, condition.Condition.EGAL)

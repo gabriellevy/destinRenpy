@@ -8,7 +8,7 @@ define audio.rejoindre_zapos = "musique/zaporogues/Hymne_National_De_L'URSS.mp3"
 init -5 python:
     import random
     from extremis.coteries.zaporogues import zaporogues
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.geographie import quartier
     from abs.humanite import identite
@@ -26,7 +26,7 @@ label zaporoguesRejoindre:
     # scene bg univ_zaporogues
     # show ordonnateur at right
     # with moveinright
-    play music rejoindre_zapos
+    play music rejoindre_zapos noloop
     $ coterieZaporogues = coteries_[zaporogues.Zaporogues.ID]
     $ coterieZaporogues.RejoindreCoterie(situation_)
     $ prenom = situation_[identite.Identite.C_PRENOM]

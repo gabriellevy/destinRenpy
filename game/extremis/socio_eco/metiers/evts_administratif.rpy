@@ -13,7 +13,7 @@ init -5 python:
     from abs import selecteur
     from abs import proba
     from abs import condition
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.reglages import filtres_action
 
     def AjouterEvtsAdministratif():

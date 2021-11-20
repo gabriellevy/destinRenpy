@@ -1,4 +1,4 @@
-from extremis.socio_eco.metiers import metier
+from abs.humanite import metier
 from extremis.coteries import coterie
 from extremis.coteries.templiers import templiers
 from abs.religions import religion

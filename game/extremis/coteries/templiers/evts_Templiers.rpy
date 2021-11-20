@@ -6,7 +6,7 @@ define audio.guyderosesquandary = "musique/templiers/guyderosesquandary.mp3"
 init -5 python:
     import random
     from extremis.coteries.templiers import templiers
-    from extremis.socio_eco.metiers import metier
+    from abs.humanite import metier
     from abs.religions import religion
     from extremis.socio_eco.crime import justice
 
@@ -67,14 +67,14 @@ init -5 python:
 
 label templiersRecevoirAumone:
     # Recevoir l'aumône
-    play music guyderosesquandary
+    play music guyderosesquandary noloop
     "Votre misère attendrit un chrétien templier qui vous fait un gros don."
     $ AjouterACarac(trait.Richesse.NOM, 1)
     jump fin_cycle
 
 label templiersDonEpeeSacree:
     # Don d'une épée sacrée
-    play music saladinbesiegejerusalem
+    play music saladinbesiegejerusalem noloop
     "Pour votre dévotion chrétienne fervente et en signe que vos compétences au combat sont reconnues suffisantes, l'ordre vous affecte une épée sacrée bénie par un évèque. Nul doute qu'elle facilitera grandement vos miracles."
     $ situation_.SetValCarac(templiers.Templiers.C_EPEE_SACREE, 1)
     $ AjouterACarac(religion.Religion.C_MIRACLE, 1)
@@ -122,7 +122,7 @@ label recrutementTemplierEnPrison:
     jump fin_cycle
 
 label templiersGrandeCeremonie:
-    play music tedonimum
+    play music tedonimum noloop
     # "Grande cérémonie => A FAIRE transférer ça dans un fichier d'événements chrétiens
     "Vous assistez aux offices de pâques. La cérémonie est si parfaite que vous en êtes très affecté, comme si vous étiez purifié de vos péchés."
     if random.uniform(0, 1.0) < 0.2:
