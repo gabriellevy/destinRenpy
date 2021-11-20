@@ -134,7 +134,14 @@ label univZaporogues_evt6:
     jump fin_cycle
 
 label univZaporogues_evt7:
-    "PAS FAIT univZaporogues_evt7"
+    # sensibilité poésie théâtre
+    "Les zaporogues ont tous la sensibilité à fleur de peau et ne peuvent concevoir la vie sans art, théâtre et poésie."
+    "Vous passez un mois entier dans une troupe de théâtre vagabonde qui vous emploie comme homme à tout faire corvéable et vous pousse à vous exprimer et faire le figurant de temps à autre."
+    "Cette ambiance effervescente vous affecte plus que de raison, vous en revenez profondément changé."
+    $ AjouterACarac(trait.Artiste.NOM, 1)
+    $ AjouterACarac(trait.Sensibilite.NOM, 1)
+    $ AjouterACarac(metier.Poete.NOM, 1)
+    $ AjouterACarac(metier.Acteur.NOM, 1)
     jump fin_cycle
 
 label univZaporogues_evt8:

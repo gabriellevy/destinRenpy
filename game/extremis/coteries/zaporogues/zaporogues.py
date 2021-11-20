@@ -26,9 +26,9 @@ class Zaporogues(coterie.Coterie):
             trait.Artiste.NOM, \
             trait.Spiritualite.NOM, \
             trait.Observation.NOM, \
+            trait.Sensibilite.NOM, \
             trait.Constitution.NOM, \
             trait.Franchise.NOM, \
-            trait.Courage.NOM, \
             ]
 
     def GetTraitsIncompatibles(self):
