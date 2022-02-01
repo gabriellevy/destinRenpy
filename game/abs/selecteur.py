@@ -10,6 +10,7 @@ class Selecteur:
 
     def ajouterDeclencheur(self, declencheur):
         self.declencheurs_.append(declencheur)
+        declencheur.selecteur_ = self
 
     def determinationEvtCourant(self, situation):
         global erreur_

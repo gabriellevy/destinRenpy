@@ -120,28 +120,28 @@ init -5 python:
         situation.SetValCarac(relationAmoureuse.RelA.C_RELATIONS_SEXUELLES_REGULIERES , aDesRelationsSexuellesRegulieres)
 
 label decFaireLaCour:
-    $ amoureuse = relationAmoureuse.GetUneAmoureuseEnSeduction(situation_) # A FAIRE : ne récupérez qu'une amoureuse d'un certain niveau ?
+    $ amoureuse = relationAmoureuse.GetUneAmoureuseEnSeduction(situation_)
     if amoureuse is not None:
         "[amoureuse.nom_] vous plaît tellement que vous tentez de la séduire par tous les moyens."
         $ relationAmoureuse.FaitLaCour(situation_, amoureuse)
     $ MAJCaracsRelationsAmoureuses(situation_)
 
 label decRencontre:
-    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "Vous avez rencontré [amoureuse.nom_]."
     $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle
 
 label decJoueurTombeAmoureux:
-    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "[amoureuse.nom_] vous fait complètement craquer."
     $ MAJCaracsRelationsAmoureuses(situation_)
     jump fin_cycle
 
 label decPnjTombeAmoureuse:
-    $ amoureuse = pnj_destin.GenererRelationAmoureuseDestin(situation_) # Destin ajouté en attendant de trouver un meilleur système
+    $ amoureuse = pnj.GenererRelationAmoureuse(situation_)
     $ AjouterCetteAmoureuse(situation_, amoureuse)
     "Cette [amoureuse.nom_] semble avoir un faible pour vous."
     $ MAJCaracsRelationsAmoureuses(situation_)

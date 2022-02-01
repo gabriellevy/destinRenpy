@@ -33,14 +33,24 @@ class TestDeCarac:
         if isinstance(self.caracs_, list):
             affichageCarac = ""
             for carac in self.caracs_:
-                affichageCarac = "{}, {}".format(affichageCarac, carac)
-        return " ({}% en {})".format(self.CalculerPourcentageReussite(situation), affichageCarac)
+                if affichageCarac == "":
+                    affichageCarac = "{}".format(carac)
+                else:
+                    affichageCarac = "{}, {}".format(affichageCarac, carac)
+
+        pourcentageReussite = self.CalculerPourcentageReussite(situation)
+        if pourcentageReussite <= 0:
+            return u" - Réussite impossible, {} trop bas".format(affichageCarac)
+        return " ({}% en {})".format(pourcentageReussite, affichageCarac)
 
     def CalculerPourcentageReussite(self, situation):
         """
         retourne le pourcentage de change que l'action réussisse étant donné  la valeur de la carac donnée chez le joueur
         et la difficulté de la tâche à accomplir
         """
+        if self.difficulte_ < 1:
+            return 100
+
         valCarac = 0
         if isinstance(self.caracs_, list):
             for carac in self.caracs_:
@@ -49,6 +59,8 @@ class TestDeCarac:
             valCarac = valCarac / len(carac)
         else:
             valCarac = situation.GetValCaracInt(self.caracs_)
+        print("valCarac : {} ".format(valCarac)) # tmp test
+        print("self.difficulte_ : {}".format(self.difficulte_)) # tmp test
 
         diff = [
         [ 80,  40,   0,   0,   0,   0,   0,  0,  0,  0], # -20 très handicapé
@@ -74,8 +86,8 @@ class TestDeCarac:
         [ 95,  85,  70,  50,  40,   5,   0,  0,  0,  0], # 0 : le seuil entre 0 (ne connaît rien à rien) et 1 (initié) est volontairement assez tranché
         [100,  95,  90,  70,  55,  20,  10,  0,  0,  0], # débutant, connaît
         [100,  98,  92,  75,  60,  25,  16,  0,  0,  0], # débutant, connaît
-        [100, 100,  95,  80,  65,  30,  22,  0,  0,  0], # débutant, connaît
-        [100, 100,  97,  85,  70,  35,  28,  0,  0,  0], # débutant, connaît
+        [100, 100,  95,  80,  65,  30,  22,  1,  0,  0], # débutant, connaît
+        [100, 100,  97,  85,  70,  35,  28,  3,  0,  0], # débutant, connaît
         [100, 100, 100,  90,  75,  40,  34,  5,  0,  0], # 5 très avancé
         [100, 100, 100,  92,  80,  45,  40, 10,  0,  0], # très avancé
         [100, 100, 100,  95,  85,  50,  46, 20,  0,  0], # très avancé
@@ -89,6 +101,7 @@ class TestDeCarac:
         [100, 100, 100, 100, 100, 100,  94, 75, 70, 45], #15 surhumain
         [100, 100, 100, 100, 100, 100, 100, 85, 80, 50] #16 dieu
         ]
+        print(" diff[valCarac+20][self.difficulte_-1] {} : ".format( diff[valCarac+20][self.difficulte_-1])) # tmp test
         return diff[valCarac+20][self.difficulte_-1]
 
     def TesterDifficulte(self, situation):

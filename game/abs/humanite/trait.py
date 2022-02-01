@@ -29,6 +29,13 @@ class Trait:
             assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
         return "Valeur de description non trouvée pour : Trait : {}. Valeur : {}".format(self.eTrait_, val)
 
+    def GetVal(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        return val
+
     def PeutEtrePrisALaNaissance(self):
         """
         Renvoie true si il s'agit d'un trait qui peut être choisi dès la création du personnage
@@ -960,6 +967,32 @@ class Artiste(TraitGraduel):
         else:
             return ""
 
+class Ruse(TraitGraduel):
+
+    NOM = u"Ruse"
+
+    def __init__(self):
+        self.eTrait_ = Ruse.NOM
+
+    def GetDescription(self, situation):
+        val = situation[self.eTrait_]
+        if val == "":
+            val = 0
+            situation[self.eTrait_] = val
+        if not isinstance(val, int):
+            assert "Ce trait n'a pas comme valeur un int. Trait : {}. Valeur : {}".format(self.eTrait_, val)
+
+        if val <= Trait.SEUIL_A_PAS:
+            if val <= Trait.SEUIL_A_PAS_EXTREME:
+               return u"Gros nigaud"
+            return u"Naïf"
+        elif val >= Trait.SEUIL_A:
+            if val >= Trait.SEUIL_A_EXTREME:
+                return u"Machiavélique"
+            return u"Rusé"
+        else:
+            return ""
+
 class Richesse(TraitGraduel):
 
     NOM = u"Richesse"
@@ -981,12 +1014,12 @@ class Richesse(TraitGraduel):
 
         if val <= Trait.SEUIL_A_PAS:
             if val <= Trait.SEUIL_A_PAS_EXTREME:
-                return u"Misérable {}".format(val)
-            return u"Pauvre {}".format(val)
+                return u"Misérable"
+            return u"Pauvre"
         elif val >= Trait.SEUIL_A:
             if val >= Trait.SEUIL_A_EXTREME:
-                return u"Incroyablement riche {}".format(val)
-            return u"Très riche {}".format(val)
+                return u"Incroyablement riche"
+            return u"Très riche"
         else:
             return u""
             # return u"Classe moyenne {}".format(val)
@@ -1026,6 +1059,8 @@ class CollectionTraits:
 
     def __init__(self):
         self.lTraits_ = dict()
+        ruse = Ruse()
+        self.SetTrait(Ruse.NOM, ruse)
         liberte = Liberte()
         self.SetTrait(Liberte.NOM, liberte)
         assurance = Assurance()

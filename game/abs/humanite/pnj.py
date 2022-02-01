@@ -30,7 +30,7 @@ class Pnj:
     def __getattr__(self, nom):
         """Si Python ne trouve pas l'attribut nommé nom, il appelle
              cette méthode. On affiche une alerte"""
-        print("Alerte ! Il n'y a pas d'attribut '{}' dans l'objet '{}' !".format(nom, self))
+        print("Alerte ! Il n'y a pas d'attribut '{}' dans l'objet '{}' !".format(nom, self.nom_))
 
     def __str__(self):
         str = u"{}".format(self.nom_)
